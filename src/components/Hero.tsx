@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import profileImage from "@/assets/profile.jpg";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -12,10 +13,24 @@ export function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-gradient-hero opacity-50" />
+      <div className="absolute inset-0 bg-gradient-hero opacity-60" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
+        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Profile Image */}
+          <div className="flex justify-center mb-6">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-primary rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/30 dark:border-primary/40 shadow-glow">
+                <img 
+                  src={profileImage} 
+                  alt="Francisco Josias da Silva Batista"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          
           <p className="text-lg text-muted-foreground">{t('hero.greeting')}</p>
           
           <h1 className="text-5xl md:text-7xl font-bold">

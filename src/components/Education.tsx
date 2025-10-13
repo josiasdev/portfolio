@@ -13,9 +13,9 @@ export function Education() {
         </h2>
 
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-          <Card className="p-6 space-y-4 hover:shadow-card transition-all animate-fade-in">
+          <Card className="p-6 space-y-4 hover:shadow-subtle transition-all animate-fade-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary">
+              <div className="p-2 rounded-lg bg-gradient-primary shadow-subtle">
                 <GraduationCap className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">{t('education.degree')}</h3>
@@ -26,9 +26,9 @@ export function Education() {
             </div>
           </Card>
 
-          <Card className="p-6 space-y-4 hover:shadow-card transition-all animate-fade-in">
+          <Card className="p-6 space-y-4 hover:shadow-subtle transition-all animate-fade-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary">
+              <div className="p-2 rounded-lg bg-gradient-primary shadow-subtle">
                 <GraduationCap className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">{t('education.technical')}</h3>
@@ -39,9 +39,9 @@ export function Education() {
             </div>
           </Card>
 
-          <Card className="p-6 md:col-span-2 hover:shadow-card transition-all animate-fade-in">
+          <Card className="p-6 md:col-span-2 hover:shadow-subtle transition-all animate-fade-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary">
+              <div className="p-2 rounded-lg bg-gradient-primary shadow-subtle">
                 <Languages className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">{t('education.languages')}</h3>

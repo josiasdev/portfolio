@@ -38,7 +38,7 @@ export function Experience() {
           {experiences.map((exp, index) => (
             <Card
               key={index}
-              className="p-6 hover:shadow-card transition-all duration-300 animate-fade-in border-l-4 border-l-primary"
+              className="p-6 hover:shadow-subtle transition-all duration-300 animate-fade-in border-l-4 border-l-primary bg-card/90 dark:bg-card/95 backdrop-blur-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="space-y-3">

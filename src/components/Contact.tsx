@@ -43,7 +43,7 @@ export function Contact() {
             {contactInfo.map((item, index) => (
               <Card
                 key={index}
-                className="p-6 hover:shadow-card transition-all hover:-translate-y-1 animate-scale-in"
+                className="p-6 hover:shadow-subtle transition-all hover:-translate-y-1 animate-scale-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.href ? (

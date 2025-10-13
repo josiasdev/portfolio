@@ -55,7 +55,7 @@ export function Projects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="p-6 flex flex-col hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in group border-border/50"
+              className="p-6 flex flex-col hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in group border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="space-y-4 flex-1">

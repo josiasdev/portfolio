@@ -11,7 +11,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/85 dark:bg-background/90 backdrop-blur-lg border-b border-border/60 dark:border-border/40 shadow-subtle">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#hero" className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
           Josias Batista

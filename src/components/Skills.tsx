@@ -49,7 +49,7 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <Card
               key={category.title}
-              className="p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1 animate-scale-in border-border/50"
+              className="p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1 animate-scale-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-3 mb-4">

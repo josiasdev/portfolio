@@ -60,6 +60,7 @@ export default {
       boxShadow: {
         'glow': 'var(--shadow-glow)',
         'card': 'var(--shadow-card)',
+        'subtle': 'var(--shadow-subtle)',
       },
       keyframes: {
         "accordion-down": {
