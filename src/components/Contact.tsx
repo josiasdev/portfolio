@@ -18,12 +18,6 @@ export function Contact() {
       value: '+55 (85) 98231-7976',
       href: 'tel:+5585982317976',
     },
-    {
-      icon: MapPin,
-      label: t('contact.location'),
-      value: 'Quixadá - Ceará, Brazil',
-      href: null,
-    },
   ];
 
   return (
