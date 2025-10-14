@@ -18,6 +18,7 @@ export function Experience() {
       company: t('experience.brazil.company'),
       period: t('experience.brazil.period'),
       description: t('experience.brazil.desc'),
+      tech: t('experience.brazil.tech')
     },
     {
       role: t('experience.lucrei.role'),
