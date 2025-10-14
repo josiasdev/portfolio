@@ -1,73 +1,102 @@
-# Welcome to your Lovable project
+# Josias Batista - Portfólio Pessoal
 
-## Project info
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-cyan?logo=tailwindcss)
+![shadcn/ui](https://img.shields.io/badge/shadcn/ui-black?logo=shadcnui&logoColor=white)
 
-**URL**: https://lovable.dev/projects/19af268b-5bad-4d1e-b96d-2aa3d82a9d5b
+## Visão Geral
 
-## How can I edit this code?
+Este é o código-fonte do meu portfólio pessoal, uma aplicação web moderna e responsiva construída para apresentar minhas habilidades, experiência profissional e projetos. O site foi desenvolvido com as tecnologias mais recentes do ecossistema React, com foco em desempenho, design limpo e uma ótima experiência de usuário.
 
-There are several ways of editing your application.
+**[➡️ Veja o site ao vivo](URL_DO_SEU_PORTFOLIO)**
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/19af268b-5bad-4d1e-b96d-2aa3d82a9d5b) and start prompting.
+## Funcionalidades
 
-Changes made via Lovable will be committed automatically to this repo.
+O portfólio conta com diversas funcionalidades para proporcionar uma experiência completa e dinâmica:
 
-**Use your preferred IDE**
+* **Design Responsivo:** Totalmente adaptado para visualização em desktops, tablets e smartphones.
+* **Tema Claro e Escuro (Dark/Light Mode):** Preferência de tema que é salva localmente, implementada com `next-themes`.
+* **Multi-idioma (i18n):** Suporte completo para Inglês (en) e Português (pt), gerenciado via React Context API.
+* **Componentização com shadcn/ui:** Interface construída com componentes acessíveis, reutilizáveis e customizáveis.
+* **Performance Otimizada:** Build rápido e otimizado para produção com Vite.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tecnologias Utilizadas
 
-Follow these steps:
+Este projeto foi construído utilizando um stack moderno e robusto, focado em produtividade e escalabilidade.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+#### **Frontend & UI**
+* **Framework:** [React 18](https://reactjs.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+* **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+* **Componentes UI:** [shadcn/ui](https://ui.shadcn.com/) (baseado em Radix UI)
+* **Roteamento:** [React Router DOM](https://reactrouter.com/)
+* **Ícones:** [Lucide React](https://lucide.dev/)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+#### **Gerenciamento de Estado e Formulários**
+* **Data Fetching/State:** [TanStack Query](https://tanstack.com/query)
+* **Gerenciamento de Formulários:** [React Hook Form](https://react-hook-form.com/)
+* **Validação de Schema:** [Zod](https://zod.dev/)
 
-# Step 3: Install the necessary dependencies.
-npm i
+#### **Ferramentas e Qualidade de Código**
+* **Linting:** [ESLint](https://eslint.org/)
+* **Formatação:** Configurado para seguir padrões consistentes de código.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## Como Rodar o Projeto Localmente
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Siga os passos abaixo para configurar e executar o projeto no seu ambiente de desenvolvimento.
 
-**Use GitHub Codespaces**
+#### **Pré-requisitos**
+* [Node.js](https://nodejs.org/) (versão 18 ou superior)
+* [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+#### **Instalação**
 
-## What technologies are used for this project?
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/josiasdev/portfolio
+    cd portfolio
+    ```
 
-This project is built with:
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+    *ou, se você usa yarn:*
+    ```bash
+    yarn install
+    ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
 
-## How can I deploy this project?
+4.  Abra seu navegador e acesse `http://localhost:8080` (ou a porta indicada no terminal).
 
-Simply open [Lovable](https://lovable.dev/projects/19af268b-5bad-4d1e-b96d-2aa3d82a9d5b) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Scripts Disponíveis
 
-Yes, you can!
+* `npm run dev`: Inicia o servidor de desenvolvimento com Hot-Reload.
+* `npm run build`: Gera a build de produção na pasta `dist/`.
+* `npm run lint`: Executa o linter (ESLint) para verificar a qualidade do código.
+* `npm run preview`: Inicia um servidor local para visualizar a build de produção.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Contato
+
+**Josias Batista**
+
+* **LinkedIn:** `https://www.linkedin.com/in/josias-batista`
+* **GitHub:** `https://github.com/josiasdev/`
+* **Email:** `francisco.batista67@alu.ufc.br`
