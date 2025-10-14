@@ -25,7 +25,7 @@ export function Hero() {
                 <img 
                   src={profileImage} 
                   alt="Francisco Josias da Silva Batista"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-bottom"
                 />
               </div>
             </div>
@@ -34,10 +34,10 @@ export function Hero() {
           <p className="text-lg text-muted-foreground">{t('hero.greeting')}</p>
           
           <h1 className="text-5xl md:text-7xl font-bold">
-            Francisco Josias
+            Josias
             <br />
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              da Silva Batista
+              Batista
             </span>
           </h1>
           
