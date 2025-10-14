@@ -20,15 +20,15 @@ const translations = {
     
     // Hero
     'hero.greeting': 'Hi, I\'m',
-    'hero.title': 'Full Stack Developer',
-    'hero.subtitle': 'Specialized in Backend Development, Web3 & Financial Systems',
+    'hero.title': 'Web3 Full Stack Developer',
+    'hero.subtitle': 'Backend Development and Integration with Web3 Ecosystems',
     'hero.location': 'Quixadá - Ceará, Brazil',
     'hero.cta': 'View Projects',
     'hero.contact': 'Contact Me',
     
     // About
     'about.title': 'About Me',
-    'about.summary': 'Full Stack Developer with a solid foundation in software engineering, blockchain, and back-end architecture. Experienced in building RESTful APIs, integrating financial and Web3 systems, and developing scalable and secure applications. Focused on innovation, security, and performance, with hands-on experience in digital payments, financial automation, and decentralized solutions. Passionate about contributing to global teams that build seamless and future-ready financial technologies.',
+    'about.summary': 'Full-stack developer focused on building robust and innovative Back-End and Web3 solutions. I have experience building scalable and secure applications, leveraging cutting-edge technologies to solve complex problems and deliver value in both decentralized and traditional ecosystems.',
     
     // Skills
     'skills.title': 'Technical Skills',
@@ -44,17 +44,20 @@ const translations = {
     'experience.current': 'Present',
     'experience.switchpay.role': 'Full Stack Developer Junior',
     'experience.switchpay.company': 'Switch Pay',
-    'experience.switchpay.period': 'October 2024 - Present',
-    'experience.switchpay.desc': 'Developing and maintaining the Switch Pay platform, focused on payment solutions, financial reconciliation, and automated integration with management systems.',
+    'experience.switchpay.period': 'October 2025 - Present',
+    'experience.switchpay.desc': 'Development and maintenance of the Switch Pay platform, specializing in payment methods, automatic reconciliation, and integration with management software. Creation and integration of financial APIs for process automation. Implementation of responsive and secure interfaces, focusing on UX/UI and performance. Collaboration in a multidisciplinary environment, applying agile methodologies.',
     'experience.switchpay.tech': 'Technologies: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Portainer, Redis, AWS',
+
     'experience.brazil.role': 'Front-End Developer',
     'experience.brazil.company': 'Brazil Preparatory Courses',
-    'experience.brazil.period': 'February 2025 - Present',
-    'experience.brazil.desc': 'Direct involvement in the development and maintenance of the organization\'s portal, using Next.js, React, TypeScript and Tailwind CSS to create components and user interfaces.',
+    'experience.brazil.period': 'February 2025 - October 2025',
+    'experience.brazil.desc': 'Direct involvement in the development and maintenance of the organizations portal, using HTML, CSS, JavaScript, React, Next.js, TypeScript and Tailwind CSS to create components and user interfaces. Leading the design and organization of the entire technology structure.',
+    'experience.brazil.tech': 'Technologies: Html, Css, JavaScript, React.js, Next.js, TypeScript, TailwindCss.',
+
     'experience.lucrei.role': 'IT Intern',
     'experience.lucrei.company': 'Lucrei - Cash Back',
-    'experience.lucrei.period': 'September 2021 - November 2021',
-    'experience.lucrei.desc': 'Collaboration in the technical training of students, assisting in learning web programming, programming logic and the use of tools such as Excel. Performing manual testing on software and website.',
+    'experience.lucrei.period': 'September 2021 - December 2021',
+    'experience.lucrei.desc': 'Collaboration in the technical training of students at EEEP Dr. Salomão Alves de Moura, helping them learn web programming, programming logic and use of tools such as Excel. Performing manual tests on software and on the website https://eulucrei.com.br, documenting results in spreadsheets and participating in meetings to report and discuss improvements.',
     
     // Projects
     'projects.title': 'Featured Projects',
@@ -80,10 +83,10 @@ const translations = {
     'education.title': 'Education & Languages',
     'education.degree': 'Bachelor\'s Degree in Software Engineering',
     'education.university': 'Federal University of Ceará - UFC',
-    'education.graduation': 'Expected: 12/2027',
+    'education.graduation': 'Expected: December 2027',
     'education.technical': 'Intermediate Level Technical Course in Computer Science',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': 'Completed: 12/2021',
+    'education.completed': 'Completed: December 2021',
     'education.languages': 'Languages',
     'education.portuguese': 'Portuguese: Native',
     'education.english': 'English: Intermediate (B1)',
@@ -92,8 +95,7 @@ const translations = {
     'contact.title': 'Get In Touch',
     'contact.description': 'I\'m always open to discussing new projects, creative ideas or opportunities to be part of your visions.',
     'contact.email': 'Email',
-    'contact.phone': 'Phone',
-    'contact.location': 'Location',
+    'contact.phone': 'Phone'
   },
   pt: {
     // Navigation
@@ -106,15 +108,15 @@ const translations = {
     
     // Hero
     'hero.greeting': 'Olá, eu sou',
-    'hero.title': 'Desenvolvedor Full Stack',
-    'hero.subtitle': 'Especializado em Desenvolvimento Backend, Web3 e Sistemas Financeiros',
+    'hero.title': 'Desenvolvedor Full Stack Web3',
+    'hero.subtitle': 'Desenvolvimento de Backend e Integração com Ecossistemas Web3',
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Projetos',
     'hero.contact': 'Entre em Contato',
     
     // About
     'about.title': 'Sobre Mim',
-    'about.summary': 'Tenho me dedicado a construir uma carreira sólida como Engenheiro de Software. Hoje, como estudante na UFC-Quixadá, meu foco está no desenvolvimento de soluções back-end com Java, Spring Boot, C# e .NET. Minha jornada é uma mistura de aprendizado acadêmico e desafios práticos, aplicando conhecimentos em projetos significativos com forte desejo de aprender e inovar. Sou movido pela curiosidade e pela vontade de competir, sempre buscando criar soluções back-end que realmente atendem às necessidades do usuário final.',
+    'about.summary': 'Desenvolvedor full-stack focado na construção de soluções Back-End e Web3 robustas e inovadoras. Tenho experiência na construção de aplicações escaláveis ​​e seguras, utilizando tecnologias de ponta para resolver problemas complexos e agregar valor em ecossistemas descentralizados e tradicionais.',
     
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -130,17 +132,20 @@ const translations = {
     'experience.current': 'Presente',
     'experience.switchpay.role': 'Desenvolvedor Full Stack Júnior',
     'experience.switchpay.company': 'Switch Pay',
-    'experience.switchpay.period': 'Outubro 2024 - Presente',
-    'experience.switchpay.desc': 'Desenvolvimento e manutenção da plataforma Switch Pay, focada em soluções de pagamento, conciliação financeira e integração automatizada com sistemas de gestão.',
+    'experience.switchpay.period': 'Outubro 2025 - Presente',
+    'experience.switchpay.desc': 'Desenvolvimento e manutenção da plataforma Switch Pay, especializada em meios de pagamento, conciliação automática e integração com softwares de gestão. Criação e integração de APIs financeiras para automação de processos. Implementação de interfaces responsivas e seguras, com foco em UX/UI e desempenho. Colaboração em um ambiente multidisciplinar, aplicando metodologias ágeis.',
     'experience.switchpay.tech': 'Tecnologias: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Portainer, Redis, AWS',
+    
     'experience.brazil.role': 'Desenvolvedor Front-End',
     'experience.brazil.company': 'Brasil Cursinhos',
-    'experience.brazil.period': 'Fevereiro 2025 - Presente',
-    'experience.brazil.desc': 'Envolvimento direto no desenvolvimento e manutenção do portal da organização, usando Next.js, React, TypeScript e Tailwind CSS para criar componentes e interfaces de usuário.',
+    'experience.brazil.period': 'Fevereiro 2025 - Outubro 2025',
+    'experience.brazil.desc': 'Atuação direta no desenvolvimento e manutenção do portal da organização, utilizando Next.js, React, TypeScript e Tailwind CSS para criar componentes e interfaces de usuário. Liderando o projeto e organização de toda a estrutura da parte da tecnologia.',
+    'experience.brazil.tech': 'Tecnologias: Html, Css, JavaScript, React.js, Next.js, TypeScript, TailwindCss.',
+
     'experience.lucrei.role': 'Estagiário de TI',
     'experience.lucrei.company': 'Lucrei - Cash Back',
-    'experience.lucrei.period': 'Setembro 2021 - Novembro 2021',
-    'experience.lucrei.desc': 'Colaboração no treinamento técnico de estudantes, auxiliando no aprendizado de programação web, lógica de programação e uso de ferramentas como Excel. Realização de testes manuais em software e website.',
+    'experience.lucrei.period': 'Setembro 2021 - Dezembro 2021',
+    'experience.lucrei.desc': 'Colaboração na formação técnica de alunos da EEEP Dr. Salomão Alves de Moura, auxiliando no aprendizado de programação web, lógica de programação e uso de ferramentas como Excel. Realização de testes manuais em software e no site https://eulucrei.com.br, documentando resultados em planilhas e participando de reuniões para reportar e discutir melhorias.',
     
     // Projects
     'projects.title': 'Projetos em Destaque',
@@ -166,10 +171,10 @@ const translations = {
     'education.title': 'Formação & Idiomas',
     'education.degree': 'Bacharelado em Engenharia de Software',
     'education.university': 'Universidade Federal do Ceará - UFC',
-    'education.graduation': 'Previsão: 12/2027',
+    'education.graduation': 'Previsão: Dezembro de 2027',
     'education.technical': 'Curso Técnico de Nível Médio em Informática',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': 'Concluído: 12/2021',
+    'education.completed': 'Concluído: Dezembro de 2021',
     'education.languages': 'Idiomas',
     'education.portuguese': 'Português: Nativo',
     'education.english': 'Inglês: Intermediário (B1)',
@@ -178,8 +183,7 @@ const translations = {
     'contact.title': 'Entre em Contato',
     'contact.description': 'Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte das suas visões.',
     'contact.email': 'E-mail',
-    'contact.phone': 'Telefone',
-    'contact.location': 'Localização',
+    'contact.phone': 'Telefone'
   },
 };
 
