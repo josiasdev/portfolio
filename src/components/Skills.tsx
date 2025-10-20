@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Database, Cloud, Blocks, Palette, Wrench } from "lucide-react";
+import { Code2, Database, Cloud, Blocks, Palette, Wrench, SquareCode } from "lucide-react";
 
 export function Skills() {
   const { t } = useLanguage();
@@ -14,12 +14,12 @@ export function Skills() {
     {
       title: t('skills.backend'),
       icon: Code2,
-      skills: ['Node.js', 'NestJS', 'Java', 'Spring Boot', 'C#', '.NET', 'Express.js', 'TypeORM'],
+      skills: ['Node.js', 'NestJS', 'Java', 'Spring Boot', 'C#', '.NET', 'Express.js'],
     },
     {
       title: t('skills.frontend'),
       icon: Palette,
-      skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      skills: ['Html5', 'Css3', 'JavaScript', 'React.js', 'Vite', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     },
     {
       title: t('skills.databases'),
@@ -30,6 +30,11 @@ export function Skills() {
       title: t('skills.devops'),
       icon: Cloud,
       skills: ['Docker', 'Kubernetes', 'AWS', 'Git'],
+    },
+    {
+      title: t('IDEs'),
+      icon: SquareCode,
+      skills: ['Intellij IDEA', 'Vscode', 'Android Studio'],
     },
     {
       title: t('skills.additional'),
