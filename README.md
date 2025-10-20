@@ -10,8 +10,6 @@
 
 Este é o código-fonte do meu portfólio pessoal, uma aplicação web moderna e responsiva construída para apresentar minhas habilidades, experiência profissional e projetos. O site foi desenvolvido com as tecnologias mais recentes do ecossistema React, com foco em desempenho, design limpo e uma ótima experiência de usuário.
 
-**[➡️ Veja o site ao vivo](URL_DO_SEU_PORTFOLIO)**
-
 ---
 
 ## Funcionalidades
