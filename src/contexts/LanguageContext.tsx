@@ -20,7 +20,7 @@ const translations = {
     
     // Hero
     'hero.greeting': 'Hi, I\'m',
-    'hero.title': 'Web3 Full Stack Developer',
+    'hero.title': 'Full Stack Developer',
     'hero.subtitle': 'Backend Development and Integration with Web3 Ecosystems',
     'hero.location': 'Quixadá - Ceará, Brazil',
     'hero.cta': 'View Projects',
@@ -108,7 +108,7 @@ const translations = {
     
     // Hero
     'hero.greeting': 'Olá, eu sou',
-    'hero.title': 'Desenvolvedor Full Stack Web3',
+    'hero.title': 'Desenvolvedor Full Stack',
     'hero.subtitle': 'Desenvolvimento de Backend e Integração com Ecossistemas Web3',
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Projetos',
