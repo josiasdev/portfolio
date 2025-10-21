@@ -15,35 +15,30 @@ export function Projects() {
     },
     {
       title: t('projects.sylopay.title'),
-      subtitle: t('projects.sylopay.subtitle'),
       description: t('projects.sylopay.desc'),
       github: 'https://github.com/Sylopay/sylopay',
       demo: null,
     },
     {
       title: t('projects.kyra.title'),
-      subtitle: t('projects.kyra.subtitle'),
       description: t('projects.kyra.desc'),
       github: null,
       demo: 'https://kyra-finance.vercel.app',
     },
     {
       title: t('projects.heather.title'),
-      subtitle: t('projects.heather.subtitle'),
       description: t('projects.heather.desc'),
       github: 'https://github.com/pleasantfinance8/xrp',
       demo: null,
     },
     {
       title: t('projects.btg.title'),
-      subtitle: t('projects.btg.subtitle'),
       description: t('projects.btg.desc'),
       github: 'https://github.com/josiasdev/orderms/',
       demo: null,
     },
     {
       title: t('projects.sysagua.title'),
-      subtitle: t('projects.sysagua.subtitle'),
       description: t('projects.sysagua.desc'),
       github: 'https://github.com/CristianoMends/sys-agua',
       demo: null,
@@ -53,7 +48,44 @@ export function Projects() {
       description: t('projects.innovateacademytech.desc'),
       github: 'https://github.com/josiasdev/innovateAcademyTech/',
       demo: null,
+    },
+    {
+      title: t('projects.todolist.title'),
+      description: t('projects.todolist.desc'),
+      github: 'https://github.com/josiasdev/todo-list',
+      demo: null,
+    },
+    {
+      title: t('projects.investtrackapi.title'),
+      description: t('projects.investtrackapi.desc'),
+      github: t('https://github.com/josiasdev/InvestTrackAPI'),
+      demo: null,
+    },
+    {
+      title: t('projects.bookfinderapi.title'),
+      description: t('projects.bookfinderapi.desc'),
+      github: t('https://github.com/josiasdev/BookFinderApi'),
+      demo: null,
+    },
+    {
+      title: t('projects.candidatesapi.title'),
+      description: t('projects.candidatesapi.desc'),
+      github: t('https://github.com/josiasdev/CandidatosAPI'),
+      demo: null,
+    },
+    {
+      title: t('projects.teste.title'),
+      description: t('projects.teste.desc'),
+      github: t('https://github.com/josiasdev/teste-estagio'),
+      demo: null,
+    },
+    {
+      title: t('projects.contratobiblia.title'),
+      description: t('projects.contratobiblia.desc'),
+      github: t('https://github.com/josiasdev/contrato_biblia'),
+      demo: null,
     }
+
   ];
 
   return (
@@ -75,7 +107,6 @@ export function Projects() {
                   <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-accent font-medium">{project.subtitle}</p>
                 </div>
                 
                 <p className="text-muted-foreground text-sm leading-relaxed">
