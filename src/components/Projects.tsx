@@ -110,7 +110,7 @@ export function Projects() {
     { id: 'Backend', label: t('projects.filters.backend') },
     { id: 'Web3', label: t('projects.filters.web3') },
     { id: 'Java', label: t('projects.filters.java') },
-    { id: 'Python', label: t('projects.filter.python')},
+    { id: 'Python', label: t('projects.filters.python')},
     { id: 'Rust', label: t('projects.filters.rust') },
     { id: '.NET', label: t('projects.filters.dotnet') },
   ];
