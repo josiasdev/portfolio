@@ -180,6 +180,10 @@ const translations = {
     'projects.viewCode': 'Ver Código',
     'projects.viewDemo': 'Demo ao Vivo',
 
+
+    'projects.convit3-digital.title': 'Convit3-digital',
+    'projects.convit3-digital.desc': 'É uma plataforma intuitiva para criar e gerenciar eventos digitais. Com ela, você pode acompanhar as confirmações de presença dos participantes, ver quem confirmou ou recusou convites e organizar todos os detalhes do evento em um só lugar.',
+
     'projects.innovateacademytech.title': 'InnovateAcademyTech',
     'projects.innovateacademytech.desc': 'API para gerenciamento de cursos.',
 
