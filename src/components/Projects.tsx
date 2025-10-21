@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge} from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ExternalLink, Github } from "lucide-react";
 
 export function Projects() {
   const { t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const projects = [
     {
@@ -12,81 +15,109 @@ export function Projects() {
       description: t('projects.convit3-digital.desc'),
       github: 'https://github.com/josiasdev/convit3-digital',
       demo: null,
+      tags: ['Full Stack', 'Next.js', 'TypeScript']
     },
     {
       title: t('projects.sylopay.title'),
       description: t('projects.sylopay.desc'),
       github: 'https://github.com/Sylopay/sylopay',
       demo: null,
+      tags: ['Backend', 'Web3', 'NestJS', 'Stellar']
     },
     {
       title: t('projects.kyra.title'),
       description: t('projects.kyra.desc'),
       github: null,
       demo: 'https://kyra-finance.vercel.app',
+      tags: ['Backend', 'Web3', 'AI', 'SUI']
     },
     {
       title: t('projects.heather.title'),
       description: t('projects.heather.desc'),
       github: 'https://github.com/pleasantfinance8/xrp',
       demo: null,
+      tags: ['Backend', 'Web3', 'AI', 'XRPL']
     },
     {
       title: t('projects.btg.title'),
       description: t('projects.btg.desc'),
       github: 'https://github.com/josiasdev/orderms/',
       demo: null,
+      tags: ['Backend', 'Java', 'Spring Boot', 'Microservices']
     },
     {
       title: t('projects.sysagua.title'),
       description: t('projects.sysagua.desc'),
       github: 'https://github.com/CristianoMends/sys-agua',
       demo: null,
+      tags: ['Backend', 'Java', 'Spring Boot', 'Desktop']
     },
     {
       title: t('projects.innovateacademytech.title'),
       description: t('projects.innovateacademytech.desc'),
       github: 'https://github.com/josiasdev/innovateAcademyTech/',
       demo: null,
+      tags: ['Backend', 'Python', 'FastAPI']
     },
     {
       title: t('projects.todolist.title'),
       description: t('projects.todolist.desc'),
       github: 'https://github.com/josiasdev/todo-list',
       demo: null,
+      tags: ['Backend', 'Java', 'Spring Boot']
     },
     {
       title: t('projects.investtrackapi.title'),
       description: t('projects.investtrackapi.desc'),
-      github: t('https://github.com/josiasdev/InvestTrackAPI'),
+      github: 'https://github.com/josiasdev/InvestTrackAPI',
       demo: null,
+      tags: ['Backend', '.NET', 'C#']
     },
     {
       title: t('projects.bookfinderapi.title'),
       description: t('projects.bookfinderapi.desc'),
-      github: t('https://github.com/josiasdev/BookFinderApi'),
+      github: 'https://github.com/josiasdev/BookFinderApi',
       demo: null,
+      tags: ['Backend', '.NET', 'C#']
     },
     {
       title: t('projects.candidatesapi.title'),
       description: t('projects.candidatesapi.desc'),
-      github: t('https://github.com/josiasdev/CandidatosAPI'),
+      github: 'https://github.com/josiasdev/CandidatosAPI',
       demo: null,
+      tags: ['Backend', 'Python', 'FastAPI']
     },
     {
       title: t('projects.teste.title'),
       description: t('projects.teste.desc'),
-      github: t('https://github.com/josiasdev/teste-estagio'),
+      github: 'https://github.com/josiasdev/teste-estagio',
       demo: null,
+      tags: ['Full Stack', 'Java', 'Python', 'Vue.js']
     },
     {
       title: t('projects.contratobiblia.title'),
       description: t('projects.contratobiblia.desc'),
-      github: t('https://github.com/josiasdev/contrato_biblia'),
+      github: 'https://github.com/josiasdev/contrato_biblia',
       demo: null,
+      tags: ['Web3', 'Rust', 'Stellar']
     }
 
   ];
+
+  const categories = [
+    { id: 'All', label: t('projects.filters.all') },
+    { id: 'Full Stack', label: t('projects.filters.fullstack') },
+    { id: 'Backend', label: t('projects.filters.backend') },
+    { id: 'Web3', label: t('projects.filters.web3') },
+    { id: 'Java', label: t('projects.filters.java') },
+    { id: 'Python', label: t('projects.filter.python')},
+    { id: 'Rust', label: t('projects.filters.rust') },
+    { id: '.NET', label: t('projects.filters.dotnet') },
+  ];
+
+  const filteredProjects = selectedCategory === 'All'
+    ? projects
+    : projects.filter(project => project.tags.includes(selectedCategory));
 
   return (
     <section id="projects" className="py-20">
@@ -95,8 +126,22 @@ export function Projects() {
           {t('projects.title')}
         </h2>
 
+        <div className="flex justify-center flex-wrap gap-2 mb-12 animate-fade-in">
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              variant={selectedCategory === category.id ? 'default' : 'outline'}
+              onClick={() => setSelectedCategory(category.id)}
+              className="transition-all"
+            >
+              {category.label}
+            </Button>
+          ))}
+        </div>
+
+          
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <Card
               key={index}
               className="p-6 flex flex-col hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in group border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm"
@@ -112,6 +157,14 @@ export function Projects() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
               </div>
 
               <div className="flex gap-3 pt-4 mt-4 border-t border-border">
