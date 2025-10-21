@@ -11,32 +11,39 @@ export function Projects() {
 
   const projects = [
     {
+      title: t('projects.monemiitec.title'),
+      description: t('projects.monemiitec.desc'),
+      github: null,
+      demo: 'https://www.monemiitec.com.br',
+      tags: ['Full Stack', 'React.js', 'JavaScript']
+    },
+    {
       title: t('projects.convit3-digital.title'),
       description: t('projects.convit3-digital.desc'),
       github: 'https://github.com/josiasdev/convit3-digital',
       demo: null,
-      tags: ['Full Stack', 'Next.js', 'TypeScript']
+      tags: ['Full Stack', 'Next.js', 'JavaScript', 'TypeScript']
     },
     {
       title: t('projects.sylopay.title'),
       description: t('projects.sylopay.desc'),
       github: 'https://github.com/Sylopay/sylopay',
       demo: null,
-      tags: ['Backend', 'Web3', 'NestJS', 'Stellar']
+      tags: ['Full Stack', 'Web3', 'React.js', 'JavaScript', 'Express.js', 'Stellar']
     },
     {
       title: t('projects.kyra.title'),
       description: t('projects.kyra.desc'),
       github: null,
       demo: 'https://kyra-finance.vercel.app',
-      tags: ['Backend', 'Web3', 'AI', 'SUI']
+      tags: ['Full Stack', 'Next.js', 'Web3', 'AI', 'SUI']
     },
     {
       title: t('projects.heather.title'),
       description: t('projects.heather.desc'),
       github: 'https://github.com/pleasantfinance8/xrp',
       demo: null,
-      tags: ['Backend', 'Web3', 'AI', 'XRPL']
+      tags: ['Full Stack', 'Web3', 'AI', 'XRPL']
     },
     {
       title: t('projects.btg.title'),
@@ -50,7 +57,7 @@ export function Projects() {
       description: t('projects.sysagua.desc'),
       github: 'https://github.com/CristianoMends/sys-agua',
       demo: null,
-      tags: ['Backend', 'Java', 'Spring Boot', 'Desktop']
+      tags: ['Backend', 'Java', 'JavaFx', 'Spring Boot', 'Desktop']
     },
     {
       title: t('projects.innovateacademytech.title'),
@@ -92,7 +99,7 @@ export function Projects() {
       description: t('projects.teste.desc'),
       github: 'https://github.com/josiasdev/teste-estagio',
       demo: null,
-      tags: ['Full Stack', 'Java', 'Python', 'Vue.js']
+      tags: ['Backend', 'Java', 'Python']
     },
     {
       title: t('projects.contratobiblia.title'),
