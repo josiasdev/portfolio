@@ -64,6 +64,15 @@ const translations = {
     'projects.viewCode': 'View Code',
     'projects.viewDemo': 'Live Demo',
 
+    'projects.filters.all': 'All',
+    'projects.filters.fullstack': 'Full Stack',
+    'projects.filters.backend': 'Back-End',
+    'projects.filters.web3': 'Web3',
+    'projects.filters.java': 'Java',
+    'projects.filters.python': 'Python',
+    'projects.filters.rust': 'Rust',
+    'projects.filters.dotnet': '.NET',
+
     'projects.convit3-digital.title': 'Convit3-digital',
     'projects.convit3-digital.desc': 'Its an intuitive platform for creating and managing digital events. With it, you can track attendee RSVPs, see who confirmed or declined invitations, and organize all event details in one place.',
 
@@ -179,6 +188,15 @@ const translations = {
     'projects.title': 'Projetos em Destaque',
     'projects.viewCode': 'Ver Código',
     'projects.viewDemo': 'Demo ao Vivo',
+
+    'projects.filters.all': 'Todos',
+    'projects.filters.fullstack': 'Full Stack',
+    'projects.filters.backend': 'Back-End',
+    'projects.filters.web3': 'Web3',
+    'projects.filters.java': 'Java',
+    'projects.filters.python': 'Python',
+    'projects.filters.rust': 'Rust',
+    'projects.filters.dotnet': '.NET',
 
 
     'projects.convit3-digital.title': 'Convit3-digital',
