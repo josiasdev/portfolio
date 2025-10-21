@@ -73,6 +73,9 @@ const translations = {
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
 
+    'projects.monemiitec.title': 'Monemii Tec',
+    'projects.monemiitec.desc': 'A digital platform for the Agrotech sector, offering agrocomputing solutions for the public sector and connecting cutting-edge technology to the field.',
+
     'projects.convit3-digital.title': 'Convit3-digital',
     'projects.convit3-digital.desc': 'Its an intuitive platform for creating and managing digital events. With it, you can track attendee RSVPs, see who confirmed or declined invitations, and organize all event details in one place.',
 
@@ -197,6 +200,9 @@ const translations = {
     'projects.filters.python': 'Python',
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
+
+    'projects.monemiitec.title': 'Monemii Tec',
+    'projects.monemiitec.desc': 'Uma plataforma digital para o setor Agrotech, que apresenta soluções de agrocomputação para o setor público e conecta tecnologia de ponta ao campo.',
 
 
     'projects.convit3-digital.title': 'Convit3-digital',
