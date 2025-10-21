@@ -63,21 +63,49 @@ const translations = {
     'projects.title': 'Featured Projects',
     'projects.viewCode': 'View Code',
     'projects.viewDemo': 'Live Demo',
-    'projects.sylopay.title': 'Sylopay',
-    'projects.sylopay.subtitle': 'HackMeridian 2025 (Stellar)',
-    'projects.sylopay.desc': 'A Buy Now, Pay Later (BNPL) platform built on the Stellar blockchain, enabling instant merchant settlements. Built core Back-End infrastructure using NestJS, Stellar SDK, PostgreSQL, and Docker.',
-    'projects.kyra.title': 'Kyra Finance',
-    'projects.kyra.subtitle': 'SUI Hackathon 2025',
-    'projects.kyra.desc': 'An AI agent that analyzes DeFi strategies and recommends optimal combinations within the SUI ecosystem. Designed and implemented the Back-End logic for data analysis and on-chain integrations.',
-    'projects.heather.title': 'Heather AI Finance',
-    'projects.heather.subtitle': 'XRPL Hackathon 2024',
-    'projects.heather.desc': 'An AI-powered educational assistant for the XRP Ledger, guiding non-technical users through XRPL tools. Designed the database schema and data model for AI–user interactions.',
-    'projects.btg.title': 'BTG Pactual Challenge',
-    'projects.btg.subtitle': 'Order Microservice',
-    'projects.btg.desc': 'Development of a microservice with Java and Spring Boot for asynchronous order processing via RabbitMQ. RESTful API implementation for querying reports and persisting data in MongoDB.',
+
+    'projects.convit3-digital.title': 'Convit3-digital',
+    'projects.convit3-digital.desc': 'Its an intuitive platform for creating and managing digital events. With it, you can track attendee RSVPs, see who confirmed or declined invitations, and organize all event details in one place.',
+
     'projects.sysagua.title': 'Sys Água',
-    'projects.sysagua.subtitle': 'Team Project',
     'projects.sysagua.desc': 'Development of a desktop system for inventory and sales control. Using Spring Boot to manage business logic and data persistence in PostgreSQL.',
+
+    'projects.innovateacademytech.title': 'InnovateAcademyTech',
+    'projects.innovateacademytech.desc': 'API for course management.',
+
+    'projects.todolist.title': 'Todo List',
+    'projects.todolist.desc': 'API for managing tasks (CRUD) that is part of the challenge for junior backend developers, who apply to Simplify.',
+
+    'projects.investtrackapi.title': 'Invest Track API',
+    'projects.investtrackapi.desc': 'RESTful API for aggregating and managing investment portfolios, developed with .NET 8 and C#.',
+
+    'projects.bookfinderapi.title': 'Book Finder API',
+    'projects.bookfinderapi.desc': 'This is a .NET 8 Web API that searches for books by author using the Open Library API. It processes the results and stores them in a local SQL Server database. This project was developed as part of a technical assessment for the Junior Backend Developer position.',
+
+
+
+    'projects.candidatesapi.title' : 'CandidatesAPI',
+    'projects.candidatesapi.desc' : 'is a REST API developed to provide access to data related to candidacies, elections, parties, and visual analysis of this information.',
+
+    'projects.teste.title': 'Back-End Developer Internship Selection Process Test',
+    'projects.teste.desc': 'solve a series of challenges related to different areas of data engineering and software development. Challenges include web scraping in Java, data transformation in Java, and database manipulation in Postgres SQL, as well as developing an API with Vue.js and Python.',
+
+
+    'projects.sylopay.title': 'Sylopay',
+    'projects.sylopay.desc': 'A Buy Now, Pay Later (BNPL) platform built on the Stellar blockchain, enabling instant merchant settlements. Built core Back-End infrastructure using NestJS, Stellar SDK, PostgreSQL, and Docker.',
+    
+    'projects.kyra.title': 'Kyra Finance',
+    'projects.kyra.desc': 'An AI agent that analyzes DeFi strategies and recommends optimal combinations within the SUI ecosystem. Designed and implemented the Back-End logic for data analysis and on-chain integrations.',
+    
+    'projects.heather.title': 'Heather AI Finance',
+    'projects.heather.desc': 'An AI-powered educational assistant for the XRP Ledger, guiding non-technical users through XRPL tools. Designed the database schema and data model for AI–user interactions.',
+    
+    'projects.btg.title': 'BTG Pactual Challenge',
+    'projects.btg.desc': 'Development of a microservice with Java and Spring Boot for asynchronous order processing via RabbitMQ. RESTful API implementation for querying reports and persisting data in MongoDB.',
+    
+    'projects.contratobiblia.title': 'Bible contract',
+    'projects.contratobiblia.desc': 'A Rust library for a smart contract on the Stellar blockchain (Soroban) focused on a social and Bible study application.',
+    
     
     // Education
     'education.title': 'Education & Languages',
@@ -151,22 +179,42 @@ const translations = {
     'projects.title': 'Projetos em Destaque',
     'projects.viewCode': 'Ver Código',
     'projects.viewDemo': 'Demo ao Vivo',
+
+    'projects.innovateacademytech.title': 'InnovateAcademyTech',
+    'projects.innovateacademytech.desc': 'API para gerenciamento de cursos.',
+
+    'projects.todolist.title': 'Todo List',
+    'projects.todolist.desc': 'API para gerenciamento de tarefas (CRUD) que faz parte do desafio para desenvolvedores backend juniores que se candidatam ao Simplify.',
+
+    'projects.investtrackapi.title': 'Invest Track API',
+    'projects.investtrackapi.desc': 'API RESTful para agregar e gerenciar portfólios de investimentos, desenvolvida com .NET 8 e C#.',
+
+    'projects.bookfinderapi.title': 'Book Finder API',
+    'projects.bookfinderapi.desc': 'Esta é uma API Web .NET 8 que busca livros por autor usando a Open Library API. Ela processa os resultados e os armazena em um banco de dados SQL Server local. Este projeto foi desenvolvido como parte de uma avaliação técnica para a vaga de Desenvolvedor Backend Júnior.',
+
+    'projects.candidatesapi.title' : 'CandidatesAPI',
+    'projects.candidatesapi.desc' : 'é uma API REST desenvolvida para fornecer acesso a dados relacionados a candidaturas, eleições, partidos e análise visual dessas informações.',
+
+    'projects.teste.title': 'Back-End Developer Internship Selection Process Test',
+    'projects.teste.desc': 'Resolver uma série de desafios relacionados a diferentes áreas da engenharia de dados e desenvolvimento de software. Os desafios incluem web scraping em Java, transformação de dados em Java e manipulação de banco de dados em PostgreSQL, além de desenvolver uma API com Vue.js e Python.',
+
     'projects.sylopay.title': 'Sylopay',
-    'projects.sylopay.subtitle': 'HackMeridian 2025 (Stellar)',
     'projects.sylopay.desc': 'Uma plataforma Buy Now, Pay Later (BNPL) construída na blockchain Stellar, permitindo liquidações instantâneas para comerciantes. Construí a infraestrutura Back-End principal usando NestJS, Stellar SDK, PostgreSQL e Docker.',
+    
     'projects.kyra.title': 'Kyra Finance',
-    'projects.kyra.subtitle': 'SUI Hackathon 2025',
     'projects.kyra.desc': 'Um agente de IA que analisa estratégias DeFi e recomenda combinações ideais dentro do ecossistema SUI. Projetei e implementei a lógica Back-End para análise de dados e integrações on-chain.',
     'projects.heather.title': 'Heather AI Finance',
-    'projects.heather.subtitle': 'XRPL Hackathon 2024',
     'projects.heather.desc': 'Um assistente educacional alimentado por IA para o XRP Ledger, orientando usuários não técnicos através das ferramentas XRPL. Projetei o esquema do banco de dados e modelo de dados para interações IA-usuário.',
-    'projects.btg.title': 'Desafio BTG Pactual',
-    'projects.btg.subtitle': 'Microsserviço de Pedidos',
-    'projects.btg.desc': 'Desenvolvimento de um microsserviço com Java e Spring Boot para processamento assíncrono de pedidos via RabbitMQ. Implementação de API RESTful para consulta de relatórios e persistência de dados em MongoDB.',
-    'projects.sysagua.title': 'Sys Água',
-    'projects.sysagua.subtitle': 'Projeto em Equipe',
-    'projects.sysagua.desc': 'Desenvolvimento de um sistema desktop para controle de estoque e vendas. Usando Spring Boot para gerenciar lógica de negócios e persistência de dados em PostgreSQL.',
     
+    'projects.btg.title': 'Desafio BTG Pactual',
+    'projects.btg.desc': 'Desenvolvimento de um microsserviço com Java e Spring Boot para processamento assíncrono de pedidos via RabbitMQ. Implementação de API RESTful para consulta de relatórios e persistência de dados em MongoDB.',
+    
+    'projects.sysagua.title': 'Sys Água',
+    'projects.sysagua.desc': 'Desenvolvimento de um sistema desktop para controle de estoque e vendas. Usando Spring Boot para gerenciar lógica de negócios e persistência de dados em PostgreSQL.',
+
+    'projects.contratobiblia.title': 'Contrato Biblia',
+    'projects.contratobiblia.desc': 'Uma biblioteca Rust para um contrato inteligente no blockchain Stellar (Soroban) focada em uma aplicação social e de estudo bíblico.',
+
     // Education
     'education.title': 'Formação & Idiomas',
     'education.degree': 'Bacharelado em Engenharia de Software',

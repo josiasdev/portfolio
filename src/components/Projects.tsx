@@ -8,6 +8,12 @@ export function Projects() {
 
   const projects = [
     {
+      title: t('projects.convit3-digital.title'),
+      description: t('projects.convit3-digital.desc'),
+      github: 'https://github.com/josiasdev/convit3-digital',
+      demo: null,
+    },
+    {
       title: t('projects.sylopay.title'),
       subtitle: t('projects.sylopay.subtitle'),
       description: t('projects.sylopay.desc'),
@@ -42,6 +48,12 @@ export function Projects() {
       github: 'https://github.com/CristianoMends/sys-agua',
       demo: null,
     },
+    {
+      title: t('projects.innovateacademytech.title'),
+      description: t('projects.innovateacademytech.desc'),
+      github: 'https://github.com/josiasdev/innovateAcademyTech/',
+      demo: null,
+    }
   ];
 
   return (
