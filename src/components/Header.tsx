@@ -1,8 +1,8 @@
-import { ThemeToggle } from "./ThemeToggle";
-import { LanguageToggle } from "./LanguageToggle";
+import  ThemeToggle  from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export function Header() {
+const Header = () => {
   const { t } = useLanguage();
 
   const scrollToSection = (id: string) => {
@@ -43,3 +43,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header;

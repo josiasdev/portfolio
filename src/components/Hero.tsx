@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.jpg";
 
-export function Hero() {
+const Hero = () => {
   const { t } = useLanguage();
 
   const scrollToSection = (id: string) => {
@@ -106,3 +106,5 @@ export function Hero() {
     </section>
   );
 }
+
+export default Hero;

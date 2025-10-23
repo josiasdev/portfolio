@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { GraduationCap, Languages } from "lucide-react";
 
-export function Education() {
+const Education = () => {
   const { t } = useLanguage();
 
   return (
@@ -62,3 +62,5 @@ export function Education() {
     </section>
   );
 }
+
+export default Education;

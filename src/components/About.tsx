@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export function About() {
+const About = () => {
   const { t } = useLanguage();
 
   return (
@@ -18,3 +18,5 @@ export function About() {
     </section>
   );
 }
+
+export default About;

@@ -25,7 +25,7 @@ import {
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 
-export function Contact() {
+const Contact = () => {
   const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -257,3 +257,5 @@ export function Contact() {
     </section>
   );
 }
+
+export default Contact;

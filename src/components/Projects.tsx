@@ -5,7 +5,7 @@ import { Badge} from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ExternalLink, Github } from "lucide-react";
 
-export function Projects() {
+const Projects = () => {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -215,3 +215,5 @@ export function Projects() {
     </section>
   );
 }
+
+export default Projects;

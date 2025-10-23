@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Briefcase, Calendar } from "lucide-react";
 
-export function Experience() {
+const Experience = () => {
   const { t } = useLanguage();
 
   const experiences = [
@@ -74,3 +74,5 @@ export function Experience() {
     </section>
   );
 }
+
+export default Experience;

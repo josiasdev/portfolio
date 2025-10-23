@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Code2, Database, Cloud, Blocks, Palette, Wrench, SquareCode } from "lucide-react";
 
-export function Skills() {
+const Skills = () => {
   const { t } = useLanguage();
 
   const skillCategories = [
@@ -80,3 +80,5 @@ export function Skills() {
     </section>
   );
 }
+
+export default Skills;
