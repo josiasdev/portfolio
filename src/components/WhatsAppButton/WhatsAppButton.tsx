@@ -1,6 +1,6 @@
 import { FaWhatsapp } from 'react-icons/fa'; 
 
-export function WhatsAppButton() {
+const WhatsAppButton = () => {
   const phoneNumber = '5585982317976';
   const message = 'Olá! Vi seu portfólio e gostaria de conversar.';
   
@@ -20,3 +20,5 @@ export function WhatsAppButton() {
     </a>
   );
 }
+
+export default WhatsAppButton;
