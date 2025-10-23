@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
-import { Bot, Loader2, Send, X, MessageSquare } from 'lucide-react';
+import { Bot, Loader2, Send, X} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -23,22 +23,25 @@ type Message = {
 };
 
 export function Chatbot() {
-  const { t } = useLanguage(); 
+  const { t, language } = useLanguage(); 
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'bot',
-      content: t('chatbot.greeting', {
-        defaultValue:
-          'Olá! Sou um assistente virtual. Pergunte-me sobre a experiência, projetos ou habilidades do Josias.',
-      }),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   
+  useEffect(() => {
+    if (isOpen && messages.length === 0) {
+      setMessages([
+        {
+          role: 'bot',
+          content: t('chatbot.greeting'),
+        },
+      ]);
+    }
+  }, [isOpen, messages.length, t]);
+
   useEffect(() => {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTo({
@@ -50,7 +53,9 @@ export function Chatbot() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim()){
+        return;
+    } 
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
@@ -61,7 +66,7 @@ export function Chatbot() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ message: input, lang: language }),
       });
 
       if (!response.ok) {
@@ -73,19 +78,14 @@ export function Chatbot() {
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error('Chat error:', error);
-      toast.error(
-        t('chatbot.error', {
-          defaultValue: 'Desculpe, ocorreu um erro ao buscar a resposta.',
-        })
-      );
-      
+
+      const errorMsg = t('chatbot.error');
+      toast.error(errorMsg);
       setMessages((prev) => [
         ...prev,
         {
           role: 'bot',
-          content: t('chatbot.error', {
-            defaultValue: 'Desculpe, ocorreu um erro ao buscar a resposta.',
-          }),
+          content: errorMsg,
         },
       ]);
     } finally {
@@ -93,8 +93,15 @@ export function Chatbot() {
     }
   };
 
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      setMessages([]);
+    }
+  };
+
   return (
-    <Drawer open={isOpen} onOpenChange={setIsOpen}>
+    <Drawer open={isOpen} onOpenChange={handleOpenChange}>
       <DrawerTrigger asChild>
         <Button
           variant="outline"
@@ -113,9 +120,7 @@ export function Chatbot() {
                 <Bot className="w-4 h-4" />
               </AvatarFallback>
             </Avatar>
-            <DrawerTitle>
-              {t('chatbot.title', { defaultValue: 'Assistente Virtual' })}
-            </DrawerTitle>
+            <DrawerTitle>{t('chatbot.title')}</DrawerTitle>
           </div>
           <Button
             variant="ghost"
@@ -144,10 +149,9 @@ export function Chatbot() {
                     </AvatarFallback>
                   </Avatar>
                 )}
-
                 <div
                   className={cn(
-                    'max-w-[75%] rounded-lg p-3 text-sm',
+                    'max-w-[75%] rounded-lg p-3 text-sm whitespace-pre-wrap', // Adicionado whitespace-pre-wrap
                     msg.role === 'user'
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted'
@@ -155,18 +159,13 @@ export function Chatbot() {
                 >
                   {msg.content}
                 </div>
-                
-                
                 {msg.role === 'user' && (
                   <Avatar className="w-8 h-8 border">
-                    <AvatarFallback>
-                      {t('chatbot.user', { defaultValue: 'EU' })}
-                    </AvatarFallback>
+                    <AvatarFallback>{t('chatbot.user')}</AvatarFallback>
                   </Avatar>
                 )}
               </div>
             ))}
-            
             {isLoading && (
               <div className="flex items-start gap-3 justify-start">
                 <Avatar className="w-8 h-8 border">
@@ -187,9 +186,7 @@ export function Chatbot() {
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={t('chatbot.placeholder', {
-                defaultValue: 'Pergunte sobre meus projetos...',
-              })}
+              placeholder={t('chatbot.placeholder')}
               className="flex-1"
               disabled={isLoading}
             />
