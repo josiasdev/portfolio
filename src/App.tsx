@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { Spinner } from "./components/ui/spinner";
 
 import { lazy, Suspense } from "react";
 const Index = lazy(() => import("./pages/Index"));
@@ -13,7 +14,7 @@ const queryClient = new QueryClient();
 
 const AppLoader = () => (
   <div className="flex h-screen w-full items-center justify-center bg-background">
-    Carregando...
+   <Spinner size="lg" />
   </div>
 );
 
