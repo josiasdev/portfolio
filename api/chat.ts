@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import {
   portfolioContexts,
   SupportedLanguage,
-} from '../lib/portfolio-context';
+} from '../lib/portfolio-context.js';
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || '');
 
 const systemInstructions = {
