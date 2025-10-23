@@ -1,7 +1,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { portfolioContexts, SupportedLanguage } from '../src/lib/portfolio-context'; 
-
+import {
+  portfolioContexts,
+  SupportedLanguage,
+} from '../src/lib/portfolio-context';
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || '');
 
 const systemInstructions = {
