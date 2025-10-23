@@ -11,6 +11,13 @@ export function Projects() {
 
   const projects = [
     {
+      title: t('projects.chainmed.title'),
+      description: t('projects.chainmed.desc'),
+      github: "https://github.com/josiasdev/ChainMed",
+      demo: "https://chain-med.vercel.app",
+      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS']
+    }
+    {
       title: t('projects.monemiitec.title'),
       description: t('projects.monemiitec.desc'),
       github: null,
