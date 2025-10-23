@@ -73,6 +73,9 @@ const translations = {
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
 
+    'projects.chainmed.title': 'ChainMed',
+    'projects.chainmed.desc': 'ChainMed revolutionizes the way doctors prescribe and patients manage their medications, all with the security and immutability of blockchain technology.',
+
     'projects.monemiitec.title': 'Monemii Tec',
     'projects.monemiitec.desc': 'A digital platform for the Agrotech sector, offering agrocomputing solutions for the public sector and connecting cutting-edge technology to the field.',
 
@@ -200,6 +203,9 @@ const translations = {
     'projects.filters.python': 'Python',
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
+
+    'projects.chainmed.title': 'ChainMed',
+    'projects.chainmed.desc': 'ChainMed revoluciona a forma como médicos prescrevem e pacientes gerenciam seus medicamentos, tudo com a segurança e imutabilidade da tecnologia blockchain.',
 
     'projects.monemiitec.title': 'Monemii Tec',
     'projects.monemiitec.desc': 'Uma plataforma digital para o setor Agrotech, que apresenta soluções de agrocomputação para o setor público e conecta tecnologia de ponta ao campo.',
