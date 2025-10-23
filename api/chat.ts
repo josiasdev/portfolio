@@ -1,14 +1,13 @@
-
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import OpenAI from 'openai'; 
+import {
+  GoogleGenAI,
+} from '@google/genai';
 import {
   portfolioContexts,
   SupportedLanguage,
-} from '../lib/portfolio-context.js'; 
+} from '../src/lib/portfolio-context.js';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const genAI = new GoogleGenAI({});
 
 const systemInstructions = {
   pt: `Você é um assistente virtual amigável e profissional do portfólio de Josias Batista. Responda as perguntas do usuário baseando-se **estrita e unicamente** no contexto fornecido a seguir.
@@ -41,7 +40,7 @@ export default async function handler(
     const validatedLang: SupportedLanguage =
       lang === 'en' || lang === 'pt' ? lang : 'pt';
 
-    const systemPrompt = systemInstructions[validatedLang];
+    const systemInstruction = systemInstructions[validatedLang];
     const context = portfolioContexts[validatedLang];
 
     const userPrompt = `
@@ -56,32 +55,32 @@ export default async function handler(
       ${message}
     `;
 
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini', 
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt },
+    const result = await genAI.models.generateContent({
+      model: 'gemini-2.5-pro',
+      
+      contents: [
+        {
+          role: 'model',
+          parts: [{ text: systemInstruction }],
+        },
+        {
+          role: 'user',
+          parts: [{ text: userPrompt }],
+        },
       ],
+
+      
     });
 
-    const reply = completion.choices[0].message.content;
+   
+    const text = result.text;
 
-    return res.status(200).json({ reply: reply || 'Desculpe, não obtive uma resposta.' });
-
+    return res.status(200).json({ reply: text });
+    
   } catch (error) {
     console.error('Error in chat API:', error);
-    
-    let errorMsg = 'Failed to get response from AI';
-    if (error instanceof OpenAI.APIError) {
-      errorMsg = error.message;
-      return res.status(error.status || 500).json({
-        error: errorMsg,
-        details: error.code
-      });
-    }
-
     return res.status(500).json({
-      error: errorMsg,
+      error: 'Failed to get response from AI',
       details: error instanceof Error ? error.message : String(error),
     });
   }
