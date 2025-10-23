@@ -1,6 +1,3 @@
-// Este arquivo serve como a "base de conhecimento" para o chatbot.
-// Ele contém todas as informações do portfólio que a IA pode usar.
-
 export const portfolioContextPT = `
 # Informações sobre Josias Batista - Desenvolvedor Full Stack
 
