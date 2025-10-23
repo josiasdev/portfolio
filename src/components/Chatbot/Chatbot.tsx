@@ -20,7 +20,7 @@ type Message = {
   content: string;
 };
 
-export function Chatbot() {
+const Chatbot = () => {
   const { t, language } = useLanguage(); 
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -205,3 +205,5 @@ export function Chatbot() {
     </Popover>
   );
 }
+
+export default Chatbot;
