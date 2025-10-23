@@ -8,6 +8,7 @@ import { Education } from "@/components/Education";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton/WhatsAppButton";
+import { Chatbot } from "@/components/Chatbot/Chatbot";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <Contact />
       </main>
       <WhatsAppButton />
+      <Chatbot />
       <Footer />
     </div>
   );
