@@ -33,7 +33,7 @@ export default async function handler(
     const { name, email, subject, message } = result.data;
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <francisco.batista67@alu.ufc.br>',
+      from: 'Portfolio Contact <onboarding@resend.dev>',
       to: ['francisco.batista67@alu.ufc.br'],
       subject: `Nova Mensagem do Portfólio: ${subject}`,
 
