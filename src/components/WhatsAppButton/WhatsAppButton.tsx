@@ -1,4 +1,4 @@
-import { FaWhatsapp } from 'react-icons/fa'; // Importa o ícone
+import { FaWhatsapp } from 'react-icons/fa'; 
 
 export function WhatsAppButton() {
   const phoneNumber = '5585982317976';
