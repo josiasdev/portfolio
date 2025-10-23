@@ -16,7 +16,7 @@ export function Projects() {
       github: "https://github.com/josiasdev/ChainMed",
       demo: "https://chain-med.vercel.app",
       tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS']
-    }
+    },
     {
       title: t('projects.monemiitec.title'),
       description: t('projects.monemiitec.desc'),
