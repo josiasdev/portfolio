@@ -1,6 +1,7 @@
 import  Header  from "@/components/Header";
 import { lazy, Suspense } from "react";
 import  Hero  from "@/components/Hero";
+import { Spinner } from "@/components/ui/spinner";
 const About = lazy(() => import("@/components/About"));
 const Skills = lazy(() => import("@/components/Skills"));
 const Experience = lazy(() => import("@/components/Experience"));
@@ -12,7 +13,9 @@ const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton/WhatsAppBu
 const Chatbot = lazy(() => import("@/components/Chatbot/Chatbot"));
 
 const SectionLoader = () => (
-  <div className="h-96 w-full" /> 
+  <div className="flex h-96 w-full items-center justify-center">
+    <Spinner size="default" />
+  </div>
 );
 
 const Index = () => {
