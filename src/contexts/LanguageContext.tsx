@@ -159,6 +159,13 @@ const translations = {
     'contact.form.error.subject': 'Please select a subject.',
     'contact.form.error.message': 'Message must be at least {count} characters.',
     'contact.form.error.submit': 'Error sending message. Please try again.',
+
+
+    'chatbot.greeting': 'Hi! I am a virtual assistant. Ask me about Josias Batista\'s experience, projects, or skills.',
+    'chatbot.error': 'Sorry, an error occurred while fetching the response.',
+    'chatbot.title': 'Virtual Assistant',
+    'chatbot.user': 'ME',
+    'chatbot.placeholder': 'Ask about my projects...',
   },
   pt: {
     // Navigation
@@ -308,6 +315,12 @@ const translations = {
       'A mensagem deve ter pelo menos {count} caracteres.',
     'contact.form.error.submit':
       'Erro ao enviar a mensagem. Tente novamente.',
+
+    'chatbot.greeting': 'Olá! Sou um assistente virtual. Pergunte-me sobre a experiência, projetos ou habilidades do Josias Batista.',
+    'chatbot.error': 'Desculpe, ocorreu um erro ao buscar a resposta.',
+    'chatbot.title': 'Assistente Virtual',
+    'chatbot.user': 'EU',
+    'chatbot.placeholder': 'Pergunte sobre meus projetos...',
   },
 };
 
