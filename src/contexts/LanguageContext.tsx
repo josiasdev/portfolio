@@ -5,7 +5,7 @@ type Language = 'en' | 'pt';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, options?: { [key: string]: string | number }) => string;
 }
 
 const translations = {
@@ -136,9 +136,29 @@ const translations = {
     
     // Contact
     'contact.title': 'Get In Touch',
-    'contact.description': 'I\'m always open to discussing new projects, creative ideas or opportunities to be part of your visions.',
+    'contact.description': 'I\m always open to discussing new projects, creative ideas or opportunities to be part of your visions.',
     'contact.email': 'Email',
-    'contact.phone': 'Phone'
+    'contact.phone': 'Phone',
+    'contact.form.name': 'Name',
+    'contact.form.name.placeholder': 'Your full name',
+    'contact.form.email': 'Email',
+    'contact.form.email.placeholder': 'your.email@example.com',
+    'contact.form.subject': 'Subject',
+    'contact.form.subject.placeholder': 'Select a reason for contacting',
+    'contact.form.subject.general': 'General Inquiry',
+    'contact.form.subject.project': 'Project Proposal',
+    'contact.form.subject.feedback': 'Feedback',
+    'contact.form.subject.other': 'Other',
+    'contact.form.message': 'Message',
+    'contact.form.message.placeholder': 'Type your message here...',
+    'contact.form.submit': 'Send Message',
+    'contact.form.submitting': 'Sending...',
+    'contact.form.success': 'Message sent successfully!',
+    'contact.form.error.min': 'Must be at least {count} characters.',
+    'contact.form.error.email': 'Invalid email address.',
+    'contact.form.error.subject': 'Please select a subject.',
+    'contact.form.error.message': 'Message must be at least {count} characters.',
+    'contact.form.error.submit': 'Error sending message. Please try again.',
   },
   pt: {
     // Navigation
@@ -265,7 +285,29 @@ const translations = {
     'contact.title': 'Entre em Contato',
     'contact.description': 'Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte das suas visões.',
     'contact.email': 'E-mail',
-    'contact.phone': 'Telefone'
+    'contact.phone': 'Telefone',
+    'contact.form.name': 'Nome',
+    'contact.form.name.placeholder': 'Seu nome completo',
+    'contact.form.email': 'Email',
+    'contact.form.email.placeholder': 'seu.email@exemplo.com',
+    'contact.form.subject': 'Assunto',
+    'contact.form.subject.placeholder': 'Selecione o motivo do contato',
+    'contact.form.subject.general': 'Contato Geral',
+    'contact.form.subject.project': 'Proposta de Projeto',
+    'contact.form.subject.feedback': 'Feedback',
+    'contact.form.subject.other': 'Outro',
+    'contact.form.message': 'Mensagem',
+    'contact.form.message.placeholder': 'Digite sua mensagem aqui...',
+    'contact.form.submit': 'Enviar Mensagem',
+    'contact.form.submitting': 'Enviando...',
+    'contact.form.success': 'Mensagem enviada com sucesso!',
+    'contact.form.error.min': 'Deve ter pelo menos {count} caracteres.',
+    'contact.form.error.email': 'Email inválido.',
+    'contact.form.error.subject': 'Por favor, selecione um assunto.',
+    'contact.form.error.message':
+      'A mensagem deve ter pelo menos {count} caracteres.',
+    'contact.form.error.submit':
+      'Erro ao enviar a mensagem. Tente novamente.',
   },
 };
 
@@ -274,8 +316,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('en');
 
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.en] || key;
+ const t = (
+    key: string,
+    options?: { [key: string]: string | number }
+  ): string => {
+    let translation =
+      translations[language][key as keyof (typeof translations)['en']] || key;
+
+    if (options) {
+      Object.keys(options).forEach((optionKey) => {
+        translation = translation.replace(
+          `{${optionKey}}`,
+          String(options[optionKey])
+        );
+      });
+    }
+
+    return translation;
   };
 
   return (
