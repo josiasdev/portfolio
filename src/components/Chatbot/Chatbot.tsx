@@ -7,13 +7,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
-  Drawer,
-  DrawerTrigger,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerFooter,
-} from '@/components/ui/drawer';
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from '@/components/ui/popover';
+
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { toast } from 'sonner';
 
@@ -101,8 +99,8 @@ export function Chatbot() {
   };
 
   return (
-    <Drawer open={isOpen} onOpenChange={handleOpenChange}>
-      <DrawerTrigger asChild>
+    <Popover open={isOpen} onOpenChange={handleOpenChange}>
+      <PopoverTrigger asChild>
         <Button
           variant="outline"
           size="icon"
@@ -111,16 +109,24 @@ export function Chatbot() {
         >
           <Bot className="h-7 w-7" />
         </Button>
-      </DrawerTrigger>
-      <DrawerContent className="h-[75vh] max-h-[800px] flex flex-col fixed bottom-0 left-0 right-0 z-50 rounded-t-lg border-t bg-card">
-        <DrawerHeader className="flex justify-between items-center p-4 border-b">
+      </PopoverTrigger>
+      
+      
+      <PopoverContent
+        side="top" 
+        align="start" 
+        className="h-[70vh] w-[350px] flex flex-col p-0 rounded-lg shadow-xl border bg-card"
+        onOpenAutoFocus={(e) => e.preventDefault()} 
+      >
+        {/* Header do Chat */}
+        <div className="flex justify-between items-center p-4 border-b">
           <div className="flex items-center space-x-2">
             <Avatar className="w-8 h-8 border">
               <AvatarFallback className="bg-primary text-primary-foreground">
                 <Bot className="w-4 h-4" />
               </AvatarFallback>
             </Avatar>
-            <DrawerTitle>{t('chatbot.title')}</DrawerTitle>
+            <h3 className="text-sm font-medium">{t('chatbot.title')}</h3>
           </div>
           <Button
             variant="ghost"
@@ -130,7 +136,7 @@ export function Chatbot() {
           >
             <X className="h-4 w-4" />
           </Button>
-        </DrawerHeader>
+        </div>
 
         <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
           <div className="space-y-4">
@@ -151,7 +157,7 @@ export function Chatbot() {
                 )}
                 <div
                   className={cn(
-                    'max-w-[75%] rounded-lg p-3 text-sm whitespace-pre-wrap', // Adicionado whitespace-pre-wrap
+                    'max-w-[75%] rounded-lg p-3 text-sm whitespace-pre-wrap',
                     msg.role === 'user'
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted'
@@ -181,7 +187,7 @@ export function Chatbot() {
           </div>
         </ScrollArea>
 
-        <DrawerFooter className="p-4 border-t bg-background">
+        <div className="p-4 border-t bg-background">
           <form onSubmit={handleSubmit} className="flex items-center gap-2">
             <Input
               value={input}
@@ -194,8 +200,8 @@ export function Chatbot() {
               <Send className="h-4 w-4" />
             </Button>
           </form>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+        </div>
+      </PopoverContent>
+    </Popover>
   );
 }
