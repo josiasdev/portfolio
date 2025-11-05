@@ -1,6 +1,6 @@
-import  Header  from "@/components/Header";
+import Header from "@/components/Header";
 import { lazy, Suspense } from "react";
-import  Hero  from "@/components/Hero";
+import Hero from "@/components/Hero";
 import { Spinner } from "@/components/ui/spinner";
 const About = lazy(() => import("@/components/About"));
 const Skills = lazy(() => import("@/components/Skills"));
@@ -24,7 +24,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-       <Suspense fallback={<SectionLoader />}>
+        <Suspense fallback={<SectionLoader />}>
           <About />
           <Skills />
           <Experience />
@@ -33,7 +33,7 @@ const Index = () => {
           <Contact />
         </Suspense>
       </main>
-      <Suspense fallback={null}> 
+      <Suspense fallback={null}>
         <WhatsAppButton />
         <Chatbot />
       </Suspense>
