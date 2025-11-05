@@ -57,7 +57,7 @@ Quixadá - Ceará, Brasil
 - Idiomas: Português (Nativo), Inglês (Intermediário - B1)
 
 ## Informações de Contato
-- Email: francisco.batista67@alu.ufc.br
+- Email: JBDevSoftware@proton.me
 - Telefone: +55 (85) 98231-7976
 `;
 
@@ -117,7 +117,7 @@ Quixadá - Ceará, Brazil
 - Languages: Portuguese (Native), English (Intermediate - B1)
 
 ## Contact Information
-- Email: francisco.batista67@alu.ufc.br
+- Email: JBDevSoftware@proton.me
 - Phone: +55 (85) 98231-7976
 `;
 
