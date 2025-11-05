@@ -33,8 +33,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: t('contact.email'),
-      value: 'francisco.batista67@alu.ufc.br',
-      href: 'mailto:francisco.batista67@alu.ufc.br',
+      value: 'JBDevSoftware@proton.me',
+      href: 'mailto:JBDevSoftware@proton.me',
     },
     {
       icon: Phone,
