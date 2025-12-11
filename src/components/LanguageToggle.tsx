@@ -6,7 +6,7 @@ const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'pt' : 'en');
+    setLanguage(language === 'pt' ? 'en' : 'pt');
   };
 
   return (
@@ -17,7 +17,7 @@ const LanguageToggle = () => {
       className="gap-2"
     >
       <Languages className="h-4 w-4" />
-      <span className="font-medium">{language === 'en' ? 'PT' : 'EN'}</span>
+      <span className="font-medium">{language === 'pt' ? 'PT' : 'EN'}</span>
     </Button>
   );
 }
