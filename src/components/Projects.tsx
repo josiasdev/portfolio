@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge} from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ExternalLink, Github } from "lucide-react";
+import { Description } from "@radix-ui/react-toast";
 
 const Projects = () => {
   const { t } = useLanguage();
@@ -114,6 +115,13 @@ const Projects = () => {
       github: 'https://github.com/josiasdev/contrato_biblia',
       demo: null,
       tags: ['Web3', 'Rust', 'Stellar']
+    },
+    {
+      title: t('projects.ponte-pecem-ia-ret.title'),
+      Description: t('projects.ponte-pecem-ia-ret.desc'),
+      github: 'https://github.com/josiasdev/ponte-pecem-ia-ret',
+      demo: null,
+      tags: ['Backend', 'Python', 'N8n']
     }
 
   ];
