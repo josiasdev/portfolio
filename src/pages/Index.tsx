@@ -10,7 +10,6 @@ const Education = lazy(() => import("@/components/Education"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton/WhatsAppButton"));
-const Chatbot = lazy(() => import("@/components/Chatbot/Chatbot"));
 
 const SectionLoader = () => (
   <div className="flex h-96 w-full items-center justify-center">
@@ -35,12 +34,10 @@ const Index = () => {
       </main>
       <Suspense fallback={null}>
         <WhatsAppButton />
-        <Chatbot />
       </Suspense>
       <Suspense fallback={null}>
         <div className="pb-20 md:pb-0">
         <Footer />
-
         </div>
       </Suspense>
     </div>
