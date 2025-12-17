@@ -118,7 +118,7 @@ const Projects = () => {
     },
     {
       title: t('projects.ponte-pecem-ia-ret.title'),
-      Description: t('projects.ponte-pecem-ia-ret.desc'),
+      description: t('projects.ponte-pecem-ia-ret.desc'),
       github: 'https://github.com/josiasdev/ponte-pecem-ia-ret',
       demo: null,
       tags: ['Backend', 'Python', 'N8n']
