@@ -8,15 +8,7 @@ const Header = () => {
   const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Close mobile menu when scrolling starts (optional UX enhancement)
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobileMenuOpen]);
-
+  // We removed the aggressive scroll listener that was instantly closing the menu on some mobile devices.
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
@@ -63,20 +55,16 @@ const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       <div 
-        className={`md:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-xl transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'
+        className={`md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
         }`}
       >
         <div className="container mx-auto px-4 py-8 flex flex-col gap-6">
-          {navItems.map((item, i) => (
+          {navItems.map((item) => (
             <button 
               key={item.id} 
               onClick={() => scrollToSection(item.id)} 
-              className="text-2xl font-bold text-left w-full hover:text-primary transition-colors"
-              style={{
-                animation: isMobileMenuOpen ? `slide-in-right 0.4s ease-out forwards ${i * 0.1}s` : 'none',
-                opacity: isMobileMenuOpen ? 0 : 1
-              }}
+              className="text-2xl font-bold text-left w-full hover:text-primary transition-colors py-2"
             >
               {item.label}
             </button>
