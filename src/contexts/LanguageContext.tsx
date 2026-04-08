@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Language = 'en' | 'pt';
+type Language = 'en' | 'pt' | 'es';
 
 interface LanguageContextType {
   language: Language;
@@ -42,22 +42,32 @@ const translations = {
     // Experience
     'experience.title': 'Work Experience',
     'experience.current': 'Present',
-    'experience.switchpay.role': 'Full Stack Developer Junior',
-    'experience.switchpay.company': 'Switch Pay',
-    'experience.switchpay.period': 'October 2025 - Present',
-    'experience.switchpay.desc': 'Development and maintenance of the Switch Pay platform, specializing in payment methods, automatic reconciliation, and integration with management software. Creation and integration of financial APIs for process automation. Implementation of responsive and secure interfaces, focusing on UX/UI and performance. Collaboration in a multidisciplinary environment, applying agile methodologies.',
-    'experience.switchpay.tech': 'Technologies: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Portainer, Redis, AWS',
 
-    'experience.brazil.role': 'Front-End Developer',
-    'experience.brazil.company': 'Brazil Preparatory Courses',
-    'experience.brazil.period': 'February 2025 - October 2025',
-    'experience.brazil.desc': 'Direct involvement in the development and maintenance of the organizations portal, using HTML, CSS, JavaScript, React, Next.js, TypeScript and Tailwind CSS to create components and user interfaces. Leading the design and organization of the entire technology structure.',
-    'experience.brazil.tech': 'Technologies: Html, Css, JavaScript, React.js, Next.js, TypeScript, TailwindCss.',
+    'experience.monitor.role': 'Software Development Monitor (Web & Mobile)',
+    'experience.monitor.company': 'Federal University of Ceará – UFC',
+    'experience.monitor.period': 'March 2026 - Present',
+    'experience.monitor.desc1': 'Supported best development practices (Clean Code), leading Code Review sessions and requiring the implementation of unit tests in complex academic projects.',
+    'experience.monitor.desc2': 'Supported AI-driven development initiatives, instructing classes on using LLMs for refactoring and structuring modern architectures.',
+    'experience.monitor.tech': 'Technologies: JavaScript, TypeScript, React.js, Node.js, Unit Testing, Clean Code, LLMs',
+
+    'experience.switchpay.role': 'Full Stack Developer Junior (Temporary)',
+    'experience.switchpay.company': 'Switch Pay',
+    'experience.switchpay.period': 'October 2025 - December 2025',
+    'experience.switchpay.desc1': 'Developed features and fixed bugs in web applications using the JavaScript ecosystem and Java integrations.',
+    'experience.switchpay.desc2': 'Participated in agile ceremonies (Scrum), optimizing CI/CD integration flow and rigorously applying versioning best practices.',
+    'experience.switchpay.tech': 'Technologies: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Java, CI/CD',
+
+    'experience.brazil.role': 'Junior Front-End Developer',
+    'experience.brazil.company': 'Brasil Cursinhos',
+    'experience.brazil.period': 'February 2025 - February 2026',
+    'experience.brazil.desc1': 'Built modular front-end interfaces using JavaScript, HTML and CSS, applying componentization concepts essential for modern frameworks.',
+    'experience.brazil.desc2': 'Developed routines to consume REST APIs efficiently and in a structured way.',
+    'experience.brazil.tech': 'Technologies: HTML, CSS, JavaScript, React.js, Next.js, TypeScript, TailwindCSS.',
 
     'experience.lucrei.role': 'IT Intern',
     'experience.lucrei.company': 'Lucrei - Cash Back',
     'experience.lucrei.period': 'September 2021 - December 2021',
-    'experience.lucrei.desc': 'Collaboration in the technical training of students at EEEP Dr. Salomão Alves de Moura, helping them learn web programming, programming logic and use of tools such as Excel. Performing manual tests on software and on the website https://eulucrei.com.br, documenting results in spreadsheets and participating in meetings to report and discuss improvements.',
+    'experience.lucrei.desc1': 'Created and executed rigorous tests on web services and actively contributed to the technical documentation of company solutions.',
     
     // Projects
     'projects.title': 'Featured Projects',
@@ -135,7 +145,8 @@ const translations = {
     'education.completed': 'Completed: December 2021',
     'education.languages': 'Languages',
     'education.portuguese': 'Portuguese: Native',
-    'education.english': 'English: Intermediate (B1)',
+    'education.english': 'English: Intermediate',
+    'education.spanish': 'Spanish: Intermediate',
     
     // Contact
     'contact.title': 'Get In Touch',
@@ -169,6 +180,14 @@ const translations = {
     'chatbot.title': 'Virtual Assistant',
     'chatbot.user': 'ME',
     'chatbot.placeholder': 'Ask about my projects...',
+
+    // Footer
+    'footer.tagline': 'Full Stack Developer & Web3 enthusiast building robust, scalable solutions.',
+    'footer.nav': 'Quick Links',
+    'footer.social': 'Connect',
+    'footer.contact.label': 'Contact',
+    'footer.rights': 'All rights reserved.',
+    'footer.open': 'Open to work',
   },
   pt: {
     // Navigation
@@ -203,22 +222,32 @@ const translations = {
     // Experience
     'experience.title': 'Experiência Profissional',
     'experience.current': 'Presente',
-    'experience.switchpay.role': 'Desenvolvedor Full Stack Júnior',
-    'experience.switchpay.company': 'Switch Pay',
-    'experience.switchpay.period': 'Outubro 2025 - Presente',
-    'experience.switchpay.desc': 'Desenvolvimento e manutenção da plataforma Switch Pay, especializada em meios de pagamento, conciliação automática e integração com softwares de gestão. Criação e integração de APIs financeiras para automação de processos. Implementação de interfaces responsivas e seguras, com foco em UX/UI e desempenho. Colaboração em um ambiente multidisciplinar, aplicando metodologias ágeis.',
-    'experience.switchpay.tech': 'Tecnologias: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Portainer, Redis, AWS',
-    
-    'experience.brazil.role': 'Desenvolvedor Front-End',
-    'experience.brazil.company': 'Brasil Cursinhos',
-    'experience.brazil.period': 'Fevereiro 2025 - Outubro 2025',
-    'experience.brazil.desc': 'Atuação direta no desenvolvimento e manutenção do portal da organização, utilizando Next.js, React, TypeScript e Tailwind CSS para criar componentes e interfaces de usuário. Liderando o projeto e organização de toda a estrutura da parte da tecnologia.',
-    'experience.brazil.tech': 'Tecnologias: Html, Css, JavaScript, React.js, Next.js, TypeScript, TailwindCss.',
 
-    'experience.lucrei.role': 'Estagiário de TI',
-    'experience.lucrei.company': 'Lucrei - Cash Back',
+    'experience.monitor.role': 'Monitor de Desenvolvimento de Software (Web e Mobile)',
+    'experience.monitor.company': 'Universidade Federal do Ceará – UFC',
+    'experience.monitor.period': 'Março 2026 - Presente',
+    'experience.monitor.desc1': 'Apoiei boas práticas de desenvolvimento (Clean Code), liderando sessões de Code Review e exigindo a implementação de testes unitários em projetos acadêmicos complexos.',
+    'experience.monitor.desc2': 'Apoiei iniciativas com IA no desenvolvimento, instruindo turmas no uso de LLMs para refatoração e estruturação de arquiteturas modernas.',
+    'experience.monitor.tech': 'Tecnologias: JavaScript, TypeScript, React.js, Node.js, Testes Unitários, Clean Code, LLMs',
+
+    'experience.switchpay.role': 'Desenvolvedor Full Stack Júnior (Temporário)',
+    'experience.switchpay.company': 'Switch Pay',
+    'experience.switchpay.period': 'Outubro 2025 - Dezembro 2025',
+    'experience.switchpay.desc1': 'Desenvolvi funcionalidades e corrigi bugs em aplicações web utilizando o ecossistema JavaScript e integrações em Java.',
+    'experience.switchpay.desc2': 'Participei de cerimônias ágeis (Scrum), otimizando o fluxo de integração contínua (CI/CD) e aplicando rigorosamente boas práticas de versionamento.',
+    'experience.switchpay.tech': 'Tecnologias: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Java, CI/CD',
+    
+    'experience.brazil.role': 'Desenvolvedor Front-End Júnior',
+    'experience.brazil.company': 'Brasil Cursinhos',
+    'experience.brazil.period': 'Fevereiro 2025 - Fevereiro 2026',
+    'experience.brazil.desc1': 'Atuei na construção de interfaces (front-end) modulares utilizando JavaScript, HTML e CSS, aplicando conceitos de componentização essenciais para frameworks modernos.',
+    'experience.brazil.desc2': 'Desenvolvi rotinas para consumir APIs REST de forma eficiente e estruturada.',
+    'experience.brazil.tech': 'Tecnologias: HTML, CSS, JavaScript, React.js, Next.js, TypeScript, TailwindCSS.',
+
+    'experience.lucrei.role': 'Estagiário de T.I',
+    'experience.lucrei.company': 'Lucrei Cash Back',
     'experience.lucrei.period': 'Setembro 2021 - Dezembro 2021',
-    'experience.lucrei.desc': 'Colaboração na formação técnica de alunos da EEEP Dr. Salomão Alves de Moura, auxiliando no aprendizado de programação web, lógica de programação e uso de ferramentas como Excel. Realização de testes manuais em software e no site https://eulucrei.com.br, documentando resultados em planilhas e participando de reuniões para reportar e discutir melhorias.',
+    'experience.lucrei.desc1': 'Criei e executei testes rigorosos em serviços web e contribuí ativamente com a documentação técnica das soluções da empresa.',
     
     // Projects
     'projects.title': 'Projetos em Destaque',
@@ -292,7 +321,8 @@ const translations = {
     'education.completed': 'Concluído: Dezembro de 2021',
     'education.languages': 'Idiomas',
     'education.portuguese': 'Português: Nativo',
-    'education.english': 'Inglês: Intermediário (B1)',
+    'education.english': 'Inglês: Intermediário',
+    'education.spanish': 'Espanhol: Intermediário',
     
     // Contact
     'contact.title': 'Entre em Contato',
@@ -327,6 +357,189 @@ const translations = {
     'chatbot.title': 'Assistente Virtual',
     'chatbot.user': 'EU',
     'chatbot.placeholder': 'Pergunte sobre meus projetos...',
+
+    // Footer
+    'footer.tagline': 'Desenvolvedor Full Stack & entusiasta Web3 construindo soluções robustas e escaláveis.',
+    'footer.nav': 'Links Rápidos',
+    'footer.social': 'Redes',
+    'footer.contact.label': 'Contato',
+    'footer.rights': 'Todos os direitos reservados.',
+    'footer.open': 'Aberto a oportunidades',
+  },
+  es: {
+    // Navigation
+    'nav.about': 'Sobre mí',
+    'nav.skills': 'Habilidades',
+    'nav.experience': 'Experiencia',
+    'nav.projects': 'Proyectos',
+    'nav.education': 'Educación',
+    'nav.contact': 'Contacto',
+
+    // Hero
+    'hero.greeting': 'Hola, soy',
+    'hero.title': 'Desarrollador Full Stack',
+    'hero.subtitle': 'Desarrollo Backend e Integración con Ecosistemas Web3',
+    'hero.location': 'Quixadá - Ceará, Brasil',
+    'hero.cta': 'Ver Proyectos',
+    'hero.contact': 'Contáctame',
+
+    // About
+    'about.title': 'Sobre mí',
+    'about.summary': 'Desarrollador full-stack enfocado en construir soluciones Back-End y Web3 robustas e innovadoras. Tengo experiencia en la construcción de aplicaciones escalables y seguras, aprovechando tecnologías de vanguardia para resolver problemas complejos y generar valor en ecosistemas descentralizados y tradicionales.',
+
+    // Skills
+    'skills.title': 'Habilidades Técnicas',
+    'skills.web3': 'Web3 & Blockchain',
+    'skills.backend': 'Back-End',
+    'skills.frontend': 'Front-End',
+    'skills.databases': 'Bases de Datos',
+    'skills.devops': 'DevOps & Cloud',
+    'skills.additional': 'Habilidades Adicionales',
+
+    // Experience
+    'experience.title': 'Experiencia Profesional',
+    'experience.current': 'Presente',
+
+    'experience.monitor.role': 'Monitor de Desarrollo de Software (Web y Mobile)',
+    'experience.monitor.company': 'Universidad Federal de Ceará – UFC',
+    'experience.monitor.period': 'Marzo 2026 - Presente',
+    'experience.monitor.desc1': 'Apoyé buenas prácticas de desarrollo (Clean Code), liderando sesiones de Code Review y exigiendo la implementación de pruebas unitarias en proyectos académicos complejos.',
+    'experience.monitor.desc2': 'Apoyé iniciativas con IA en el desarrollo, instruyendo clases sobre el uso de LLMs para refactorización y estructuración de arquitecturas modernas.',
+    'experience.monitor.tech': 'Tecnologías: JavaScript, TypeScript, React.js, Node.js, Pruebas Unitarias, Clean Code, LLMs',
+
+    'experience.switchpay.role': 'Desarrollador Full Stack Junior (Temporal)',
+    'experience.switchpay.company': 'Switch Pay',
+    'experience.switchpay.period': 'Octubre 2025 - Diciembre 2025',
+    'experience.switchpay.desc1': 'Desarrollé funcionalidades y corregí bugs en aplicaciones web utilizando el ecosistema JavaScript e integraciones en Java.',
+    'experience.switchpay.desc2': 'Participé en ceremonias ágiles (Scrum), optimizando el flujo de integración continua (CI/CD) y aplicando rigurosamente buenas prácticas de versionado.',
+    'experience.switchpay.tech': 'Tecnologías: Node.js, React.js, Express.js, MySQL, TypeORM, TypeScript, Docker, Java, CI/CD',
+
+    'experience.brazil.role': 'Desarrollador Front-End Junior',
+    'experience.brazil.company': 'Brasil Cursinhos',
+    'experience.brazil.period': 'Febrero 2025 - Febrero 2026',
+    'experience.brazil.desc1': 'Construí interfaces front-end modulares usando JavaScript, HTML y CSS, aplicando conceptos de componentización esenciales para frameworks modernos.',
+    'experience.brazil.desc2': 'Desarrollé rutinas para consumir APIs REST de forma eficiente y estructurada.',
+    'experience.brazil.tech': 'Tecnologías: HTML, CSS, JavaScript, React.js, Next.js, TypeScript, TailwindCSS.',
+
+    'experience.lucrei.role': 'Pasante de T.I',
+    'experience.lucrei.company': 'Lucrei Cash Back',
+    'experience.lucrei.period': 'Septiembre 2021 - Diciembre 2021',
+    'experience.lucrei.desc1': 'Creé y ejecuté pruebas rigurosas en servicios web y contribuí activamente con la documentación técnica de las soluciones de la empresa.',
+
+    // Projects
+    'projects.title': 'Proyectos Destacados',
+    'projects.viewCode': 'Ver Código',
+    'projects.viewDemo': 'Demo en Vivo',
+
+    'projects.filters.all': 'Todos',
+    'projects.filters.fullstack': 'Full Stack',
+    'projects.filters.backend': 'Back-End',
+    'projects.filters.web3': 'Web3',
+    'projects.filters.java': 'Java',
+    'projects.filters.python': 'Python',
+    'projects.filters.rust': 'Rust',
+    'projects.filters.dotnet': '.NET',
+
+    'projects.chainmed.title': 'ChainMed',
+    'projects.chainmed.desc': 'ChainMed revoluciona la forma en que los médicos prescriben y los pacientes gestionan sus medicamentos, con la seguridad e inmutabilidad de la tecnología blockchain.',
+
+    'projects.monemiitec.title': 'Monemii Tec',
+    'projects.monemiitec.desc': 'Una plataforma digital para el sector Agrotech, que ofrece soluciones de agrocomputación para el sector público y conecta tecnología de punta con el campo.',
+
+    'projects.convit3-digital.title': 'Convit3-digital',
+    'projects.convit3-digital.desc': 'Es una plataforma intuitiva para crear y gestionar eventos digitales. Con ella, puedes rastrear confirmaciones de asistencia, ver quién confirmó o rechazó invitaciones y organizar todos los detalles del evento en un solo lugar.',
+
+    'projects.sysagua.title': 'Sys Água',
+    'projects.sysagua.desc': 'Desarrollo de un sistema de escritorio para control de inventario y ventas. Usando Spring Boot para gestionar la lógica de negocio y persistencia de datos en PostgreSQL.',
+
+    'projects.innovateacademytech.title': 'InnovateAcademyTech',
+    'projects.innovateacademytech.desc': 'API para gestión de cursos.',
+
+    'projects.ponte-pecem-ia-ret.title': 'Puente Pecém: IA-RET (Gobernanza de Auditoría y Selección)',
+    'projects.ponte-pecem-ia-ret.desc': 'La IA-RET actúa como agente de auditoría imparcial, usando Investigación Operativa (Programación Lineal Entera) para seleccionar candidatos maximizando el mérito técnico del equipo bajo restricciones de gobernanza.',
+
+    'projects.todolist.title': 'Todo List',
+    'projects.todolist.desc': 'API para gestión de tareas (CRUD), parte del desafío para desarrolladores backend junior que aplican en Simplify.',
+
+    'projects.investtrackapi.title': 'Invest Track API',
+    'projects.investtrackapi.desc': 'API RESTful para agregar y gestionar portafolios de inversión, desarrollada con .NET 8 y C#.',
+
+    'projects.bookfinderapi.title': 'Book Finder API',
+    'projects.bookfinderapi.desc': 'API Web .NET 8 que busca libros por autor usando la Open Library API. Procesa resultados y los almacena en una base de datos SQL Server local.',
+
+    'projects.candidatesapi.title': 'CandidatesAPI',
+    'projects.candidatesapi.desc': 'API REST desarrollada para proveer acceso a datos relacionados con candidaturas, elecciones, partidos y análisis visual de esa información.',
+
+    'projects.teste.title': 'Prueba de Proceso de Selección para Pasante Backend',
+    'projects.teste.desc': 'Resolver desafíos de ingeniería de datos y desarrollo de software: web scraping en Java, transformación de datos en Java, manipulación de base de datos en PostgreSQL, y API con Vue.js y Python.',
+
+    'projects.sylopay.title': 'Sylopay',
+    'projects.sylopay.desc': 'Plataforma Buy Now, Pay Later (BNPL) construida en la blockchain Stellar, permitiendo liquidaciones instantáneas para comerciantes. Construí la infraestructura Back-End principal con NestJS, Stellar SDK, PostgreSQL y Docker.',
+
+    'projects.kyra.title': 'Kyra Finance',
+    'projects.kyra.desc': 'Agente de IA que analiza estrategias DeFi y recomienda combinaciones óptimas dentro del ecosistema SUI. Diseñé e implementé la lógica Back-End para análisis de datos e integraciones on-chain.',
+
+    'projects.heather.title': 'Heather AI Finance',
+    'projects.heather.desc': 'Asistente educativo impulsado por IA para XRP Ledger, guiando usuarios no técnicos a través de las herramientas XRPL. Diseñé el esquema de base de datos y modelo de datos para interacciones IA-usuario.',
+
+    'projects.btg.title': 'Desafío BTG Pactual',
+    'projects.btg.desc': 'Desarrollo de un microservicio con Java y Spring Boot para procesamiento asíncrono de pedidos vía RabbitMQ. Implementación de API RESTful para consulta de reportes y persistencia de datos en MongoDB.',
+
+    'projects.contratobiblia.title': 'Contrato Biblia',
+    'projects.contratobiblia.desc': 'Biblioteca Rust para un contrato inteligente en la blockchain Stellar (Soroban), enfocada en una aplicación social y de estudio bíblico.',
+
+    // Education
+    'education.title': 'Formación e Idiomas',
+    'education.degree': 'Licenciatura en Ingeniería de Software',
+    'education.university': 'Universidad Federal de Ceará - UFC',
+    'education.graduation': 'Previsto: Diciembre 2027',
+    'education.technical': 'Curso Técnico de Nivel Medio en Informática',
+    'education.school': 'EEEP Dr. Salomão Alves de Moura',
+    'education.completed': 'Completado: Diciembre 2021',
+    'education.languages': 'Idiomas',
+    'education.portuguese': 'Portugués: Nativo',
+    'education.english': 'Inglés: Intermedio',
+    'education.spanish': 'Español: Intermedio',
+
+    // Contact
+    'contact.title': 'Contáctame',
+    'contact.description': 'Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.',
+    'contact.email': 'Correo',
+    'contact.phone': 'Teléfono',
+    'contact.form.name': 'Nombre',
+    'contact.form.name.placeholder': 'Tu nombre completo',
+    'contact.form.email': 'Email',
+    'contact.form.email.placeholder': 'tu.email@ejemplo.com',
+    'contact.form.subject': 'Asunto',
+    'contact.form.subject.placeholder': 'Selecciona el motivo de contacto',
+    'contact.form.subject.general': 'Consulta General',
+    'contact.form.subject.project': 'Propuesta de Proyecto',
+    'contact.form.subject.feedback': 'Feedback',
+    'contact.form.subject.other': 'Otro',
+    'contact.form.message': 'Mensaje',
+    'contact.form.message.placeholder': 'Escribe tu mensaje aquí...',
+    'contact.form.submit': 'Enviar Mensaje',
+    'contact.form.submitting': 'Enviando...',
+    'contact.form.success': '¡Mensaje enviado con éxito!',
+    'contact.form.error.min': 'Debe tener al menos {count} caracteres.',
+    'contact.form.error.email': 'Correo electrónico inválido.',
+    'contact.form.error.subject': 'Por favor, selecciona un asunto.',
+    'contact.form.error.message': 'El mensaje debe tener al menos {count} caracteres.',
+    'contact.form.error.submit': 'Error al enviar el mensaje. Inténtalo de nuevo.',
+
+    'chatbot.greeting': '¡Hola! Soy un asistente virtual. Pregúntame sobre la experiencia, proyectos o habilidades de Josias Batista.',
+    'chatbot.error': 'Lo siento, ocurrió un error al obtener la respuesta.',
+    'chatbot.title': 'Asistente Virtual',
+    'chatbot.user': 'YO',
+    'chatbot.placeholder': 'Pregunta sobre mis proyectos...',
+
+    // Footer
+    'footer.tagline': 'Desarrollador Full Stack & entusiasta Web3 construyendo soluciones robustas y escalables.',
+    'footer.nav': 'Accesos Rápidos',
+    'footer.social': 'Conectar',
+    'footer.contact.label': 'Contacto',
+    'footer.rights': 'Todos los derechos reservados.',
+    'footer.open': 'Abierto a oportunidades',
   },
 };
 
@@ -335,12 +548,13 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('en');
 
- const t = (
+  const t = (
     key: string,
     options?: { [key: string]: string | number }
   ): string => {
-    let translation =
-      translations[language][key as keyof (typeof translations)['en']] || key;
+    const langTranslations = translations[language] as Record<string, string>;
+    const fallback = translations['en'] as Record<string, string>;
+    let translation = langTranslations[key] || fallback[key] || key;
 
     if (options) {
       Object.keys(options).forEach((optionKey) => {

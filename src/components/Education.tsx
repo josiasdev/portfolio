@@ -46,7 +46,7 @@ const Education = () => {
               </div>
               <h3 className="text-xl font-semibold">{t('education.languages')}</h3>
             </div>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               <div className="flex items-center gap-3">
                 <div className="h-2 w-2 rounded-full bg-primary" />
                 <span className="text-muted-foreground">{t('education.portuguese')}</span>
@@ -54,6 +54,10 @@ const Education = () => {
               <div className="flex items-center gap-3">
                 <div className="h-2 w-2 rounded-full bg-accent" />
                 <span className="text-muted-foreground">{t('education.english')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="h-2 w-2 rounded-full bg-primary/60" />
+                <span className="text-muted-foreground">{t('education.spanish')}</span>
               </div>
             </div>
           </Card>
