@@ -1,14 +1,15 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import { lazy, Suspense } from "react";
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero/Hero";
 import { Spinner } from "@/components/ui/spinner";
-const About = lazy(() => import("@/components/About"));
-const Skills = lazy(() => import("@/components/Skills"));
-const Experience = lazy(() => import("@/components/Experience"));
-const Projects = lazy(() => import("@/components/Projects"));
-const Education = lazy(() => import("@/components/Education"));
-const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer"));
+const About = lazy(() => import("@/components/About/About"));
+const Skills = lazy(() => import("@/components/Skills/Skills"));
+const Experience = lazy(() => import("@/components/Experience/Experience"));
+const Projects = lazy(() => import("@/components/Projects/Projects"));
+const Hackathons = lazy(() => import("@/components/Hackathons/Hackathons"));
+const Education = lazy(() => import("@/components/Education/Education"));
+const Contact = lazy(() => import("@/components/Contact/Contact"));
+const Footer = lazy(() => import("@/components/Footer/Footer"));
 const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton/WhatsAppButton"));
 
 const SectionLoader = () => (
@@ -28,6 +29,7 @@ const Index = () => {
           <Skills />
           <Experience />
           <Projects />
+          <Hackathons />
           <Education />
           <Contact />
         </Suspense>

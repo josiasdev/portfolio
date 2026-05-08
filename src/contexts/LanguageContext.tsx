@@ -15,8 +15,10 @@ const translations = {
     'nav.skills': 'Skills',
     'nav.experience': 'Experience',
     'nav.projects': 'Projects',
+    'nav.hackathons': 'Hackathons',
     'nav.education': 'Education',
     'nav.contact': 'Contact',
+    
     
     // Hero
     'hero.greeting': 'Hi, I\'m',
@@ -42,6 +44,14 @@ const translations = {
     // Experience
     'experience.title': 'Work Experience',
     'experience.current': 'Present',
+
+    'experience.ideedutec.role' : 'Full Stack Developer',
+    'experience.ideedutec.company' : 'IDEEDUTEC',
+    'experience.ideedutec.period' : 'APRIL 2026 - Present',
+    'experience.ideedutec.desc1' : 'Modern Interface Development: Responsible for implementing complex dashboards and reporting systems using Next.js, TypeScript, and Chakra UI.',
+    'experience.ideedutec.desc2' : 'Analysis and Refactoring of Legacy Systems: Proactively identifying performance bottlenecks in legacy routes, proposing data processing migrations from the client-side to the server-side to optimize loading times and user experience.',
+    'experience.ideedutec.desc3' : 'Technical Collaboration: Direct interface with the Backend team for defining new API contracts and data architecture focused on Analytics.',
+    'experience.ideedutec.tech' : 'Technology Stack: React, Next.js, TypeScript, Chakra UI, Git/GitHub and integration with REST APIs for Frontend and Nest.js, Postgreesql, PrismaORM, Docker in the Backend.',
 
     'experience.monitor.role': 'Software Development Monitor (Web & Mobile)',
     'experience.monitor.company': 'Federal University of Ceará – UFC',
@@ -134,6 +144,15 @@ const translations = {
     'projects.contratobiblia.title': 'Bible contract',
     'projects.contratobiblia.desc': 'A Rust library for a smart contract on the Stellar blockchain (Soroban) focused on a social and Bible study application.',
     
+    // Hackathons
+    'hackathons.badge': 'Competitions & Innovation',
+    'hackathons.title': 'Hackathons',
+    'hackathons.subtitle': 'Projects developed under pressure and focused on real solutions during programming and Web3 marathons.',
+    'hackathons.meridian.desc': 'Modern BNPL (Buy Now, Pay Later) platform built on the Stellar blockchain. Enables instant settlement for merchants and transparent interest-free installment plans.',
+    'hackathons.meridian.award': 'Competitor (Prize Pool: US$50k)',
+    'hackathons.sui.desc': 'AI agent specialized in DeFi strategies, acting as an on-chain analyst. Identifies and simulates efficient combinations of lending, staking, and swaps on the SUI network.',
+    'hackathons.xrpl.desc': 'Personalized digital tutor integrated with an LLM chatbot designed to guide users intuitively within the XRP Ledger ecosystem.',
+    'hackathons.xrpl.award': '3rd Place - Web 3 Track',
     
     // Education
     'education.title': 'Education & Languages',
@@ -174,13 +193,6 @@ const translations = {
     'contact.form.error.message': 'Message must be at least {count} characters.',
     'contact.form.error.submit': 'Error sending message. Please try again.',
 
-
-    'chatbot.greeting': 'Hi! I am a virtual assistant. Ask me about Josias Batista\'s experience, projects, or skills.',
-    'chatbot.error': 'Sorry, an error occurred while fetching the response.',
-    'chatbot.title': 'Virtual Assistant',
-    'chatbot.user': 'ME',
-    'chatbot.placeholder': 'Ask about my projects...',
-
     // Footer
     'footer.tagline': 'Full Stack Developer & Web3 enthusiast building robust, scalable solutions.',
     'footer.nav': 'Quick Links',
@@ -195,6 +207,7 @@ const translations = {
     'nav.skills': 'Habilidades',
     'nav.experience': 'Experiência',
     'nav.projects': 'Projetos',
+    'nav.hackathons': 'Hackathons',
     'nav.education': 'Educação',
     'nav.contact': 'Contato',
     
@@ -222,6 +235,14 @@ const translations = {
     // Experience
     'experience.title': 'Experiência Profissional',
     'experience.current': 'Presente',
+
+    'experience.ideedutec.role' : 'Desenvolvedor Full Stack',
+    'experience.ideedutec.company' : 'IDEEDUTEC',
+    'experience.ideedutec.period' : 'Abril 2026 - Presente',
+    'experience.ideedutec.desc1' : ' Desenvolvimento de Interfaces Modernas: Responsável pela implementação de Dashboards complexos e sistemas de relatórios utilizando Next.js, TypeScript e Chakra UI.',
+    'experience.ideedutec.desc2' : 'Análise e Refatoração de Sistemas Legados: Atuação proativa na identificação de gargalos de performance em rotas legadas, propondo migrações de processamento de dados do Client-side para o Server-side para otimizar o tempo de carregamento e a experiência do usuário.',
+    'experience.ideedutec.desc3' : 'Colaboração Técnica: Interface direta com a equipe de Backend para definição de novos contratos de API e arquitetura de dados voltada para Analytics.',
+    'experience.ideedutec.tech' : 'Stack Tecnológica: React, Next.js, TypeScript, Chakra UI, Git/GitHub e integração com APIs REST pro Frontend e Nest.js, Postgreesql, PrismaORM, Docker no Backend.',
 
     'experience.monitor.role': 'Monitor de Desenvolvimento de Software (Web e Mobile)',
     'experience.monitor.company': 'Universidade Federal do Ceará – UFC',
@@ -311,6 +332,17 @@ const translations = {
     'projects.contratobiblia.title': 'Contrato Biblia',
     'projects.contratobiblia.desc': 'Uma biblioteca Rust para um contrato inteligente no blockchain Stellar (Soroban) focada em uma aplicação social e de estudo bíblico.',
 
+
+    // Hackathons
+    'hackathons.badge': 'Competições & Inovação',
+    'hackathons.title': 'Hackathons',
+    'hackathons.subtitle': 'Projetos desenvolvidos sob pressão e focados em soluções reais durante maratonas de programação e Web3.',
+    'hackathons.meridian.desc': 'Plataforma moderna de BNPL (Buy Now, Pay Later) construída na blockchain Stellar. Permite liquidação instantânea para comerciantes e planos de parcelamento transparentes sem juros.',
+    'hackathons.meridian.award': 'Competidor (Prize Pool: US$50k)',
+    'hackathons.sui.desc': 'Agente de IA especializado em estratégias DeFi, atuando como analista on-chain. Identifica e simula combinações eficientes de lending, staking e swaps na rede SUI.',
+    'hackathons.xrpl.desc': 'Tutor digital personalizado integrado a um chatbot LLM projetado para guiar usuários intuitivamente dentro do ecossistema XRP Ledger.',
+    'hackathons.xrpl.award': '3º Lugar - Trilha Web 3',
+
     // Education
     'education.title': 'Formação & Idiomas',
     'education.degree': 'Bacharelado em Engenharia de Software',
@@ -352,12 +384,6 @@ const translations = {
     'contact.form.error.submit':
       'Erro ao enviar a mensagem. Tente novamente.',
 
-    'chatbot.greeting': 'Olá! Sou um assistente virtual. Pergunte-me sobre a experiência, projetos ou habilidades do Josias Batista.',
-    'chatbot.error': 'Desculpe, ocorreu um erro ao buscar a resposta.',
-    'chatbot.title': 'Assistente Virtual',
-    'chatbot.user': 'EU',
-    'chatbot.placeholder': 'Pergunte sobre meus projetos...',
-
     // Footer
     'footer.tagline': 'Desenvolvedor Full Stack & entusiasta Web3 construindo soluções robustas e escaláveis.',
     'footer.nav': 'Links Rápidos',
@@ -372,6 +398,7 @@ const translations = {
     'nav.skills': 'Habilidades',
     'nav.experience': 'Experiencia',
     'nav.projects': 'Proyectos',
+    'nav.hackathons': 'Hackatones',
     'nav.education': 'Educación',
     'nav.contact': 'Contacto',
 
@@ -399,6 +426,14 @@ const translations = {
     // Experience
     'experience.title': 'Experiencia Profesional',
     'experience.current': 'Presente',
+
+      'experience.ideedutec.role' : 'Desarrollador Full Stack',
+    'experience.ideedutec.company' : 'IDEEDUTEC',
+    'experience.ideedutec.period' : 'Abril 2026 - Presente',
+    'experience.ideedutec.desc1' : 'Desarrollo de interfaces modernas: Responsable de la implementación de paneles de control y sistemas de informes complejos utilizando Next.js, TypeScript y Chakra UI.',
+    'experience.ideedutec.desc2' : 'Análise e Refatoração de Sistemas Legados: Atuação proativa na identificação de gargalos de performance em rotas legadas, propondo migrações de processamento de dados do Client-side para o Server-side para otimizar o tempo de carregamento e a experiência do usuário.',
+    'experience.ideedutec.desc3' : 'Colaboración técnica: Interfaz directa con el equipo de backend para definir nuevos contratos de API y arquitectura de datos centrada en análisis.',
+    'experience.ideedutec.tech' : 'Tecnologías utilizadas: React, Next.js, TypeScript, Chakra UI, Git/GitHub e integración con API REST para el frontend y Nest.js, PostgreSQL, PrismaORM y Docker en el backend.',
 
     'experience.monitor.role': 'Monitor de Desarrollo de Software (Web y Mobile)',
     'experience.monitor.company': 'Universidad Federal de Ceará – UFC',
@@ -488,6 +523,16 @@ const translations = {
     'projects.contratobiblia.title': 'Contrato Biblia',
     'projects.contratobiblia.desc': 'Biblioteca Rust para un contrato inteligente en la blockchain Stellar (Soroban), enfocada en una aplicación social y de estudio bíblico.',
 
+    // Hackathons
+    'hackathons.badge': 'Competiciones e Innovación',
+    'hackathons.title': 'Hackathons',
+    'hackathons.subtitle': 'Proyectos desarrollados bajo presión y enfocados en soluciones reales durante maratones de programación y Web3.',
+    'hackathons.meridian.desc': 'Moderna plataforma BNPL (Buy Now, Pay Later) construida en la blockchain de Stellar. Permite liquidación instantánea para comerciantes y planes de pago a plazos transparentes y sin intereses.',
+    'hackathons.meridian.award': 'Competidor (Prize Pool: US$50k)',
+    'hackathons.sui.desc': 'Agente de IA especializado en estrategias DeFi, actuando como analista on-chain. Identifica y simula combinaciones eficientes de préstamos, staking y swaps en la red SUI.',
+    'hackathons.xrpl.desc': 'Tutor digital personalizado integrado a un chatbot LLM diseñado para guiar a los usuarios intuitivamente dentro del ecosistema XRP Ledger.',
+    'hackathons.xrpl.award': '3er Lugar - Pista Web 3',
+
     // Education
     'education.title': 'Formación e Idiomas',
     'education.degree': 'Licenciatura en Ingeniería de Software',
@@ -526,12 +571,6 @@ const translations = {
     'contact.form.error.subject': 'Por favor, selecciona un asunto.',
     'contact.form.error.message': 'El mensaje debe tener al menos {count} caracteres.',
     'contact.form.error.submit': 'Error al enviar el mensaje. Inténtalo de nuevo.',
-
-    'chatbot.greeting': '¡Hola! Soy un asistente virtual. Pregúntame sobre la experiencia, proyectos o habilidades de Josias Batista.',
-    'chatbot.error': 'Lo siento, ocurrió un error al obtener la respuesta.',
-    'chatbot.title': 'Asistente Virtual',
-    'chatbot.user': 'YO',
-    'chatbot.placeholder': 'Pregunta sobre mis proyectos...',
 
     // Footer
     'footer.tagline': 'Desarrollador Full Stack & entusiasta Web3 construyendo soluciones robustas y escalables.',

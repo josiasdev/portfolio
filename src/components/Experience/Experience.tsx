@@ -145,6 +145,18 @@ const Experience = () => {
 
   const experiences: Experience[] = [
     {
+      role: t('experience.ideedutec.role'),
+      company: t('experience.ideedutec.company'),
+      period: t('experience.ideedutec.period'),
+      descriptions: [
+        t('experience.ideedutec.desc1'),
+        t('experience.ideedutec.desc2'),
+        t('experience.ideedutec.desc3'),
+      ],
+      tech: t('experience.ideedutec.tech'),
+      isCurrent: true,
+    },
+    {
       role: t('experience.monitor.role'),
       company: t('experience.monitor.company'),
       period: t('experience.monitor.period'),

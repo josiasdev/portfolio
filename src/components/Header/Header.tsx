@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import ThemeToggle from "./ThemeToggle";
-import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
 
@@ -8,7 +8,6 @@ const Header = () => {
   const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // We removed the aggressive scroll listener that was instantly closing the menu on some mobile devices.
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
@@ -20,6 +19,7 @@ const Header = () => {
     { id: 'skills', label: t('nav.skills') },
     { id: 'experience', label: t('nav.experience') },
     { id: 'projects', label: t('nav.projects') },
+    { id : 'hackathons', label: t('nav.hackathons') },
     { id: 'education', label: t('nav.education') },
   ];
 
@@ -30,7 +30,6 @@ const Header = () => {
           Josias Batista
         </a>
         
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <button key={item.id} onClick={() => scrollToSection(item.id)} className="text-sm font-medium hover:text-primary transition-colors">
@@ -42,7 +41,6 @@ const Header = () => {
         <div className="flex items-center gap-2 relative z-50">
           <LanguageToggle />
           <ThemeToggle />
-          {/* Mobile Menu Toggle */}
           <button 
             className="md:hidden p-2 text-foreground hover:text-primary transition-colors focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -53,7 +51,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation Overlay */}
       <div 
         className={`md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
