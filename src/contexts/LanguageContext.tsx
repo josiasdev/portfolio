@@ -30,7 +30,7 @@ const translations = {
     
     // About
     'about.title': 'About Me',
-    'about.summary': 'Full-stack developer focused on building robust and innovative Back-End and Web3 solutions. I have experience building scalable and secure applications, leveraging cutting-edge technologies to solve complex problems and deliver value in both decentralized and traditional ecosystems.',
+    'about.summary': 'Born in the countryside of Passagem Funda, Ceará (Brazil), my journey in tech started early. I took my first steps as a developer during my technical course in Aracoiaba, building websites with HTML, PHP, and Java. Today, I am studying Software Engineering at the Federal University of Ceará (UFC) in Quixadá. I am a Christian at the Assembleia de Deus Templo Central, passionate about games, and driven by the challenge of building real solutions. I value strong roots and clean code.',
     
     // Skills
     'skills.title': 'Technical Skills',
@@ -158,10 +158,10 @@ const translations = {
     'education.title': 'Education & Languages',
     'education.degree': 'Bachelor\'s Degree in Software Engineering',
     'education.university': 'Federal University of Ceará - UFC',
-    'education.graduation': 'Expected: December 2027',
+    'education.graduation': '2022 - Expected: December 2027',
     'education.technical': 'Intermediate Level Technical Course in Computer Science',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': 'Completed: December 2021',
+    'education.completed': '2019 - 2021',
     'education.languages': 'Languages',
     'education.portuguese': 'Portuguese: Native',
     'education.english': 'English: Intermediate',
@@ -221,7 +221,7 @@ const translations = {
     
     // About
     'about.title': 'Sobre Mim',
-    'about.summary': 'Desenvolvedor full-stack focado na construção de soluções Back-End e Web3 robustas e inovadoras. Tenho experiência na construção de aplicações escaláveis ​​e seguras, utilizando tecnologias de ponta para resolver problemas complexos e agregar valor em ecossistemas descentralizados e tradicionais.',
+    'about.summary': 'Nascido no interior de Passagem Funda (CE), minha jornada na tecnologia começou cedo. Dei meus primeiros passos como desenvolvedor no curso técnico de Informática em Aracoiaba, criando sites com HTML, PHP e Java. Hoje, curso Engenharia de Software na Universidade Federal do Ceará (UFC) em Quixadá. Sou cristão da Assembleia de Deus Templo Central, apaixonado por jogos e movido pelo desafio de construir soluções reais. Valorizo raízes fortes e código limpo.',
     
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -347,10 +347,10 @@ const translations = {
     'education.title': 'Formação & Idiomas',
     'education.degree': 'Bacharelado em Engenharia de Software',
     'education.university': 'Universidade Federal do Ceará - UFC',
-    'education.graduation': 'Previsão: Dezembro de 2027',
+    'education.graduation': '2022 - Previsão: Dezembro de 2027',
     'education.technical': 'Curso Técnico de Nível Médio em Informática',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': 'Concluído: Dezembro de 2021',
+    'education.completed': '2019 - 2021',
     'education.languages': 'Idiomas',
     'education.portuguese': 'Português: Nativo',
     'education.english': 'Inglês: Intermediário',
@@ -412,7 +412,7 @@ const translations = {
 
     // About
     'about.title': 'Sobre mí',
-    'about.summary': 'Desarrollador full-stack enfocado en construir soluciones Back-End y Web3 robustas e innovadoras. Tengo experiencia en la construcción de aplicaciones escalables y seguras, aprovechando tecnologías de vanguardia para resolver problemas complejos y generar valor en ecosistemas descentralizados y tradicionales.',
+    'about.summary': 'Nacido en el interior de Passagem Funda, Ceará (Brasil), mi viaje en la tecnología comenzó temprano. Di mis primeros pasos como desarrollador en mi curso técnico en Aracoiaba, creando sitios web con HTML, PHP y Java. Hoy, estudio Ingeniería de Software en la Universidad Federal de Ceará (UFC) en Quixadá. Soy cristiano de la Assembleia de Deus Templo Central, un apasionado por los juegos y motivado por el desafío de construir soluciones reales. Valoro las raíces fuertes y el código limpio.',
 
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -537,10 +537,10 @@ const translations = {
     'education.title': 'Formación e Idiomas',
     'education.degree': 'Licenciatura en Ingeniería de Software',
     'education.university': 'Universidad Federal de Ceará - UFC',
-    'education.graduation': 'Previsto: Diciembre 2027',
+    'education.graduation': '2022 - Previsto: Diciembre 2027',
     'education.technical': 'Curso Técnico de Nivel Medio en Informática',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': 'Completado: Diciembre 2021',
+    'education.completed': '2019 - 2021',
     'education.languages': 'Idiomas',
     'education.portuguese': 'Portugués: Nativo',
     'education.english': 'Inglés: Intermedio',
