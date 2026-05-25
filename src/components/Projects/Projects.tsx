@@ -1,8 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, LayoutGrid, Star } from "lucide-react";
 
 type Project = {
   title: string;
@@ -10,94 +10,109 @@ type Project = {
   github: string | null;
   demo: string | null;
   tags: string[];
+  image?: string;
 };
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const { t } = useLanguage();
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+  const [stars, setStars] = useState<number | null>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setMousePos({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 });
-    setTilt({
-      x: ((y - rect.height / 2) / (rect.height / 2)) * -7,
-      y: ((x - rect.width / 2) / (rect.width / 2)) * 7,
-    });
-  };
+  // Dynamic GitHub Stars Fetching
+  useEffect(() => {
+    if (project.github) {
+      const repoPath = project.github.replace("https://github.com/", "").replace(/\/$/, "");
+      if (repoPath.includes("/")) {
+        fetch(`https://api.github.com/repos/${repoPath}`)
+          .then(res => res.json())
+          .then(data => {
+            if (data.stargazers_count !== undefined) {
+              setStars(data.stargazers_count);
+            }
+          })
+          .catch(() => {});
+      }
+    }
+  }, [project.github]);
+
+  // Tag Overflow Management
+  const MAX_TAGS = 3;
+  const visibleTags = project.tags.slice(0, MAX_TAGS);
+  const hiddenTagsCount = project.tags.length - MAX_TAGS;
 
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => { setTilt({ x: 0, y: 0 }); setIsHovered(false); }}
-      onMouseEnter={() => setIsHovered(true)}
-      className="animate-scale-in flex flex-col"
+      className="animate-fade-in flex flex-col group h-full"
       style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div
-        style={{
-          transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "translateY(-5px)" : "translateY(0)"}`,
-          transition: isHovered ? "transform 0.12s ease-out" : "transform 0.45s ease-out",
-          transformStyle: "preserve-3d",
-        }}
-        className={`
-          relative flex flex-col flex-1 p-6 rounded-xl border overflow-hidden h-full
-          border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm
-          ${isHovered ? "shadow-glow" : "shadow-card"}
-          transition-shadow duration-300
-        `}
-      >
-        {/* Mouse-follow shimmer */}
-        {isHovered && (
-          <div
-            className="absolute inset-0 pointer-events-none rounded-xl"
-            style={{
-              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, hsl(var(--primary) / 0.1), transparent 65%)`,
-            }}
-          />
-        )}
+      <div className="relative flex flex-col flex-1 rounded-2xl border border-border/40 bg-card/30 dark:bg-card/20 overflow-hidden hover:bg-card/60 dark:hover:bg-card/40 hover:border-border/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle">
+        
+        {/* Preview / Image Section */}
+        <div className="h-44 w-full bg-muted/30 border-b border-border/40 relative overflow-hidden group-hover:bg-muted/50 transition-colors">
+          {project.image ? (
+            <>
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+              />
+              {project.demo && (
+                <div className="absolute top-3 left-3 bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-md">
+                  Live
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground/60 group-hover:text-muted-foreground/80 transition-colors">
+              <LayoutGrid className="h-8 w-8 mb-2 opacity-50" />
+              <span className="text-xs font-semibold uppercase tracking-widest opacity-60">No Preview</span>
+            </div>
+          )}
+        </div>
 
-        <div className="space-y-4 flex-1 relative z-10">
-          <h3
-            className="text-xl font-bold transition-colors duration-200"
-            style={{ color: isHovered ? "hsl(var(--primary))" : undefined }}
-          >
-            {project.title}
-          </h3>
+        <div className="p-6 space-y-4 flex-1 flex flex-col relative z-10">
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="text-xl font-bold font-serif group-hover:text-primary transition-colors duration-200">
+              {project.title}
+            </h3>
+            {stars !== null && stars > 0 && (
+              <div className="flex items-center gap-1 text-xs font-medium text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex-shrink-0">
+                <Star className="h-3 w-3 fill-amber-500" />
+                <span>{stars}</span>
+              </div>
+            )}
+          </div>
 
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed flex-1">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 pt-1">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors cursor-default">
+          <div className="flex flex-wrap gap-2 pt-2">
+            {visibleTags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs hover:bg-primary/10 transition-colors cursor-default border-border/40 bg-secondary/50">
                 {tag}
               </Badge>
             ))}
+            {hiddenTagsCount > 0 && (
+              <Badge variant="outline" className="text-xs text-muted-foreground border-border/40">
+                +{hiddenTagsCount}
+              </Badge>
+            )}
           </div>
         </div>
 
-        <div className="flex gap-3 pt-4 mt-4 border-t border-border/40 relative z-10">
+        <div className="p-6 pt-0 mt-auto flex gap-3 relative z-10">
           {project.github && (
-            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary hover:text-primary transition-all">
+            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold h-9">
               <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4 mr-2" />
+                <Github className="h-3.5 w-3.5 mr-2" />
                 {t('projects.viewCode')}
               </a>
             </Button>
           )}
           {project.demo && (
-            <Button size="sm" asChild className="flex-1 bg-gradient-primary hover:opacity-90 transition-all">
+            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold h-9">
               <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4 mr-2" />
+                <ExternalLink className="h-3.5 w-3.5 mr-2" />
                 {t('projects.viewDemo')}
               </a>
             </Button>
@@ -118,14 +133,16 @@ const Projects = () => {
       description: t('projects.chainmed.desc'),
       github: "https://github.com/josiasdev/ChainMed",
       demo: "https://chain-med.vercel.app",
-      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS']
+      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS'],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" // Placeholder, replace with real screenshot
     },
     {
       title: t('projects.monemiitec.title'),
       description: t('projects.monemiitec.desc'),
       github: null,
       demo: 'https://www.monemiitec.com.br',
-      tags: ['Full Stack', 'React.js', 'JavaScript']
+      tags: ['Full Stack', 'React.js', 'JavaScript'],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" // Placeholder
     },
     {
       title: t('projects.convit3-digital.title'),
@@ -139,14 +156,16 @@ const Projects = () => {
       description: t('projects.sylopay.desc'),
       github: 'https://github.com/Sylopay/sylopay',
       demo: null,
-      tags: ['Full Stack', 'Web3', 'React.js', 'JavaScript', 'Express.js', 'Stellar']
+      tags: ['Full Stack', 'Web3', 'React.js', 'Express.js', 'Stellar'],
+      image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80" // Placeholder Web3
     },
     {
       title: t('projects.kyra.title'),
       description: t('projects.kyra.desc'),
       github: null,
       demo: 'https://kyra-finance.vercel.app',
-      tags: ['Full Stack', 'Next.js', 'Web3', 'AI', 'SUI']
+      tags: ['Full Stack', 'Next.js', 'Web3', 'AI', 'SUI'],
+      image: "https://images.unsplash.com/photo-1639762681485-074b7f4ec651?auto=format&fit=crop&w=800&q=80" // Placeholder Web3
     },
     {
       title: t('projects.heather.title'),
@@ -161,13 +180,14 @@ const Projects = () => {
       github: 'https://github.com/josiasdev/orderms/',
       demo: null,
       tags: ['Backend', 'Java', 'Spring Boot', 'Microservices']
+      // Backend projects typically have no image, showing "No Preview"
     },
     {
       title: t('projects.sysagua.title'),
       description: t('projects.sysagua.desc'),
       github: 'https://github.com/CristianoMends/sys-agua',
       demo: null,
-      tags: ['Backend', 'Java', 'JavaFx', 'Spring Boot', 'Desktop']
+      tags: ['Backend', 'Java', 'JavaFx', 'Spring Boot']
     },
     {
       title: t('projects.innovateacademytech.title'),
@@ -240,20 +260,16 @@ const Projects = () => {
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
-    : projects.filter(project => project.tags.includes(selectedCategory));
+    : projects.filter(project => project.tags.some(t => t.toLowerCase() === selectedCategory.toLowerCase()));
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-
-      <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 animate-fade-in">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 font-serif animate-fade-in">
           {t('projects.title')}
         </h2>
         <p className="text-center text-muted-foreground mb-10 animate-fade-in">
-          {filteredProjects.length} projeto{filteredProjects.length !== 1 ? 's' : ''} · Hover para interagir
+          {filteredProjects.length} projeto{filteredProjects.length !== 1 ? 's' : ''}
         </p>
 
         {/* Filter buttons */}
@@ -265,8 +281,8 @@ const Projects = () => {
               className={`
                 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
                 ${selectedCategory === category.id
-                  ? "bg-gradient-primary text-white shadow-glow scale-105"
-                  : "border border-border/60 hover:border-primary/50 hover:text-primary hover:scale-105 bg-card/50 backdrop-blur-sm"
+                  ? "bg-primary text-primary-foreground shadow-subtle scale-105"
+                  : "border border-border/40 hover:border-primary/40 hover:bg-card/50 text-muted-foreground hover:text-foreground bg-card/30 backdrop-blur-sm"
                 }
               `}
             >
@@ -275,7 +291,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={`${project.title}-${selectedCategory}`} project={project} index={index} />
           ))}
