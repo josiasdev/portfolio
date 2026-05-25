@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ExternalLink, Github, LayoutGrid, Star } from "lucide-react";
+import { ExternalLink, Github, Star } from "lucide-react";
 
 type Project = {
   title: string;
@@ -10,7 +10,6 @@ type Project = {
   github: string | null;
   demo: string | null;
   tags: string[];
-  image?: string;
 };
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
@@ -44,49 +43,26 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       className="animate-fade-in flex flex-col group h-full"
       style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div className="relative flex flex-col flex-1 rounded-2xl border border-border/40 bg-card/30 dark:bg-card/20 overflow-hidden hover:bg-card/60 dark:hover:bg-card/40 hover:border-border/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle">
+      <div className="relative flex flex-col flex-1 p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 overflow-hidden hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle backdrop-blur-sm">
         
-        {/* Preview / Image Section */}
-        <div className="h-44 w-full bg-muted/30 border-b border-border/40 relative overflow-hidden group-hover:bg-muted/50 transition-colors">
-          {project.image ? (
-            <>
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-              />
-              {project.demo && (
-                <div className="absolute top-3 left-3 bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-md">
-                  Live
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground/60 group-hover:text-muted-foreground/80 transition-colors">
-              <LayoutGrid className="h-8 w-8 mb-2 opacity-50" />
-              <span className="text-xs font-semibold uppercase tracking-widest opacity-60">No Preview</span>
-            </div>
-          )}
-        </div>
-
-        <div className="p-6 space-y-4 flex-1 flex flex-col relative z-10">
+        <div className="space-y-4 flex-1 flex flex-col relative z-10">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="text-xl font-bold font-serif group-hover:text-primary transition-colors duration-200">
+            <h3 className="text-xl md:text-2xl font-bold font-serif group-hover:text-primary transition-colors duration-200">
               {project.title}
             </h3>
             {stars !== null && stars > 0 && (
-              <div className="flex items-center gap-1 text-xs font-medium text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex-shrink-0">
+              <div className="flex items-center gap-1 text-xs font-medium text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex-shrink-0 mt-1">
                 <Star className="h-3 w-3 fill-amber-500" />
                 <span>{stars}</span>
               </div>
             )}
           </div>
 
-          <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+          <p className="text-muted-foreground text-sm leading-relaxed flex-1 mt-2">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 pt-2">
+          <div className="flex flex-wrap gap-2 pt-4 border-t border-border/40 mt-4">
             {visibleTags.map((tag) => (
               <Badge key={tag} variant="secondary" className="text-xs hover:bg-primary/10 transition-colors cursor-default border-border/40 bg-secondary/50">
                 {tag}
@@ -100,9 +76,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </div>
         </div>
 
-        <div className="p-6 pt-0 mt-auto flex gap-3 relative z-10">
+        {/* Buttons are responsive: stacked on small screens if both exist, side-by-side on larger screens */}
+        <div className="flex flex-col sm:flex-row gap-3 pt-6 relative z-10 mt-auto">
           {project.github && (
-            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold h-9">
+            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold h-9 rounded-full">
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <Github className="h-3.5 w-3.5 mr-2" />
                 {t('projects.viewCode')}
@@ -110,7 +87,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </Button>
           )}
           {project.demo && (
-            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold h-9">
+            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold h-9 rounded-full">
               <a href={project.demo} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="h-3.5 w-3.5 mr-2" />
                 {t('projects.viewDemo')}
@@ -133,16 +110,14 @@ const Projects = () => {
       description: t('projects.chainmed.desc'),
       github: "https://github.com/josiasdev/ChainMed",
       demo: "https://chain-med.vercel.app",
-      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS'],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" // Placeholder, replace with real screenshot
+      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS']
     },
     {
       title: t('projects.monemiitec.title'),
       description: t('projects.monemiitec.desc'),
       github: null,
       demo: 'https://www.monemiitec.com.br',
-      tags: ['Full Stack', 'React.js', 'JavaScript'],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" // Placeholder
+      tags: ['Full Stack', 'React.js', 'JavaScript']
     },
     {
       title: t('projects.convit3-digital.title'),
@@ -156,16 +131,14 @@ const Projects = () => {
       description: t('projects.sylopay.desc'),
       github: 'https://github.com/Sylopay/sylopay',
       demo: null,
-      tags: ['Full Stack', 'Web3', 'React.js', 'Express.js', 'Stellar'],
-      image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80" // Placeholder Web3
+      tags: ['Full Stack', 'Web3', 'React.js', 'Express.js', 'Stellar']
     },
     {
       title: t('projects.kyra.title'),
       description: t('projects.kyra.desc'),
       github: null,
       demo: 'https://kyra-finance.vercel.app',
-      tags: ['Full Stack', 'Next.js', 'Web3', 'AI', 'SUI'],
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f4ec651?auto=format&fit=crop&w=800&q=80" // Placeholder Web3
+      tags: ['Full Stack', 'Next.js', 'Web3', 'AI', 'SUI']
     },
     {
       title: t('projects.heather.title'),
@@ -180,7 +153,6 @@ const Projects = () => {
       github: 'https://github.com/josiasdev/orderms/',
       demo: null,
       tags: ['Backend', 'Java', 'Spring Boot', 'Microservices']
-      // Backend projects typically have no image, showing "No Preview"
     },
     {
       title: t('projects.sysagua.title'),
@@ -244,7 +216,7 @@ const Projects = () => {
       github: 'https://github.com/josiasdev/ponte-pecem-ia-ret',
       demo: null,
       tags: ['Backend', 'Python', 'N8n']
-    },
+    }
   ];
 
   const categories = [
@@ -291,7 +263,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={`${project.title}-${selectedCategory}`} project={project} index={index} />
           ))}
