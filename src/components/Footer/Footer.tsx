@@ -36,10 +36,10 @@ const Footer = () => {
       username: "josias-batista",
     },
     {
-      href: "mailto:JBDevSoftware@proton.me",
+      href: "josiasmartins098@gmail.com",
       icon: Mail,
       label: "Email",
-      username: "JBDevSoftware@proton.me",
+      username: "josiasmartins098@gmail.com",
     },
   ];
 

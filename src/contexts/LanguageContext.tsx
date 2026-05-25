@@ -19,7 +19,6 @@ const translations = {
     'nav.education': 'Education',
     'nav.contact': 'Contact',
     
-    
     // Hero
     'hero.greeting': 'Hi, I\'m',
     'hero.title': 'Full Stack Developer',
@@ -31,6 +30,14 @@ const translations = {
     // About
     'about.title': 'About Me',
     'about.summary': 'Born in the countryside of Passagem Funda, Ceará (Brazil), my journey in tech started early. I took my first steps as a developer during my technical course in Aracoiaba, building websites with HTML, PHP, and Java. Today, I am studying Software Engineering at the Federal University of Ceará (UFC) in Quixadá. I am a Christian at the Assembleia de Deus Templo Central, passionate about games, and driven by the challenge of building real solutions. I value strong roots and clean code.',
+    'about.bento.backend': 'Backend & APIs',
+    'about.bento.backend_desc': 'Scalable architectures with Java, Spring Boot, and Node.js.',
+    'about.bento.web3': 'Web3 & Blockchain',
+    'about.bento.web3_desc': 'Smart Contracts and integrations on Stellar & SUI.',
+    'about.bento.frontend': 'Modern Frontend',
+    'about.bento.frontend_desc': 'Interactive UIs using React, Next.js and Tailwind CSS.',
+    'about.bento.database': 'Data & Architecture',
+    'about.bento.database_desc': 'Database design, modeling and CI/CD pipelines.',
     
     // Skills
     'skills.title': 'Technical Skills',
@@ -45,13 +52,13 @@ const translations = {
     'experience.title': 'Work Experience',
     'experience.current': 'Present',
 
-    'experience.ideedutec.role' : 'Full Stack Developer',
-    'experience.ideedutec.company' : 'IDEEDUTEC',
-    'experience.ideedutec.period' : 'APRIL 2026 - Present',
-    'experience.ideedutec.desc1' : 'Modern Interface Development: Responsible for implementing complex dashboards and reporting systems using Next.js, TypeScript, and Chakra UI.',
-    'experience.ideedutec.desc2' : 'Analysis and Refactoring of Legacy Systems: Proactively identifying performance bottlenecks in legacy routes, proposing data processing migrations from the client-side to the server-side to optimize loading times and user experience.',
-    'experience.ideedutec.desc3' : 'Technical Collaboration: Direct interface with the Backend team for defining new API contracts and data architecture focused on Analytics.',
-    'experience.ideedutec.tech' : 'Technology Stack: React, Next.js, TypeScript, Chakra UI, Git/GitHub and integration with REST APIs for Frontend and Nest.js, Postgreesql, PrismaORM, Docker in the Backend.',
+    'experience.ideedutec.role': 'Full Stack Developer',
+    'experience.ideedutec.company': 'IDEEDUTEC',
+    'experience.ideedutec.period': 'APRIL 2026 - Present',
+    'experience.ideedutec.desc1': 'Modern Interface Development: Responsible for implementing complex dashboards and reporting systems using Next.js, TypeScript, and Chakra UI.',
+    'experience.ideedutec.desc2': 'Analysis and Refactoring of Legacy Systems: Proactively identifying performance bottlenecks in legacy routes, proposing data processing migrations from the client-side to the server-side to optimize loading times and user experience.',
+    'experience.ideedutec.desc3': 'Technical Collaboration: Direct interface with the Backend team for defining new API contracts and data architecture focused on Analytics.',
+    'experience.ideedutec.tech': 'Technology Stack: React, Next.js, TypeScript, Chakra UI, Git/GitHub, REST APIs, Nest.js, PostgreSQL, PrismaORM, and Docker.',
 
     'experience.monitor.role': 'Software Development Monitor (Web & Mobile)',
     'experience.monitor.company': 'Federal University of Ceará – UFC',
@@ -60,7 +67,7 @@ const translations = {
     'experience.monitor.desc2': 'Supported AI-driven development initiatives, instructing classes on using LLMs for refactoring and structuring modern architectures.',
     'experience.monitor.tech': 'Technologies: JavaScript, TypeScript, React.js, Node.js, Unit Testing, Clean Code, LLMs',
 
-    'experience.switchpay.role': 'Full Stack Developer Junior (Temporary)',
+    'experience.switchpay.role': 'Junior Full Stack Developer (Temporary)',
     'experience.switchpay.company': 'Switch Pay',
     'experience.switchpay.period': 'October 2025 - December 2025',
     'experience.switchpay.desc1': 'Developed features and fixed bugs in web applications using the JavaScript ecosystem and Java integrations.',
@@ -70,7 +77,7 @@ const translations = {
     'experience.brazil.role': 'Junior Front-End Developer',
     'experience.brazil.company': 'Brasil Cursinhos',
     'experience.brazil.period': 'February 2025 - February 2026',
-    'experience.brazil.desc1': 'Built modular front-end interfaces using JavaScript, HTML and CSS, applying componentization concepts essential for modern frameworks.',
+    'experience.brazil.desc1': 'Built modular front-end interfaces using JavaScript, HTML, and CSS, applying componentization concepts essential for modern frameworks.',
     'experience.brazil.desc2': 'Developed routines to consume REST APIs efficiently and in a structured way.',
     'experience.brazil.tech': 'Technologies: HTML, CSS, JavaScript, React.js, Next.js, TypeScript, TailwindCSS.',
 
@@ -100,34 +107,31 @@ const translations = {
     'projects.monemiitec.desc': 'A digital platform for the Agrotech sector, offering agrocomputing solutions for the public sector and connecting cutting-edge technology to the field.',
 
     'projects.convit3-digital.title': 'Convit3-digital',
-    'projects.convit3-digital.desc': 'Its an intuitive platform for creating and managing digital events. With it, you can track attendee RSVPs, see who confirmed or declined invitations, and organize all event details in one place.',
+    'projects.convit3-digital.desc': 'An intuitive platform for creating and managing digital events. Track attendee RSVPs, see who confirmed or declined invitations, and organize all event details in one place.',
 
     'projects.sysagua.title': 'Sys Água',
-    'projects.sysagua.desc': 'Development of a desktop system for inventory and sales control. Using Spring Boot to manage business logic and data persistence in PostgreSQL.',
+    'projects.sysagua.desc': 'Development of a desktop system for inventory and sales control. Uses Spring Boot to manage business logic and data persistence in PostgreSQL.',
 
     'projects.innovateacademytech.title': 'InnovateAcademyTech',
-    'projects.innovateacademytech.desc': 'API for course management.',
+    'projects.innovateacademytech.desc': 'REST API for course management.',
 
     'projects.ponte-pecem-ia-ret.title': 'Pecém Bridge: IA-RET (Audit and Selection Governance)',
-    'projects.ponte-pecem-ia-ret.desc': 'AI-RET (Regenerative Artificial Intelligence) acts as an impartial auditing agent. Unlike a conventional AI (LLM), it uses Operations Research (Integer Linear Programming) to select candidates. The algorithm maximizes the teams technical score (merit), respecting a strict governance constraint: the Anti-Nomination Lock, which limits the percentage of positions that can be filled by political appointment, forcing the prioritization of technical competence.',
+    'projects.ponte-pecem-ia-ret.desc': 'AI-RET (Regenerative Artificial Intelligence) acts as an impartial auditing agent. Unlike a conventional AI (LLM), it uses Operations Research (Integer Linear Programming) to select candidates. The algorithm maximizes the team\'s technical score (merit), respecting a strict governance constraint: the Anti-Nomination Lock, which limits the percentage of positions that can be filled by political appointment, forcing the prioritization of technical competence.',
 
     'projects.todolist.title': 'Todo List',
-    'projects.todolist.desc': 'API for managing tasks (CRUD) that is part of the challenge for junior backend developers, who apply to Simplify.',
+    'projects.todolist.desc': 'REST API for managing tasks (CRUD) that is part of the challenge for junior backend developers applying to Simplify.',
 
     'projects.investtrackapi.title': 'Invest Track API',
     'projects.investtrackapi.desc': 'RESTful API for aggregating and managing investment portfolios, developed with .NET 8 and C#.',
 
     'projects.bookfinderapi.title': 'Book Finder API',
-    'projects.bookfinderapi.desc': 'This is a .NET 8 Web API that searches for books by author using the Open Library API. It processes the results and stores them in a local SQL Server database. This project was developed as part of a technical assessment for the Junior Backend Developer position.',
+    'projects.bookfinderapi.desc': 'A .NET 8 Web API that searches for books by author using the Open Library API. It processes the results and stores them in a local SQL Server database. This project was developed as part of a technical assessment for the Junior Backend Developer position.',
 
-
-
-    'projects.candidatesapi.title' : 'CandidatesAPI',
-    'projects.candidatesapi.desc' : 'is a REST API developed to provide access to data related to candidacies, elections, parties, and visual analysis of this information.',
+    'projects.candidatesapi.title': 'Candidates API',
+    'projects.candidatesapi.desc': 'A REST API developed to provide access to data related to candidacies, elections, parties, and visual analysis of this information.',
 
     'projects.teste.title': 'Back-End Developer Internship Selection Process Test',
-    'projects.teste.desc': 'solve a series of challenges related to different areas of data engineering and software development. Challenges include web scraping in Java, data transformation in Java, and database manipulation in Postgres SQL, as well as developing an API with Vue.js and Python.',
-
+    'projects.teste.desc': 'Solved a series of challenges related to different areas of data engineering and software development. Challenges include web scraping in Java, data transformation in Java, and database manipulation in PostgreSQL, as well as developing an API with Vue.js and Python.',
 
     'projects.sylopay.title': 'Sylopay',
     'projects.sylopay.desc': 'A Buy Now, Pay Later (BNPL) platform built on the Stellar blockchain, enabling instant merchant settlements. Built core Back-End infrastructure using NestJS, Stellar SDK, PostgreSQL, and Docker.',
@@ -169,7 +173,7 @@ const translations = {
     
     // Contact
     'contact.title': 'Get In Touch',
-    'contact.description': 'I\m always open to discussing new projects, creative ideas or opportunities to be part of your visions.',
+    'contact.description': 'I\'m always open to discussing new projects, creative ideas or opportunities to be part of your visions.',
     'contact.email': 'Email',
     'contact.phone': 'Phone',
     'contact.form.name': 'Name',
@@ -221,7 +225,15 @@ const translations = {
     
     // About
     'about.title': 'Sobre Mim',
-    'about.summary': 'Nascido no interior de Passagem Funda (CE), minha jornada na tecnologia começou cedo. Dei meus primeiros passos como desenvolvedor no curso técnico de Informática em Aracoiaba, criando sites com HTML, PHP e Java. Hoje, curso Engenharia de Software na Universidade Federal do Ceará (UFC) em Quixadá. Sou cristão da Assembleia de Deus Templo Central, apaixonado por jogos e movido pelo desafio de construir soluções reais. Valorizo raízes fortes e código limpo.',
+    'about.summary': 'Nascido no interior de Passagem Funda (CE), minha jornada na tecnologia começou cedo. Dei meus primeiros passos como desenvolvedor no curso técnico em Informática em Aracoiaba, criando sites com HTML, PHP e Java. Hoje, curso Engenharia de Software na Universidade Federal do Ceará (UFC) em Quixadá. Sou cristão da Assembleia de Deus Templo Central, apaixonado por jogos e movido pelo desafio de construir soluções reais. Valorizo raízes fortes e código limpo.',
+    'about.bento.backend': 'Backend & APIs',
+    'about.bento.backend_desc': 'Arquiteturas escaláveis com Java, Spring Boot e Node.js.',
+    'about.bento.web3': 'Web3 & Blockchain',
+    'about.bento.web3_desc': 'Smart Contracts e integrações na Stellar e SUI.',
+    'about.bento.frontend': 'Frontend Moderno',
+    'about.bento.frontend_desc': 'Interfaces interativas com React, Next.js e Tailwind CSS.',
+    'about.bento.database': 'Dados & Arquitetura',
+    'about.bento.database_desc': 'Modelagem de dados, bancos relacionais e pipelines CI/CD.',
     
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -236,13 +248,13 @@ const translations = {
     'experience.title': 'Experiência Profissional',
     'experience.current': 'Presente',
 
-    'experience.ideedutec.role' : 'Desenvolvedor Full Stack',
-    'experience.ideedutec.company' : 'IDEEDUTEC',
-    'experience.ideedutec.period' : 'Abril 2026 - Presente',
-    'experience.ideedutec.desc1' : ' Desenvolvimento de Interfaces Modernas: Responsável pela implementação de Dashboards complexos e sistemas de relatórios utilizando Next.js, TypeScript e Chakra UI.',
-    'experience.ideedutec.desc2' : 'Análise e Refatoração de Sistemas Legados: Atuação proativa na identificação de gargalos de performance em rotas legadas, propondo migrações de processamento de dados do Client-side para o Server-side para otimizar o tempo de carregamento e a experiência do usuário.',
-    'experience.ideedutec.desc3' : 'Colaboração Técnica: Interface direta com a equipe de Backend para definição de novos contratos de API e arquitetura de dados voltada para Analytics.',
-    'experience.ideedutec.tech' : 'Stack Tecnológica: React, Next.js, TypeScript, Chakra UI, Git/GitHub e integração com APIs REST pro Frontend e Nest.js, Postgreesql, PrismaORM, Docker no Backend.',
+    'experience.ideedutec.role': 'Desenvolvedor Full Stack',
+    'experience.ideedutec.company': 'IDEEDUTEC',
+    'experience.ideedutec.period': 'Abril 2026 - Presente',
+    'experience.ideedutec.desc1': 'Desenvolvimento de Interfaces Modernas: Responsável pela implementação de Dashboards complexos e sistemas de relatórios utilizando Next.js, TypeScript e Chakra UI.',
+    'experience.ideedutec.desc2': 'Análise e Refatoração de Sistemas Legados: Atuação proativa na identificação de gargalos de performance em rotas legadas, propondo migrações de processamento de dados do Client-side para o Server-side para otimizar o tempo de carregamento e a experiência do usuário.',
+    'experience.ideedutec.desc3': 'Colaboração Técnica: Interface direta com a equipe de Backend para definição de novos contratos de API e arquitetura de dados voltada para Analytics.',
+    'experience.ideedutec.tech': 'Stack Tecnológica: React, Next.js, TypeScript, Chakra UI, Git/GitHub, APIs REST, Nest.js, PostgreSQL, PrismaORM e Docker.',
 
     'experience.monitor.role': 'Monitor de Desenvolvimento de Software (Web e Mobile)',
     'experience.monitor.company': 'Universidade Federal do Ceará – UFC',
@@ -265,7 +277,7 @@ const translations = {
     'experience.brazil.desc2': 'Desenvolvi rotinas para consumir APIs REST de forma eficiente e estruturada.',
     'experience.brazil.tech': 'Tecnologias: HTML, CSS, JavaScript, React.js, Next.js, TypeScript, TailwindCSS.',
 
-    'experience.lucrei.role': 'Estagiário de T.I',
+    'experience.lucrei.role': 'Estagiário de T.I.',
     'experience.lucrei.company': 'Lucrei Cash Back',
     'experience.lucrei.period': 'Setembro 2021 - Dezembro 2021',
     'experience.lucrei.desc1': 'Criei e executei testes rigorosos em serviços web e contribuí ativamente com a documentação técnica das soluções da empresa.',
@@ -285,32 +297,31 @@ const translations = {
     'projects.filters.dotnet': '.NET',
 
     'projects.chainmed.title': 'ChainMed',
-    'projects.chainmed.desc': 'ChainMed revoluciona a forma como médicos prescrevem e pacientes gerenciam seus medicamentos, tudo com a segurança e imutabilidade da tecnologia blockchain.',
+    'projects.chainmed.desc': 'O ChainMed revoluciona a forma como médicos prescrevem e pacientes gerenciam seus medicamentos, tudo com a segurança e imutabilidade da tecnologia blockchain.',
 
     'projects.monemiitec.title': 'Monemii Tec',
     'projects.monemiitec.desc': 'Uma plataforma digital para o setor Agrotech, que apresenta soluções de agrocomputação para o setor público e conecta tecnologia de ponta ao campo.',
 
-
     'projects.convit3-digital.title': 'Convit3-digital',
-    'projects.convit3-digital.desc': 'É uma plataforma intuitiva para criar e gerenciar eventos digitais. Com ela, você pode acompanhar as confirmações de presença dos participantes, ver quem confirmou ou recusou convites e organizar todos os detalhes do evento em um só lugar.',
+    'projects.convit3-digital.desc': 'Uma plataforma intuitiva para criar e gerenciar eventos digitais. Com ela, você pode acompanhar as confirmações de presença dos participantes, ver quem confirmou ou recusou convites e organizar todos os detalhes do evento em um só lugar.',
 
     'projects.innovateacademytech.title': 'InnovateAcademyTech',
-    'projects.innovateacademytech.desc': 'API para gerenciamento de cursos.',
+    'projects.innovateacademytech.desc': 'API REST para gerenciamento de cursos.',
 
     'projects.todolist.title': 'Todo List',
-    'projects.todolist.desc': 'API para gerenciamento de tarefas (CRUD) que faz parte do desafio para desenvolvedores backend juniores que se candidatam ao Simplify.',
+    'projects.todolist.desc': 'API REST para gerenciamento de tarefas (CRUD) que faz parte do desafio para desenvolvedores backend juniores que se candidatam ao Simplify.',
 
     'projects.investtrackapi.title': 'Invest Track API',
     'projects.investtrackapi.desc': 'API RESTful para agregar e gerenciar portfólios de investimentos, desenvolvida com .NET 8 e C#.',
 
     'projects.bookfinderapi.title': 'Book Finder API',
-    'projects.bookfinderapi.desc': 'Esta é uma API Web .NET 8 que busca livros por autor usando a Open Library API. Ela processa os resultados e os armazena em um banco de dados SQL Server local. Este projeto foi desenvolvido como parte de uma avaliação técnica para a vaga de Desenvolvedor Backend Júnior.',
+    'projects.bookfinderapi.desc': 'Uma API Web .NET 8 que busca livros por autor usando a Open Library API. Ela processa os resultados e os armazena em um banco de dados SQL Server local. Este projeto foi desenvolvido como parte de uma avaliação técnica para a vaga de Desenvolvedor Backend Júnior.',
 
-    'projects.candidatesapi.title' : 'CandidatesAPI',
-    'projects.candidatesapi.desc' : 'é uma API REST desenvolvida para fornecer acesso a dados relacionados a candidaturas, eleições, partidos e análise visual dessas informações.',
+    'projects.candidatesapi.title': 'Candidates API',
+    'projects.candidatesapi.desc': 'Uma API REST desenvolvida para fornecer acesso a dados relacionados a candidaturas, eleições, partidos e análise visual dessas informações.',
 
-    'projects.teste.title': 'Back-End Developer Internship Selection Process Test',
-    'projects.teste.desc': 'Resolver uma série de desafios relacionados a diferentes áreas da engenharia de dados e desenvolvimento de software. Os desafios incluem web scraping em Java, transformação de dados em Java e manipulação de banco de dados em PostgreSQL, além de desenvolver uma API com Vue.js e Python.',
+    'projects.teste.title': 'Teste de Processo Seletivo para Estágio Backend',
+    'projects.teste.desc': 'Resolução de uma série de desafios relacionados a diferentes áreas da engenharia de dados e desenvolvimento de software. Os desafios incluem web scraping em Java, transformação de dados em Java e manipulação de banco de dados em PostgreSQL, além do desenvolvimento de uma API com Vue.js e Python.',
 
     'projects.ponte-pecem-ia-ret.title': 'Ponte do Pecém: IA-RET (Auditoria e Governança de Seleção)',
     'projects.ponte-pecem-ia-ret.desc': 'A IA-RET (Inteligência Artificial Regenerativa) atua como um agente de auditoria imparcial. Ao contrário de uma IA convencional (LLM), ela utiliza Pesquisa Operacional (Programação Linear Inteira) para selecionar candidatos. O algoritmo maximiza a pontuação técnica (mérito) das equipes, respeitando uma restrição de governança rigorosa: o Bloqueio Anti-Nomeação, que limita a porcentagem de cargos que podem ser preenchidos por indicação política, forçando a priorização da competência técnica.',
@@ -320,18 +331,18 @@ const translations = {
     
     'projects.kyra.title': 'Kyra Finance',
     'projects.kyra.desc': 'Um agente de IA que analisa estratégias DeFi e recomenda combinações ideais dentro do ecossistema SUI. Projetei e implementei a lógica Back-End para análise de dados e integrações on-chain.',
+    
     'projects.heather.title': 'Heather AI Finance',
-    'projects.heather.desc': 'Um assistente educacional alimentado por IA para o XRP Ledger, orientando usuários não técnicos através das ferramentas XRPL. Projetei o esquema do banco de dados e modelo de dados para interações IA-usuário.',
+    'projects.heather.desc': 'Um assistente educacional alimentado por IA para o XRP Ledger, orientando usuários não técnicos através das ferramentas XRPL. Projetei o esquema do banco de dados e o modelo de dados para interações IA-usuário.',
     
     'projects.btg.title': 'Desafio BTG Pactual',
     'projects.btg.desc': 'Desenvolvimento de um microsserviço com Java e Spring Boot para processamento assíncrono de pedidos via RabbitMQ. Implementação de API RESTful para consulta de relatórios e persistência de dados em MongoDB.',
     
     'projects.sysagua.title': 'Sys Água',
-    'projects.sysagua.desc': 'Desenvolvimento de um sistema desktop para controle de estoque e vendas. Usando Spring Boot para gerenciar lógica de negócios e persistência de dados em PostgreSQL.',
+    'projects.sysagua.desc': 'Desenvolvimento de um sistema desktop para controle de estoque e vendas, utilizando Spring Boot para gerenciar a lógica de negócios e a persistência de dados em PostgreSQL.',
 
-    'projects.contratobiblia.title': 'Contrato Biblia',
+    'projects.contratobiblia.title': 'Contrato Bíblia',
     'projects.contratobiblia.desc': 'Uma biblioteca Rust para um contrato inteligente no blockchain Stellar (Soroban) focada em uma aplicação social e de estudo bíblico.',
-
 
     // Hackathons
     'hackathons.badge': 'Competições & Inovação',
@@ -348,7 +359,7 @@ const translations = {
     'education.degree': 'Bacharelado em Engenharia de Software',
     'education.university': 'Universidade Federal do Ceará - UFC',
     'education.graduation': '2022 - Previsão: Dezembro de 2027',
-    'education.technical': 'Curso Técnico de Nível Médio em Informática',
+    'education.technical': 'Curso Técnico em Informática',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
     'education.completed': '2019 - 2021',
     'education.languages': 'Idiomas',
@@ -379,10 +390,8 @@ const translations = {
     'contact.form.error.min': 'Deve ter pelo menos {count} caracteres.',
     'contact.form.error.email': 'Email inválido.',
     'contact.form.error.subject': 'Por favor, selecione um assunto.',
-    'contact.form.error.message':
-      'A mensagem deve ter pelo menos {count} caracteres.',
-    'contact.form.error.submit':
-      'Erro ao enviar a mensagem. Tente novamente.',
+    'contact.form.error.message': 'A mensagem deve ter pelo menos {count} caracteres.',
+    'contact.form.error.submit': 'Erro ao enviar a mensagem. Tente novamente.',
 
     // Footer
     'footer.tagline': 'Desenvolvedor Full Stack & entusiasta Web3 construindo soluções robustas e escaláveis.',
@@ -413,6 +422,14 @@ const translations = {
     // About
     'about.title': 'Sobre mí',
     'about.summary': 'Nacido en el interior de Passagem Funda, Ceará (Brasil), mi viaje en la tecnología comenzó temprano. Di mis primeros pasos como desarrollador en mi curso técnico en Aracoiaba, creando sitios web con HTML, PHP y Java. Hoy, estudio Ingeniería de Software en la Universidad Federal de Ceará (UFC) en Quixadá. Soy cristiano de la Assembleia de Deus Templo Central, un apasionado por los juegos y motivado por el desafío de construir soluciones reales. Valoro las raíces fuertes y el código limpio.',
+    'about.bento.backend': 'Backend & APIs',
+    'about.bento.backend_desc': 'Arquitecturas escalables con Java, Spring Boot y Node.js.',
+    'about.bento.web3': 'Web3 & Blockchain',
+    'about.bento.web3_desc': 'Smart Contracts e integraciones en Stellar y SUI.',
+    'about.bento.frontend': 'Frontend Moderno',
+    'about.bento.frontend_desc': 'Interfaces interactivas con React, Next.js y Tailwind CSS.',
+    'about.bento.database': 'Datos y Arquitectura',
+    'about.bento.database_desc': 'Diseño de bases de datos, modelado y pipelines CI/CD.',
 
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -427,13 +444,13 @@ const translations = {
     'experience.title': 'Experiencia Profesional',
     'experience.current': 'Presente',
 
-      'experience.ideedutec.role' : 'Desarrollador Full Stack',
-    'experience.ideedutec.company' : 'IDEEDUTEC',
-    'experience.ideedutec.period' : 'Abril 2026 - Presente',
-    'experience.ideedutec.desc1' : 'Desarrollo de interfaces modernas: Responsable de la implementación de paneles de control y sistemas de informes complejos utilizando Next.js, TypeScript y Chakra UI.',
-    'experience.ideedutec.desc2' : 'Análise e Refatoração de Sistemas Legados: Atuação proativa na identificação de gargalos de performance em rotas legadas, propondo migrações de processamento de dados do Client-side para o Server-side para otimizar o tempo de carregamento e a experiência do usuário.',
-    'experience.ideedutec.desc3' : 'Colaboración técnica: Interfaz directa con el equipo de backend para definir nuevos contratos de API y arquitectura de datos centrada en análisis.',
-    'experience.ideedutec.tech' : 'Tecnologías utilizadas: React, Next.js, TypeScript, Chakra UI, Git/GitHub e integración con API REST para el frontend y Nest.js, PostgreSQL, PrismaORM y Docker en el backend.',
+    'experience.ideedutec.role': 'Desarrollador Full Stack',
+    'experience.ideedutec.company': 'IDEEDUTEC',
+    'experience.ideedutec.period': 'Abril 2026 - Presente',
+    'experience.ideedutec.desc1': 'Desarrollo de interfaces modernas: Responsable de la implementación de paneles de control y sistemas de informes complejos utilizando Next.js, TypeScript y Chakra UI.',
+    'experience.ideedutec.desc2': 'Análisis y refactorización de sistemas heredados: Actuación proactiva en la identificación de cuellos de botella de rendimiento en rutas heredadas, proponiendo migraciones de procesamiento de datos del lado del cliente al lado del servidor para optimizar el tiempo de carga y la experiencia del usuario.',
+    'experience.ideedutec.desc3': 'Colaboración técnica: Interfaz directa con el equipo de backend para definir nuevos contratos de API y arquitectura de datos centrada en análisis.',
+    'experience.ideedutec.tech': 'Tecnologías utilizadas: React, Next.js, TypeScript, Chakra UI, Git/GitHub, APIs REST, Nest.js, PostgreSQL, PrismaORM y Docker.',
 
     'experience.monitor.role': 'Monitor de Desarrollo de Software (Web y Mobile)',
     'experience.monitor.company': 'Universidad Federal de Ceará – UFC',
@@ -482,19 +499,19 @@ const translations = {
     'projects.monemiitec.desc': 'Una plataforma digital para el sector Agrotech, que ofrece soluciones de agrocomputación para el sector público y conecta tecnología de punta con el campo.',
 
     'projects.convit3-digital.title': 'Convit3-digital',
-    'projects.convit3-digital.desc': 'Es una plataforma intuitiva para crear y gestionar eventos digitales. Con ella, puedes rastrear confirmaciones de asistencia, ver quién confirmó o rechazó invitaciones y organizar todos los detalles del evento en un solo lugar.',
+    'projects.convit3-digital.desc': 'Una plataforma intuitiva para crear y gestionar eventos digitales. Con ella, puedes rastrear confirmaciones de asistencia, ver quién confirmó o rechazó invitaciones y organizar todos los detalles del evento en un solo lugar.',
 
     'projects.sysagua.title': 'Sys Água',
-    'projects.sysagua.desc': 'Desarrollo de un sistema de escritorio para control de inventario y ventas. Usando Spring Boot para gestionar la lógica de negocio y persistencia de datos en PostgreSQL.',
+    'projects.sysagua.desc': 'Desarrollo de un sistema de escritorio para control de inventario y ventas, utilizando Spring Boot para gestionar la lógica de negocio y persistencia de datos en PostgreSQL.',
 
     'projects.innovateacademytech.title': 'InnovateAcademyTech',
-    'projects.innovateacademytech.desc': 'API para gestión de cursos.',
+    'projects.innovateacademytech.desc': 'API REST para gestión de cursos.',
 
     'projects.ponte-pecem-ia-ret.title': 'Puente Pecém: IA-RET (Gobernanza de Auditoría y Selección)',
     'projects.ponte-pecem-ia-ret.desc': 'La IA-RET actúa como agente de auditoría imparcial, usando Investigación Operativa (Programación Lineal Entera) para seleccionar candidatos maximizando el mérito técnico del equipo bajo restricciones de gobernanza.',
 
     'projects.todolist.title': 'Todo List',
-    'projects.todolist.desc': 'API para gestión de tareas (CRUD), parte del desafío para desarrolladores backend junior que aplican en Simplify.',
+    'projects.todolist.desc': 'API REST para gestión de tareas (CRUD), parte del desafío para desarrolladores backend junior que aplican en Simplify.',
 
     'projects.investtrackapi.title': 'Invest Track API',
     'projects.investtrackapi.desc': 'API RESTful para agregar y gestionar portafolios de inversión, desarrollada con .NET 8 y C#.',
@@ -502,11 +519,11 @@ const translations = {
     'projects.bookfinderapi.title': 'Book Finder API',
     'projects.bookfinderapi.desc': 'API Web .NET 8 que busca libros por autor usando la Open Library API. Procesa resultados y los almacena en una base de datos SQL Server local.',
 
-    'projects.candidatesapi.title': 'CandidatesAPI',
-    'projects.candidatesapi.desc': 'API REST desarrollada para proveer acceso a datos relacionados con candidaturas, elecciones, partidos y análisis visual de esa información.',
+    'projects.candidatesapi.title': 'Candidates API',
+    'projects.candidatesapi.desc': 'Una API REST desarrollada para proveer acceso a datos relacionados con candidaturas, elecciones, partidos y análisis visual de esa información.',
 
     'projects.teste.title': 'Prueba de Proceso de Selección para Pasante Backend',
-    'projects.teste.desc': 'Resolver desafíos de ingeniería de datos y desarrollo de software: web scraping en Java, transformación de datos en Java, manipulación de base de datos en PostgreSQL, y API con Vue.js y Python.',
+    'projects.teste.desc': 'Resolución de desafíos de ingeniería de datos y desarrollo de software: web scraping en Java, transformación de datos en Java, manipulación de base de datos en PostgreSQL, y desarrollo de una API con Vue.js y Python.',
 
     'projects.sylopay.title': 'Sylopay',
     'projects.sylopay.desc': 'Plataforma Buy Now, Pay Later (BNPL) construida en la blockchain Stellar, permitiendo liquidaciones instantáneas para comerciantes. Construí la infraestructura Back-End principal con NestJS, Stellar SDK, PostgreSQL y Docker.',
@@ -538,7 +555,7 @@ const translations = {
     'education.degree': 'Licenciatura en Ingeniería de Software',
     'education.university': 'Universidad Federal de Ceará - UFC',
     'education.graduation': '2022 - Previsto: Diciembre 2027',
-    'education.technical': 'Curso Técnico de Nivel Medio en Informática',
+    'education.technical': 'Curso Técnico en Informática',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
     'education.completed': '2019 - 2021',
     'education.languages': 'Idiomas',

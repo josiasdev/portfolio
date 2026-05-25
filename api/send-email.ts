@@ -34,7 +34,7 @@ export default async function handler(
 
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: ['JBDevSoftware@proton.me'],
+      to: ['josiasmartins098@gmail.com'],
       subject: `Nova Mensagem do Portfólio: ${subject}`,
 
       replyTo: email,
