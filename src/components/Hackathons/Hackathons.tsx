@@ -1,8 +1,7 @@
-import { useState, useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ExternalLink, Github, Trophy, Calendar, MapPin } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 type Hackathon = {
   id: string;
@@ -19,112 +18,75 @@ type Hackathon = {
 
 const HackathonCard = ({ hackathon, index }: { hackathon: Hackathon; index: number }) => {
   const { t } = useLanguage();
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setMousePos({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 });
-    setTilt({
-      x: ((y - rect.height / 2) / (rect.height / 2)) * -7,
-      y: ((x - rect.width / 2) / (rect.width / 2)) * 7,
-    });
-  };
+  const MAX_TAGS = 3;
+  const visibleTags = hackathon.tags.slice(0, MAX_TAGS);
+  const hiddenTagsCount = hackathon.tags.length - MAX_TAGS;
 
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => { setTilt({ x: 0, y: 0 }); setIsHovered(false); }}
-      onMouseEnter={() => setIsHovered(true)}
-      className="animate-scale-in flex flex-col"
+      className="animate-fade-in flex flex-col group h-full"
       style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div
-        style={{
-          transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "translateY(-5px)" : "translateY(0)"}`,
-          transition: isHovered ? "transform 0.12s ease-out" : "transform 0.45s ease-out",
-          transformStyle: "preserve-3d",
-        }}
-        className={`
-          relative flex flex-col flex-1 p-6 rounded-xl border overflow-hidden h-full
-          border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm
-          ${isHovered ? "shadow-glow" : "shadow-card"}
-          transition-shadow duration-300
-        `}
-      >
-        {isHovered && (
-          <div
-            className="absolute inset-0 pointer-events-none rounded-xl"
-            style={{
-              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, hsl(var(--primary) / 0.1), transparent 65%)`,
-            }}
-          />
-        )}
-
-        <div className="space-y-4 flex-1 relative z-10">
-          <div className="flex justify-between items-start gap-4">
-            <div>
-              <h3
-                className="text-xl font-bold transition-colors duration-200"
-                style={{ color: isHovered ? "hsl(var(--primary))" : undefined }}
-              >
-                {hackathon.name}
-              </h3>
-              <p className="text-primary font-medium mt-1">Projeto: {hackathon.projectName}</p>
-            </div>
+      <div className="relative flex flex-col flex-1 p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 overflow-hidden hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle backdrop-blur-sm">
+        
+        <div className="space-y-4 flex-1 relative z-10 flex flex-col">
+          <div className="flex flex-col gap-1">
+            <h3 className="text-xl md:text-2xl font-bold font-serif group-hover:text-primary transition-colors duration-200">
+              {hackathon.name}
+            </h3>
+            <p className="text-sm font-medium text-primary uppercase tracking-widest mt-1">Projeto: {hackathon.projectName}</p>
           </div>
 
           {hackathon.award && (
-            <div className="flex items-center gap-2 text-amber-500 dark:text-amber-400 font-semibold bg-amber-500/10 w-fit px-3 py-1.5 rounded-full text-sm">
-              <Trophy className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-amber-500 dark:text-amber-400 font-semibold bg-amber-500/10 border border-amber-500/20 w-fit px-3 py-1.5 rounded-full text-xs">
+              <Trophy className="h-3.5 w-3.5" />
               {hackathon.award}
             </div>
           )}
 
-          <div className="flex flex-col gap-1.5 text-sm text-muted-foreground mb-3">
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4 opacity-70" />
+          <div className="flex flex-col gap-2 text-xs font-semibold text-muted-foreground my-2">
+            <div className="flex items-center gap-2 bg-background/50 border border-border/40 px-3 py-1.5 rounded-full w-fit">
+              <Calendar className="h-3.5 w-3.5 opacity-70" />
               {hackathon.date}
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 opacity-70" />
+            <div className="flex items-center gap-2 bg-background/50 border border-border/40 px-3 py-1.5 rounded-full w-fit">
+              <MapPin className="h-3.5 w-3.5 opacity-70" />
               {hackathon.location}
             </div>
           </div>
 
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed flex-1 mt-2">
             {hackathon.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 pt-2">
-            {hackathon.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors cursor-default">
+          <div className="flex flex-wrap gap-2 pt-4 border-t border-border/40 mt-4">
+            {visibleTags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs hover:bg-primary/10 transition-colors cursor-default border-border/40 bg-secondary/50">
                 {tag}
               </Badge>
             ))}
+            {hiddenTagsCount > 0 && (
+              <Badge variant="outline" className="text-xs text-muted-foreground border-border/40">
+                +{hiddenTagsCount}
+              </Badge>
+            )}
           </div>
         </div>
 
-        <div className="flex gap-3 pt-4 mt-4 border-t border-border/40 relative z-10">
+        <div className="flex gap-3 pt-6 relative z-10 mt-auto">
           {hackathon.github && (
-            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary hover:text-primary transition-all">
+            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold h-9 rounded-full">
               <a href={hackathon.github} target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4 mr-2" />
+                <Github className="h-3.5 w-3.5 mr-2" />
                 {t('projects.viewCode')}
               </a>
             </Button>
           )}
           {hackathon.demo && (
-            <Button size="sm" asChild className="flex-1 bg-gradient-primary hover:opacity-90 transition-all">
+            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold h-9 rounded-full">
               <a href={hackathon.demo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4 mr-2" />
+                <ExternalLink className="h-3.5 w-3.5 mr-2" />
                 {t('projects.viewDemo')}
               </a>
             </Button>
@@ -178,24 +140,25 @@ const Hackathons = () => {
   ];
 
   return (
-    <section id="hackathons" className="py-20 relative overflow-hidden bg-muted/30">
-      <div className="absolute top-40 left-0 w-72 h-72 rounded-full bg-amber-500/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+    <section id="hackathons" className="py-20 relative overflow-hidden bg-muted/20 border-y border-border/40">
+      <div className="absolute top-40 left-0 w-80 h-80 rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center justify-center mb-12 animate-fade-in">
-          <Badge variant="outline" className="mb-4 px-3 py-1 border-primary/50 text-primary">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="flex flex-col items-center justify-center mb-16 animate-fade-in">
+          <Badge variant="outline" className="mb-4 px-4 py-1.5 border-primary/30 text-primary bg-primary/5 text-xs font-bold tracking-widest uppercase">
             {t('hackathons.badge')}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold font-serif text-center mb-4">
             {t('hackathons.title')}
           </h2>
+          <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full opacity-80 mb-6" />
           <p className="text-center text-muted-foreground max-w-2xl">
             {t('hackathons.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {hackathons.map((hackathon, index) => (
             <HackathonCard key={hackathon.id} hackathon={hackathon} index={index} />
           ))}
