@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.jpg";
 
@@ -49,7 +49,7 @@ const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], spe
 };
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -131,7 +131,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 flex-wrap">
             <Button
               size="lg"
               className="w-full sm:w-auto h-12 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-subtle hover:shadow-glow rounded-full"
@@ -146,6 +146,17 @@ const Hero = () => {
               onClick={() => scrollToSection('contact')}
             >
               {t('hero.contact')}
+            </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
+              className="w-full sm:w-auto h-12 px-8 text-base border border-border/40 hover:border-primary/40 bg-secondary/50 hover:bg-secondary transition-all duration-300 rounded-full"
+            >
+              <a href={`/cv-${language}.pdf`} download={`Josias_Batista_CV_${language.toUpperCase()}.pdf`}>
+                <FileText className="mr-2 h-4 w-4" />
+                {t('hero.downloadCV')}
+              </a>
             </Button>
           </div>
 

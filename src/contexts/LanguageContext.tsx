@@ -26,6 +26,7 @@ const translations = {
     'hero.location': 'Quixadá - Ceará, Brazil',
     'hero.cta': 'View Projects',
     'hero.contact': 'Contact Me',
+    'hero.downloadCV': 'Download CV',
     
     // About
     'about.title': 'About Me',
@@ -222,6 +223,7 @@ const translations = {
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Projetos',
     'hero.contact': 'Entre em Contato',
+    'hero.downloadCV': 'Baixar Currículo',
     
     // About
     'about.title': 'Sobre Mim',
@@ -418,6 +420,7 @@ const translations = {
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Proyectos',
     'hero.contact': 'Contáctame',
+    'hero.downloadCV': 'Descargar CV',
 
     // About
     'about.title': 'Sobre mí',
