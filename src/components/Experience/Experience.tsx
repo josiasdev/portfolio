@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Briefcase, Calendar, ChevronRight, GraduationCap } from "lucide-react";
 
@@ -12,127 +11,93 @@ type Experience = {
   isCurrent?: boolean;
 };
 
-const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -6;
-    const rotateY = ((x - centerX) / centerX) * 6;
-    setTilt({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-    setIsHovered(false);
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
+const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number; isLast: boolean }) => {
   return (
     <div
-      className="relative pl-8 md:pl-12 animate-fade-in"
+      className="relative pl-8 md:pl-12 animate-fade-in group"
       style={{ animationDelay: `${index * 0.15}s` }}
     >
       {/* Timeline dot */}
-      <div className="absolute left-0 top-6 flex flex-col items-center">
+      <div className="absolute left-0 top-8 flex flex-col items-center z-20">
         <div
-          className={`w-4 h-4 rounded-full border-2 z-10 transition-all duration-300 ${
+          className={`w-4 h-4 rounded-full border-[3px] transition-all duration-300 ${
             exp.isCurrent
-              ? "bg-primary border-primary shadow-[0_0_10px_hsl(var(--primary)/0.6)]"
+              ? "bg-background border-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]"
               : exp.isAcademic
-              ? "bg-accent border-accent"
-              : "bg-muted-foreground/40 border-muted-foreground/40"
+              ? "bg-background border-accent"
+              : "bg-background border-muted-foreground/40 group-hover:border-primary/50 group-hover:scale-110"
           }`}
         />
       </div>
 
-      {/* Card with 3D tilt */}
+      {/* Connecting Line */}
+      {!isLast && (
+        <div className="absolute left-[7px] top-12 bottom-[-32px] w-[2px] bg-gradient-to-b from-border/80 via-border/40 to-transparent z-10" />
+      )}
+
+      {/* Card */}
       <div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
-        style={{
-          transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "translateY(-4px)" : "translateY(0)"}`,
-          transition: isHovered ? "transform 0.1s ease-out" : "transform 0.4s ease-out",
-          transformStyle: "preserve-3d",
-        }}
-        className={`relative rounded-xl border p-6 backdrop-blur-sm cursor-default overflow-hidden
+        className={`relative rounded-3xl border p-6 md:p-8 overflow-hidden transition-all duration-300
           ${exp.isAcademic
-            ? "border-accent/40 bg-accent/5 dark:bg-accent/10"
-            : "border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95"
+            ? "border-accent/20 bg-accent/5 hover:bg-accent/10 hover:border-accent/40"
+            : "border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/50 dark:hover:bg-card/20 hover:border-primary/30 hover:shadow-subtle backdrop-blur-sm"
           }
-          ${isHovered ? "shadow-glow" : "shadow-card"}
         `}
       >
-        {/* Shimmer overlay */}
-        {isHovered && (
-          <div
-            className="absolute inset-0 pointer-events-none rounded-xl opacity-20"
-            style={{
-              background: `radial-gradient(circle at ${50}% ${50}%, hsl(var(--primary) / 0.3), transparent 70%)`,
-            }}
-          />
-        )}
-
-        {/* 3D floating accent on current job */}
+        {/* Current job badge */}
         {exp.isCurrent && (
-          <span
-            className="absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/15 text-primary border border-primary/30 animate-pulse"
-            style={{ transform: "translateZ(20px)" }}
-          >
-            ATUAL
+          <span className="absolute top-6 right-6 text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full uppercase bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
+            Atual
           </span>
         )}
 
-        <div className="space-y-4">
+        <div className="space-y-5 relative z-10">
           {/* Header */}
-          <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 md:gap-4 pr-16">
             <div className="space-y-1.5">
-              <div className="flex items-center gap-2">
-                {exp.isAcademic ? (
-                  <GraduationCap className="h-4 w-4 text-accent flex-shrink-0" />
-                ) : (
-                  <Briefcase className="h-4 w-4 text-primary flex-shrink-0" />
-                )}
-                <h3 className="text-lg font-bold leading-tight">{exp.role}</h3>
+              <div className="flex items-center gap-3">
+                <div className={`p-2 rounded-xl ${exp.isAcademic ? "bg-accent/10" : "bg-primary/10"}`}>
+                  {exp.isAcademic ? (
+                    <GraduationCap className="h-5 w-5 text-accent" />
+                  ) : (
+                    <Briefcase className="h-5 w-5 text-primary" />
+                  )}
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold font-serif tracking-tight group-hover:text-primary transition-colors">{exp.role}</h3>
               </div>
-              <p className={`text-sm font-semibold ${exp.isAcademic ? "text-accent" : "text-primary"}`}>
+              <p className={`text-base font-medium pl-12 ${exp.isAcademic ? "text-accent/90" : "text-muted-foreground"}`}>
                 {exp.company}
               </p>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-secondary/80 px-3 py-1.5 rounded-full flex-shrink-0">
-              <Calendar className="h-3.5 w-3.5" />
-              <span>{exp.period}</span>
-            </div>
+          </div>
+          
+          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground bg-background/50 border border-border/40 px-3 py-1.5 rounded-full w-fit">
+            <Calendar className="h-3.5 w-3.5" />
+            <span>{exp.period}</span>
           </div>
 
           {/* Bullet descriptions */}
-          <ul className="space-y-2">
+          <ul className="space-y-3 mt-4">
             {exp.descriptions.map((desc, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
-                <ChevronRight className={`h-4 w-4 flex-shrink-0 mt-0.5 ${exp.isAcademic ? "text-accent" : "text-primary"}`} />
-                <span>{desc}</span>
+              <li key={i} className="flex items-start gap-3 text-sm text-foreground/80 leading-relaxed">
+                <ChevronRight className={`h-4 w-4 flex-shrink-0 mt-0.5 opacity-60 ${exp.isAcademic ? "text-accent" : "text-primary"}`} />
+                <span className="flex-1">{desc}</span>
               </li>
             ))}
           </ul>
 
           {/* Tech stack */}
           {exp.tech && (
-            <p className={`text-xs font-medium pt-1 border-t border-border/40 ${exp.isAcademic ? "text-accent/80" : "text-primary/80"}`}>
-              {exp.tech}
-            </p>
+            <div className="pt-5 mt-2 border-t border-border/40">
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Tecnologias Utilizadas</p>
+              <div className="flex flex-wrap gap-2">
+                {exp.tech.split(',').map((tech, i) => (
+                  <span key={i} className={`text-xs px-2.5 py-1 rounded-md border ${exp.isAcademic ? "border-accent/20 bg-accent/5 text-accent" : "border-primary/20 bg-primary/5 text-primary"}`}>
+                    {tech.trim()}
+                  </span>
+                ))}
+              </div>
+            </div>
           )}
         </div>
       </div>
@@ -201,29 +166,21 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
       {/* Background 3D decoration */}
-      <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in">
-          {t('experience.title')}
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 animate-fade-in">
-          {t('experience.current')} · 4 {t('experience.title').split(' ')[0] === 'Work' ? 'positions' : 'posições'}
-        </p>
+      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">
+            {t('experience.title')}
+          </h2>
+          <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full opacity-80 mb-6" />
+        </div>
 
-        <div className="max-w-3xl mx-auto relative">
-          {/* Vertical timeline line */}
-          <div
-            className="absolute left-[7px] md:left-[7px] top-0 bottom-0 w-px"
-            style={{
-              background: "linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--muted-foreground)/0.2))",
-            }}
-          />
-
+        <div className="max-w-4xl mx-auto relative">
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <ExperienceCard key={index} exp={exp} index={index} />
+              <ExperienceCard key={index} exp={exp} index={index} isLast={index === experiences.length - 1} />
             ))}
           </div>
         </div>
