@@ -70,12 +70,12 @@ const LanguageToggle = () => {
         <div
           role="listbox"
           className="
-            absolute right-0 top-full mt-2 w-44 z-50
+            absolute left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-0 top-full mt-2 w-44 z-50
             rounded-xl border border-border/60 dark:border-border/40
             bg-background/95 dark:bg-card/98 backdrop-blur-lg
             shadow-[0_8px_30px_hsl(0_0%_0%/0.12)] dark:shadow-[0_8px_30px_hsl(0_0%_0%/0.4)]
             overflow-hidden
-            animate-scale-in origin-top-right
+            animate-scale-in origin-top lg:origin-top-right
           "
         >
           {/* Header */}

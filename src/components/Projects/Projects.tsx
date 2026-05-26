@@ -40,7 +40,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
   return (
     <div
-      className="animate-fade-in flex flex-col group h-full"
+      className="animate-fade-in flex flex-col group h-full w-full"
       style={{ animationDelay: `${index * 0.08}s` }}
     >
       <div className="relative flex flex-col flex-1 p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 overflow-hidden hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle backdrop-blur-sm">
@@ -263,9 +263,11 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8 md:pb-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] -mx-4 px-4 md:mx-0 md:px-0">
           {filteredProjects.map((project, index) => (
-            <ProjectCard key={`${project.title}-${selectedCategory}`} project={project} index={index} />
+            <div key={`${project.title}-${selectedCategory}`} className="w-[85vw] sm:w-[350px] md:w-auto flex-none snap-center flex flex-col items-stretch">
+              <ProjectCard project={project} index={index} />
+            </div>
           ))}
         </div>
       </div>
