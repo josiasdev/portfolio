@@ -12,6 +12,7 @@ type Experience = {
 };
 
 const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number; isLast: boolean }) => {
+  const { t } = useLanguage();
   return (
     <div
       className="relative pl-8 md:pl-12 animate-fade-in group"
