@@ -155,4 +155,16 @@ All colors MUST be HSL.
     opacity: 0;
     animation: scale-in 0.4s ease-out forwards;
   }
+
+  /* 
+    Scroll-reveal: when a section is wrapped in <ScrollReveal>,
+    the section itself transitions via Tailwind classes (opacity/translate).
+    Children with animate-fade-in should still play their own micro-animation.
+    We reset opacity on children so their own animation runs correctly
+    once the parent is already visible in the viewport.
+  */
+  .scroll-reveal-inner .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.5s ease-out forwards;
+  }
 }

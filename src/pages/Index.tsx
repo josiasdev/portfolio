@@ -2,6 +2,8 @@ import Header from "@/components/Header/Header";
 import { lazy, Suspense } from "react";
 import Hero from "@/components/Hero/Hero";
 import { Spinner } from "@/components/ui/spinner";
+import ScrollReveal from "@/components/ui/scroll-reveal";
+
 const About = lazy(() => import("@/components/About/About"));
 const GitHubStats = lazy(() => import("@/components/GitHubStats/GitHubStats"));
 const Skills = lazy(() => import("@/components/Skills/Skills"));
@@ -24,24 +26,51 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
+        {/* Hero is always above the fold — no scroll reveal needed */}
         <Hero />
+
         <Suspense fallback={<SectionLoader />}>
-          <About />
-          <GitHubStats />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Hackathons />
-          <Education />
-          <Contact />
+          <ScrollReveal direction="up" delay={0}>
+            <About />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <GitHubStats />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <Skills />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <Experience />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <Projects />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <Hackathons />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <Education />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0}>
+            <Contact />
+          </ScrollReveal>
         </Suspense>
       </main>
+
       <Suspense fallback={null}>
         <WhatsAppButton />
       </Suspense>
+
       <Suspense fallback={null}>
         <div className="pb-20 md:pb-0">
-        <Footer />
+          <Footer />
         </div>
       </Suspense>
     </div>
