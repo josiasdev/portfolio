@@ -35,7 +35,7 @@ const HackathonCard = ({ hackathon, index }: { hackathon: Hackathon; index: numb
             <h3 className="text-xl md:text-2xl font-bold font-serif group-hover:text-primary transition-colors duration-200">
               {hackathon.name}
             </h3>
-            <p className="text-sm font-medium text-primary uppercase tracking-widest mt-1">Projeto: {hackathon.projectName}</p>
+            <p className="text-sm font-medium text-primary uppercase tracking-widest mt-1">{t('hackathons.project.label')}: {hackathon.projectName}</p>
           </div>
 
           {hackathon.award && (
@@ -158,9 +158,11 @@ const Hackathons = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 pb-8 lg:pb-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] -mx-4 px-4 lg:mx-0 lg:px-0">
           {hackathons.map((hackathon, index) => (
-            <HackathonCard key={hackathon.id} hackathon={hackathon} index={index} />
+            <div key={hackathon.id} className="w-[85vw] sm:w-[400px] lg:w-auto flex-none snap-center flex flex-col items-stretch">
+              <HackathonCard hackathon={hackathon} index={index} />
+            </div>
           ))}
         </div>
       </div>

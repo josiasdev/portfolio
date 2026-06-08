@@ -47,7 +47,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
         {/* Current job badge */}
         {exp.isCurrent && (
           <span className="absolute top-6 right-6 text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full uppercase bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
-            Atual
+            {t('experience.badge.current')}
           </span>
         )}
 
@@ -89,7 +89,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
           {/* Tech stack */}
           {exp.tech && (
             <div className="pt-5 mt-2 border-t border-border/40">
-              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Tecnologias Utilizadas</p>
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-3">{t('experience.tech.label')}</p>
               <div className="flex flex-wrap gap-2">
                 {exp.tech.split(',').map((tech, i) => (
                   <span key={i} className={`text-xs px-2.5 py-1 rounded-md border ${exp.isAcademic ? "border-accent/20 bg-accent/5 text-accent" : "border-primary/20 bg-primary/5 text-primary"}`}>

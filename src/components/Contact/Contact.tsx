@@ -109,7 +109,7 @@ const Contact = () => {
           
           {/* Left Column: Contact Cards */}
           <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-2xl font-semibold mb-6">Entre em contato direto</h3>
+            <h3 className="text-2xl font-semibold mb-6">{t('contact.direct.title')}</h3>
             <div className="space-y-4">
               {contactInfo.map((item, index) => (
                 <a

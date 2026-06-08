@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { GraduationCap, Languages } from "lucide-react";
 
@@ -7,60 +6,61 @@ const Education = () => {
 
   return (
     <section id="education" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif animate-fade-in">
           {t('education.title')}
         </h2>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-          <Card className="p-6 space-y-4 hover:shadow-subtle transition-all animate-fade-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary shadow-subtle">
-                <GraduationCap className="h-6 w-6 text-primary-foreground" />
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Bachelor's Degree */}
+          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle">
+            <div className="flex items-center gap-4 mb-5">
+              <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                <GraduationCap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">{t('education.degree')}</h3>
+              <h3 className="text-lg font-bold font-serif group-hover:text-primary transition-colors">{t('education.degree')}</h3>
             </div>
-            <div className="space-y-2">
-              <p className="text-muted-foreground">{t('education.university')}</p>
-              <p className="text-sm text-primary font-medium">{t('education.graduation')}</p>
+            <div className="space-y-1.5 pl-1">
+              <p className="text-sm text-muted-foreground font-medium">{t('education.university')}</p>
+              <p className="text-sm text-primary font-semibold">{t('education.graduation')}</p>
             </div>
-          </Card>
+          </div>
 
-          <Card className="p-6 space-y-4 hover:shadow-subtle transition-all animate-fade-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary shadow-subtle">
-                <GraduationCap className="h-6 w-6 text-primary-foreground" />
+          {/* Technical Course */}
+          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle" style={{ animationDelay: '0.1s' }}>
+            <div className="flex items-center gap-4 mb-5">
+              <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                <GraduationCap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">{t('education.technical')}</h3>
+              <h3 className="text-lg font-bold font-serif group-hover:text-primary transition-colors">{t('education.technical')}</h3>
             </div>
-            <div className="space-y-2">
-              <p className="text-muted-foreground">{t('education.school')}</p>
-              <p className="text-sm text-primary font-medium">{t('education.completed')}</p>
+            <div className="space-y-1.5 pl-1">
+              <p className="text-sm text-muted-foreground font-medium">{t('education.school')}</p>
+              <p className="text-sm text-primary font-semibold">{t('education.completed')}</p>
             </div>
-          </Card>
+          </div>
 
-          <Card className="p-6 md:col-span-2 hover:shadow-subtle transition-all animate-fade-in border-border/60 dark:border-border/40 bg-card/80 dark:bg-card/95 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary shadow-subtle">
-                <Languages className="h-6 w-6 text-primary-foreground" />
+          {/* Languages — full width */}
+          <div className="animate-fade-in group md:col-span-2 flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-accent/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center gap-4 mb-5">
+              <div className="p-3 rounded-2xl bg-accent/10 border border-accent/20 group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                <Languages className="h-6 w-6 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">{t('education.languages')}</h3>
+              <h3 className="text-lg font-bold font-serif group-hover:text-accent transition-colors">{t('education.languages')}</h3>
             </div>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-primary" />
-                <span className="text-muted-foreground">{t('education.portuguese')}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-accent" />
-                <span className="text-muted-foreground">{t('education.english')}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-primary/60" />
-                <span className="text-muted-foreground">{t('education.spanish')}</span>
-              </div>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { label: t('education.portuguese'), color: 'bg-primary' },
+                { label: t('education.english'), color: 'bg-accent' },
+                { label: t('education.spanish'), color: 'bg-primary/60' },
+              ].map(({ label, color }) => (
+                <div key={label} className="flex items-center gap-3 p-3 rounded-xl bg-background/50 border border-border/40">
+                  <div className={`h-2.5 w-2.5 rounded-full flex-shrink-0 ${color}`} />
+                  <span className="text-sm text-muted-foreground font-medium">{label}</span>
+                </div>
+              ))}
             </div>
-          </Card>
+          </div>
         </div>
       </div>
     </section>

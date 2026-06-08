@@ -39,6 +39,16 @@ const translations = {
     'about.bento.frontend_desc': 'Interactive UIs using React, Next.js and Tailwind CSS.',
     'about.bento.database': 'Data & Architecture',
     'about.bento.database_desc': 'Database design, modeling and CI/CD pipelines.',
+
+    // GitHub Stats
+    'github.title': 'GitHub Activity',
+    'github.subtitle': 'Real-time data from the GitHub API.',
+    'github.repos': 'Public Repos',
+    'github.stars': 'Total Stars',
+    'github.followers': 'Followers',
+    'github.following': 'Following',
+    'github.languages': 'Top Languages',
+    'github.viewProfile': 'View GitHub profile',
     
     // Skills
     'skills.title': 'Technical Skills',
@@ -205,6 +215,22 @@ const translations = {
     'footer.contact.label': 'Contact',
     'footer.rights': 'All rights reserved.',
     'footer.open': 'Open to work',
+    'footer.backToTop': 'Back to top',
+    'footer.madeWith': 'Made with',
+
+    // Experience (inline labels)
+    'experience.badge.current': 'Present',
+    'experience.tech.label': 'Technologies Used',
+
+    // Hackathons
+    'hackathons.project.label': 'Project',
+
+    // Contact
+    'contact.direct.title': 'Get in touch directly',
+
+    // Projects count
+    'projects.count.one': 'project',
+    'projects.count.many': 'projects',
   },
   pt: {
     // Navigation
@@ -236,6 +262,16 @@ const translations = {
     'about.bento.frontend_desc': 'Interfaces interativas com React, Next.js e Tailwind CSS.',
     'about.bento.database': 'Dados & Arquitetura',
     'about.bento.database_desc': 'Modelagem de dados, bancos relacionais e pipelines CI/CD.',
+
+    // GitHub Stats
+    'github.title': 'Atividade no GitHub',
+    'github.subtitle': 'Dados em tempo real via API do GitHub.',
+    'github.repos': 'Repositórios',
+    'github.stars': 'Total de Stars',
+    'github.followers': 'Seguidores',
+    'github.following': 'Seguindo',
+    'github.languages': 'Principais Linguagens',
+    'github.viewProfile': 'Ver perfil no GitHub',
     
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -401,7 +437,23 @@ const translations = {
     'footer.social': 'Redes',
     'footer.contact.label': 'Contato',
     'footer.rights': 'Todos os direitos reservados.',
-    'footer.open': 'Aberto a oportunidades',
+    'footer.open': 'Disponível para trabalho',
+    'footer.backToTop': 'Voltar ao topo',
+    'footer.madeWith': 'Feito com',
+
+    // Experience (inline labels)
+    'experience.badge.current': 'Atual',
+    'experience.tech.label': 'Tecnologias Utilizadas',
+
+    // Hackathons
+    'hackathons.project.label': 'Projeto',
+
+    // Contact
+    'contact.direct.title': 'Entre em contato direto',
+
+    // Projects count
+    'projects.count.one': 'projeto',
+    'projects.count.many': 'projetos',
   },
   es: {
     // Navigation
@@ -433,6 +485,16 @@ const translations = {
     'about.bento.frontend_desc': 'Interfaces interactivas con React, Next.js y Tailwind CSS.',
     'about.bento.database': 'Datos y Arquitectura',
     'about.bento.database_desc': 'Diseño de bases de datos, modelado y pipelines CI/CD.',
+
+    // GitHub Stats
+    'github.title': 'Actividad en GitHub',
+    'github.subtitle': 'Datos en tiempo real desde la API de GitHub.',
+    'github.repos': 'Repositorios',
+    'github.stars': 'Total de Stars',
+    'github.followers': 'Seguidores',
+    'github.following': 'Siguiendo',
+    'github.languages': 'Principales Lenguajes',
+    'github.viewProfile': 'Ver perfil en GitHub',
 
     // Skills
     'skills.title': 'Habilidades Técnicas',
@@ -598,7 +660,23 @@ const translations = {
     'footer.social': 'Conectar',
     'footer.contact.label': 'Contacto',
     'footer.rights': 'Todos los derechos reservados.',
-    'footer.open': 'Abierto a oportunidades',
+    'footer.open': 'Disponible para trabajar',
+    'footer.backToTop': 'Volver arriba',
+    'footer.madeWith': 'Hecho con',
+
+    // Experience (inline labels)
+    'experience.badge.current': 'Actual',
+    'experience.tech.label': 'Tecnologías Utilizadas',
+
+    // Hackathons
+    'hackathons.project.label': 'Proyecto',
+
+    // Contact
+    'contact.direct.title': 'Contáctame directamente',
+
+    // Projects count
+    'projects.count.one': 'proyecto',
+    'projects.count.many': 'proyectos',
   },
 };
 

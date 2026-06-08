@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -7,6 +7,8 @@ import { Menu, X } from "lucide-react";
 const Header = () => {
   const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
@@ -23,6 +25,31 @@ const Header = () => {
     { id: 'education', label: t('nav.education') },
   ];
 
+  // Scroll Spy via IntersectionObserver
+  useEffect(() => {
+    if (observerRef.current) observerRef.current.disconnect();
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+    );
+
+    const sections = ['hero', ...navItems.map(n => n.id), 'contact'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observerRef.current?.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMobileMenuOpen ? 'bg-transparent' : 'bg-background/85 dark:bg-background/90 backdrop-blur-lg border-b border-border/40 shadow-sm'}`}>
@@ -35,16 +62,23 @@ const Header = () => {
           </button>
           
           <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button 
-                key={item.id} 
-                onClick={() => scrollToSection(item.id)} 
-                className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors relative group py-2"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full rounded-full" />
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button 
+                  key={item.id} 
+                  onClick={() => scrollToSection(item.id)} 
+                  className={`text-sm font-semibold transition-colors relative group py-2 ${
+                    isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {item.label}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ease-out rounded-full ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
+                </button>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-3 relative z-50">
@@ -53,7 +87,6 @@ const Header = () => {
               <ThemeToggle />
             </div>
             
-            {/* The mobile toggle button floats cleanly in the top right */}
             <button 
               className="lg:hidden p-2 text-foreground hover:text-primary transition-colors focus:outline-none rounded-full bg-card/30 backdrop-blur-md border border-border/20 shadow-sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -65,7 +98,7 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Fullscreen Mobile Menu - Ultra Premium Apple Style */}
+      {/* Fullscreen Mobile Menu */}
       <div 
         className={`lg:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isMobileMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none scale-105'
@@ -73,7 +106,6 @@ const Header = () => {
       >
         <div className="flex flex-col items-center justify-center h-full w-full px-6 pt-16">
           
-          {/* Quick Actions at the top so dropdown opens correctly */}
           <div 
             className={`relative z-50 flex justify-center items-center gap-6 mb-12 transition-all duration-700 delay-100 ${
               isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
@@ -91,7 +123,9 @@ const Header = () => {
               <button 
                 key={item.id} 
                 onClick={() => scrollToSection(item.id)} 
-                className={`text-3xl sm:text-4xl font-bold font-serif tracking-tight text-foreground/90 hover:text-primary transition-all duration-500 ${
+                className={`text-3xl sm:text-4xl font-bold font-serif tracking-tight transition-all duration-500 ${
+                  activeSection === item.id ? 'text-primary' : 'text-foreground/90 hover:text-primary'
+                } ${
                   isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${isMobileMenuOpen ? (index + 2) * 80 : 0}ms` }}

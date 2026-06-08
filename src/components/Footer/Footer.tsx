@@ -36,7 +36,7 @@ const Footer = () => {
       username: "josias-batista",
     },
     {
-      href: "josiasmartins098@gmail.com",
+      href: "mailto:josiasmartins098@gmail.com",
       icon: Mail,
       label: "Email",
       username: "josiasmartins098@gmail.com",
@@ -159,7 +159,7 @@ const Footer = () => {
           </p>
 
           <p className="text-xs text-muted-foreground/60">
-            Made with{" "}
+            {t("footer.madeWith")}{" "}
             <span className="text-primary">♥</span>
             {" "}in React + TypeScript
           </p>
@@ -170,7 +170,7 @@ const Footer = () => {
             aria-label="Back to top"
             className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-all duration-200 hover:-translate-y-0.5 group"
           >
-            <span className="hidden sm:inline">Back to top</span>
+            <span className="hidden sm:inline">{t("footer.backToTop")}</span>
             <span className="p-1.5 rounded-full border border-border/60 group-hover:border-primary/40 group-hover:bg-primary/10 transition-all">
               <ArrowUp className="h-3 w-3" />
             </span>

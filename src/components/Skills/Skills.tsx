@@ -19,7 +19,12 @@ const SkillCard = ({ category, index }: { category: SkillCategory; index: number
           <div className="p-3.5 rounded-2xl bg-background/80 border border-border/50 group-hover:scale-110 group-hover:border-primary/50 transition-all duration-300 w-fit">
             <category.icon className="h-6 w-6 text-primary" />
           </div>
-          <h3 className="text-xl font-bold font-serif">{category.title}</h3>
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 className="text-xl font-bold font-serif">{category.title}</h3>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 tabular-nums">
+              {category.skills.length}
+            </span>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-2">

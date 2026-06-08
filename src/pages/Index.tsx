@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Hero from "@/components/Hero/Hero";
 import { Spinner } from "@/components/ui/spinner";
 const About = lazy(() => import("@/components/About/About"));
+const GitHubStats = lazy(() => import("@/components/GitHubStats/GitHubStats"));
 const Skills = lazy(() => import("@/components/Skills/Skills"));
 const Experience = lazy(() => import("@/components/Experience/Experience"));
 const Projects = lazy(() => import("@/components/Projects/Projects"));
@@ -26,6 +27,7 @@ const Index = () => {
         <Hero />
         <Suspense fallback={<SectionLoader />}>
           <About />
+          <GitHubStats />
           <Skills />
           <Experience />
           <Projects />

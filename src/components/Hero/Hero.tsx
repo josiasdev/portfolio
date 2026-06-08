@@ -153,7 +153,7 @@ const Hero = () => {
               asChild
               className="w-full sm:w-auto h-12 px-8 text-base border border-border/40 hover:border-primary/40 bg-secondary/50 hover:bg-secondary transition-all duration-300 rounded-full"
             >
-              <a href={`/cv-${language}.pdf`} download={`Josias_Batista_CV_${language.toUpperCase()}.pdf`}>
+              <a href={`/cv-pt.pdf`} download={`Josias_Batista_CV.pdf`}>
                 <FileText className="mr-2 h-4 w-4" />
                 {t('hero.downloadCV')}
               </a>

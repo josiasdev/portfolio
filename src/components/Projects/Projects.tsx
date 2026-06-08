@@ -241,7 +241,7 @@ const Projects = () => {
           {t('projects.title')}
         </h2>
         <p className="text-center text-muted-foreground mb-10 animate-fade-in">
-          {filteredProjects.length} projeto{filteredProjects.length !== 1 ? 's' : ''}
+          {filteredProjects.length} {filteredProjects.length === 1 ? t('projects.count.one') : t('projects.count.many')}
         </p>
 
         {/* Filter buttons */}
