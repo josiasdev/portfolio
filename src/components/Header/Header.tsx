@@ -100,9 +100,10 @@ const Header = () => {
 
       {/* Fullscreen Mobile Menu */}
       <div 
-        className={`lg:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`lg:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl transition-all duration-500 ${
           isMobileMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none scale-105'
         }`}
+        style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
       >
         <div className="flex flex-col items-center justify-center h-full w-full px-6 pt-16">
           
