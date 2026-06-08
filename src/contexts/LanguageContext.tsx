@@ -43,6 +43,7 @@ const translations = {
     // GitHub Stats
     'github.title': 'GitHub Activity',
     'github.subtitle': 'Real-time data from the GitHub API.',
+    'github.fallback': 'Estimated data — live data loading...',
     'github.repos': 'Public Repos',
     'github.stars': 'Total Stars',
     'github.followers': 'Followers',
@@ -266,6 +267,7 @@ const translations = {
     // GitHub Stats
     'github.title': 'Atividade no GitHub',
     'github.subtitle': 'Dados em tempo real via API do GitHub.',
+    'github.fallback': 'Dados estimados — carregando dados ao vivo...',
     'github.repos': 'Repositórios',
     'github.stars': 'Total de Stars',
     'github.followers': 'Seguidores',
@@ -489,6 +491,7 @@ const translations = {
     // GitHub Stats
     'github.title': 'Actividad en GitHub',
     'github.subtitle': 'Datos en tiempo real desde la API de GitHub.',
+    'github.fallback': 'Datos estimados — cargando datos en vivo...',
     'github.repos': 'Repositorios',
     'github.stars': 'Total de Stars',
     'github.followers': 'Seguidores',
