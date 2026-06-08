@@ -46,9 +46,12 @@ const GitHubStats = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const token = import.meta.env.VITE_GITHUB_TOKEN;
+        const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+
         const [profileRes, reposRes] = await Promise.all([
-          fetch('https://api.github.com/users/josiasdev'),
-          fetch('https://api.github.com/users/josiasdev/repos?per_page=100&sort=updated'),
+          fetch('https://api.github.com/users/josiasdev', { headers }),
+          fetch('https://api.github.com/users/josiasdev/repos?per_page=100&sort=updated', { headers }),
         ]);
 
         if (!profileRes.ok) return; // silently keep fallback
