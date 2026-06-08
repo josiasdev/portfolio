@@ -164,7 +164,7 @@ const Hero = () => {
             {[
               { href: "https://github.com/josiasdev", icon: Github },
               { href: "https://www.linkedin.com/in/josias-batista/", icon: Linkedin },
-              { href: "mailto:JBDevSoftware@proton.me", icon: Mail },
+              { href: "mailto:josiasmartins098@gmail.com", icon: Mail },
             ].map(({ href, icon: Icon }, i) => (
               <a
                 key={i}

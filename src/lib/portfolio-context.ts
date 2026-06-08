@@ -57,7 +57,7 @@ Quixadá - Ceará, Brasil
 - Idiomas: Português (Nativo), Inglês (Intermediário - B1)
 
 ## Informações de Contato
-- Email: JBDevSoftware@proton.me
+- Email: josiasmartins098@gmail.com
 - Telefone: +55 (85) 98231-7976
 `;
 
@@ -117,7 +117,7 @@ Quixadá - Ceará, Brazil
 - Languages: Portuguese (Native), English (Intermediate - B1)
 
 ## Contact Information
-- Email: JBDevSoftware@proton.me
+- Email: josiasmartins098@gmail.com
 - Phone: +55 (85) 98231-7976
 `;
 

@@ -80,7 +80,7 @@ npm run dev
 
 Gostou do projeto? Vamos construir coisas incríveis e integrar soluções!
 
-- **Email:** [JBDevSoftware@proton.me](mailto:JBDevSoftware@proton.me)
+- **Email:** [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
 - **LinkedIn:** [josias-batista](https://www.linkedin.com/in/josias-batista)
 - **GitHub:** [@josiasdev](https://github.com/josiasdev)
 
