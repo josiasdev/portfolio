@@ -25,16 +25,16 @@ const LANGUAGE_COLORS: Record<string, string> = {
 
 // Static fallback data — always shown while API loads or if it fails
 const FALLBACK: GitHubData = {
-  public_repos: 30,
-  followers: 10,
-  following: 20,
-  total_stars: 5,
+  public_repos: 75,
+  followers: 34,
+  following: 116,
+  total_stars: 12,
   top_languages: [
-    { name: 'TypeScript', percentage: 45, color: '#3178c6' },
-    { name: 'Java',       percentage: 22, color: '#b07219' },
+    { name: 'TypeScript', percentage: 22, color: '#3178c6' },
+    { name: 'Java',       percentage: 17, color: '#b07219' },
     { name: 'JavaScript', percentage: 16, color: '#f7df1e' },
-    { name: 'Rust',       percentage: 10, color: '#dea584' },
-    { name: 'Python',     percentage:  7, color: '#3572A5' },
+    { name: 'Python',     percentage: 11, color: '#3572A5' },
+    { name: 'HTML',       percentage: 8,  color: '#e34c26' },
   ],
 };
 
