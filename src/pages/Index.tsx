@@ -30,7 +30,7 @@ const Index = () => {
   useSmoothScroll(); // Ativa a rolagem amanteigada global
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-[100dvh] bg-background">
       <Helmet htmlAttributes={{ lang: language }}>
         <title>{t('seo.title')}</title>
         <meta name="description" content={t('seo.description')} />

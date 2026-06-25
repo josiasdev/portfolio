@@ -88,7 +88,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-16"
     >
       {/* Background layers */}
       <div className="absolute inset-0 bg-background/80" />

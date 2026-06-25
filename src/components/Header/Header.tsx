@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Menu, X } from "lucide-react";
+import { Home, User, Briefcase, Code, Mail } from "lucide-react";
 import { useWeb3 } from "@/hooks/useWeb3";
 
 const Header = () => {
@@ -13,12 +13,10 @@ const Header = () => {
   const isHome = location.pathname === '/';
   
   const { account, connectWallet, disconnectWallet, isConnected, isConnecting, shortenAddress } = useWeb3();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>('hero');
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const scrollToSection = (id: string) => {
-    setIsMobileMenuOpen(false);
     if (!isHome) {
       navigate(`/#${id}`);
       setTimeout(() => {
@@ -38,6 +36,15 @@ const Header = () => {
     { id: 'projects', label: t('nav.projects') },
     { id: 'hackathons', label: t('nav.hackathons') },
     { id: 'education', label: t('nav.education') },
+  ];
+
+  // Ícones específicos para a Bottom Bar Mobile
+  const bottomNavItems = [
+    { id: 'hero', label: 'Home', icon: Home },
+    { id: 'about', label: t('nav.about'), icon: User },
+    { id: 'experience', label: t('nav.experience'), icon: Briefcase },
+    { id: 'projects', label: t('nav.projects'), icon: Code },
+    { id: 'contact', label: t('nav.contact'), icon: Mail },
   ];
 
   // Scroll Spy via IntersectionObserver
@@ -67,11 +74,11 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMobileMenuOpen ? 'bg-transparent' : 'bg-background/85 dark:bg-background/90 backdrop-blur-lg border-b border-border/40 shadow-sm'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/85 dark:bg-background/90 backdrop-blur-lg border-b border-border/40 shadow-sm`}>
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
           <button 
             onClick={() => scrollToSection('hero')} 
-            className={`text-xl font-bold font-serif bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative z-50 hover:opacity-80 transition-opacity ${isMobileMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'}`}
+            className="text-xl font-bold font-serif bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative z-50 hover:opacity-80 transition-opacity"
           >
             Josias Batista
           </button>
@@ -97,13 +104,13 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-3 relative z-50">
-            <div className={`hidden lg:flex items-center gap-3 ${isMobileMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
+            <div className="flex items-center gap-2 md:gap-3">
               <LanguageToggle />
               <ThemeToggle />
               
               <button 
                 onClick={isConnected ? disconnectWallet : connectWallet}
-                className={`text-xs font-semibold px-4 py-2 rounded-full border transition-all ${
+                className={`text-xs font-semibold px-3 md:px-4 py-2 rounded-full border transition-all ${
                   isConnected 
                     ? 'border-primary/50 bg-primary/10 text-primary hover:bg-primary/20' 
                     : 'border-border/40 bg-card/30 text-muted-foreground hover:text-foreground hover:border-primary/40'
@@ -118,59 +125,35 @@ const Header = () => {
                 )}
               </button>
             </div>
-            
-            <button 
-              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors focus:outline-none rounded-full bg-card/30 backdrop-blur-md border border-border/20 shadow-sm"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
         </nav>
       </header>
 
-      {/* Fullscreen Mobile Menu */}
-      <div 
-        className={`lg:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl transition-all duration-500 ${
-          isMobileMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none scale-105'
-        }`}
-        style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-      >
-        <div className="flex flex-col items-center justify-center h-full w-full px-6 pt-16">
-          
-          <div 
-            className={`relative z-50 flex justify-center items-center gap-6 mb-12 transition-all duration-700 delay-100 ${
-              isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
-            }`}
-          >
-            <div className="flex bg-card/50 backdrop-blur-md border border-border/40 rounded-full p-2 gap-4">
-              <LanguageToggle />
-              <div className="w-[1px] h-auto bg-border/50 my-1"></div>
-              <ThemeToggle />
-            </div>
-          </div>
-
-          <div className="w-full flex flex-col items-center gap-6 pb-20">
-            {navItems.map((item, index) => (
-              <button 
-                key={item.id} 
-                onClick={() => scrollToSection(item.id)} 
-                className={`text-3xl sm:text-4xl font-bold font-serif tracking-tight transition-all duration-500 ${
-                  activeSection === item.id ? 'text-primary' : 'text-foreground/90 hover:text-primary'
-                } ${
-                  isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${isMobileMenuOpen ? (index + 2) * 80 : 0}ms` }}
+      {/* Bottom Navigation Bar (Mobile App-Like) */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-t border-border/40 pb-[env(safe-area-inset-bottom)] shadow-[0_-5px_20px_-10px_rgba(0,0,0,0.1)]">
+        <div className="flex justify-around items-center h-16 px-2">
+          {bottomNavItems.map((item) => {
+            const isActive = activeSection === item.id;
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="flex flex-col items-center justify-center w-full h-full space-y-1 relative group"
               >
-                {item.label}
+                <div className={`p-1.5 rounded-full transition-all duration-300 ${isActive ? 'bg-primary/15 text-primary scale-110' : 'text-muted-foreground group-hover:text-foreground'}`}>
+                  <Icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
+                </div>
+                <span className={`text-[10px] font-medium transition-colors ${isActive ? 'text-primary' : 'text-muted-foreground'}`}>
+                  {item.label}
+                </span>
               </button>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Header;

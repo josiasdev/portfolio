@@ -79,17 +79,17 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         {/* Buttons are responsive: stacked on small screens if both exist, side-by-side on larger screens */}
         <div className="flex flex-col sm:flex-row gap-3 pt-6 relative z-10 mt-auto">
           {project.github && (
-            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold h-9 rounded-full">
+            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold min-h-[44px] rounded-full">
               <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <Github className="h-3.5 w-3.5 mr-2" />
+                <Github className="h-4 w-4 mr-2" />
                 {t('projects.viewCode')}
               </a>
             </Button>
           )}
           {project.demo && (
-            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold h-9 rounded-full">
+            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold min-h-[44px] rounded-full">
               <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-3.5 w-3.5 mr-2" />
+                <ExternalLink className="h-4 w-4 mr-2" />
                 {t('projects.viewDemo')}
               </a>
             </Button>
@@ -251,7 +251,7 @@ const Projects = () => {
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={`
-                px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+                px-5 min-h-[44px] rounded-full text-sm font-medium transition-all duration-300
                 ${selectedCategory === category.id
                   ? "bg-primary text-primary-foreground shadow-subtle scale-105"
                   : "border border-border/40 hover:border-primary/40 hover:bg-card/50 text-muted-foreground hover:text-foreground bg-card/30 backdrop-blur-sm"
