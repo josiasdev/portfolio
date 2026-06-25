@@ -5,8 +5,7 @@ description: "Construindo uma solução baseada em blockchain capaz de registrar
 tags: ["Web3", "Hackathon", "Solidity", "React"]
 ---
 
-# COINCONUT — ImpactLedger
-<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/hero.jpg" alt="COINCONUT Banner" style={{ width: '100%', borderRadius: '12px', marginBottom: '20px' }} />
+<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/hero.jpg" alt="COINCONUT Banner" className="w-full rounded-2xl shadow-2xl mb-12 border border-border/40" />
 
 ## Sobre o desafio
 Projeto oficial submetido ao desafio **ImpactLedger** do Hackathon Web3 RESTIC 29.
@@ -38,22 +37,50 @@ Desenvolvemos uma **infraestrutura Web3 descentralizada** que transforma o resí
 
 **Pitch Desk (Video):** [Pitch Desk Video Youtube](https://www.youtube.com/watch?v=Jz55Q_brcfI)
 
-**Demonstração funcional:** 
+---
+
+### Demonstração funcional
 O fluxo principal é orquestrado através de 3 portais:
 1. **Posto de Coleta:** Pesa a casca e assina a transação, emitindo o registro imutável do lote e transferindo a custódia.
 2. **Indústria:** Adquire a matéria-prima rastreada no painel e a converte em produtos ecológicos (Briquete, Fibra).
 3. **Catador:** Acessa seu Dashboard para ver suas entregas validadas e sacar a sua remuneração de forma instantânea via simulador de Oráculo PIX.
 
-**Demonstração auditável:** 
+### Demonstração auditável
 - A cada pesagem, um lote tokenizado (`ERC-1155`) é gerado no contrato `CocoAsset`.
 - A cada transformação feita pela Indústria, o contrato emite um certificado intransferível (`ERC-721`) que fica guardado permanentemente na Galeria ESG.
 
-**Smart Contracts Deployados (Sepolia Testnet):**
-- **CocoAsset (Lotes ERC-1155):** [0x961379292204ED01DC6436dC2db666f5E9532bCb](https://sepolia.etherscan.io/address/0x961379292204ED01DC6436dC2db666f5E9532bCb)
-- **CoconutRegistry (Logística):** [0xF6f39040a3dA724E466Eb31f9Da0EBc8Fc552E70](https://sepolia.etherscan.io/address/0xF6f39040a3dA724E466Eb31f9Da0EBc8Fc552E70)
-- **PaymentLedger (Oráculo PIX):** [0x80d9A97CEE8F8530888879d09fc1010082aFEd64](https://sepolia.etherscan.io/address/0x80d9A97CEE8F8530888879d09fc1010082aFEd64)
-- **BriquetteMarket (B2B):** [0xFFd48Fd40f6C3c734a384d1f7FB2581185AaDA8e](https://sepolia.etherscan.io/address/0xFFd48Fd40f6C3c734a384d1f7FB2581185AaDA8e)
-- **SustainabilityNFT (Selo ESG ERC-721):** [0x6C3aa917f8C10C3608cb0dA877eb3F4eE6284619](https://sepolia.etherscan.io/address/0x6C3aa917f8C10C3608cb0dA877eb3F4eE6284619)
+### Smart Contracts Deployados (Sepolia Testnet)
+- **CocoAsset (Lotes ERC-1155):** [0x961379...32bCb](https://sepolia.etherscan.io/address/0x961379292204ED01DC6436dC2db666f5E9532bCb)
+- **CoconutRegistry (Logística):** [0xF6f390...52E70](https://sepolia.etherscan.io/address/0xF6f39040a3dA724E466Eb31f9Da0EBc8Fc552E70)
+- **PaymentLedger (Oráculo PIX):** [0x80d9A9...aFEd64](https://sepolia.etherscan.io/address/0x80d9A97CEE8F8530888879d09fc1010082aFEd64)
+- **BriquetteMarket (B2B):** [0xFFd48F...AaDA8e](https://sepolia.etherscan.io/address/0xFFd48Fd40f6C3c734a384d1f7FB2581185AaDA8e)
+- **SustainabilityNFT (Selo ESG):** [0x6C3aa9...84619](https://sepolia.etherscan.io/address/0x6C3aa917f8C10C3608cb0dA877eb3F4eE6284619)
+
+---
+
+## Demonstração Visual (Screenshots)
+
+> **Nota:** As imagens abaixo ilustram o fluxo simplificado e intuitivo do COINCONUT.
+
+### 1. Acesso Simples via Web2 (Account Abstraction)
+<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/login.jpg" alt="Tela de Login" className="w-full rounded-xl shadow-lg border border-border/40 my-6" />
+Sem carteiras complexas. Catadores e Pontos de coleta acessam diretamente com e-mail/Google.
+
+### 2. Dashboard do Catador (Oráculo PIX)
+<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/dashboard-catador.jpg" alt="Dashboard do Catador" className="w-full rounded-xl shadow-lg border border-border/40 my-6" />
+Acompanhamento em tempo real das pesagens validadas e saldo disponível para saque imediato.
+
+### 3. Registro do Ponto de Coleta (Rastreabilidade)
+<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/registro-coleta.jpg" alt="Registro de Coleta" className="w-full rounded-xl shadow-lg border border-border/40 my-6" />
+A pesagem física da casca de coco é inserida no sistema e cunhada como um lote ERC-1155 imutável.
+
+### 4. Galeria ESG (NFTs Soulbound)
+<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/galeria-esg.jpg" alt="Galeria ESG" className="w-full rounded-xl shadow-lg border border-border/40 my-6" />
+Os certificados de logística reversa são transformados em Trading Cards colecionáveis e intransferíveis para as fábricas.
+
+### 5. Prova de Auditoria On-Chain (Transparência)
+<img src="https://raw.githubusercontent.com/josiasdev/coinconut-hackathon/main/docs/images/auditoria-onchain.jpg" alt="Transparência On-Chain" className="w-full rounded-xl shadow-lg border border-border/40 my-6" />
+Transações verificáveis no Etherscan (Sepolia), garantindo que todo o processo seja 100% à prova de Greenwashing.
 
 ---
 
@@ -72,8 +99,8 @@ O fluxo principal é orquestrado através de 3 portais:
 ## Equipe
 
 | Membro | Foco |
-|---|---|
-| <img src="https://github.com/josiasdev.png" width="50" style={{ borderRadius: '50%' }} /><br/>**[Josias](https://github.com/josiasdev)** | Frontend - Integração |
-| <img src="https://github.com/davicorreia-dev.png" width="50" style={{ borderRadius: '50%' }} /><br/>**[Davi](https://github.com/davicorreia-dev)** | Smart Contracts - Solidity - Deploy |
-| <img src="https://github.com/JadeProg.png" width="50" style={{ borderRadius: '50%' }} /><br/>**[Jade](https://github.com/JadeProg)** | Produto e Pitch |
-| <img src="https://github.com/willian-uiu.png" width="50" style={{ borderRadius: '50%' }} /><br/>**[Willian](https://github.com/willian-uiu)** | Produto e Pitch |
+|:---|:---|
+| <div className="flex items-center gap-3"><img src="https://github.com/josiasdev.png" alt="Josias" className="w-10 h-10 rounded-full m-0" />**[Josias](https://github.com/josiasdev)**</div> | Frontend - Integração |
+| <div className="flex items-center gap-3"><img src="https://github.com/davicorreia-dev.png" alt="Davi" className="w-10 h-10 rounded-full m-0" />**[Davi](https://github.com/davicorreia-dev)**</div> | Smart Contracts - Solidity - Deploy |
+| <div className="flex items-center gap-3"><img src="https://github.com/JadeProg.png" alt="Jade" className="w-10 h-10 rounded-full m-0" />**[Jade](https://github.com/JadeProg)**</div> | Produto e Pitch |
+| <div className="flex items-center gap-3"><img src="https://github.com/willian-uiu.png" alt="Willian" className="w-10 h-10 rounded-full m-0" />**[Willian](https://github.com/willian-uiu)**</div> | Produto e Pitch |
