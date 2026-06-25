@@ -42,7 +42,7 @@ const Web3EasterEgg = () => {
         </div>
 
         {/* Terminal Body */}
-        <div className="p-6 font-mono text-sm space-y-4">
+        <div className="p-6 font-mono text-sm space-y-5">
           <div className="flex items-center gap-3 text-green-500">
             <ShieldAlert className="w-8 h-8 animate-pulse" />
             <h3 className="text-xl font-bold tracking-wider">{t('web3.secret.title')}</h3>
@@ -54,16 +54,52 @@ const Web3EasterEgg = () => {
             <p>{'>'} STATUS: <span className="text-green-500 font-bold">CONFIRMED</span></p>
           </div>
 
-          <div className="pt-4 border-t border-green-900/30">
-            <p className="text-gray-300 leading-relaxed font-sans">
+          <div className="pt-2">
+            <p className="text-gray-300 leading-relaxed font-sans mb-4">
               {t('web3.secret.desc')}
             </p>
+            
+            {/* SyloPay Feature Block */}
+            <div className="border border-green-500/30 bg-green-500/5 p-4 rounded-md space-y-3">
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-xs text-green-500/70 mb-1">{'// DECRYPTED_FILE: PROJECT_SYLOPAY'}</p>
+                  <h4 className="text-lg font-bold text-green-400">SyloPay (Stellar Network)</h4>
+                </div>
+                <span className="px-2 py-1 bg-green-500/20 text-green-500 text-[10px] rounded animate-pulse">
+                  CLASSIFIED
+                </span>
+              </div>
+              
+              <p className="text-gray-400 text-sm">
+                A Buy Now, Pay Later (BNPL) platform built on the Stellar blockchain, enabling instant merchant settlements using Smart Contracts.
+              </p>
+              
+              <div className="flex flex-wrap gap-2 pt-2">
+                {['NestJS', 'Stellar SDK', 'PostgreSQL', 'Docker'].map((tech) => (
+                  <span key={tech} className="text-xs px-2 py-1 bg-black border border-[#333] rounded text-gray-400">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="pt-3">
+                <a 
+                  href="https://github.com/Sylopay/sylopay" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-500 hover:text-green-400 hover:underline transition-all"
+                >
+                  {'>'} ACCESS_SOURCE_CODE
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="pt-4 flex justify-end">
             <Button 
               onClick={() => setIsVisible(false)}
-              className="bg-green-500/20 text-green-500 hover:bg-green-500/30 border border-green-500/50 rounded-md font-mono"
+              className="bg-green-500/20 text-green-500 hover:bg-green-500/30 border border-green-500/50 rounded-md font-mono transition-colors"
             >
               ACKNOWLEDGE
             </Button>
