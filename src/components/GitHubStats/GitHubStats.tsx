@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { Github, Star, GitFork, BookOpen, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { GitHubCalendar } from 'react-github-calendar';
+import { useQuery } from "@tanstack/react-query";
 
 type GitHubData = {
   public_repos: number;
@@ -39,64 +39,69 @@ const FALLBACK: GitHubData = {
   ],
 };
 
+const fetchGitHubData = async (): Promise<GitHubData> => {
+  const token = import.meta.env.VITE_GITHUB_TOKEN;
+  const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+
+  const [profileRes, reposRes] = await Promise.all([
+    fetch('https://api.github.com/users/josiasdev', { headers }),
+    fetch('https://api.github.com/users/josiasdev/repos?per_page=100&sort=updated', { headers }),
+  ]);
+
+  if (!profileRes.ok || !reposRes.ok) {
+    throw new Error('Falha ao comunicar com a API do GitHub');
+  }
+
+  const profile = await profileRes.json();
+  const repos = await reposRes.json();
+
+  if (!Array.isArray(repos)) {
+    throw new Error('Formato de repositório inválido');
+  }
+
+  const total_stars = repos.reduce(
+    (sum: number, r: { stargazers_count: number }) => sum + r.stargazers_count,
+    0
+  );
+
+  const langCount: Record<string, number> = {};
+  repos.forEach((repo: { language: string | null }) => {
+    if (repo.language) langCount[repo.language] = (langCount[repo.language] || 0) + 1;
+  });
+
+  const totalLangRepos = Object.values(langCount).reduce((a, b) => a + b, 0);
+  const top_languages = Object.entries(langCount)
+    .sort(([, a], [, b]) => b - a)
+    .slice(0, 5)
+    .map(([name, count]) => ({
+      name,
+      percentage: Math.round((count / totalLangRepos) * 100),
+      color: LANGUAGE_COLORS[name] || '#6e7681',
+    }));
+
+  return {
+    public_repos: profile.public_repos,
+    followers:    profile.followers,
+    following:    profile.following,
+    total_stars,
+    top_languages,
+  };
+};
+
 const GitHubStats = () => {
   const { t } = useLanguage();
-  const [data, setData] = useState<GitHubData>(FALLBACK);
-  const [live, setLive] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = import.meta.env.VITE_GITHUB_TOKEN;
-        const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+  const { data: fetchedData, isError, isFetching } = useQuery({
+    queryKey: ['github-stats-realtime'],
+    queryFn: fetchGitHubData,
+    staleTime: 1000 * 60 * 60, // 1 hora de cache puro na memória
+    retry: 1, // Tenta apenas uma vez caso falhe
+  });
 
-        const [profileRes, reposRes] = await Promise.all([
-          fetch('https://api.github.com/users/josiasdev', { headers }),
-          fetch('https://api.github.com/users/josiasdev/repos?per_page=100&sort=updated', { headers }),
-        ]);
-
-        if (!profileRes.ok) return; // silently keep fallback
-
-        const profile = await profileRes.json();
-        const repos = await reposRes.json();
-
-        if (!Array.isArray(repos)) return;
-
-        const total_stars = repos.reduce(
-          (sum: number, r: { stargazers_count: number }) => sum + r.stargazers_count,
-          0
-        );
-
-        const langCount: Record<string, number> = {};
-        repos.forEach((repo: { language: string | null }) => {
-          if (repo.language) langCount[repo.language] = (langCount[repo.language] || 0) + 1;
-        });
-
-        const totalLangRepos = Object.values(langCount).reduce((a, b) => a + b, 0);
-        const top_languages = Object.entries(langCount)
-          .sort(([, a], [, b]) => b - a)
-          .slice(0, 5)
-          .map(([name, count]) => ({
-            name,
-            percentage: Math.round((count / totalLangRepos) * 100),
-            color: LANGUAGE_COLORS[name] || '#6e7681',
-          }));
-
-        setData({
-          public_repos: profile.public_repos,
-          followers:    profile.followers,
-          following:    profile.following,
-          total_stars,
-          top_languages,
-        });
-        setLive(true);
-      } catch {
-        // Keep fallback silently
-      }
-    };
-
-    fetchData();
-  }, []);
+  // Se estiver carregando pela primeira vez, os dados serão fallback simulando um skeleton
+  // Se falhar (isError), manteremos o fallback elegantemente
+  const data = fetchedData && !isError ? fetchedData : FALLBACK;
+  const isLive = !!fetchedData && !isError;
 
   const stats = [
     { label: t('github.repos'),     value: data.public_repos, icon: BookOpen },
@@ -118,9 +123,21 @@ const GitHubStats = () => {
               <Github className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold font-serif">{t('github.title')}</h2>
-              <p className="text-xs text-muted-foreground">
-                {live ? t('github.subtitle') : t('github.fallback')}
+              <div className="flex items-center gap-2">
+                <h2 className="text-2xl font-bold font-serif">{t('github.title')}</h2>
+                {isFetching && (
+                  <span className="flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
+                )}
+              </div>
+              <p className="text-xs text-muted-foreground flex items-center gap-1.5 mt-1">
+                {isFetching 
+                  ? "Sincronizando com GitHub..." 
+                  : isLive 
+                    ? t('github.subtitle') 
+                    : t('github.fallback')}
               </p>
             </div>
           </div>
@@ -128,11 +145,11 @@ const GitHubStats = () => {
             href="https://github.com/josiasdev"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors self-start sm:self-auto border border-primary/20 bg-primary/5 hover:bg-primary/10 px-4 py-2 rounded-full"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors self-start sm:self-auto border border-primary/20 bg-primary/5 hover:bg-primary/10 px-4 min-h-[44px] rounded-full"
           >
-            <Github className="h-3.5 w-3.5" />
+            <Github className="h-4 w-4" />
             {t('github.viewProfile')}
-            <ExternalLink className="h-3 w-3 opacity-60" />
+            <ExternalLink className="h-3.5 w-3.5 opacity-60" />
           </a>
         </div>
 
@@ -142,12 +159,14 @@ const GitHubStats = () => {
             {stats.map(({ label, value, icon: Icon }) => (
               <div
                 key={label}
-                className="flex flex-col items-center justify-center gap-2 p-5 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group"
+                className={`flex flex-col items-center justify-center gap-2 p-5 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group ${!isLive && isFetching ? 'animate-pulse opacity-80' : ''}`}
               >
                 <div className="p-2 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <Icon className="h-4 w-4 text-primary" />
                 </div>
-                <span className="text-2xl font-bold tabular-nums">{value}</span>
+                <span className="text-2xl font-bold tabular-nums">
+                  {value}
+                </span>
                 <span className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wide text-center">{label}</span>
               </div>
             ))}
@@ -170,7 +189,7 @@ const GitHubStats = () => {
                   </div>
                   <div className="h-2 rounded-full bg-secondary/60 overflow-hidden">
                     <div
-                      className="h-full rounded-full transition-all duration-1000"
+                      className={`h-full rounded-full transition-all duration-1000 ${!isLive && isFetching ? 'animate-pulse' : ''}`}
                       style={{ width: `${percentage}%`, backgroundColor: color }}
                     />
                   </div>
