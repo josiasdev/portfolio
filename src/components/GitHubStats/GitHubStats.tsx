@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Github, Star, GitFork, BookOpen, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import GitHubCalendar from 'react-github-calendar';
+import { GitHubCalendar } from 'react-github-calendar';
 
 type GitHubData = {
   public_repos: number;
