@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.webp";
 import { Magnetic } from "@/components/ui/magnetic";
+import { motion } from "framer-motion";
 
 const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], speed?: number, delay?: number }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -49,6 +50,26 @@ const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], spe
   );
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 100, damping: 20 }
+  }
+};
+
 const Hero = () => {
   const { t, language } = useLanguage();
 
@@ -79,10 +100,15 @@ const Hero = () => {
       <div className="absolute top-1/2 right-1/4 w-2 h-2 rounded-full bg-accent/40 animate-orbit-reverse pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center space-y-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
 
           {/* Profile Image - Clean Glassmorphic Style */}
-          <div className="flex justify-center mb-6">
+          <motion.div variants={itemVariants} className="flex justify-center mb-6">
             <div className="relative group">
               {/* Subtle ambient glow */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/30 to-accent/30 blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60" />
@@ -100,9 +126,9 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="space-y-4">
+          <motion.div variants={itemVariants} className="space-y-4">
             <p className="text-sm md:text-base font-medium text-primary tracking-widest uppercase">
               {t('hero.greeting')}
             </p>
@@ -117,13 +143,13 @@ const Hero = () => {
             <h2 className="text-2xl md:text-3xl font-medium text-foreground/80 h-10">
               <Typewriter texts={typingRoles} />
             </h2>
-          </div>
+          </motion.div>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
-          </p>
+          </motion.p>
 
-          <div className="flex items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground flex-wrap pt-2">
+          <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground flex-wrap pt-2">
             <div className="flex items-center gap-2 bg-card/40 border border-border/40 backdrop-blur-sm px-4 py-2 rounded-full">
               <MapPin className="h-4 w-4 text-primary" />
               <span>{t('hero.location')}</span>
@@ -132,9 +158,9 @@ const Hero = () => {
               <Phone className="h-4 w-4 text-primary" />
               <span>+55 (85) 98231-7976</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 flex-wrap">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 flex-wrap">
             <Magnetic>
               <Button
                 size="lg"
@@ -167,9 +193,9 @@ const Hero = () => {
                 </a>
               </Button>
             </Magnetic>
-          </div>
+          </motion.div>
 
-          <div className="flex items-center justify-center gap-5 pt-8">
+          <motion.div variants={itemVariants} className="flex items-center justify-center gap-5 pt-8">
             {[
               { href: "https://github.com/josiasdev", icon: Github },
               { href: "https://www.linkedin.com/in/josias-batista/", icon: Linkedin },
@@ -186,8 +212,8 @@ const Hero = () => {
                 </a>
               </Magnetic>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -168,3 +168,9 @@ All colors MUST be HSL.
     animation: fade-in 0.5s ease-out forwards;
   }
 }
+
+@media (pointer: fine) {
+  body, button, a, input, select, textarea {
+    cursor: none !important;
+  }
+}
