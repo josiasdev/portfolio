@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    { enforce: 'pre', ...mdx({ remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm] }) },
+    { enforce: 'pre' as const, ...mdx({ remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm] }) },
     react(),
     mode === "development" && componentTagger()
   ].filter(Boolean),
