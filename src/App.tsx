@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Spinner } from "./components/ui/spinner";
+import { Analytics } from "@vercel/analytics/react";
 
 import { lazy, Suspense } from "react";
 const Index = lazy(() => import("./pages/Index"));
@@ -35,6 +36,7 @@ const App = () => (
             </Routes>
             </Suspense>
           </BrowserRouter>
+          <Analytics />
         </TooltipProvider>
       </LanguageProvider>
     </QueryClientProvider>

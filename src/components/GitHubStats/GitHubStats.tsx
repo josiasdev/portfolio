@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Github, Star, GitFork, BookOpen, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import GitHubCalendar from 'react-github-calendar';
 
 type GitHubData = {
   public_repos: number;
@@ -176,6 +177,26 @@ const GitHubStats = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* GitHub Contributions Heatmap */}
+        <div className="mt-6 p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 overflow-x-auto">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-6">
+            Activity Heatmap
+          </p>
+          <div className="flex justify-center min-w-[700px]">
+            <GitHubCalendar 
+              username="josiasdev" 
+              colorScheme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
+              theme={{
+                light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+                dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+              }}
+              labels={{
+                totalCount: '{{count}} contributions in the last year',
+              }}
+            />
           </div>
         </div>
       </div>
