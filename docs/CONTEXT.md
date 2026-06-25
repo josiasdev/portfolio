@@ -18,10 +18,10 @@ O projeto foi construído utilizando as melhores práticas do ecossistema front-
 
 Embora seja majoritariamente uma Single Page Application (SPA) estática, o portfólio possui recursos dinâmicos robustos:
 
-1. **GitHub Stats:**
+1. **GitHub Stats (Powered by React Query):**
    - Componente que se comunica com a API REST pública do GitHub (`api.github.com`).
-   - Puxa dados em tempo real sobre repositórios, seguidores, stars e processa as linguagens de programação mais utilizadas no perfil do desenvolvedor.
-   - Possui sistema de *fallback* embutido (`FALLBACK`) que garante a renderização da seção (com dados reais previamente colhidos) mesmo em caso de indisponibilidade da API ou bloqueio de rede (Rate Limit excedido).
+   - Puxa dados 100% em tempo real sobre repositórios, seguidores, stars e processa as linguagens de programação mais utilizadas no perfil do desenvolvedor.
+   - Utiliza a inteligência do `@tanstack/react-query` para armazenar as requisições num cache de 1 hora (`staleTime`), poupando os Rate Limits da API e garantindo que o portfólio seja renderizado instantaneamente entre navegações. O projeto não possui mais "mocks" estáticos (Fallback falso).
 
 2. **Formulário de Contato (Vercel Functions):**
    - Utiliza a infraestrutura de Serverless Functions da nuvem Vercel.
