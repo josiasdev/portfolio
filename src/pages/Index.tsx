@@ -5,6 +5,7 @@ import { Spinner } from "@/components/ui/spinner";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const About = lazy(() => import("@/components/About/About"));
 const GitHubStats = lazy(() => import("@/components/GitHubStats/GitHubStats"));
@@ -25,6 +26,7 @@ const SectionLoader = () => (
 
 const Index = () => {
   const { t, language } = useLanguage();
+  useSmoothScroll(); // Ativa a rolagem amanteigada global
 
   return (
     <div className="min-h-screen bg-background">

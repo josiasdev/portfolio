@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.jpg";
+import { Magnetic } from "@/components/ui/magnetic";
 
 const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], speed?: number, delay?: number }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -132,32 +133,38 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 flex-wrap">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto h-12 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-subtle hover:shadow-glow rounded-full"
-              onClick={() => scrollToSection('projects')}
-            >
-              {t('hero.cta')}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto h-12 px-8 text-base border-border/60 hover:border-primary/50 hover:bg-card/50 backdrop-blur-sm transition-all duration-300 rounded-full"
-              onClick={() => scrollToSection('contact')}
-            >
-              {t('hero.contact')}
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              asChild
-              className="w-full sm:w-auto h-12 px-8 text-base border border-border/40 hover:border-primary/40 bg-secondary/50 hover:bg-secondary transition-all duration-300 rounded-full"
-            >
-              <a href={`/cv-${language}.pdf`} download={`Josias_Batista_CV_${language.toUpperCase()}.pdf`}>
-                <FileText className="mr-2 h-4 w-4" />
-                {t('hero.downloadCV')}
-              </a>
-            </Button>
+            <Magnetic>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto h-12 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-subtle hover:shadow-glow rounded-full"
+                onClick={() => scrollToSection('projects')}
+              >
+                {t('hero.cta')}
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto h-12 px-8 text-base border-border/60 hover:border-primary/50 hover:bg-card/50 backdrop-blur-sm transition-all duration-300 rounded-full"
+                onClick={() => scrollToSection('contact')}
+              >
+                {t('hero.contact')}
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button
+                size="lg"
+                variant="secondary"
+                asChild
+                className="w-full sm:w-auto h-12 px-8 text-base border border-border/40 hover:border-primary/40 bg-secondary/50 hover:bg-secondary transition-all duration-300 rounded-full"
+              >
+                <a href={`/cv-${language}.pdf`} download={`Josias_Batista_CV_${language.toUpperCase()}.pdf`}>
+                  <FileText className="mr-2 h-4 w-4" />
+                  {t('hero.downloadCV')}
+                </a>
+              </Button>
+            </Magnetic>
           </div>
 
           <div className="flex items-center justify-center gap-5 pt-8">
@@ -166,15 +173,16 @@ const Hero = () => {
               { href: "https://www.linkedin.com/in/josias-batista/", icon: Linkedin },
               { href: "mailto:josiasmartins098@gmail.com", icon: Mail },
             ].map(({ href, icon: Icon }, i) => (
-              <a
-                key={i}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="group p-3.5 rounded-full border border-border/40 hover:border-primary/50 hover:bg-card/80 bg-card/30 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle"
-              >
-                <Icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </a>
+              <Magnetic key={i} power={0.8}>
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="group flex p-3.5 rounded-full border border-border/40 hover:border-primary/50 hover:bg-card/80 bg-card/30 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle"
+                >
+                  <Icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </a>
+              </Magnetic>
             ))}
           </div>
         </div>
