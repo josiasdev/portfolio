@@ -83,7 +83,6 @@ const Index = () => {
         <div className="pb-20 md:pb-0">
           <Footer />
         </div>
-      </Suspense>
     </div>
   );
 };
