@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 import Hero from "@/components/Hero/Hero";
 import { Spinner } from "@/components/ui/spinner";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { Helmet } from "react-helmet-async";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = lazy(() => import("@/components/About/About"));
 const GitHubStats = lazy(() => import("@/components/GitHubStats/GitHubStats"));
@@ -22,8 +24,19 @@ const SectionLoader = () => (
 );
 
 const Index = () => {
+  const { t, language } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet htmlAttributes={{ lang: language }}>
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
+        <meta property="og:title" content={t('seo.title')} />
+        <meta property="og:description" content={t('seo.description')} />
+        <meta name="twitter:title" content={t('seo.title')} />
+        <meta name="twitter:description" content={t('seo.description')} />
+      </Helmet>
+      
       <Header />
       <main>
         {/* Hero is always above the fold — no scroll reveal needed */}

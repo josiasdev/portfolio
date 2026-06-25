@@ -19,6 +19,10 @@ const translations = {
     'nav.education': 'Education',
     'nav.contact': 'Contact',
     
+    // SEO
+    'seo.title': 'Josias Batista | Full Stack & Web3 Developer',
+    'seo.description': 'Portfolio of Josias Batista, Full Stack Developer specializing in Web3, Blockchain, and modern web applications with React and Node.js.',
+    
     // Hero
     'hero.greeting': 'Hi, I\'m',
     'hero.title': 'Full Stack Developer',
@@ -243,6 +247,10 @@ const translations = {
     'nav.education': 'Educação',
     'nav.contact': 'Contato',
     
+    // SEO
+    'seo.title': 'Josias Batista | Desenvolvedor Full Stack & Web3',
+    'seo.description': 'Portfólio de Josias Batista, Desenvolvedor Full Stack especializado em Web3, Blockchain e aplicações web modernas com React e Node.js.',
+
     // Hero
     'hero.greeting': 'Olá, eu sou',
     'hero.title': 'Desenvolvedor Full Stack',
@@ -466,6 +474,10 @@ const translations = {
     'nav.hackathons': 'Hackatones',
     'nav.education': 'Educación',
     'nav.contact': 'Contacto',
+
+    // SEO
+    'seo.title': 'Josias Batista | Desarrollador Full Stack & Web3',
+    'seo.description': 'Portafolio de Josias Batista, Desarrollador Full Stack especializado en Web3, Blockchain y aplicaciones web modernas con React y Node.js.',
 
     // Hero
     'hero.greeting': 'Hola, soy',
