@@ -4,22 +4,19 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { Spinner } from "./components/ui/spinner";
 import { Analytics } from "@vercel/analytics/react";
 
 import { lazy, Suspense } from "react";
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const NotesList = lazy(() => import("./pages/Notes/NotesList"));
-const NotePost = lazy(() => import("./pages/Notes/NotePost"));
 
 import { HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
 const AppLoader = () => (
-  <div className="flex h-screen w-full items-center justify-center bg-background">
-   <Spinner size="lg" />
+  <div className="min-h-[100dvh] flex w-full items-center justify-center bg-background">
+   <div className="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
   </div>
 );
 
@@ -34,8 +31,6 @@ const App = () => (
           <Suspense fallback={<AppLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/notes" element={<NotesList />} />
-              <Route path="/notes/:slug" element={<NotePost />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
