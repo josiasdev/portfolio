@@ -18,6 +18,10 @@ const Web3EasterEgg = () => {
         setHasSeen(true);
       }, 1000);
       return () => clearTimeout(timer);
+    } else if (!isConnected) {
+      // Reseta o estado se o usuário desconectar, permitindo ver de novo ao reconectar
+      setHasSeen(false);
+      setIsVisible(false);
     }
   }, [isConnected, account, hasSeen]);
 
