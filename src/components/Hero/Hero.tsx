@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/profile.webp";
 import { Magnetic } from "@/components/ui/magnetic";
 
 const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], speed?: number, delay?: number }) => {
@@ -93,6 +93,8 @@ const Hero = () => {
                   <img
                     src={profileImage}
                     alt="Francisco Josias da Silva Batista"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
