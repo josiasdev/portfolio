@@ -77,7 +77,17 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error(t('contact.form.error.submit'));
+      if (!response.ok) {
+        let errorMsg = t('contact.form.error.submit');
+        try {
+          const errData = await response.json();
+          if (errData.details) errorMsg = `${errData.error}: ${errData.details}`;
+          else if (errData.error) errorMsg = errData.error;
+        } catch (_) {
+          // Fallback to default message if JSON parsing fails
+        }
+        throw new Error(errorMsg);
+      }
 
       toast.success(t('contact.form.success'));
       form.reset();
