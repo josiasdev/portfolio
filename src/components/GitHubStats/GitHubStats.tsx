@@ -24,21 +24,6 @@ const LANGUAGE_COLORS: Record<string, string> = {
   Kotlin:      '#A97BFF',
 };
 
-// Static fallback data — always shown while API loads or if it fails
-const FALLBACK: GitHubData = {
-  public_repos: 75,
-  followers: 34,
-  following: 116,
-  total_stars: 12,
-  top_languages: [
-    { name: 'TypeScript', percentage: 22, color: '#3178c6' },
-    { name: 'Java',       percentage: 17, color: '#b07219' },
-    { name: 'JavaScript', percentage: 16, color: '#f7df1e' },
-    { name: 'Python',     percentage: 11, color: '#3572A5' },
-    { name: 'HTML',       percentage: 8,  color: '#e34c26' },
-  ],
-};
-
 const fetchGitHubData = async (): Promise<GitHubData> => {
   const token = import.meta.env.VITE_GITHUB_TOKEN;
   const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
@@ -98,9 +83,15 @@ const GitHubStats = () => {
     retry: 1, // Tenta apenas uma vez caso falhe
   });
 
-  // Se estiver carregando pela primeira vez, os dados serão fallback simulando um skeleton
-  // Se falhar (isError), manteremos o fallback elegantemente
-  const data = fetchedData && !isError ? fetchedData : FALLBACK;
+  // Zero-state while loading or on error
+  const data = fetchedData || {
+    public_repos: 0,
+    followers: 0,
+    following: 0,
+    total_stars: 0,
+    top_languages: [],
+  };
+  
   const isLive = !!fetchedData && !isError;
 
   const stats = [
