@@ -22,51 +22,49 @@ const NotesList = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Header />
       <main className="flex-1 pt-32 pb-16">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="mb-12">
             <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4 flex items-center gap-3">
               <FileText className="w-10 h-10 text-primary" />
               Engineering Notes
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg max-w-2xl">
               Um espaço para registrar meus estudos, desafios arquiteturais e soluções técnicas em Back-end e Web3.
             </p>
           </div>
 
-          <div className="grid gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {notes.map((note) => (
               <Link 
                 key={note.slug} 
                 to={`/notes/${note.slug}`}
-                className="group p-6 rounded-2xl border border-border/40 bg-card/30 hover:bg-card/60 hover:border-primary/40 backdrop-blur-sm transition-all duration-300"
+                className="group flex flex-col p-6 rounded-3xl border border-border/40 bg-card/30 hover:bg-card/60 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl h-full"
               >
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                      {note.title}
-                    </h2>
-                    <p className="text-muted-foreground line-clamp-2">
-                      {note.description}
-                    </p>
-                    <div className="flex flex-wrap items-center gap-3 pt-2">
-                      {note.tags?.map((tag: string) => (
-                        <span key={tag} className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium">
-                          <Tag className="w-3 h-3" />
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono shrink-0 pt-1 md:pt-0">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {new Date(note.date).toLocaleDateString('pt-BR')}
-                  </div>
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono mb-4">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {new Date(note.date).toLocaleDateString('pt-BR')}
+                </div>
+                
+                <h2 className="text-xl md:text-2xl font-bold group-hover:text-primary transition-colors mb-3 line-clamp-2">
+                  {note.title}
+                </h2>
+                
+                <p className="text-muted-foreground line-clamp-3 mb-6 flex-1 text-sm leading-relaxed">
+                  {note.description}
+                </p>
+                
+                <div className="flex flex-wrap items-center gap-2 mt-auto pt-4 border-t border-border/40">
+                  {note.tags?.map((tag: string) => (
+                    <span key={tag} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-primary/10 text-primary font-bold">
+                      <Tag className="w-2.5 h-2.5" />
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </Link>
             ))}
             {notes.length === 0 && (
-              <p className="text-muted-foreground italic">Nenhuma nota publicada ainda.</p>
+              <p className="text-muted-foreground italic col-span-full">Nenhuma nota publicada ainda.</p>
             )}
           </div>
         </div>
