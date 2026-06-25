@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.webp";
 import { Magnetic } from "@/components/ui/magnetic";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], speed?: number, delay?: number }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -50,7 +50,7 @@ const Typewriter = ({ texts, speed = 100, delay = 2000 }: { texts: string[], spe
   );
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -61,7 +61,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
