@@ -10,6 +10,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { lazy, Suspense } from "react";
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const NotesList = lazy(() => import("./pages/Notes/NotesList"));
+const NotePost = lazy(() => import("./pages/Notes/NotePost"));
 
 import { HelmetProvider } from "react-helmet-async";
 
@@ -32,6 +34,9 @@ const App = () => (
           <Suspense fallback={<AppLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/notes" element={<NotesList />} />
+              <Route path="/notes/:slug" element={<NotePost />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>

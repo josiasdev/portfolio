@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -7,6 +8,10 @@ import { useWeb3 } from "@/hooks/useWeb3";
 
 const Header = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  
   const { account, connectWallet, disconnectWallet, isConnected, isConnecting, shortenAddress } = useWeb3();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
@@ -14,8 +19,16 @@ const Header = () => {
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (!isHome) {
+      navigate(`/#${id}`);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const navItems = [
@@ -81,6 +94,19 @@ const Header = () => {
                 </button>
               );
             })}
+            
+            {/* Notes/Blog Link */}
+            <Link
+              to="/notes"
+              className={`text-sm font-semibold transition-colors relative group py-2 ${
+                !isHome ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              Notes
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ease-out rounded-full ${
+                !isHome ? 'w-full' : 'w-0 group-hover:w-full'
+              }`} />
+            </Link>
           </div>
 
           <div className="flex items-center gap-3 relative z-50">
@@ -153,6 +179,17 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
+            
+            <Link 
+              to="/notes"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-3xl sm:text-4xl font-bold font-serif tracking-tight transition-all duration-500 text-foreground/90 hover:text-primary ${
+                isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${isMobileMenuOpen ? (navItems.length + 2) * 80 : 0}ms` }}
+            >
+              Notes
+            </Link>
           </div>
         </div>
       </div>
