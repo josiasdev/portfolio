@@ -19,6 +19,13 @@ const translations = {
     'nav.education': 'Education',
     'nav.contact': 'Contact',
     
+    // Web3
+    'web3.connect': 'Connect Wallet',
+    'web3.disconnect': 'Disconnect',
+    'web3.secret.title': 'Access Granted',
+    'web3.secret.desc': 'Welcome to the decentralized sector. Your identity is verified on the blockchain.',
+    'web3.secret.install': 'Please install MetaMask to connect.',
+    
     // SEO
     'seo.title': 'Josias Batista | Full Stack & Web3 Developer',
     'seo.description': 'Portfolio of Josias Batista, Full Stack Developer specializing in Web3, Blockchain, and modern web applications with React and Node.js.',
@@ -247,6 +254,13 @@ const translations = {
     'nav.education': 'Educação',
     'nav.contact': 'Contato',
     
+    // Web3
+    'web3.connect': 'Conectar Web3',
+    'web3.disconnect': 'Desconectar',
+    'web3.secret.title': 'Acesso Concedido',
+    'web3.secret.desc': 'Bem-vindo ao setor descentralizado. Sua identidade foi verificada na blockchain.',
+    'web3.secret.install': 'Por favor, instale a MetaMask para conectar.',
+    
     // SEO
     'seo.title': 'Josias Batista | Desenvolvedor Full Stack & Web3',
     'seo.description': 'Portfólio de Josias Batista, Desenvolvedor Full Stack especializado em Web3, Blockchain e aplicações web modernas com React e Node.js.',
@@ -474,6 +488,13 @@ const translations = {
     'nav.hackathons': 'Hackatones',
     'nav.education': 'Educación',
     'nav.contact': 'Contacto',
+
+    // Web3
+    'web3.connect': 'Conectar Web3',
+    'web3.disconnect': 'Desconectar',
+    'web3.secret.title': 'Acceso Concedido',
+    'web3.secret.desc': 'Bienvenido al sector descentralizado. Su identidad está verificada en la blockchain.',
+    'web3.secret.install': 'Por favor, instale MetaMask para conectarse.',
 
     // SEO
     'seo.title': 'Josias Batista | Desarrollador Full Stack & Web3',

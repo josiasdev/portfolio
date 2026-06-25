@@ -3,9 +3,11 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
+import { useWeb3 } from "@/hooks/useWeb3";
 
 const Header = () => {
   const { t } = useLanguage();
+  const { account, connectWallet, disconnectWallet, isConnected, isConnecting, shortenAddress } = useWeb3();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -85,6 +87,23 @@ const Header = () => {
             <div className={`hidden lg:flex items-center gap-3 ${isMobileMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
               <LanguageToggle />
               <ThemeToggle />
+              
+              <button 
+                onClick={isConnected ? disconnectWallet : connectWallet}
+                className={`text-xs font-semibold px-4 py-2 rounded-full border transition-all ${
+                  isConnected 
+                    ? 'border-primary/50 bg-primary/10 text-primary hover:bg-primary/20' 
+                    : 'border-border/40 bg-card/30 text-muted-foreground hover:text-foreground hover:border-primary/40'
+                }`}
+              >
+                {isConnecting ? (
+                  <span className="animate-pulse">...</span>
+                ) : isConnected && account ? (
+                  shortenAddress(account)
+                ) : (
+                  t('web3.connect')
+                )}
+              </button>
             </div>
             
             <button 
