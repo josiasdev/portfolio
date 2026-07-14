@@ -11,9 +11,9 @@ const Education = () => {
           {t('education.title')}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 items-start">
           {/* Bachelor's Degree */}
-          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle">
+          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle h-full">
             <div className="flex items-center gap-4 mb-5">
               <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
                 <GraduationCap className="h-6 w-6 text-primary" />
@@ -23,11 +23,14 @@ const Education = () => {
             <div className="space-y-1.5 pl-1">
               <p className="text-sm text-muted-foreground font-medium">{t('education.university')}</p>
               <p className="text-sm text-primary font-semibold">{t('education.graduation')}</p>
+              <p className="text-sm text-muted-foreground mt-4 leading-relaxed whitespace-pre-wrap">
+                {t('education.university.desc')}
+              </p>
             </div>
           </div>
 
           {/* Technical Course */}
-          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle" style={{ animationDelay: '0.1s' }}>
+          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle h-full" style={{ animationDelay: '0.1s' }}>
             <div className="flex items-center gap-4 mb-5">
               <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
                 <GraduationCap className="h-6 w-6 text-primary" />
@@ -37,6 +40,9 @@ const Education = () => {
             <div className="space-y-1.5 pl-1">
               <p className="text-sm text-muted-foreground font-medium">{t('education.school')}</p>
               <p className="text-sm text-primary font-semibold">{t('education.completed')}</p>
+              <p className="text-sm text-muted-foreground mt-4 leading-relaxed whitespace-pre-wrap">
+                {t('education.school.desc')}
+              </p>
             </div>
           </div>
 
