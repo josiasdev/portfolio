@@ -41,7 +41,7 @@ const translations = {
     
     // About
     'about.title': 'About Me',
-    'about.summary': 'Born in the countryside of Passagem Funda, Ceará (Brazil), my journey in tech started early. I took my first steps as a developer during my technical course in Aracoiaba, building websites with HTML, PHP, and Java. Today, I am studying Software Engineering at the Federal University of Ceará (UFC) in Quixadá. I am a Christian at the Assembleia de Deus Templo Central, passionate about games, and driven by the challenge of building real solutions. I value strong roots and clean code.',
+    'about.summary': 'With a degree in Software Engineering from UFC, I am transitioning my robust back-end development expertise into the Web3 ecosystem. Specialized in designing secure and scalable smart contracts in Solidity (EVM-compatible, Sepolia, OpenZeppelin) and Rust (Move, for Sui/Stellar). I hold a Cyfrin Updraft certification in Smart Contract Development and served as an academic monitor focused on code review and debugging at UFC, giving me the essential technical rigor for smart contract auditing. I have hands-on experience building robust APIs with Java and Spring Boot for off-chain orchestration and microservices. I rigorously apply engineering best practices such as SOLID, Clean Architecture, automated testing, and CI/CD. I am looking for opportunities as a Blockchain/Smart Contracts Developer or in Backend Java/Spring Boot roles where I can leverage and deepen my technical mastery in secure and scalable solutions.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Scalable architectures with Java, Spring Boot, and Node.js.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -74,6 +74,14 @@ const translations = {
     // Experience
     'experience.title': 'Work Experience',
     'experience.current': 'Present',
+
+    'experience.irede.role': 'Web 3.0 Resident Developer (Blockchain & Smart Contracts)',
+    'experience.irede.company': 'iRede (MCTI & Softex)',
+    'experience.irede.period': 'July 2026 - Present',
+    'experience.irede.desc1': 'Acting in the Web 3.0 Technological Residency, an elite program for training high-level professionals, funded by MCTI, coordinated by Softex, and held by the IREDE Institute.',
+    'experience.irede.desc2': 'Selected in 8th place (score 9.078/10.0) among 70 national vacancies to integrate the practical Residency phase (Phase 2).',
+    'experience.irede.desc3': 'Acting in solving concrete market challenges through the development of real projects, prototyping, and MVP solutions focusing on Smart Contracts (Solidity/Ethereum), Blockchain, and Metaverse (XR/AR/VR).',
+    'experience.irede.tech': 'Solidity, Rust, Ethereum, EVM, Smart Contracts, Metaverse, Web3, Blockchain',
 
     'experience.ideedutec.role': 'Full Stack Developer',
     'experience.ideedutec.company': 'IDEEDUTEC',
@@ -276,7 +284,7 @@ const translations = {
     
     // About
     'about.title': 'Sobre Mim',
-    'about.summary': 'Nascido no interior de Passagem Funda (CE), minha jornada na tecnologia começou cedo. Dei meus primeiros passos como desenvolvedor no curso técnico em Informática em Aracoiaba, criando sites com HTML, PHP e Java. Hoje, curso Engenharia de Software na Universidade Federal do Ceará (UFC) em Quixadá. Sou cristão da Assembleia de Deus Templo Central, apaixonado por jogos e movido pelo desafio de construir soluções reais. Valorizo raízes fortes e código limpo.',
+    'about.summary': 'Com formação em Engenharia de Software pela UFC, estou migrando minha expertise do desenvolvimento back-end robusto para o ecossistema Web3. Especializado no design de smart contracts seguros e escaláveis em Solidity (compatível com EVM, Sepolia, OpenZeppelin) e Rust (Move, para Sui/Stellar). Possuo certificação Cyfrin Updraft em Smart Contract Development e monitoria acadêmica focada em code review e depuração na UFC, o que me dá rigor técnico essencial para auditoria de contratos inteligentes. Tenho experiência prática em construir APIs robustas com Java e Spring Boot para orquestração off-chain e microsserviços. Aplico rigorosamente boas práticas de engenharia como SOLID, Clean Architecture, testes automatizados e CI/CD. Busco oportunidades como Desenvolvedor Blockchain/Smart Contracts ou em cargos de Backend Java/Spring Boot onde eu possa alavancar e aprofundar meu domínio técnico em soluções seguras e escaláveis.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquiteturas escaláveis com Java, Spring Boot e Node.js.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -309,6 +317,14 @@ const translations = {
     // Experience
     'experience.title': 'Experiência Profissional',
     'experience.current': 'Presente',
+
+    'experience.irede.role': 'Desenvolvedor Residente em Web 3.0 (Blockchain e Smart Contracts)',
+    'experience.irede.company': 'iRede (MCTI & Softex)',
+    'experience.irede.period': 'Julho 2026 - Presente',
+    'experience.irede.desc1': 'Atuação na Residência Tecnológica em Web 3.0, um programa de elite para formação de profissionais de alto nível, financiado pelo MCTI, coordenado pela Softex e realizado pelo Instituto IREDE.',
+    'experience.irede.desc2': 'Selecionado em 8º lugar (nota 9,078/10,0) entre 70 vagas a nível nacional para integrar a fase prática de Residência (Fase 2).',
+    'experience.irede.desc3': 'Atuação na resolução de desafios concretos do mercado por meio do desenvolvimento de projetos reais, criação de protótipos e soluções (MVP) com foco em Smart Contracts (Solidity/Ethereum), Blockchain e Metaverso (XR/AR/VR).',
+    'experience.irede.tech': 'Solidity, Rust, Ethereum, EVM, Smart Contracts, Metaverso, Web3, Blockchain',
 
     'experience.ideedutec.role': 'Desenvolvedor Full Stack',
     'experience.ideedutec.company': 'IDEEDUTEC',
@@ -511,7 +527,7 @@ const translations = {
 
     // About
     'about.title': 'Sobre mí',
-    'about.summary': 'Nacido en el interior de Passagem Funda, Ceará (Brasil), mi viaje en la tecnología comenzó temprano. Di mis primeros pasos como desarrollador en mi curso técnico en Aracoiaba, creando sitios web con HTML, PHP y Java. Hoy, estudio Ingeniería de Software en la Universidad Federal de Ceará (UFC) en Quixadá. Soy cristiano de la Assembleia de Deus Templo Central, un apasionado por los juegos y motivado por el desafío de construir soluciones reales. Valoro las raíces fuertes y el código limpio.',
+    'about.summary': 'Con formación en Ingeniería de Software por la UFC, estoy migrando mi experiencia en desarrollo back-end robusto al ecosistema Web3. Especializado en el diseño de smart contracts seguros y escalables en Solidity (compatible con EVM, Sepolia, OpenZeppelin) y Rust (Move, para Sui/Stellar). Poseo una certificación Cyfrin Updraft en Smart Contract Development y experiencia como monitor académico centrado en revisión y depuración de código en la UFC, lo que me proporciona el rigor técnico esencial para la auditoría de contratos inteligentes. Tengo experiencia práctica en la construcción de APIs robustas con Java y Spring Boot para orquestación off-chain y microservicios. Aplico rigurosamente buenas prácticas de ingeniería como SOLID, Clean Architecture, pruebas automatizadas y CI/CD. Busco oportunidades como Desarrollador Blockchain/Smart Contracts o en roles de Backend Java/Spring Boot donde pueda aprovechar y profundizar mi dominio técnico en soluciones seguras y escalables.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquitecturas escalables con Java, Spring Boot y Node.js.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -544,6 +560,14 @@ const translations = {
     // Experience
     'experience.title': 'Experiencia Profesional',
     'experience.current': 'Presente',
+
+    'experience.irede.role': 'Desarrollador Residente en Web 3.0 (Blockchain y Smart Contracts)',
+    'experience.irede.company': 'iRede (MCTI & Softex)',
+    'experience.irede.period': 'Julio 2026 - Presente',
+    'experience.irede.desc1': 'Actuando en la Residencia Tecnológica en Web 3.0, un programa de élite para la formación de profesionales de alto nivel, financiado por MCTI, coordinado por Softex y realizado por el Instituto IREDE.',
+    'experience.irede.desc2': 'Seleccionado en el octavo lugar (puntuación 9.078/10.0) entre 70 vacantes a nivel nacional para integrar la fase práctica de Residencia (Fase 2).',
+    'experience.irede.desc3': 'Actuando en la resolución de desafíos concretos del mercado a través del desarrollo de proyectos reales, creación de prototipos y soluciones MVP enfocadas en Smart Contracts (Solidity/Ethereum), Blockchain y Metaverso (XR/AR/VR).',
+    'experience.irede.tech': 'Solidity, Rust, Ethereum, EVM, Smart Contracts, Metaverso, Web3, Blockchain',
 
     'experience.ideedutec.role': 'Desarrollador Full Stack',
     'experience.ideedutec.company': 'IDEEDUTEC',
