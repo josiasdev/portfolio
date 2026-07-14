@@ -40,6 +40,27 @@ const Education = () => {
             </div>
           </div>
 
+          {/* Cyfrin Updraft */}
+          <div className="animate-fade-in group flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle md:col-span-2" style={{ animationDelay: '0.15s' }}>
+            <div className="flex items-center gap-4 mb-5">
+              <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                <GraduationCap className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold font-serif group-hover:text-primary transition-colors">
+                <a href="https://updraft.cyfrin.io/courses" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {t('education.cyfrin.title')}
+                </a>
+              </h3>
+            </div>
+            <div className="space-y-1.5 pl-1">
+              <p className="text-sm text-muted-foreground font-medium">{t('education.cyfrin.type')}</p>
+              <p className="text-sm text-primary font-semibold">{t('education.cyfrin.date')}</p>
+              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                {t('education.cyfrin.desc')}
+              </p>
+            </div>
+          </div>
+
           {/* Languages — full width */}
           <div className="animate-fade-in group md:col-span-2 flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 hover:border-accent/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle" style={{ animationDelay: '0.2s' }}>
             <div className="flex items-center gap-4 mb-5">
