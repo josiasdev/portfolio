@@ -6,10 +6,8 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
-import Web3EasterEgg from "@/components/Web3EasterEgg/Web3EasterEgg";
 
 const About = lazy(() => import("@/components/About/About"));
-const GitHubStats = lazy(() => import("@/components/GitHubStats/GitHubStats"));
 const Skills = lazy(() => import("@/components/Skills/Skills"));
 const Experience = lazy(() => import("@/components/Experience/Experience"));
 const Projects = lazy(() => import("@/components/Projects/Projects"));
@@ -39,7 +37,6 @@ const Index = () => {
         <meta name="twitter:description" content={t('seo.description')} />
       </Helmet>
       
-      <Web3EasterEgg />
       <Header />
       <main>
         {/* Hero is always above the fold — no scroll reveal needed */}
@@ -47,11 +44,8 @@ const Index = () => {
 
         <Suspense fallback={<SectionLoader />}>
           <ScrollReveal direction="up" delay={0}>
-            <About />
-          </ScrollReveal>
-
           <ScrollReveal direction="up" delay={0}>
-            <GitHubStats />
+            <About />
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0}>
