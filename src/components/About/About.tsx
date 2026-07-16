@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Server, Globe2, MonitorSmartphone, Database } from "lucide-react";
-import LinkedInBadge from "./LinkedInBadge";
 
 const About = () => {
   const { t } = useLanguage();
@@ -46,8 +45,6 @@ const About = () => {
             <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
               {t('about.summary')}
             </p>
-            
-            <LinkedInBadge />
           </div>
 
           {/* Bento Cards Grid */}

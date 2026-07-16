@@ -2,7 +2,6 @@ import Header from "@/components/Header/Header";
 import { lazy, Suspense } from "react";
 import Hero from "@/components/Hero/Hero";
 import { Spinner } from "@/components/ui/spinner";
-import ScrollReveal from "@/components/ui/scroll-reveal";
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
@@ -43,34 +42,13 @@ const Index = () => {
         <Hero />
 
         <Suspense fallback={<SectionLoader />}>
-          <ScrollReveal direction="up" delay={0}>
-          <ScrollReveal direction="up" delay={0}>
-            <About />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0}>
-            <Skills />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0}>
-            <Experience />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0}>
-            <Projects />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0}>
-            <Hackathons />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0}>
-            <Education />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0}>
-            <Contact />
-          </ScrollReveal>
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Hackathons />
+          <Education />
+          <Contact />
         </Suspense>
       </main>
 
