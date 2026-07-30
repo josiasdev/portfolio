@@ -33,9 +33,9 @@ const translations = {
     'seo.description': 'Portfolio of Josias Batista, Full Stack Developer specializing in Web3, Blockchain, and modern web applications with React and Node.js.',
     
     // Hero
-    'hero.greeting': 'Hi, I\'m',
+    'hero.roleBadge': 'Web 3.0 Resident Developer @ iRede',
     'hero.title': 'Blockchain Developer & Protocol Engineer',
-    'hero.subtitle': 'Smart Contracts (Solidity/EVM/Foundry) | DeFi Primitives | Java & Spring Boot Backend',
+    'hero.subtitle': 'Blockchain Developer | Protocol Engineer | Solidity | Rust | Smart Contracts | Stellar | Ethereum | EVM | Foundry | TypeScript | DeFi',
     'hero.location': 'Quixadá - Ceará, Brazil',
     'hero.cta': 'View Projects',
     'hero.contact': 'Contact Me',
@@ -43,7 +43,7 @@ const translations = {
     
     // About
     'about.title': 'About Me',
-    'about.summary': 'My technical journey began between 2019 and 2021 with the IT Technical Course at EEEP Dr. Salomão Alves de Moura (Ceará, Brazil), building a solid foundation in programming logic, hardware, and web development. In 2022, I entered the Software Engineering Bachelor\'s program at the Federal University of Ceará (UFC Quixadá), specializing in high-performance backend architecture and Web3 protocol engineering. My current work combines event-driven microservices (Java/Spring Boot) with deterministic EVM smart contracts (Solidity/Foundry) and Stellar (Soroban/Rust). Web 3.0 Resident Developer at iRede, open to backend and blockchain protocol engineering roles: josiasmartins098@gmail.com',
+    'about.summary': 'My technical journey began between 2019 and 2021 with the IT Technical Course at EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brazil), graduating with a 9.67/10.0 GPA in technical subjects. I built strong foundations in programming logic, web development (HTML/CSS, JS, PHP, MySQL), OOP with Java, networking infrastructure, computer architecture, and robotics.\n\nIn 2022, I entered the Software Engineering Bachelor\'s program at the Federal University of Ceará (UFC Quixadá Campus). My academic training covers the complete software development lifecycle for complex systems, focusing on requirements engineering, system architecture, software testing (QA), configuration management, academic tutoring, and active hackathon participation.\n\nCurrently, I combine event-driven microservices (Java/Spring Boot) with deterministic EVM smart contracts (Solidity/Foundry) and Stellar (Soroban/Rust). I serve as a Web 3.0 Resident Developer at iRede and am open to high-performance backend and blockchain protocol engineering roles.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Scalable architectures with Java, Spring Boot, Node.js, and NestJS.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -239,9 +239,9 @@ const translations = {
     'languages.subtitle': 'Language proficiency for international teams, global Web3 ecosystems, and distributed software engineering.',
     'languages.pt.level': 'Native',
     'languages.pt.desc': 'Native written and verbal communication for technical leadership, documentation, and collaboration.',
-    'languages.en.level': 'Professional Working (B2+)',
+    'languages.en.level': 'Intermediate (B1)',
     'languages.en.desc': 'Technical reading of whitepapers, smart contract authoring, global meetings, and documentation in English.',
-    'languages.es.level': 'Professional Working',
+    'languages.es.level': 'Intermediate (B1)',
     'languages.es.desc': 'Fluent communication for technical collaboration and projects with Latin American and Spanish teams.',
     'languages.card.ready': 'Ready for remote and international teams',
     
@@ -319,9 +319,9 @@ const translations = {
     'seo.description': 'Portfólio de Josias Batista, Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Web3, Smart Contracts e Backend Java.',
 
     // Hero
-    'hero.greeting': 'Olá, eu sou',
+    'hero.roleBadge': 'Desenvolvedor Residente em Web 3.0 no iRede',
     'hero.title': 'Desenvolvedor Blockchain & Engenheiro de Protocolos',
-    'hero.subtitle': 'Smart Contracts (Solidity/EVM/Foundry) | Primitivas DeFi | Backend Java & Spring Boot',
+    'hero.subtitle': 'Desenvolvedor Blockchain | Engenheiro de Protocolos | Solidity | Rust | Smart Contracts | Stellar | Ethereum | EVM | Foundry | TypeScript | DeFi',
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Projetos',
     'hero.contact': 'Entre em Contato',
@@ -329,7 +329,7 @@ const translations = {
     
     // About
     'about.title': 'Sobre Mim',
-    'about.summary': 'Minha jornada técnica começou entre 2019 e 2021 no Curso Técnico em Informática da EEEP Dr. Salomão Alves de Moura (Aracoiaba/Quixadá - Ceará), onde consolidei as bases em lógica de programação, infraestrutura e desenvolvimento. Em 2022, ingressei no Bacharelado em Engenharia de Software na Universidade Federal do Ceará (UFC - Quixadá), me especializando em desenvolvimento backend de alta performance e engenharia de protocolos Web3. Atualmente uno a robustez de microsserviços e sistemas orientados a eventos (Java/Spring Boot) à criação de Smart Contracts determinísticos na EVM (Solidity/Foundry) e Stellar (Soroban/Rust). Desenvolvedor Residente em Web 3.0 no iRede e aberto a oportunidades em backend e blockchain: josiasmartins098@gmail.com',
+    'about.summary': 'Minha jornada técnica começou entre 2019 e 2021 no Curso Técnico em Informática integrado ao Ensino Médio da EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará), onde conquistei média de 9,67/10,0 nas disciplinas técnicas. Desenvolvi bases sólidas em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, MySQL), POO em Java, infraestrutura de redes, arquitetura de computadores e robótica.\n\nEm 2022, ingressei no Bacharelado em Engenharia de Software na Universidade Federal do Ceará (UFC - Campus Quixadá). Minha formação acadêmica abrange todo o ciclo de vida de sistemas computacionais complexos, com foco em engenharia e arquitetura de requisitos, testes de software (QA), gerência de configuração e atuação como Monitor Acadêmico, além da participação ativa em hackathons e comunidades de tecnologia.\n\nAtualmente, uno a robustez de microsserviços e sistemas orientados a eventos (Java/Spring Boot) à criação de Smart Contracts determinísticos na EVM (Solidity/Foundry) e Stellar (Soroban/Rust). Atuo como Desenvolvedor Residente em Web 3.0 no Instituto iRede e estou aberto a oportunidades em backend de alta performance e engenharia de protocolos blockchain.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquiteturas escaláveis com Java, Spring Boot, Node.js e NestJS.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -525,9 +525,9 @@ const translations = {
     'languages.subtitle': 'Proficiência idiomática para atuação em equipes internacionais, ecossistemas Web3 globais e engenharia de software distribuída.',
     'languages.pt.level': 'Nativo',
     'languages.pt.desc': 'Comunicação escrita e verbal nativa para liderança técnica, redação de documentações e colaboração.',
-    'languages.en.level': 'Profissional (Professional Working / B2+)',
+    'languages.en.level': 'Intermediário (B1)',
     'languages.en.desc': 'Leitura técnica de whitepapers, escrita de smart contracts, reuniões globais e documentações em inglês.',
-    'languages.es.level': 'Profissional (Professional Working)',
+    'languages.es.level': 'Intermediário (B1)',
     'languages.es.desc': 'Comunicação fluida para colaboração técnica e projetos com equipes da América Latina e Espanha.',
     'languages.card.ready': 'Pronto para times remotos e internacionais',
     
@@ -604,17 +604,16 @@ const translations = {
     'seo.description': 'Portafolio de Josias Batista, Desarrollador Blockchain & Ingeniero de Protocolos especializado en Web3, Smart Contracts y Backend Java.',
 
     // Hero
-    'hero.greeting': 'Hola, soy',
+    'hero.roleBadge': 'Desarrollador Residente Web 3.0 en iRede',
     'hero.title': 'Desarrollador Blockchain e Ingeniero de Protocolos',
-    'hero.subtitle': 'Smart Contracts (Solidity/EVM/Foundry) | Primitivas DeFi | Backend Java y Spring Boot',
+    'hero.subtitle': 'Desarrollador Blockchain | Ingeniero de Protocolos | Solidity | Rust | Smart Contracts | Stellar | Ethereum | EVM | Foundry | TypeScript | DeFi',
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Proyectos',
     'hero.contact': 'Contáctame',
     'hero.downloadCV': 'Descargar CV',
 
     // About
-    'about.title': 'Sobre mí',
-    'about.summary': 'Mi trayectoria técnica comenzó entre 2019 y 2021 con el Curso Técnico en Informática en EEEP Dr. Salomão Alves de Moura (Ceará, Brasil), consolidando bases en lógica, redes y desarrollo. En 2022, ingresé a la carrera de Ingeniería de Software en la Universidad Federal de Ceará (UFC Quixadá), especializándome en arquitecturas backend e ingeniería de protocolos Web3. Mi trabajo une microservicios orientados a eventos (Java/Spring Boot) con contratos inteligentes deterministas en EVM (Solidity/Foundry) y Stellar (Soroban/Rust). Desarrollador Residente Web 3.0 en iRede, abierto a oportunidades: josiasmartins098@gmail.com',
+    'about.summary': 'Mi trayectoria técnica comenzó entre 2019 y 2021 con el Curso Técnico en Informática en EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brasil), obteniendo un promedio de 9.67/10.0 en materias técnicas. Construí bases sólidas en lógica de programación, desarrollo web (HTML/CSS, JS, PHP, MySQL), POO en Java, infraestructura de redes y robótica.\n\nEn 2022, ingresé a la Licenciatura en Ingeniería de Software en la Universidad Federal de Ceará (UFC - Campus Quixadá). Mi formación abarca todo el ciclo de vida de sistemas computacionales complejos, con foco en arquitectura de requisitos, pruebas de software (QA), gestión de proyectos y tutoría académica.\n\nActualmente, combino la solidez de microservicios (Java/Spring Boot) con el desarrollo de Smart Contracts deterministas en EVM (Solidity/Foundry) y Stellar (Soroban/Rust). Me desempeño como Desarrollador Residente en Web 3.0 en iRede y estoy abierto a oportunidades en backend y protocolos blockchain.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquitecturas escalables con Java, Spring Boot, Node.js y NestJS.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -810,9 +809,9 @@ const translations = {
     'languages.subtitle': 'Competencia lingüística para equipos internacionales, ecosistemas Web3 globales e ingeniería de software distribuida.',
     'languages.pt.level': 'Nativo',
     'languages.pt.desc': 'Comunicación escrita y verbal nativa para liderazgo técnico, documentación y colaboración.',
-    'languages.en.level': 'Competencia profesional (B2+)',
+    'languages.en.level': 'Intermedio (B1)',
     'languages.en.desc': 'Lectura técnica de whitepapers, escritura de smart contracts, reuniones globales y documentación en inglés.',
-    'languages.es.level': 'Competencia profesional',
+    'languages.es.level': 'Intermedio (B1)',
     'languages.es.desc': 'Comunicación fluida para colaboración técnica y proyectos con equipos de Latinoamérica y España.',
     'languages.card.ready': 'Listo para equipos remotos e internacionales',
 

@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ExternalLink, Github, Star } from "lucide-react";
 
@@ -12,11 +10,10 @@ type Project = {
   tags: string[];
 };
 
-const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   const { t } = useLanguage();
   const [stars, setStars] = useState<number | null>(null);
 
-  // Dynamic GitHub Stars Fetching
   useEffect(() => {
     if (project.github) {
       const repoPath = project.github.replace("https://github.com/", "").replace(/\/$/, "");
@@ -24,7 +21,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         fetch(`https://api.github.com/repos/${repoPath}`)
           .then(res => res.json())
           .then(data => {
-            if (data.stargazers_count !== undefined) {
+            if (data.stargazers_count !== undefined && data.stargazers_count > 0) {
               setStars(data.stargazers_count);
             }
           })
@@ -33,66 +30,60 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     }
   }, [project.github]);
 
-  // Tag Overflow Management
-  const MAX_TAGS = 3;
-  const visibleTags = project.tags.slice(0, MAX_TAGS);
-  const hiddenTagsCount = project.tags.length - MAX_TAGS;
-
   return (
-    <div
-      className="animate-fade-in flex flex-col group h-full w-full"
-      style={{ animationDelay: `${index * 0.08}s` }}
-    >
-      <div className="relative flex flex-col flex-1 p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 overflow-hidden hover:bg-card/60 dark:hover:bg-card/20 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-subtle backdrop-blur-sm">
-        
-        <div className="space-y-4 flex-1 flex flex-col relative z-10">
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="text-xl md:text-2xl font-bold font-serif group-hover:text-primary transition-colors duration-200">
-              {project.title}
-            </h3>
-            {stars !== null && stars > 0 && (
-              <div className="flex items-center gap-1 text-xs font-medium text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex-shrink-0 mt-1">
-                <Star className="h-3 w-3 fill-amber-500" />
-                <span>{stars}</span>
-              </div>
-            )}
-          </div>
-
-          <p className="text-muted-foreground text-sm leading-relaxed flex-1 mt-2">
-            {project.description}
-          </p>
-
-          <div className="flex flex-wrap gap-2 pt-4 border-t border-border/40 mt-4">
-            {visibleTags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs hover:bg-primary/10 transition-colors cursor-default border-border/40 bg-secondary/50">
-                {tag}
-              </Badge>
-            ))}
-            {hiddenTagsCount > 0 && (
-              <Badge variant="outline" className="text-xs text-muted-foreground border-border/40">
-                +{hiddenTagsCount}
-              </Badge>
-            )}
-          </div>
+    <div className="group p-5 rounded border border-border/60 bg-card/30 hover:border-primary/50 transition-colors flex flex-col justify-between space-y-4">
+      <div className="space-y-3">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+          {stars !== null && (
+            <div className="flex items-center gap-1 text-[11px] font-mono text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 flex-shrink-0">
+              <Star className="h-3 w-3 fill-amber-500" />
+              <span>{stars}</span>
+            </div>
+          )}
         </div>
 
-        {/* Buttons are responsive: stacked on small screens if both exist, side-by-side on larger screens */}
-        <div className="flex flex-col sm:flex-row gap-3 pt-6 relative z-10 mt-auto">
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+
+      <div className="space-y-4 pt-2">
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="font-mono text-[11px] text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-4 pt-2 border-t border-border/40 text-xs font-mono">
           {project.github && (
-            <Button variant="outline" size="sm" asChild className="flex-1 hover:border-primary/50 transition-all text-xs font-semibold min-h-[44px] rounded-full">
-              <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4 mr-2" />
-                {t('projects.viewCode')}
-              </a>
-            </Button>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Github className="h-3.5 w-3.5" />
+              <span>{t('projects.viewCode')}</span>
+            </a>
           )}
           {project.demo && (
-            <Button size="sm" asChild className="flex-1 bg-primary/90 hover:bg-primary text-primary-foreground transition-all text-xs font-semibold min-h-[44px] rounded-full">
-              <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4 mr-2" />
-                {t('projects.viewDemo')}
-              </a>
-            </Button>
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ExternalLink className="h-3.5 w-3.5" />
+              <span>{t('projects.viewDemo')}</span>
+            </a>
           )}
         </div>
       </div>
@@ -110,35 +101,35 @@ const Projects = () => {
       description: t('projects.coinconut.desc'),
       github: "https://github.com/josiasdev/coinconut",
       demo: "https://coinconut-b6qp.vercel.app",
-      tags: ['Full Stack', 'Web3', 'Rust', 'Soroban', 'Stellar', 'Noir (ZK)', 'React', 'TypeScript']
+      tags: ['Web3', 'Rust', 'Soroban', 'Stellar', 'Noir (ZK)', 'React', 'TypeScript']
     },
     {
       title: t('projects.elociv.title'),
       description: t('projects.elociv.desc'),
       github: "https://github.com/josiasdev/EloCiv",
       demo: "https://github.com/josiasdev/EloCiv",
-      tags: ['Full Stack', 'Web3', 'Rust', 'Soroban', 'Stellar', 'Fastify', 'Docker', 'React']
+      tags: ['Web3', 'Rust', 'Soroban', 'Stellar', 'Fastify', 'Docker']
     },
     {
       title: t('projects.tutorcrypto.title'),
       description: t('projects.tutorcrypto.desc'),
       github: "https://github.com/josiasdev/tutor-crypto-ai",
       demo: null,
-      tags: ['Full Stack', 'Python', 'FastAPI', 'Streamlit', 'LangChain', 'RAG', 'Ollama']
+      tags: ['AI / RAG', 'Python', 'FastAPI', 'Streamlit', 'LangChain', 'Ollama']
     },
     {
       title: t('projects.relatorioaniversariantes.title'),
       description: t('projects.relatorioaniversariantes.desc'),
       github: "https://github.com/josiasdev/RelatorioAniversariantes",
       demo: null,
-      tags: ['Backend', 'Java', 'Spring Boot', 'Selenium', 'Docker', 'OpenPDF']
+      tags: ['Backend', 'Java 17', 'Spring Boot', 'Selenium', 'Docker', 'OpenPDF']
     },
     {
       title: t('projects.chainmed.title'),
       description: t('projects.chainmed.desc'),
       github: "https://github.com/josiasdev/ChainMed",
       demo: "https://chain-med.vercel.app",
-      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'shadcn/ui', 'Tailwind CSS']
+      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'Tailwind CSS']
     },
     {
       title: t('projects.monemiitec.title'),
@@ -152,42 +143,42 @@ const Projects = () => {
       description: t('projects.convit3-digital.desc'),
       github: 'https://github.com/josiasdev/convit3-digital',
       demo: null,
-      tags: ['Full Stack', 'Next.js', 'JavaScript', 'TypeScript']
+      tags: ['Full Stack', 'Next.js', 'TypeScript']
     },
     {
       title: t('projects.sylopay.title'),
       description: t('projects.sylopay.desc'),
       github: 'https://github.com/Sylopay/sylopay',
       demo: null,
-      tags: ['Full Stack', 'Web3', 'React.js', 'Express.js', 'Stellar']
+      tags: ['Web3', 'NestJS', 'Stellar', 'PostgreSQL', 'Docker']
     },
     {
       title: t('projects.kyra.title'),
       description: t('projects.kyra.desc'),
       github: null,
       demo: 'https://kyra-finance.vercel.app',
-      tags: ['Full Stack', 'Next.js', 'Web3', 'AI', 'SUI']
+      tags: ['Web3', 'AI Agent', 'Next.js', 'SUI']
     },
     {
       title: t('projects.heather.title'),
       description: t('projects.heather.desc'),
       github: 'https://github.com/pleasantfinance8/xrp',
       demo: null,
-      tags: ['Full Stack', 'Web3', 'AI', 'XRPL']
+      tags: ['Web3', 'AI', 'XRPL', 'NestJS']
     },
     {
       title: t('projects.btg.title'),
       description: t('projects.btg.desc'),
       github: 'https://github.com/josiasdev/orderms/',
       demo: null,
-      tags: ['Backend', 'Java', 'Spring Boot', 'Microservices']
+      tags: ['Backend', 'Java 17', 'Spring Boot', 'RabbitMQ', 'MongoDB']
     },
     {
       title: t('projects.sysagua.title'),
       description: t('projects.sysagua.desc'),
       github: 'https://github.com/CristianoMends/sys-agua',
       demo: null,
-      tags: ['Backend', 'Java', 'JavaFx', 'Spring Boot']
+      tags: ['Backend', 'Java', 'Spring Boot', 'PostgreSQL']
     },
     {
       title: t('projects.innovateacademytech.title'),
@@ -208,14 +199,14 @@ const Projects = () => {
       description: t('projects.investtrackapi.desc'),
       github: 'https://github.com/josiasdev/InvestTrackAPI',
       demo: null,
-      tags: ['Backend', '.NET', 'C#']
+      tags: ['Backend', '.NET 8', 'C#']
     },
     {
       title: t('projects.bookfinderapi.title'),
       description: t('projects.bookfinderapi.desc'),
       github: 'https://github.com/josiasdev/BookFinderApi',
       demo: null,
-      tags: ['Backend', '.NET', 'C#']
+      tags: ['Backend', '.NET 8', 'C#', 'SQL Server']
     },
     {
       title: t('projects.candidatesapi.title'),
@@ -229,29 +220,28 @@ const Projects = () => {
       description: t('projects.teste.desc'),
       github: 'https://github.com/josiasdev/teste-estagio',
       demo: null,
-      tags: ['Backend', 'Java', 'Python']
+      tags: ['Backend', 'Java', 'Python', 'PostgreSQL']
     },
     {
       title: t('projects.contratobiblia.title'),
       description: t('projects.contratobiblia.desc'),
       github: 'https://github.com/josiasdev/contrato_biblia',
       demo: null,
-      tags: ['Web3', 'Rust', 'Stellar']
+      tags: ['Web3', 'Rust', 'Stellar Soroban']
     },
     {
       title: t('projects.ponte-pecem-ia-ret.title'),
       description: t('projects.ponte-pecem-ia-ret.desc'),
       github: 'https://github.com/josiasdev/ponte-pecem-ia-ret',
       demo: null,
-      tags: ['Backend', 'Python', 'N8n']
+      tags: ['Backend', 'Python', 'N8n', 'Operations Research']
     }
   ];
 
   const categories = [
     { id: 'All', label: t('projects.filters.all') },
-    { id: 'Full Stack', label: t('projects.filters.fullstack') },
-    { id: 'Backend', label: t('projects.filters.backend') },
     { id: 'Web3', label: t('projects.filters.web3') },
+    { id: 'Backend', label: t('projects.filters.backend') },
     { id: 'Java', label: t('projects.filters.java') },
     { id: 'Python', label: t('projects.filters.python') },
     { id: 'Rust', label: t('projects.filters.rust') },
@@ -260,44 +250,38 @@ const Projects = () => {
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
-    : projects.filter(project => project.tags.some(t => t.toLowerCase() === selectedCategory.toLowerCase()));
+    : projects.filter(project => project.tags.some(t => t.toLowerCase().includes(selectedCategory.toLowerCase())));
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 font-serif animate-fade-in">
-          {t('projects.title')}
+    <section id="projects" className="scroll-mt-16 space-y-6">
+      <div className="flex items-center gap-3">
+        <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
+          04. {t('projects.title')}
         </h2>
-        <p className="text-center text-muted-foreground mb-10 animate-fade-in">
-          {filteredProjects.length} {filteredProjects.length === 1 ? t('projects.count.one') : t('projects.count.many')}
-        </p>
+        <div className="h-px bg-border flex-1 max-w-xs" />
+      </div>
 
-        {/* Filter buttons */}
-        <div className="flex justify-center flex-wrap gap-2 mb-12 animate-fade-in">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`
-                px-5 min-h-[44px] rounded-full text-sm font-medium transition-all duration-300
-                ${selectedCategory === category.id
-                  ? "bg-primary text-primary-foreground shadow-subtle scale-105"
-                  : "border border-border/40 hover:border-primary/40 hover:bg-card/50 text-muted-foreground hover:text-foreground bg-card/30 backdrop-blur-sm"
-                }
-              `}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
+      {/* Category filter tabs */}
+      <div className="flex flex-wrap gap-2 text-xs font-mono">
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            onClick={() => setSelectedCategory(category.id)}
+            className={`px-3 py-1 rounded transition-colors ${
+              selectedCategory === category.id
+                ? "bg-primary text-primary-foreground font-semibold"
+                : "border border-border/60 text-muted-foreground hover:text-foreground hover:border-border"
+            }`}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
 
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8 md:pb-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] -mx-4 px-4 md:mx-0 md:px-0">
-          {filteredProjects.map((project, index) => (
-            <div key={`${project.title}-${selectedCategory}`} className="w-[85vw] sm:w-[350px] md:w-auto flex-none snap-center flex flex-col items-stretch">
-              <ProjectCard project={project} index={index} />
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
       </div>
     </section>
   );

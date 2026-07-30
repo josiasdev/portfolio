@@ -5,99 +5,73 @@ const Education = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="education" className="py-20 border-t border-border/40 bg-background relative">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
-            <GraduationCap className="h-4 w-4" />
-            <span>{t('education.badge')}</span>
+    <section id="education" className="scroll-mt-16 space-y-6">
+      <div className="flex items-center gap-3">
+        <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
+          06. {t('education.title')}
+        </h2>
+        <div className="h-px bg-border flex-1 max-w-xs" />
+      </div>
+
+      <div className="space-y-4">
+        {/* Bachelor's Degree */}
+        <div className="group p-5 rounded border border-border/60 bg-card/30 hover:border-primary/50 transition-colors space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div className="space-y-1">
+              <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                {t('education.degree')}
+              </h3>
+              <p className="text-xs font-medium text-primary flex items-center gap-1.5">
+                <Building2 className="h-3.5 w-3.5" />
+                <span>{t('education.university')}</span>
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground flex-shrink-0">
+              <div className="flex items-center gap-1">
+                <Calendar className="h-3.5 w-3.5 text-primary" />
+                <span>2022 — 2027</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                <span>Quixadá, Ceará, Brasil</span>
+              </div>
+            </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 text-foreground">
-            {t('education.title')}
-          </h2>
-          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-            {t('education.subtitle')}
+
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Bacharelado focado em engenharia de requisitos, arquitetura de microsserviços, qualidade de software (QA), testes e desenvolvimento de sistemas computacionais de alta performance.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-stretch">
-          {/* Bachelor's Degree */}
-          <div className="flex flex-col justify-between p-8 rounded-3xl border border-border/40 bg-card/40 dark:bg-card/20 hover:bg-card/80 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-sm group">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                </div>
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                  Bacharelado
-                </span>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold font-serif text-foreground group-hover:text-primary transition-colors">
-                  {t('education.degree')}
-                </h3>
-                <p className="text-sm font-semibold text-primary mt-1 flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4" />
-                  <span>{t('education.university')}</span>
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 text-xs text-muted-foreground pt-1">
-                <div className="flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5 text-primary" />
-                  <span>{t('education.graduation')}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="h-3.5 w-3.5 text-primary" />
-                  <span>Quixadá, CE</span>
-                </div>
-              </div>
-
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed pt-2">
-                {t('education.university.desc')}
+        {/* Technical Course */}
+        <div className="group p-5 rounded border border-border/60 bg-card/30 hover:border-primary/50 transition-colors space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div className="space-y-1">
+              <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                {t('education.technical')}
+              </h3>
+              <p className="text-xs font-medium text-primary flex items-center gap-1.5">
+                <Building2 className="h-3.5 w-3.5" />
+                <span>{t('education.school')}</span>
               </p>
+            </div>
+
+            <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground flex-shrink-0">
+              <div className="flex items-center gap-1">
+                <Calendar className="h-3.5 w-3.5 text-primary" />
+                <span>2019 — 2021</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                <span>Aracoiaba, Ceará, Brasil</span>
+              </div>
             </div>
           </div>
 
-          {/* Technical Course */}
-          <div className="flex flex-col justify-between p-8 rounded-3xl border border-border/40 bg-card/40 dark:bg-card/20 hover:bg-card/80 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-sm group">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                </div>
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-secondary text-muted-foreground border border-border/40">
-                  Ensino Técnico
-                </span>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold font-serif text-foreground group-hover:text-primary transition-colors">
-                  {t('education.technical')}
-                </h3>
-                <p className="text-sm font-semibold text-primary mt-1 flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4" />
-                  <span>{t('education.school')}</span>
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 text-xs text-muted-foreground pt-1">
-                <div className="flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5 text-primary" />
-                  <span>{t('education.completed')}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="h-3.5 w-3.5 text-primary" />
-                  <span>Ceará, BR</span>
-                </div>
-              </div>
-
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed pt-2">
-                {t('education.school.desc')}
-              </p>
-            </div>
-          </div>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Formação técnica sólida em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, Java), banco de dados (MySQL) e redes de computadores. Média técnica: 9.67/10.0.
+          </p>
         </div>
       </div>
     </section>

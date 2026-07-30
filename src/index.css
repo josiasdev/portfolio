@@ -2,31 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     --background: 210 40% 98%;
-    --foreground: 218 50% 12%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 218 50% 12%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 218 50% 12%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 158 85% 36%;
+    --primary: 173 80% 36%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 94%;
-    --secondary-foreground: 218 50% 12%;
+    --secondary-foreground: 222 47% 11%;
 
     --muted: 210 40% 94%;
-    --muted-foreground: 215 16% 45%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 84 81% 38%;
+    --accent: 173 80% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,52 +30,39 @@ All colors MUST be HSL.
 
     --border: 214 32% 88%;
     --input: 214 32% 88%;
-    --ring: 158 85% 36%;
+    --ring: 173 80% 36%;
 
-    --radius: 1rem;
-
-    /* Light Mode Custom Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(158 85% 36%), hsl(84 81% 38%));
-    --gradient-hero: linear-gradient(135deg, hsl(158 85% 36% / 0.08), hsl(84 81% 38% / 0.04));
-    --shadow-glow: 0 0 35px hsl(158 85% 36% / 0.15);
-    --shadow-card: 0 4px 16px hsl(220 20% 12% / 0.08);
-    --shadow-subtle: 0 2px 6px hsl(220 20% 12% / 0.04);
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 218 52% 9%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 218 45% 13%;
+    --card: 217 33% 15%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 218 45% 13%;
+    --popover: 217 33% 15%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 158 75% 48%;
-    --primary-foreground: 218 52% 9%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 218 35% 16%;
+    --secondary: 217 19% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 218 30% 18%;
-    --muted-foreground: 215 20% 70%;
+    --muted: 217 19% 18%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 84 81% 52%;
-    --accent-foreground: 218 52% 9%;
+    --accent: 173 80% 40%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 218 35% 20%;
-    --input: 218 35% 20%;
-    --ring: 158 75% 48%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(158 80% 45%), hsl(84 80% 48%));
-    --gradient-hero: linear-gradient(135deg, hsl(158 80% 45% / 0.12), hsl(84 80% 48% / 0.06));
-    --shadow-glow: 0 0 50px hsl(158 75% 48% / 0.25);
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
-    --shadow-subtle: 0 2px 8px hsl(0 0% 0% / 0.25);
+    --border: 217 19% 24%;
+    --input: 217 19% 24%;
+    --ring: 173 80% 40%;
   }
 }
 
@@ -95,34 +78,12 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  /* Textura de Ruído (Grain Effect) para aspecto mais humano/orgânico */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0.03; /* Muito sutil para não atrapalhar a leitura */
-    pointer-events: none;
-    z-index: 9999;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
   
   html {
     scroll-behavior: smooth;
   }
 
-  /* 3D preserve context */
-  .perspective-800 {
-    perspective: 800px;
-  }
-  .preserve-3d {
-    transform-style: preserve-3d;
-  }
-
-  /* Custom scrollbar */
+  /* Custom subtle scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -130,39 +91,16 @@ All colors MUST be HSL.
     background: hsl(var(--background));
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary) / 0.4);
+    background: hsl(var(--muted-foreground) / 0.3);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.7);
+    background: hsl(var(--primary) / 0.6);
   }
 
   /* Text selection */
   ::selection {
-    background: hsl(var(--primary) / 0.3);
-    color: hsl(var(--foreground));
+    background: hsl(var(--primary) / 0.25);
+    color: hsl(var(--primary));
   }
-}
-
-/* Initial animation state for fade-in and scale-in - OVERRIDDEN TO STATIC */
-@layer utilities {
-  .animate-fade-in {
-    opacity: 1 !important;
-    animation: none !important;
-  }
-  .animate-scale-in {
-    opacity: 1 !important;
-    animation: none !important;
-    transform: none !important;
-  }
-
-  .scroll-reveal-inner .animate-fade-in {
-    opacity: 1 !important;
-    animation: none !important;
-  }
-}
-
-/* Transições desabilitadas globalmente */
-* {
-  transition: none !important;
 }

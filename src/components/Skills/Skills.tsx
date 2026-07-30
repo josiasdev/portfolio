@@ -1,46 +1,10 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Database, Cloud, Blocks, Palette, Wrench, SquareCode } from "lucide-react";
+import { Code2, Database, Cloud, Blocks, Palette, Wrench } from "lucide-react";
 
 type SkillCategory = {
   title: string;
   icon: React.ElementType;
   skills: string[];
-};
-
-const SkillCard = ({ category, index }: { category: SkillCategory; index: number }) => {
-  return (
-    <div
-      className="animate-fade-in group h-full"
-      style={{ animationDelay: `${index * 0.08}s` }}
-    >
-      <div className="relative p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/60 dark:hover:bg-card/20 backdrop-blur-sm h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-subtle">
-        
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-          <div className="p-3.5 rounded-2xl bg-background/80 border border-border/50 group-hover:scale-110 group-hover:border-primary/50 transition-all duration-300 w-fit">
-            <category.icon className="h-6 w-6 text-primary" />
-          </div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-xl font-bold font-serif">{category.title}</h3>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 tabular-nums">
-              {category.skills.length}
-            </span>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {category.skills.map((skill, i) => (
-            <span
-              key={skill}
-              className="px-3.5 py-1.5 text-xs font-medium rounded-full bg-secondary/50 text-secondary-foreground border border-border/40 transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:border-primary/30 cursor-default"
-              style={{ transitionDelay: `${i * 15}ms` }}
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
 };
 
 const Skills = () => {
@@ -50,12 +14,12 @@ const Skills = () => {
     {
       title: t('skills.web3'),
       icon: Blocks,
-      skills: ['Solidity', 'Foundry', 'Hardhat', 'Ethereum (EVM)', 'Smart Contracts', 'DeFi Primitives', 'Metaverso', 'Rust', 'Move', 'Sui', 'Stellar'],
+      skills: ['Solidity', 'Foundry', 'Hardhat', 'Ethereum (EVM)', 'Smart Contracts', 'DeFi Primitives', 'Rust', 'Move', 'Sui', 'Stellar (Soroban)'],
     },
     {
       title: t('skills.backend'),
       icon: Code2,
-      skills: ['Java', 'Spring Boot', 'Node.js', 'NestJS', 'FastAPI', 'Streamlit', 'Express.js', 'C#', '.NET'],
+      skills: ['Java 17', 'Spring Boot', 'Node.js', 'NestJS', 'Express.js'],
     },
     {
       title: t('skills.frontend'),
@@ -70,35 +34,50 @@ const Skills = () => {
     {
       title: t('skills.devops'),
       icon: Cloud,
-      skills: ['Docker', 'Kubernetes', 'AWS', 'Linux', 'Git', 'CI/CD'],
-    },
-    {
-      title: 'IDEs & Tools',
-      icon: SquareCode,
-      skills: ['IntelliJ IDEA', 'VS Code', 'Foundry CLI', 'Android Studio'],
+      skills: ['Docker', 'Kubernetes', 'AWS', 'Linux (LPI)', 'Git', 'CI/CD Pipelines'],
     },
     {
       title: t('skills.additional'),
       icon: Wrench,
-      skills: ['Clean Architecture', 'SOLID', 'Protocol Design', 'RESTful APIs', 'Oracles', 'Scrum', 'LLMs'],
+      skills: ['Clean Architecture', 'SOLID', 'Protocol Design', 'RESTful APIs', 'Oracles', 'Scrum', 'RAG LLMs'],
     },
   ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">
-            {t('skills.title')}
-          </h2>
-          <div className="h-1 w-20 bg-gradient-primary mx-auto rounded-full opacity-80" />
-        </div>
+    <section id="skills" className="scroll-mt-16 space-y-6">
+      <div className="flex items-center gap-3">
+        <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
+          02. {t('skills.title')}
+        </h2>
+        <div className="h-px bg-border flex-1 max-w-xs" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <SkillCard key={category.title} category={category} index={index} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {skillCategories.map((category) => {
+          const Icon = category.icon;
+          return (
+            <div
+              key={category.title}
+              className="p-4 rounded border border-border/60 bg-card/30 hover:border-border transition-colors space-y-3"
+            >
+              <div className="flex items-center gap-2 text-foreground font-semibold text-sm">
+                <Icon className="h-4 w-4 text-primary" />
+                <span className="font-mono text-xs">{category.title}</span>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="font-mono text-[11px] text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

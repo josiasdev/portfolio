@@ -15,7 +15,11 @@ const languages: LangOption[] = [
   { code: 'es', label: 'Español',   nativeLabel: 'ES', flag: '🇪🇸' },
 ];
 
-const LanguageToggle = () => {
+interface LanguageToggleProps {
+  direction?: "up" | "down";
+}
+
+const LanguageToggle = ({ direction = "up" }: LanguageToggleProps) => {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -59,7 +63,7 @@ const LanguageToggle = () => {
         `}
       >
         <span className="text-base leading-none">{current.flag}</span>
-        <span className="hidden sm:inline">{current.nativeLabel}</span>
+        <span className="text-xs font-semibold">{current.nativeLabel}</span>
         <ChevronDown
           className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
@@ -69,14 +73,13 @@ const LanguageToggle = () => {
       {open && (
         <div
           role="listbox"
-          className="
-            absolute right-0 top-full mt-2 w-44 z-[100]
+          className={`
+            absolute right-0 w-44 z-[100]
             rounded-xl border border-border/60 dark:border-border/40
-            bg-card/95 dark:bg-card/98 backdrop-blur-lg
-            shadow-[0_8px_30px_hsl(0_0%_0%/0.12)] dark:shadow-[0_8px_30px_hsl(0_0%_0%/0.4)]
-            overflow-hidden
-            animate-scale-in origin-top-right
-          "
+            bg-card/98 dark:bg-card/98 backdrop-blur-lg
+            shadow-lg overflow-hidden animate-fade-in
+            ${direction === "up" ? "bottom-full mb-2 origin-bottom-right" : "top-full mt-2 origin-top-right"}
+          `}
         >
           {/* Header */}
           <div className="px-3 pt-2.5 pb-1.5 border-b border-border/40">
