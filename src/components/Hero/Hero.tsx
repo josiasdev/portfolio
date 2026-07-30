@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, FileText, Blocks, Code, Server } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.webp";
 import { Magnetic } from "@/components/ui/magnetic";
@@ -75,7 +75,16 @@ const Hero = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const typingRoles = [
@@ -88,27 +97,27 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-20 pb-12"
     >
       {/* Background layers */}
       <div className="absolute inset-0 bg-background/95" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="max-w-4xl mx-auto text-center space-y-8"
+          className="max-w-5xl mx-auto text-center p-8 md:p-12 rounded-3xl border border-primary/30 bg-card/40 backdrop-blur-md shadow-2xl space-y-8 relative overflow-hidden"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
 
           {/* Profile Image - Clean Glassmorphic Style */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-6">
+          <motion.div variants={itemVariants} className="flex justify-center mb-4">
             <div className="relative group">
               {/* Subtle ambient glow */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/30 to-accent/30 blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60" />
               
               {/* Photo Container */}
-              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-card/30 backdrop-blur-md border border-border/50 group-hover:border-primary/50 transition-all duration-500 shadow-xl">
+              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full p-1.5 bg-card/50 backdrop-blur-md border border-primary/40 group-hover:border-primary transition-all duration-500 shadow-xl">
                 <div className="w-full h-full rounded-full overflow-hidden border border-border/20">
                   <img
                     src={profileImage}
@@ -123,32 +132,59 @@ const Hero = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-4">
-            <p className="text-sm md:text-base font-medium text-primary tracking-widest uppercase">
+            <p className="text-sm md:text-base font-bold text-primary tracking-widest uppercase">
               {t('hero.greeting')}
             </p>
 
-            <h1 className="text-5xl md:text-7xl font-bold font-serif leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-bold font-serif leading-tight tracking-tight">
               Josias{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                 Batista
               </span>
             </h1>
 
-            <h2 className="text-2xl md:text-3xl font-medium text-foreground/80 h-10">
+            <h2 className="text-xl md:text-2xl font-semibold text-foreground/90 h-10">
               <Typewriter texts={typingRoles} />
             </h2>
           </motion.div>
 
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </motion.p>
 
+          {/* 3 Core Highlight Cards - Inspired by Web 3.0 iRede */}
+          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-left">
+            <div className="p-4 rounded-2xl bg-background/60 border border-primary/25 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2.5 mb-1 text-primary font-bold text-sm">
+                <Blocks className="h-4 w-4 flex-shrink-0" />
+                <span>Blockchain & Web3</span>
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">Smart Contracts em Solidity (EVM) e Soroban (Stellar Rust).</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-background/60 border border-primary/25 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2.5 mb-1 text-primary font-bold text-sm">
+                <Code className="h-4 w-4 flex-shrink-0" />
+                <span>Engenharia de Protocolos</span>
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">Primitivas DeFi, Oráculos, Indexação On-chain e Privacy-by-Design.</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-background/60 border border-primary/25 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2.5 mb-1 text-primary font-bold text-sm">
+                <Server className="h-4 w-4 flex-shrink-0" />
+                <span>Backend de Alta Performance</span>
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">Java 17, Spring Boot, Microsserviços e Arquitetura de Eventos.</p>
+            </div>
+          </motion.div>
+
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground flex-wrap pt-2">
-            <div className="flex items-center gap-2 bg-card/40 border border-border/40 backdrop-blur-sm px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-background/60 border border-border/40 px-4 py-2 rounded-full">
               <MapPin className="h-4 w-4 text-primary" />
               <span>{t('hero.location')}</span>
             </div>
-            <div className="flex items-center gap-2 bg-card/40 border border-border/40 backdrop-blur-sm px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-background/60 border border-border/40 px-4 py-2 rounded-full">
               <Phone className="h-4 w-4 text-primary" />
               <span>+55 (85) 98231-7976</span>
             </div>
