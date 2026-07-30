@@ -29,8 +29,9 @@ const Footer = () => {
     { id: "experience",     label: t("nav.experience") },
     { id: "projects",       label: t("nav.projects") },
     { id: "hackathons",     label: t("nav.hackathons") },
-    { id: "certifications", label: t("nav.certifications") },
     { id: "education",      label: t("nav.education") },
+    { id: "certifications", label: t("nav.certifications") },
+    { id: "languages",      label: t("nav.languages") },
     { id: "contact",        label: t("nav.contact") },
   ];
 

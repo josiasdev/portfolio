@@ -16,8 +16,9 @@ const translations = {
     'nav.experience': 'Experience',
     'nav.projects': 'Projects',
     'nav.hackathons': 'Hackathons',
-    'nav.certifications': 'Certifications',
     'nav.education': 'Education',
+    'nav.certifications': 'Certifications',
+    'nav.languages': 'Languages',
     'nav.contact': 'Contact',
     
     // Web3
@@ -287,8 +288,9 @@ const translations = {
     'nav.experience': 'Experiência',
     'nav.projects': 'Projetos',
     'nav.hackathons': 'Hackathons',
+    'nav.education': 'Formação',
     'nav.certifications': 'Certificações',
-    'nav.education': 'Educação',
+    'nav.languages': 'Idiomas',
     'nav.contact': 'Contato',
     
     // Web3
@@ -558,8 +560,9 @@ const translations = {
     'nav.experience': 'Experiencia',
     'nav.projects': 'Proyectos',
     'nav.hackathons': 'Hackatones',
+    'nav.education': 'Formación',
     'nav.certifications': 'Certificaciones',
-    'nav.education': 'Educación',
+    'nav.languages': 'Idiomas',
     'nav.contact': 'Contacto',
 
     // Web3

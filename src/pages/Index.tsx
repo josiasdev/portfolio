@@ -12,6 +12,8 @@ const Experience = lazy(() => import("@/components/Experience/Experience"));
 const Projects = lazy(() => import("@/components/Projects/Projects"));
 const Hackathons = lazy(() => import("@/components/Hackathons/Hackathons"));
 const Education = lazy(() => import("@/components/Education/Education"));
+const Certifications = lazy(() => import("@/components/Certifications/Certifications"));
+const LanguagesSection = lazy(() => import("@/components/Languages/Languages"));
 const Contact = lazy(() => import("@/components/Contact/Contact"));
 const Footer = lazy(() => import("@/components/Footer/Footer"));
 
@@ -48,6 +50,8 @@ const Index = () => {
           <Projects />
           <Hackathons />
           <Education />
+          <Certifications />
+          <LanguagesSection />
           <Contact />
         </Suspense>
       </main>

@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Home, User, Briefcase, Code, Mail, Award } from "lucide-react";
+import { Home, User, Briefcase, Code, Mail, Award, Trophy, GraduationCap, Languages } from "lucide-react";
 
 const Header = () => {
   const { t } = useLanguage();
@@ -43,18 +43,20 @@ const Header = () => {
     { id: 'experience', label: t('nav.experience') },
     { id: 'projects', label: t('nav.projects') },
     { id: 'hackathons', label: t('nav.hackathons') },
-    { id: 'certifications', label: t('nav.certifications') },
     { id: 'education', label: t('nav.education') },
+    { id: 'certifications', label: t('nav.certifications') },
+    { id: 'languages', label: t('nav.languages') },
     { id: 'contact', label: t('nav.contact') },
   ];
 
   // Ícones específicos para a Bottom Bar Mobile
   const bottomNavItems = [
     { id: 'hero', label: 'Home', icon: Home },
-    { id: 'about', label: t('nav.about'), icon: User },
-    { id: 'experience', label: t('nav.experience'), icon: Briefcase },
     { id: 'projects', label: t('nav.projects'), icon: Code },
+    { id: 'hackathons', label: t('nav.hackathons'), icon: Trophy },
+    { id: 'education', label: t('nav.education'), icon: GraduationCap },
     { id: 'certifications', label: t('nav.certifications'), icon: Award },
+    { id: 'languages', label: t('nav.languages'), icon: Languages },
     { id: 'contact', label: t('nav.contact'), icon: Mail },
   ];
 
