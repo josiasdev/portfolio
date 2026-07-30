@@ -16,6 +16,7 @@ const translations = {
     'nav.experience': 'Experience',
     'nav.projects': 'Projects',
     'nav.hackathons': 'Hackathons',
+    'nav.certifications': 'Certifications',
     'nav.education': 'Education',
     'nav.contact': 'Contact',
     
@@ -286,6 +287,7 @@ const translations = {
     'nav.experience': 'Experiência',
     'nav.projects': 'Projetos',
     'nav.hackathons': 'Hackathons',
+    'nav.certifications': 'Certificações',
     'nav.education': 'Educação',
     'nav.contact': 'Contato',
     
@@ -556,6 +558,7 @@ const translations = {
     'nav.experience': 'Experiencia',
     'nav.projects': 'Proyectos',
     'nav.hackathons': 'Hackatones',
+    'nav.certifications': 'Certificaciones',
     'nav.education': 'Educación',
     'nav.contact': 'Contacto',
 

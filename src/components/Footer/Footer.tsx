@@ -6,20 +6,28 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const navLinks = [
-    { id: "about",      label: t("nav.about") },
-    { id: "skills",     label: t("nav.skills") },
-    { id: "experience", label: t("nav.experience") },
-    { id: "projects",   label: t("nav.projects") },
-    { id: "education",  label: t("nav.education") },
-    { id: "contact",    label: t("nav.contact") },
+    { id: "about",          label: t("nav.about") },
+    { id: "skills",         label: t("nav.skills") },
+    { id: "experience",     label: t("nav.experience") },
+    { id: "projects",       label: t("nav.projects") },
+    { id: "hackathons",     label: t("nav.hackathons") },
+    { id: "certifications", label: t("nav.certifications") },
+    { id: "education",      label: t("nav.education") },
+    { id: "contact",        label: t("nav.contact") },
   ];
 
   const socialLinks = [

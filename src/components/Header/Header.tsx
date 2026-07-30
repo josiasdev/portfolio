@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Home, User, Briefcase, Code, Mail } from "lucide-react";
+import { Home, User, Briefcase, Code, Mail, Award } from "lucide-react";
 
 const Header = () => {
   const { t } = useLanguage();
@@ -15,15 +15,25 @@ const Header = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const scrollToSection = (id: string) => {
+    const doScroll = () => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    };
+
     if (!isHome) {
       navigate(`/#${id}`);
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setTimeout(doScroll, 100);
     } else {
-      const element = document.getElementById(id);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      doScroll();
     }
   };
 
@@ -33,7 +43,9 @@ const Header = () => {
     { id: 'experience', label: t('nav.experience') },
     { id: 'projects', label: t('nav.projects') },
     { id: 'hackathons', label: t('nav.hackathons') },
+    { id: 'certifications', label: t('nav.certifications') },
     { id: 'education', label: t('nav.education') },
+    { id: 'contact', label: t('nav.contact') },
   ];
 
   // Ícones específicos para a Bottom Bar Mobile
@@ -42,6 +54,7 @@ const Header = () => {
     { id: 'about', label: t('nav.about'), icon: User },
     { id: 'experience', label: t('nav.experience'), icon: Briefcase },
     { id: 'projects', label: t('nav.projects'), icon: Code },
+    { id: 'certifications', label: t('nav.certifications'), icon: Award },
     { id: 'contact', label: t('nav.contact'), icon: Mail },
   ];
 
@@ -57,10 +70,10 @@ const Header = () => {
           }
         });
       },
-      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      { rootMargin: '-30% 0px -50% 0px', threshold: 0 }
     );
 
-    const sections = ['hero', ...navItems.map(n => n.id), 'contact'];
+    const sections = ['hero', ...navItems.map(n => n.id)];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observerRef.current?.observe(el);

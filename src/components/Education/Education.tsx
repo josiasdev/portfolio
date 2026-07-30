@@ -155,7 +155,7 @@ const Education = () => {
         </div>
 
         {/* Certifications Card — full width */}
-        <div className="animate-fade-in group mb-12 flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:border-primary/40 transition-all duration-300" style={{ animationDelay: '0.15s' }}>
+        <div id="certifications" className="animate-fade-in group mb-12 flex flex-col p-6 md:p-8 rounded-3xl border border-border/40 bg-card/30 dark:bg-card/10 hover:border-primary/40 transition-all duration-300" style={{ animationDelay: '0.15s' }}>
           <div className="flex items-center justify-between gap-4 mb-6">
             <div className="flex items-center gap-4">
               <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
