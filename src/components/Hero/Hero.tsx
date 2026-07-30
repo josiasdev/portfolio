@@ -194,7 +194,7 @@ const Hero = () => {
             <Magnetic>
               <Button
                 size="lg"
-                className="w-full sm:w-auto h-12 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-subtle hover:shadow-glow rounded-full"
+                className="w-full sm:w-auto h-12 px-8 text-base font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-subtle hover:shadow-glow rounded-full"
                 onClick={() => scrollToSection('projects')}
               >
                 {t('hero.cta')}
@@ -204,7 +204,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto h-12 px-8 text-base border-border/60 hover:border-primary/50 hover:bg-card/50 backdrop-blur-sm transition-all duration-300 rounded-full"
+                className="w-full sm:w-auto h-12 px-8 text-base font-semibold border-2 border-primary/50 bg-background/80 text-foreground hover:text-primary hover:border-primary hover:bg-primary/10 transition-all duration-300 rounded-full"
                 onClick={() => scrollToSection('contact')}
               >
                 {t('hero.contact')}
@@ -215,10 +215,10 @@ const Hero = () => {
                 size="lg"
                 variant="secondary"
                 asChild
-                className="w-full sm:w-auto h-12 px-8 text-base border border-border/40 hover:border-primary/40 bg-secondary/50 hover:bg-secondary transition-all duration-300 rounded-full"
+                className="w-full sm:w-auto h-12 px-8 text-base font-semibold border border-border/60 text-foreground hover:border-primary/40 bg-card/60 hover:bg-card transition-all duration-300 rounded-full"
               >
                 <a href={`/cv-${language}.pdf`} download={`Josias_Batista_CV_${language.toUpperCase()}.pdf`}>
-                  <FileText className="mr-2 h-4 w-4" />
+                  <FileText className="mr-2 h-4 w-4 text-primary" />
                   {t('hero.downloadCV')}
                 </a>
               </Button>
