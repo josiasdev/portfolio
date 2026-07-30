@@ -4,40 +4,37 @@
 
 Este repositório contém o código-fonte do portfólio profissional de Francisco Josias da Silva Batista, Desenvolvedor Blockchain, Engenheiro de Protocolos e Especialista em Backend Java/Spring Boot.
 
-A aplicação apresenta trajetórias profissionais, projetos em destaque na Web3 e software tradicional, conquistas em hackathons globais, certificações técnicas verificáveis, formação acadêmica e canais de contato.
+A aplicação apresenta trajetórias profissionais, projetos em destaque na Web3 e backend tradicional, conquistas em hackathons globais, certificações técnicas verificáveis, formação acadêmica, idiomas e formulário transacional de contato.
 
-O projeto adota uma identidade visual moderna inspirada no programa Web 3.0 iRede (com fundo em azul marinho profundo e acentos em verde esmeralda/mint e lime), suporte nativo a alternância entre Modo Escuro e Modo Claro de alto contraste, e internacionalização completa nos idiomas Português, Inglês e Espanhol.
+O projeto adota a arquitetura visual **Senior Minimalist** (inspirada em *brittanychiang.com*, *leerob.io* e *markodenic.com*): layout split-screen no desktop com barra lateral fixa e indicador dinâmico de seção ativa, paleta enxuta em Slate escuro (`#0f172a`) com acento em Teal/Emerald (`#14b8a6`), tipografia técnica monoespaçada (*Fira Code*), suporte a Modo Escuro e Claro, e internacionalização completa nos idiomas Português, Inglês e Espanhol.
 
 ---
 
 ## Estrutura do Portfólio
 
-O site é organizado nas seguintes seções independentes e navegáveis:
+O site é organizado nas seguintes seções editoriais navegáveis:
 
-1. **Hero / Apresentação**: Visão geral de atuação, papel principal (Desenvolvedor Residente Web 3.0 no iRede), pilares técnicos e botões de ação (Ver Projetos, Entre em Contato e Download de Curricular em PDF).
-2. **Sobre Mim**: Resumo da trajetória acadêmica e profissional, desde o ensino técnico em informática (2019–2021) até o bacharelado em Engenharia de Software na Universidade Federal do Ceará (UFC Quixadá) e a atuação em ecossistemas de tecnologia.
-3. **Habilidades**: Agrupamento estruturado de competências técnicas em Blockchain & Smart Contracts (Solidity/EVM, Soroban/Stellar, Rust, Sui Move, Foundry, DeFi), Backend & Sistemas Distribuídos (Java 17, Spring Boot, PostgreSQL, Docker, Arquitetura de Eventos) e Ferramentas Globais.
-4. **Experiência Profissional**: Histórico detalhado com destaque para o cargo atual como Desenvolvedor Residente em Web 3.0 no Instituto iRede, além das atuações na Raport Tecnologia / Agentic Space, UFC Quixadá e estágio em infraestrutura/sistemas.
-5. **Projetos em Destaque**:
-   - **COINCONUT (ImpactLedger on Stellar)**: Sistema descentralizado para logística reversa de casca de coco na blockchain Stellar Soroban com provas de conhecimento zero (Noir) e NFTs ESG.
-   - **EloCiv (UNICEF Youth Challenge 2026)**: Plataforma de credenciais verificáveis W3C na Stellar Soroban para engajamento juvenil com preservação de privacidade.
-   - **tutor-crypto-ai**: Agente inteligente de IA e assistente educativo para o ecossistema XRP Ledger.
-   - **RelatorioAniversariantes**: Sistema de automação de relatórios corporativos construído com Java 17 e Spring Boot.
-6. **Hackathons & Competições**: Registro de premiações e participações de destaque em maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge 2026, Meridian, SUI Developer, XRPL Web3 Track).
-7. **Formação Acadêmica**: Detalhes do Bacharelado em Engenharia de Software (Universidade Federal do Ceará - UFC Campus Quixadá) e do Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura).
-8. **Licenças & Certificados**: Grade com 13 credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, DIO, Utah Linux LPI).
-9. **Idiomas & Competências**: Proficiência idiomática detalhada em Português (Nativo), Inglês (Profissional / B2+) e Espanhol (Profissional).
-10. **Contato & Rodapé**: Formulário interativo de contato, links sociais (GitHub, LinkedIn, Email) e navegação completa.
+1. **Hero & Painel Lateral Fixo (Desktop)**: Foto de perfil ampliada, nome, cargo, resumo de atuação (Web 3.0 Resident Developer @ iRede), badges de status, botões de ação com alto contraste no hover (Ver Projetos, Entre em Contato e Download do Currículo em PDF), links sociais e navegadores de idioma/tema.
+2. **01. Sobre Mim**: Narrativa dividida em três parágrafos cobrindo o ensino técnico com média 9,67/10,0 em Aracoiaba, o bacharelado em Engenharia de Software na UFC Quixadá e a atuação atual com microsserviços Java e Smart Contracts em Solidity (EVM) e Soroban (Stellar).
+3. **02. Habilidades**: Grade com 6 categorias técnicas organizadas (Web3 & Blockchain, Back-End, Front-End, Bancos de Dados, DevOps & Cloud, Habilidades Adicionais) com badges monoespaçados.
+4. **03. Experiência**: Timeline em formato grid com períodos monoespaçados à esquerda, cargo e empresa destacados, descrições objetivas e tags de tecnologias aplicadas.
+5. **04. Projetos**: Cards minimalistas com bordas finas de 1px, filtros de categoria (Web3, Backend, Java, Python, Rust, .NET), contagem ao vivo de stars da API do GitHub, tags em `font-mono` e links diretos para código e demonstrações.
+6. **05. Hackathons**: Registro de participações e premiações em maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge Blockchain 2026, Hack Meridian, SUI Hackathon, HackaLedger XRPL).
+7. **06. Formação Acadêmica**: Detalhes do Bacharelado em Engenharia de Software (Universidade Federal do Ceará - UFC Campus Quixadá, 2022–2027) e do Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura em Aracoiaba - Ceará, 2019–2021).
+8. **07. Certificações & Licenças**: Grade com credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, Utah Linux LPI).
+9. **08. Idiomas & Proficiência**: Níveis de proficiência em Português (Nativo), Inglês (Intermediário B1) e Espanhol (Intermediário B1).
+10. **09. Contato & Rodapé**: Formulário transacional de mensagem, links de acesso direto (Email, LinkedIn, Telefone), copyright e atalho de retorno ao topo.
 
 ---
 
 ## Tecnologias e Arquitetura
 
-- **Core**: React 18, Vite 5, TypeScript 5.
-- **Estilização**: Tailwind CSS com tokens de design customizados, variáveis HSL semânticas e transições suaves.
-- **UI & Animações**: Componentes shadcn/ui, Radix UI Primitives, Lucide React Icons, Framer Motion e animações baseadas em rolagem.
-- **Gerenciamento de Estado & I18n**: Context API para alternância dinâmica de idiomas (PT-BR, EN, ES) e tema (Dark/Light).
-- **Roteamento & Qualidade**: React Router v6, TanStack Query v5, React Hook Form, Zod e ESLint.
+- **Core**: React 18, Vite 5, TypeScript 5 (strict mode).
+- **Estilização & Design System**: Tailwind CSS com tokens de design customizados, variáveis HSL semânticas e tipografia com `Inter` (sans-serif) e `Fira Code` (monospaced).
+- **UI & Componentes**: Componentes base shadcn/ui, Radix UI Primitives, Lucide React Icons.
+- **Gerenciamento de Estado & I18n**: Context API para alternância dinâmica de idiomas (PT, EN, ES) e tema (Dark/Light/System).
+- **Formulário & Serverless**: React Hook Form, Zod e Vercel Serverless Functions (`/api/send-email`) integradas ao Resend.
+- **Roteamento & Qualidade**: React Router v6, TanStack Query v5, Helmet Async e ESLint.
 
 ---
 
@@ -75,7 +72,7 @@ Abra o navegador no endereço `http://localhost:8080` (ou a porta informada pelo
 - `npm run dev`: Executa a aplicação em modo de desenvolvimento com Hot Module Replacement (HMR).
 - `npm run build`: Compila e otimiza a aplicação para produção no diretório `/dist`.
 - `npm run preview`: Serve a build de produção localmente para verificação.
-- `npm run lint`: Executa a checagem de código com ESLint e verificação de tipos com o compilador do TypeScript.
+- `npm run lint`: Executa a checagem de código com ESLint e verificação de tipos com o compilador do TypeScript (`npx tsc --noEmit`).
 
 ---
 

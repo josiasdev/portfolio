@@ -2,80 +2,41 @@
 
 Estratégias e padrões utilizados para garantir a melhor experiência mobile (responsividade app-like).
 
-## Navegação Mobile: Bottom Navigation Bar
+## Navegação Mobile: Top Bar & Bottom Navigation Bar
 
-Substituímos o clássico Side Menu (Hamburger) por uma **Navbar inferior fixa** com ícones, imitando a navegação de aplicativos nativos:
+No mobile (`<lg`), a navegação é dividida em duas áreas funcionais para máxima ergonomia:
 
-- **Localização:** `Header.tsx` — seção `bottomNavItems` renderizada apenas em `<lg` (telas menores que 1024px).
-- **7 ícones com labels:** Home, Projetos, Hackathons, Formação, Certificações, Idiomas, Contato.
-- **Ícones:** Lucide React (`Home`, `Code`, `Trophy`, `GraduationCap`, `Award`, `Languages`, `Mail`).
-- **Estado ativo:** Ícone ativo recebe `bg-primary/15 text-primary scale-110` e label em `text-primary`.
-- **Scroll spy:** Compartilha o mesmo `IntersectionObserver` do header desktop (`rootMargin: '-30% 0px -50% 0px'`).
-- **Scroll suave:** Função `scrollToSection` com offset de 80px para compensar o header fixo.
+1. **Top Header Bar Fixa (`lg:hidden sticky top-0`)**:
+   - Título do desenvolvedor com scroll suave até o topo.
+   - **`LanguageToggle` com `direction="down"`**: O menu dropdown abre para baixo (`top-full mt-2`), garantindo que não saia da tela ou seja cortado pela viewport superior.
+   - **`ThemeToggle`**: Alternância imediata entre Dark, Light e System.
 
-## Dynamic Viewports (`dvh`)
+2. **Bottom Navigation Bar Fixa (`lg:hidden fixed bottom-0`)**:
+   - 5 ícones fundamentais de acesso rápido: **Sobre**, **Experiência**, **Projetos**, **Hackathons** e **Contato**.
+   - Ícones Lucide React (`User`, `GraduationCap`, `Code`, `Trophy`, `Mail`).
+   - Estado ativo destacado em `text-primary` com ícone em traço mais espesso (`strokeWidth={2.5}`).
+   - Suporte a `pb-[env(safe-area-inset-bottom)]` para evitar colisão com a barra do Face ID / Home Indicator nos iPhones.
 
-Uso de `min-h-[100dvh]` no Root (`Index.tsx`) e no Hero para evitar bugs onde barras nativas de endereço de navegadores móveis (Safari, Chrome) escondem conteúdo inferior.
+## Touch Targets (Acessibilidade WCAG)
 
-## Touch Targets
-
-Todos os botões críticos possuem tamanho mínimo de `min-h-[44px]`, seguindo diretrizes WCAG de acessibilidade:
+Todos os elementos interativos no mobile possuem dimensões adequadas (mínimo de 44px de altura/largura útil):
 - Filtros de categoria em Projetos
-- Botões GitHub/Demo nos cards de projetos e hackathons
-- Links de contato
-- Botões CTA do Hero (h-12 = 48px)
-
-## Safe Area (iPhone)
-
-A Bottom Navigation Bar usa `pb-[env(safe-area-inset-bottom)]` para evitar colisão com a barra do Face ID / Home Indicator nos iPhones.
-
-## Scroll Horizontal (Cards)
-
-Seções com múltiplos cards (Projetos e Hackathons) usam **scroll horizontal snap** em mobile:
-
-```
-flex overflow-x-auto snap-x snap-mandatory
-[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
-```
-
-- **Projetos:** Cards de `w-[85vw] sm:w-[350px]` com `snap-center`, convertendo para grid 3 colunas em `md:`.
-- **Hackathons:** Cards de `w-[85vw] sm:w-[400px]` com `snap-center`, convertendo para grid 3 colunas em `lg:`.
-- Scrollbar oculta em ambos para aparência nativa.
-
-## Breakpoints
-
-| Breakpoint | Tailwind | Uso principal |
-|-----------|----------|---------------|
-| < 640px | default | Telas de celular — layout em coluna única, cards full-width |
-| ≥ 640px | `sm:` | Cards de scroll horizontal com largura fixa, grid 2 cols em Certificações |
-| ≥ 768px | `md:` | Grid de projetos em 2 colunas, tipografia maior, padding expandido |
-| ≥ 1024px | `lg:` | Header desktop ativo (Bottom Nav escondida), grids em 3+ colunas |
+- Botões "Entre em Contato" e "Baixar Currículo" no Hero (h-10 com padding generoso)
+- Links diretos no formulário de contato e redes sociais
 
 ## LanguageToggle Mobile
 
-- No header, o botão mostra apenas a bandeira emoji (flag) em `<sm`, e flag + código do idioma (`PT`, `EN`, `ES`) em `sm:` acima.
-- Dropdown posicionado com `absolute right-0 top-full mt-2 w-44 z-[100]`.
-- Fecha ao clicar fora (`mousedown` listener) ou pressionar `Escape`.
+- O botão acionador mostra a bandeira emoji e a sigla em texto monoespaçado (`🇧🇷 PT`, `🇺🇸 EN`, `🇪🇸 ES`).
+- O menu dropdown recebe `direction="down"` quando acionado na barra superior mobile (`Header.tsx`) e `direction="up"` quando acionado na barra lateral desktop (`Index.tsx`).
+- Fechamento automático ao clicar fora (`mousedown`) ou pressionar `Escape`.
 
-## ThemeToggle
+## Performance Mobile & Viewport
 
-- Dropdown menu via Radix UI (`DropdownMenu`).
-- 3 opções: Light, Dark, System.
-- Ícone Sun/Moon com rotação CSS animada entre temas.
-- Persistência via `localStorage` key `"theme"`.
+- **Dynamic Viewports (`dvh`):** Uso de `min-h-screen` com containers flexíveis para evitar que barras nativas de navegadores (Safari, Chrome iOS/Android) ocultem conteúdos inferiores.
+- **Lazy Loading:** Seções do conteúdo principal importadas via `React.lazy` + `<Suspense>` com indicador sutil.
+- **Imagem de Perfil Ampliada:** `fetchPriority="high"`, `decoding="async"` e dimensões `w-32 h-32 sm:w-36 sm:h-36` garantindo nitidez sem re-layouts.
+- **Scroll NATIVO Suave:** Scroll nativo otimizado do navegador (`scroll-behavior: smooth` em CSS), eliminando bibliotecas pesadas de loop JS no thread principal mobile.
 
-## Efeito Magnetic (desabilitado em touch)
+## Padding de Compensação no Footer Mobile
 
-O componente `Magnetic` (`src/components/ui/magnetic.tsx`) detecta se o dispositivo suporta hover via `window.matchMedia('(hover: hover) and (pointer: fine)')`. Em dispositivos touch, o efeito magnético é automaticamente desativado para evitar comportamento indesejado.
-
-## Considerações de Performance Mobile
-
-- **Lazy loading:** Todas as seções abaixo do Hero são importadas via `React.lazy` + `<Suspense>` com fallback spinner.
-- **Imagem de perfil:** `fetchPriority="high"` e `decoding="async"` no `<img>` do Hero.
-- **Grain texture:** SVG inline no `body::before` com `opacity: 0.03` e `pointer-events: none`.
-- **Transições globais desabilitadas:** `* { transition: none !important; }` no `index.css` — animações Framer Motion continuam funcionando normalmente.
-- **Smooth scroll:** Lenis (biblioteca leve) ativado via hook `useSmoothScroll` em `Index.tsx`.
-
-## Footer em Mobile
-
-O Footer recebe `pb-20 md:pb-0` no wrapper (`Index.tsx`) para evitar que o conteúdo final fique escondido pela Bottom Navigation Bar fixa.
+O wrapper principal em `Index.tsx` aplica `pb-20 md:pb-0` ao final do conteúdo para garantir que a Bottom Navigation Bar fixa não sobreponha as informações de copyright e botão de retorno ao topo.
