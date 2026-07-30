@@ -19,6 +19,10 @@ const Footer = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const navLinks = [
     { id: "about",          label: t("nav.about") },
     { id: "skills",         label: t("nav.skills") },
