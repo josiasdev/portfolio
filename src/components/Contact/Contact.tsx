@@ -25,7 +25,7 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
