@@ -9,6 +9,13 @@ const contactFormSchema = z.object({
   message: z.string().min(10),
 });
 
+const subjectLabels: Record<string, string> = {
+  project: 'Proposta de Projeto',
+  general: 'Dúvida Geral / Oportunidade',
+  feedback: 'Feedback / Sugestão',
+  other: 'Outro Assunto',
+};
+
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -38,22 +45,46 @@ export default async function handler(
     }
 
     const { name, email, subject, message } = result.data;
+    const formattedSubject = subjectLabels[subject] || subject;
 
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: ['josiasmartins098@gmail.com'],
-      subject: `Nova Mensagem do Portfólio: ${subject}`,
+      subject: `[Portfólio] ${formattedSubject} — ${name}`,
       replyTo: email,
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2 style="color: #0d9488;">Nova Mensagem do Portfólio</h2>
-          <hr style="border: 0; border-top: 1px solid #eee;" />
-          <p><strong>Nome:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Assunto:</strong> ${subject}</p>
-          <p><strong>Mensagem:</strong></p>
-          <div style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc;">
-            ${message.replace(/\n/g, '<br>')}
+        <div style="max-width: 600px; margin: 0 auto; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f8fafc; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; color: #1e293b;">
+          <div style="background-color: #0f172a; padding: 24px; border-bottom: 3px solid #14b8a6;">
+            <h1 style="color: #ffffff; font-size: 18px; margin: 0; font-weight: 700;">Josias Batista — Portfólio</h1>
+            <p style="color: #94a3b8; font-size: 12px; margin: 4px 0 0 0;">Nova mensagem de contato recebida</p>
+          </div>
+          
+          <div style="padding: 24px; background-color: #ffffff;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+              <tr>
+                <td style="padding: 8px 0; color: #64748b; width: 100px; font-weight: 600;">Nome:</td>
+                <td style="padding: 8px 0; color: #0f172a; font-weight: 600;">${name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #64748b; font-weight: 600;">Email:</td>
+                <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #0d9488; text-decoration: none; font-weight: 600;">${email}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #64748b; font-weight: 600;">Assunto:</td>
+                <td style="padding: 8px 0;"><span style="background-color: #f1f5f9; border: 1px solid #cbd5e1; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; color: #0f172a;">${formattedSubject}</span></td>
+              </tr>
+            </table>
+            
+            <div style="margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+              <p style="color: #64748b; font-size: 12px; font-weight: 700; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">Mensagem:</p>
+              <div style="padding: 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; line-height: 1.6; color: #334155;">
+                ${message.replace(/\n/g, '<br />')}
+              </div>
+            </div>
+          </div>
+          
+          <div style="background-color: #f1f5f9; padding: 16px 24px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 12px; color: #64748b;">
+            <p style="margin: 0;">Mensagem enviada através de <a href="https://josias-batista-portfolio.vercel.app" style="color: #0d9488; text-decoration: none; font-weight: 600;">josias-batista-portfolio.vercel.app</a></p>
           </div>
         </div>
       `,
