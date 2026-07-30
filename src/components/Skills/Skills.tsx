@@ -50,46 +50,42 @@ const Skills = () => {
     {
       title: t('skills.web3'),
       icon: Blocks,
-      skills: ['Solidity', 'Rust', 'Move', 'Sui', 'Stellar', 'XRP Ledger'],
+      skills: ['Solidity', 'Foundry', 'Hardhat', 'Ethereum (EVM)', 'Smart Contracts', 'DeFi Primitives', 'Metaverso', 'Rust', 'Move', 'Sui', 'Stellar'],
     },
     {
       title: t('skills.backend'),
       icon: Code2,
-      skills: ['Node.js', 'NestJS', 'Java', 'Spring Boot', 'C#', '.NET', 'Express.js'],
+      skills: ['Java', 'Spring Boot', 'Node.js', 'NestJS', 'FastAPI', 'Streamlit', 'Express.js', 'C#', '.NET'],
     },
     {
       title: t('skills.frontend'),
       icon: Palette,
-      skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Vite', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      skills: ['TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Vite', 'HTML5', 'CSS3'],
     },
     {
       title: t('skills.databases'),
       icon: Database,
-      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQL Server'],
+      skills: ['PostgreSQL', 'Prisma ORM', 'MySQL', 'MongoDB', 'SQL Server'],
     },
     {
       title: t('skills.devops'),
       icon: Cloud,
-      skills: ['Docker', 'Kubernetes', 'AWS', 'Git', 'CI/CD'],
+      skills: ['Docker', 'Kubernetes', 'AWS', 'Linux', 'Git', 'CI/CD'],
     },
     {
       title: 'IDEs & Tools',
       icon: SquareCode,
-      skills: ['IntelliJ IDEA', 'VS Code', 'Android Studio'],
+      skills: ['IntelliJ IDEA', 'VS Code', 'Foundry CLI', 'Android Studio'],
     },
     {
       title: t('skills.additional'),
       icon: Wrench,
-      skills: ['Clean Architecture', 'JWT', 'RESTful APIs', 'Scrum', 'Kanban', 'LLMs'],
+      skills: ['Clean Architecture', 'SOLID', 'Protocol Design', 'RESTful APIs', 'Oracles', 'Scrum', 'LLMs'],
     },
   ];
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-64 h-64 rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
-
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">

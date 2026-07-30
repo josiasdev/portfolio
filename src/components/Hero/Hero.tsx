@@ -91,13 +91,7 @@ const Hero = () => {
       className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-16"
     >
       {/* Background layers */}
-      <div className="absolute inset-0 bg-background/80" />
-      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary/10 blur-[120px] animate-float pointer-events-none" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-accent/10 blur-[120px] animate-float-delayed pointer-events-none" />
-
-      {/* Floating orbs */}
-      <div className="absolute top-1/3 left-1/4 w-3 h-3 rounded-full bg-primary/30 animate-orbit pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 w-2 h-2 rounded-full bg-accent/40 animate-orbit-reverse pointer-events-none" />
+      <div className="absolute inset-0 bg-background/95" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 

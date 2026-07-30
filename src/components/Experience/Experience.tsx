@@ -23,9 +23,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
         <div
           className={`w-4 h-4 rounded-full border-[3px] transition-all duration-300 ${
             exp.isCurrent
-              ? "bg-background border-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)]"
-              : exp.isAcademic
-              ? "bg-background border-accent"
+              ? "bg-primary border-primary shadow-[0_0_16px_hsl(var(--primary)/0.8)] scale-125"
               : "bg-background border-muted-foreground/40 group-hover:border-primary/50 group-hover:scale-110"
           }`}
         />
@@ -39,15 +37,15 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
       {/* Card */}
       <div
         className={`relative rounded-3xl border p-6 md:p-8 overflow-hidden transition-all duration-300
-          ${exp.isAcademic
-            ? "border-accent/20 bg-accent/5 hover:bg-accent/10 hover:border-accent/40"
+          ${exp.isCurrent
+            ? "border-primary/50 bg-primary/10 dark:bg-primary/15 shadow-[0_0_24px_hsl(var(--primary)/0.15)] hover:border-primary hover:bg-primary/20 backdrop-blur-md"
             : "border-border/40 bg-card/30 dark:bg-card/10 hover:bg-card/50 dark:hover:bg-card/20 hover:border-primary/30 hover:shadow-subtle backdrop-blur-sm"
           }
         `}
       >
         {/* Current job badge */}
         {exp.isCurrent && (
-          <span className="absolute top-6 right-6 text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full uppercase bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
+          <span className="absolute top-6 right-6 text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase bg-primary text-primary-foreground shadow-[0_0_12px_hsl(var(--primary)/0.5)] border border-primary/30 animate-pulse">
             {t('experience.badge.current')}
           </span>
         )}
@@ -57,22 +55,28 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 md:gap-4 pr-16">
             <div className="space-y-1.5">
               <div className="flex items-center gap-3">
-                <div className={`p-2 rounded-xl ${exp.isAcademic ? "bg-accent/10" : "bg-primary/10"}`}>
+                <div className={`p-2.5 rounded-xl ${exp.isCurrent ? "bg-primary/20 border border-primary/40 text-primary" : "bg-primary/10 text-primary"}`}>
                   {exp.isAcademic ? (
-                    <GraduationCap className="h-5 w-5 text-accent" />
+                    <GraduationCap className="h-5 w-5" />
                   ) : (
-                    <Briefcase className="h-5 w-5 text-primary" />
+                    <Briefcase className="h-5 w-5" />
                   )}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold font-serif tracking-tight group-hover:text-primary transition-colors">{exp.role}</h3>
+                <h3 className={`text-xl md:text-2xl font-bold font-serif tracking-tight transition-colors ${exp.isCurrent ? "text-primary" : "group-hover:text-primary"}`}>
+                  {exp.role}
+                </h3>
               </div>
-              <p className={`text-base font-medium pl-12 ${exp.isAcademic ? "text-accent/90" : "text-muted-foreground"}`}>
+              <p className={`text-base font-medium pl-12 ${exp.isCurrent ? "text-primary/90 font-semibold" : "text-muted-foreground"}`}>
                 {exp.company}
               </p>
             </div>
           </div>
           
-          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground bg-background/50 border border-border/40 px-3 py-1.5 rounded-full w-fit">
+          <div className={`flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full w-fit ${
+            exp.isCurrent
+              ? "bg-primary/15 text-primary border border-primary/30"
+              : "text-muted-foreground bg-background/50 border border-border/40"
+          }`}>
             <Calendar className="h-3.5 w-3.5" />
             <span>{exp.period}</span>
           </div>
@@ -81,7 +85,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
           <ul className="space-y-3 mt-4">
             {exp.descriptions.map((desc, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-foreground/80 leading-relaxed">
-                <ChevronRight className={`h-4 w-4 flex-shrink-0 mt-0.5 opacity-60 ${exp.isAcademic ? "text-accent" : "text-primary"}`} />
+                <ChevronRight className={`h-4 w-4 flex-shrink-0 mt-0.5 ${exp.isCurrent ? "text-primary opacity-100" : "text-primary/60 opacity-60"}`} />
                 <span className="flex-1">{desc}</span>
               </li>
             ))}
@@ -93,7 +97,11 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
               <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-3">{t('experience.tech.label')}</p>
               <div className="flex flex-wrap gap-2">
                 {exp.tech.split(',').map((tech, i) => (
-                  <span key={i} className={`text-xs px-2.5 py-1 rounded-md border ${exp.isAcademic ? "border-accent/20 bg-accent/5 text-accent" : "border-primary/20 bg-primary/5 text-primary"}`}>
+                  <span key={i} className={`text-xs px-2.5 py-1 rounded-md border transition-colors ${
+                    exp.isCurrent
+                      ? "border-primary/40 bg-primary/15 text-primary font-medium"
+                      : "border-border/40 bg-card/40 text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                  }`}>
                     {tech.trim()}
                   </span>
                 ))}
@@ -132,7 +140,6 @@ const Experience = () => {
         t('experience.ideedutec.desc3'),
       ],
       tech: t('experience.ideedutec.tech'),
-      isCurrent: true,
     },
     {
       role: t('experience.monitor.role'),
@@ -141,10 +148,20 @@ const Experience = () => {
       descriptions: [
         t('experience.monitor.desc1'),
         t('experience.monitor.desc2'),
+        t('experience.monitor.desc3'),
       ],
       tech: t('experience.monitor.tech'),
-      isAcademic: true,
-      isCurrent: true,
+    },
+    {
+      role: t('experience.brazil.role'),
+      company: t('experience.brazil.company'),
+      period: t('experience.brazil.period'),
+      descriptions: [
+        t('experience.brazil.desc1'),
+        t('experience.brazil.desc2'),
+        t('experience.brazil.desc3'),
+      ],
+      tech: t('experience.brazil.tech'),
     },
     {
       role: t('experience.switchpay.role'),
@@ -157,31 +174,19 @@ const Experience = () => {
       tech: t('experience.switchpay.tech'),
     },
     {
-      role: t('experience.brazil.role'),
-      company: t('experience.brazil.company'),
-      period: t('experience.brazil.period'),
-      descriptions: [
-        t('experience.brazil.desc1'),
-        t('experience.brazil.desc2'),
-      ],
-      tech: t('experience.brazil.tech'),
-    },
-    {
       role: t('experience.lucrei.role'),
       company: t('experience.lucrei.company'),
       period: t('experience.lucrei.period'),
       descriptions: [
         t('experience.lucrei.desc1'),
+        t('experience.lucrei.desc2'),
       ],
+      tech: t('experience.lucrei.tech'),
     },
   ];
 
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
-      {/* Background 3D decoration */}
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
-
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">

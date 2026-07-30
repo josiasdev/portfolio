@@ -106,6 +106,34 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
+      title: t('projects.coinconut.title'),
+      description: t('projects.coinconut.desc'),
+      github: "https://github.com/josiasdev/coinconut",
+      demo: "https://coinconut-b6qp.vercel.app",
+      tags: ['Full Stack', 'Web3', 'Rust', 'Soroban', 'Stellar', 'Noir (ZK)', 'React', 'TypeScript']
+    },
+    {
+      title: t('projects.elociv.title'),
+      description: t('projects.elociv.desc'),
+      github: "https://github.com/josiasdev/EloCiv",
+      demo: "https://github.com/josiasdev/EloCiv",
+      tags: ['Full Stack', 'Web3', 'Rust', 'Soroban', 'Stellar', 'Fastify', 'Docker', 'React']
+    },
+    {
+      title: t('projects.tutorcrypto.title'),
+      description: t('projects.tutorcrypto.desc'),
+      github: "https://github.com/josiasdev/tutor-crypto-ai",
+      demo: null,
+      tags: ['Full Stack', 'Python', 'FastAPI', 'Streamlit', 'LangChain', 'RAG', 'Ollama']
+    },
+    {
+      title: t('projects.relatorioaniversariantes.title'),
+      description: t('projects.relatorioaniversariantes.desc'),
+      github: "https://github.com/josiasdev/RelatorioAniversariantes",
+      demo: null,
+      tags: ['Backend', 'Java', 'Spring Boot', 'Selenium', 'Docker', 'OpenPDF']
+    },
+    {
       title: t('projects.chainmed.title'),
       description: t('projects.chainmed.desc'),
       github: "https://github.com/josiasdev/ChainMed",

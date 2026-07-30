@@ -102,6 +102,30 @@ const Hackathons = () => {
 
   const hackathons: Hackathon[] = [
     {
+      id: "pulso-hackathon",
+      name: "PULSO Hackathon (Stellar Network)",
+      projectName: "COINCONUT",
+      description: t('hackathons.pulso.desc'),
+      award: t('hackathons.pulso.award'),
+      date: "2026",
+      location: "Stellar Network / Online",
+      github: "https://github.com/josiasdev/coinconut",
+      demo: "https://coinconut-b6qp.vercel.app",
+      tags: ["Stellar", "Soroban", "Rust", "Noir (ZK)", "React", "TypeScript", "Fee Bumps"],
+    },
+    {
+      id: "unicef-challenge",
+      name: "UNICEF Youth Challenge Blockchain 2026",
+      projectName: "EloCiv",
+      description: t('hackathons.unicef.desc'),
+      award: t('hackathons.unicef.award'),
+      date: "2026",
+      location: "UNICEF Brasil & Blockchain.RIO (Rio de Janeiro, BR)",
+      github: "https://github.com/josiasdev/EloCiv",
+      demo: "https://github.com/josiasdev/EloCiv",
+      tags: ["UNICEF", "Stellar", "Soroban", "Rust", "Fastify", "W3C VC", "Prisma", "Docker"],
+    },
+    {
       id: "hack-meridian",
       name: "Hack Meridian 2025",
       projectName: "SyloPay",
@@ -141,9 +165,6 @@ const Hackathons = () => {
 
   return (
     <section id="hackathons" className="py-20 relative overflow-hidden bg-muted/20 border-y border-border/40">
-      <div className="absolute top-40 left-0 w-80 h-80 rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
-
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="flex flex-col items-center justify-center mb-16 animate-fade-in">
           <Badge variant="outline" className="mb-4 px-4 py-1.5 border-primary/30 text-primary bg-primary/5 text-xs font-bold tracking-widest uppercase">
