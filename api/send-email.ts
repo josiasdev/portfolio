@@ -18,16 +18,16 @@ export default async function handler(
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error('Missing RESEND_API_KEY environment variable');
+  if (!apiKey || apiKey.trim() === '') {
+    console.error('Missing or empty RESEND_API_KEY environment variable');
     return res.status(500).json({
       error: 'Configuração pendente',
-      details: 'A chave RESEND_API_KEY não foi configurada nas Variáveis de Ambiente da Vercel.',
+      details: 'A chave RESEND_API_KEY está vazia ou não foi configurada nas Variáveis de Ambiente da Vercel.',
     });
   }
 
   try {
-    const resend = new Resend(apiKey);
+    const resend = new Resend(apiKey.trim());
     const result = contactFormSchema.safeParse(req.body);
 
     if (!result.success) {
@@ -40,7 +40,7 @@ export default async function handler(
     const { name, email, subject, message } = result.data;
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: 'onboarding@resend.dev',
       to: ['josiasmartins098@gmail.com'],
       subject: `Nova Mensagem do Portfólio: ${subject}`,
       replyTo: email,
