@@ -3,8 +3,15 @@ import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.webp";
 
+const cvFileMap: Record<string, string> = {
+  pt: 'Curriculo_Josias_Batista.pdf',
+  en: 'Resume_Josias_Batista.pdf',
+  es: 'Currículum_Josias_Batista.pdf',
+};
+
 const Hero = () => {
   const { t, language } = useLanguage();
+  const currentCvFile = cvFileMap[language] || cvFileMap.pt;
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -88,7 +95,7 @@ const Hero = () => {
           asChild
           className="h-10 px-4 text-xs font-mono font-semibold text-foreground border border-border/80 hover:bg-card hover:border-primary/50 hover:text-primary transition-all rounded"
         >
-          <a href={`/cv-${language}.pdf`} download={`Josias_Batista_CV_${language.toUpperCase()}.pdf`}>
+          <a href={`/${encodeURI(currentCvFile)}`} download={currentCvFile}>
             <FileText className="mr-1.5 h-3.5 w-3.5 text-primary" />
             {t('hero.downloadCV')}
           </a>
