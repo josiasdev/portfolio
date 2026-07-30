@@ -73,7 +73,7 @@ const Contact = () => {
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, language }),
       });
 
       if (!response.ok) {
