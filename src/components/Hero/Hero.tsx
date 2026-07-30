@@ -95,24 +95,42 @@ const Hero = () => {
         </Button>
       </div>
 
-      {/* Social Links */}
-      <div className="flex items-center gap-4 pt-2 border-t border-border/40">
-        {[
-          { href: "https://github.com/josiasdev", icon: Github, label: "GitHub" },
-          { href: "https://www.linkedin.com/in/josias-batista/", icon: Linkedin, label: "LinkedIn" },
-          { href: "mailto:josiasmartins098@gmail.com", icon: Mail, label: "Email" },
-        ].map(({ href, icon: Icon, label }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith("http") ? "_blank" : undefined}
-            rel="noopener noreferrer"
-            aria-label={label}
-            className="text-muted-foreground hover:text-primary transition-colors p-1"
-          >
-            <Icon className="h-4 w-4" />
-          </a>
-        ))}
+      {/* Social Badges */}
+      <div className="flex items-center gap-2 pt-2 border-t border-border/40 flex-wrap">
+        <a
+          href="https://github.com/josiasdev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-opacity hover:opacity-85"
+        >
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="GitHub"
+            className="h-7 rounded"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/josias-batista/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-opacity hover:opacity-85"
+        >
+          <img
+            src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+            alt="LinkedIn"
+            className="h-7 rounded"
+          />
+        </a>
+        <a
+          href="mailto:josiasmartins098@gmail.com"
+          className="transition-opacity hover:opacity-85"
+        >
+          <img
+            src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+            alt="Gmail"
+            className="h-7 rounded"
+          />
+        </a>
       </div>
     </div>
   );

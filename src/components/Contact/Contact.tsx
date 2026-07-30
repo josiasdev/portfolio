@@ -34,18 +34,28 @@ const Contact = () => {
       label: t('contact.email'),
       value: 'josiasmartins098@gmail.com',
       href: 'mailto:josiasmartins098@gmail.com',
+      badgeUrl: 'https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'josias-batista',
       href: 'https://linkedin.com/in/josias-batista',
+      badgeUrl: 'https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white',
+    },
+    {
+      icon: Phone,
+      label: 'GitHub',
+      value: 'josiasdev',
+      href: 'https://github.com/josiasdev',
+      badgeUrl: 'https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white',
     },
     {
       icon: Phone,
       label: t('contact.phone'),
       value: '+55 (85) 98231-7976',
       href: 'tel:+5585982317976',
+      badgeUrl: null,
     },
   ];
 
@@ -122,18 +132,22 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="group p-4 rounded border border-border/60 bg-card/30 hover:border-primary/50 transition-colors flex items-center justify-between"
             >
-              <div className="flex items-center space-x-3">
-                <item.icon className="h-4 w-4 text-primary flex-shrink-0" />
-                <div>
+              <div className="flex items-center space-x-3 min-w-0 flex-1 mr-2">
+                {item.badgeUrl ? (
+                  <img src={item.badgeUrl} alt={item.label} className="h-5 sm:h-6 rounded flex-shrink-0" />
+                ) : (
+                  <item.icon className="h-4 w-4 text-primary flex-shrink-0" />
+                )}
+                <div className="min-w-0 flex-1">
                   <p className="text-[10px] font-mono text-muted-foreground uppercase">
                     {item.label}
                   </p>
-                  <p className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <p className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                     {item.value}
                   </p>
                 </div>
               </div>
-              <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
             </a>
           ))}
         </div>
