@@ -142,7 +142,7 @@ const Contact = () => {
         <div className="lg:col-span-7 p-5 rounded border border-border/60 bg-card/30 space-y-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-xs font-sans">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <FormField
                   control={form.control}
                   name="name"
@@ -150,7 +150,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel className="text-xs font-mono text-muted-foreground">{t('contact.form.name')}</FormLabel>
                       <FormControl>
-                        <Input placeholder={t('contact.form.name.placeholder')} className="h-9 text-xs bg-background/50 rounded" {...field} />
+                        <Input placeholder={t('contact.form.name.placeholder')} className="h-10 text-xs bg-background/50 rounded" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -163,7 +163,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel className="text-xs font-mono text-muted-foreground">{t('contact.form.email')}</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder={t('contact.form.email.placeholder')} className="h-9 text-xs bg-background/50 rounded" {...field} />
+                        <Input type="email" placeholder={t('contact.form.email.placeholder')} className="h-10 text-xs bg-background/50 rounded" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
