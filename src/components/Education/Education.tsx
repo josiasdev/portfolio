@@ -10,13 +10,13 @@ const Education = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
             <GraduationCap className="h-4 w-4" />
-            <span>Engenharia & Tecnologia</span>
+            <span>{t('education.badge')}</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 text-foreground">
             {t('education.title')}
           </h2>
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-            Formação sólida em Engenharia de Software na Universidade Federal do Ceará e base técnica em TI.
+            {t('education.subtitle')}
           </p>
         </div>
 

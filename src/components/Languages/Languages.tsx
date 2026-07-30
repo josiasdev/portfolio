@@ -3,10 +3,10 @@ import { Languages as LanguagesIcon, Globe2, CheckCircle2 } from "lucide-react";
 
 type LanguageItem = {
   nameKey: string;
-  level: string;
+  levelKey: string;
   flag: string;
-  status: string;
-  desc: string;
+  statusKey: string;
+  descKey: string;
 };
 
 const LanguagesSection = () => {
@@ -15,24 +15,24 @@ const LanguagesSection = () => {
   const langList: LanguageItem[] = [
     {
       nameKey: 'education.portuguese',
-      level: 'Nativo (Native)',
+      levelKey: 'languages.pt.level',
       flag: '🇧🇷',
-      status: 'Fluente',
-      desc: 'Comunicação escrita e verbal nativa para liderança técnica e redação de documentações.'
+      statusKey: 'languages.pt.level',
+      descKey: 'languages.pt.desc'
     },
     {
       nameKey: 'education.english',
-      level: 'Profissional (Professional Working)',
+      levelKey: 'languages.en.level',
       flag: '🇺🇸',
-      status: 'Avançado / B2+',
-      desc: 'Leitura técnica de whitepapers, escrita de smart contracts, reuniões globais e documentações em inglês.'
+      statusKey: 'languages.en.level',
+      descKey: 'languages.en.desc'
     },
     {
       nameKey: 'education.spanish',
-      level: 'Profissional (Professional Working)',
+      levelKey: 'languages.es.level',
       flag: '🇪🇸',
-      status: 'Profissional',
-      desc: 'Comunicação fluida para colaboração técnica e projetos com equipes da América Latina e Espanha.'
+      statusKey: 'languages.es.level',
+      descKey: 'languages.es.desc'
     }
   ];
 
@@ -42,13 +42,13 @@ const LanguagesSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
             <LanguagesIcon className="h-4 w-4" />
-            <span>Comunicação Global</span>
+            <span>{t('languages.badge')}</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 text-foreground">
-            {t('nav.languages')} & Competências
+            {t('languages.title')}
           </h2>
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-            Proficiência idiomática para atuação em equipes internacionais, ecossistemas Web3 globais e engenharia de software distribuída.
+            {t('languages.subtitle')}
           </p>
         </div>
 
@@ -62,7 +62,7 @@ const LanguagesSection = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-3xl">{item.flag}</span>
                   <span className="text-[10px] px-2.5 py-1 rounded-full bg-accent/10 text-accent font-bold tracking-wider uppercase border border-accent/20">
-                    {item.status}
+                    {t(item.statusKey)}
                   </span>
                 </div>
 
@@ -72,18 +72,18 @@ const LanguagesSection = () => {
                   </h3>
                   <p className="text-xs text-primary font-semibold mt-1 flex items-center gap-1.5">
                     <Globe2 className="h-3.5 w-3.5" />
-                    <span>{item.level}</span>
+                    <span>{t(item.levelKey)}</span>
                   </p>
                 </div>
 
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  {item.desc}
+                  {t(item.descKey)}
                 </p>
               </div>
 
               <div className="pt-4 mt-6 border-t border-border/30 flex items-center gap-2 text-xs font-medium text-muted-foreground">
                 <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0" />
-                <span>Pronto para times remotos e internacionais</span>
+                <span>{t('languages.card.ready')}</span>
               </div>
             </div>
           ))}

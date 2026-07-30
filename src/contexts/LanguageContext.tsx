@@ -212,7 +212,9 @@ const translations = {
     'hackathons.xrpl.award': '3rd Place - Web 3 Track',
     
     // Education
-    'education.title': 'Education & Languages',
+    'education.badge': 'Engineering & Technology',
+    'education.title': 'Academic Education',
+    'education.subtitle': 'Solid background in Software Engineering at the Federal University of Ceará and technical IT foundation.',
     'education.degree': 'Bachelor\'s Degree in Software Engineering',
     'education.university': 'Federal University of Ceará - UFC',
     'education.graduation': '2022 - Expected: December 2027',
@@ -224,12 +226,24 @@ const translations = {
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Free Course',
     'education.cyfrin.date': 'July 2026 – Present',
-    'education.cyfrin.desc': 'Complete training on the Cyfrin Updraft Web3 education platform, focused on Blockchain and Smart Contract development. The curriculum covers from fundamentals to advanced levels, designed to empower blockchain engineers and security auditors. Learning is based on step-by-step tutorials and the construction of practical (hands-on) projects taught by industry-leading experts.',
+    'education.cyfrin.desc': 'Complete training on the Cyfrin Updraft Web3 education platform, focused on Blockchain and Smart Contract development.',
     'education.certifications.title': 'Certifications & Credentials',
     'education.languages': 'Languages',
-    'education.portuguese': 'Portuguese: Native',
-    'education.english': 'English: Professional Working',
-    'education.spanish': 'Spanish: Professional Working',
+    'education.portuguese': 'Portuguese',
+    'education.english': 'English',
+    'education.spanish': 'Spanish',
+
+    // Languages Section
+    'languages.badge': 'Global Communication',
+    'languages.title': 'Languages & Proficiencies',
+    'languages.subtitle': 'Language proficiency for international teams, global Web3 ecosystems, and distributed software engineering.',
+    'languages.pt.level': 'Native',
+    'languages.pt.desc': 'Native written and verbal communication for technical leadership, documentation, and collaboration.',
+    'languages.en.level': 'Professional Working (B2+)',
+    'languages.en.desc': 'Technical reading of whitepapers, smart contract authoring, global meetings, and documentation in English.',
+    'languages.es.level': 'Professional Working',
+    'languages.es.desc': 'Fluent communication for technical collaboration and projects with Latin American and Spanish teams.',
+    'languages.card.ready': 'Ready for remote and international teams',
     
     // Contact
     'contact.title': 'Get In Touch',
@@ -484,7 +498,9 @@ const translations = {
     'hackathons.xrpl.award': '3º Lugar - Trilha Web 3',
 
     // Education
-    'education.title': 'Formação & Idiomas',
+    'education.badge': 'Engenharia & Tecnologia',
+    'education.title': 'Formação Acadêmica',
+    'education.subtitle': 'Formação sólida em Engenharia de Software na Universidade Federal do Ceará e base técnica em TI.',
     'education.degree': 'Bacharelado em Engenharia de Software',
     'education.university': 'Universidade Federal do Ceará - UFC',
     'education.graduation': 'mar de 2022 - dez de 2027',
@@ -496,12 +512,24 @@ const translations = {
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Curso Livre',
     'education.cyfrin.date': 'Julho de 2026 – o momento',
-    'education.cyfrin.desc': 'Formação completa na plataforma de educação Web3 da Cyfrin Updraft, com foco em desenvolvimento de Blockchain e Smart Contracts. O currículo abrange desde os fundamentos até o nível avançado, desenhado para capacitar engenheiros de blockchain e auditores de segurança (Security Auditors). O aprendizado baseia-se em tutoriais passo a passo e na construção de projetos práticos (hands-on) ministrados por especialistas líderes da indústria.',
+    'education.cyfrin.desc': 'Formação completa na plataforma de educação Web3 da Cyfrin Updraft, com foco em desenvolvimento de Blockchain e Smart Contracts.',
     'education.certifications.title': 'Certificações & Licenças',
     'education.languages': 'Idiomas',
-    'education.portuguese': 'Português: Nativo',
-    'education.english': 'Inglês: Profissional (Professional Working)',
-    'education.spanish': 'Espanhol: Profissional (Professional Working)',
+    'education.portuguese': 'Português',
+    'education.english': 'Inglês',
+    'education.spanish': 'Espanhol',
+
+    // Languages Section
+    'languages.badge': 'Comunicação Global',
+    'languages.title': 'Idiomas & Proficiência',
+    'languages.subtitle': 'Proficiência idiomática para atuação em equipes internacionais, ecossistemas Web3 globais e engenharia de software distribuída.',
+    'languages.pt.level': 'Nativo',
+    'languages.pt.desc': 'Comunicação escrita e verbal nativa para liderança técnica, redação de documentações e colaboração.',
+    'languages.en.level': 'Profissional (Professional Working / B2+)',
+    'languages.en.desc': 'Leitura técnica de whitepapers, escrita de smart contracts, reuniões globais e documentações em inglês.',
+    'languages.es.level': 'Profissional (Professional Working)',
+    'languages.es.desc': 'Comunicação fluida para colaboração técnica e projetos com equipes da América Latina e Espanha.',
+    'languages.card.ready': 'Pronto para times remotos e internacionais',
     
     // Contact
     'contact.title': 'Entre em Contato',
@@ -755,7 +783,9 @@ const translations = {
     'hackathons.xrpl.award': '3er Lugar - Pista Web 3',
 
     // Education
-    'education.title': 'Formación e Idiomas',
+    'education.badge': 'Ingeniería y Tecnología',
+    'education.title': 'Formación Académica',
+    'education.subtitle': 'Formación sólida en Ingeniería de Software en la Universidad Federal de Ceará y base técnica en TI.',
     'education.degree': 'Licenciatura en Ingeniería de Software',
     'education.university': 'Universidad Federal de Ceará - UFC',
     'education.graduation': '2022 - Previsto: Diciembre 2027',
@@ -767,12 +797,24 @@ const translations = {
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Curso Libre',
     'education.cyfrin.date': 'Julio 2026 – Presente',
-    'education.cyfrin.desc': 'Formación completa en la plataforma de educación Web3 de Cyfrin Updraft, enfocada en el desarrollo de Blockchain y Smart Contracts. El plan de estudios abarca desde fundamentos hasta nivel avanzado, diseñado para capacitar a ingenieros de blockchain y auditores de seguridad. El aprendizaje se basa en tutoriales paso a paso y en la construcción de proyectos prácticos (hands-on) impartidos por expertos líderes en la industria.',
+    'education.cyfrin.desc': 'Formación completa en la plataforma de educación Web3 de Cyfrin Updraft, enfocada en el desarrollo de Blockchain y Smart Contracts.',
     'education.certifications.title': 'Certificaciones y Licencias',
     'education.languages': 'Idiomas',
-    'education.portuguese': 'Portugués: Nativo',
-    'education.english': 'Inglés: Competencia profesional',
-    'education.spanish': 'Español: Competencia profesional',
+    'education.portuguese': 'Portugués',
+    'education.english': 'Inglés',
+    'education.spanish': 'Español',
+
+    // Languages Section
+    'languages.badge': 'Comunicación Global',
+    'languages.title': 'Idiomas y Competencias',
+    'languages.subtitle': 'Competencia lingüística para equipos internacionales, ecosistemas Web3 globales e ingeniería de software distribuida.',
+    'languages.pt.level': 'Nativo',
+    'languages.pt.desc': 'Comunicación escrita y verbal nativa para liderazgo técnico, documentación y colaboración.',
+    'languages.en.level': 'Competencia profesional (B2+)',
+    'languages.en.desc': 'Lectura técnica de whitepapers, escritura de smart contracts, reuniones globales y documentación en inglés.',
+    'languages.es.level': 'Competencia profesional',
+    'languages.es.desc': 'Comunicación fluida para colaboración técnica y proyectos con equipos de Latinoamérica y España.',
+    'languages.card.ready': 'Listo para equipos remotos e internacionales',
 
     // Contact
     'contact.title': 'Contáctame',
