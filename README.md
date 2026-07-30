@@ -1,91 +1,88 @@
-# Josias Batista - Desenvolvedor Full Stack & Web3
+# Francisco Josias da Silva Batista — Portfólio Pessoal
 
-<div align="center" style="margin-bottom: 2rem;">
-  <img src="https://img.shields.io/badge/React-18-blue?logo=react&style=for-the-badge" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-5-purple?logo=vite&style=for-the-badge" alt="Vite" />
-  <img src="https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&style=for-the-badge" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3-cyan?logo=tailwindcss&style=for-the-badge" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/shadcn%2Fui-black?logo=shadcnui&logoColor=white&style=for-the-badge" alt="shadcn/ui" />
-</div>
+## Visão Geral
 
-## 📌 Visão Geral
+Este repositório contém o código-fonte do portfólio profissional de Francisco Josias da Silva Batista, Desenvolvedor Blockchain, Engenheiro de Protocolos e Especialista em Backend Java/Spring Boot.
 
-Este é o código-fonte do meu [Portfólio Pessoal](https://josiasdev.github.io/portfolio), uma aplicação web moderna e interativa construída para apresentar minhas habilidades como Desenvolvedor Full Stack (com foco em backend moderno e integrações Web3), minhas experiências profissionais e os projetos em que atuei.
+A aplicação apresenta trajetórias profissionais, projetos em destaque na Web3 e software tradicional, conquistas em hackathons globais, certificações técnicas verificáveis, formação acadêmica e canais de contato.
 
-O site foi desenvolvido priorizando uma interface de usuário rica (com animações CSS avançadas e efeitos 3D via `preserve-3d`), arquitetura limpa, e acessibilidade.
+O projeto adota uma identidade visual moderna inspirada no programa Web 3.0 iRede (com fundo em azul marinho profundo e acentos em verde esmeralda/mint e lime), suporte nativo a alternância entre Modo Escuro e Modo Claro de alto contraste, e internacionalização completa nos idiomas Português, Inglês e Espanhol.
 
 ---
 
-## ✨ Funcionalidades Principais
+## Estrutura do Portfólio
 
-* **Internacionalização (i18n):** Suporte completo para 3 idiomas (Português 🇧🇷, Inglês 🇺🇸 e Espanhol 🇪🇸), gerenciados dinamicamente via Context API.
-* **UI/UX Premium:** Animações interativas utilizando keyframes nativos do Tailwind, cards com propriedades de "tilt 3D", rastreamento dinâmico de mouse (shimmer effects) e barras de rolagem customizadas.
-* **Layout Totalmente Responsivo:** Navegação adaptativa com menús laterais expansíveis no mobile e layouts perfeitamente escaláveis para desktops e tablets.
-* **Dark / Light Mode:** Alternância de temas fluidos otimizada usando `next-themes` e cores semânticas variadas.
-* **Componentização Inteligente:** Baseado na estrutura do `shadcn/ui` aliado ao Radix Primitives, garantindo total controle de acessibilidade aos leitores de tela e navegação por teclado na web.
+O site é organizado nas seguintes seções independentes e navegáveis:
 
----
-
-## 🛠 Tecnologias Utilizadas
-
-Este projeto foi construído usando uma base robusta focada na escalabilidade do React 18:
-
-| Categoria | Tecnologias |
-| :--- | :--- |
-| **Core & Build** | [React 18](https://reactjs.org/), [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/) |
-| **Estilização** | [Tailwind CSS](https://tailwindcss.com/) (com utilitários de animações personalizadas) |
-| **Componentes UI** | [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/) (Ícones) |
-| **Data Fetching e Forms** | [TanStack Query](https://tanstack.com/query) v5, [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/) |
+1. **Hero / Apresentação**: Visão geral de atuação, papel principal (Desenvolvedor Residente Web 3.0 no iRede), pilares técnicos e botões de ação (Ver Projetos, Entre em Contato e Download de Curricular em PDF).
+2. **Sobre Mim**: Resumo da trajetória acadêmica e profissional, desde o ensino técnico em informática (2019–2021) até o bacharelado em Engenharia de Software na Universidade Federal do Ceará (UFC Quixadá) e a atuação em ecossistemas de tecnologia.
+3. **Habilidades**: Agrupamento estruturado de competências técnicas em Blockchain & Smart Contracts (Solidity/EVM, Soroban/Stellar, Rust, Sui Move, Foundry, DeFi), Backend & Sistemas Distribuídos (Java 17, Spring Boot, PostgreSQL, Docker, Arquitetura de Eventos) e Ferramentas Globais.
+4. **Experiência Profissional**: Histórico detalhado com destaque para o cargo atual como Desenvolvedor Residente em Web 3.0 no Instituto iRede, além das atuações na Raport Tecnologia / Agentic Space, UFC Quixadá e estágio em infraestrutura/sistemas.
+5. **Projetos em Destaque**:
+   - **COINCONUT (ImpactLedger on Stellar)**: Sistema descentralizado para logística reversa de casca de coco na blockchain Stellar Soroban com provas de conhecimento zero (Noir) e NFTs ESG.
+   - **EloCiv (UNICEF Youth Challenge 2026)**: Plataforma de credenciais verificáveis W3C na Stellar Soroban para engajamento juvenil com preservação de privacidade.
+   - **tutor-crypto-ai**: Agente inteligente de IA e assistente educativo para o ecossistema XRP Ledger.
+   - **RelatorioAniversariantes**: Sistema de automação de relatórios corporativos construído com Java 17 e Spring Boot.
+6. **Hackathons & Competições**: Registro de premiações e participações de destaque em maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge 2026, Meridian, SUI Developer, XRPL Web3 Track).
+7. **Formação Acadêmica**: Detalhes do Bacharelado em Engenharia de Software (Universidade Federal do Ceará - UFC Campus Quixadá) e do Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura).
+8. **Licenças & Certificados**: Grade com 13 credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, DIO, Utah Linux LPI).
+9. **Idiomas & Competências**: Proficiência idiomática detalhada em Português (Nativo), Inglês (Profissional / B2+) e Espanhol (Profissional).
+10. **Contato & Rodapé**: Formulário interativo de contato, links sociais (GitHub, LinkedIn, Email) e navegação completa.
 
 ---
 
-## 🚀 Como Executar Localmente
+## Tecnologias e Arquitetura
+
+- **Core**: React 18, Vite 5, TypeScript 5.
+- **Estilização**: Tailwind CSS com tokens de design customizados, variáveis HSL semânticas e transições suaves.
+- **UI & Animações**: Componentes shadcn/ui, Radix UI Primitives, Lucide React Icons, Framer Motion e animações baseadas em rolagem.
+- **Gerenciamento de Estado & I18n**: Context API para alternância dinâmica de idiomas (PT-BR, EN, ES) e tema (Dark/Light).
+- **Roteamento & Qualidade**: React Router v6, TanStack Query v5, React Hook Form, Zod e ESLint.
+
+---
+
+## Como Executar Localmente
 
 ### Pré-requisitos
-* [Node.js](https://nodejs.org/) (versão 18 ou superior)
-* `npm` ou `yarn` instalados no seu sistema.
+- Node.js (versão 18 ou superior)
+- npm ou yarn
 
-### Passo a passo para Instalação
+### Passo a Passo
 
-1. **Clone o repositório:**
+1. **Clonar o repositório:**
 ```bash
-git clone https://github.com/josiasdev/portfolio
+git clone https://github.com/josiasdev/portfolio.git
 cd portfolio
 ```
 
-2. **Instale as dependências:**
+2. **Instalar dependências:**
 ```bash
 npm install
 ```
 
-3. **Inicie o servidor de desenvolvimento:**
+3. **Iniciar o servidor de desenvolvimento:**
 ```bash
 npm run dev
 ```
 
-4. **Abra o seu navegador:** Vá até [http://localhost:8080](http://localhost:8080) (verifique a porta indicada pelo Vite no terminal se estiver ocupada).
+4. **Acessar a aplicação:**
+Abra o navegador no endereço `http://localhost:8080` (ou a porta informada pelo Vite no terminal).
 
 ---
 
-## 🤖 Comandos Disponíveis
+## Comandos Disponíveis
 
-- `npm run dev`: Inicia o servidor local com hot-reload habilitado (HMR).
-- `npm run build`: Cria a versão enxuta otimizada de produção no diretório `/dist`.
-- `npm run lint`: Inicia varreduras do Linter e TypeScript Strict compiler para capturar bugs.
-- `npm run preview`: Mostra como a build em produção será servida em tempo real.
+- `npm run dev`: Executa a aplicação em modo de desenvolvimento com Hot Module Replacement (HMR).
+- `npm run build`: Compila e otimiza a aplicação para produção no diretório `/dist`.
+- `npm run preview`: Serve a build de produção localmente para verificação.
+- `npm run lint`: Executa a checagem de código com ESLint e verificação de tipos com o compilador do TypeScript.
 
 ---
 
-## 📩 Contato
+## Contato e Links Profissionais
 
-Gostou do projeto? Vamos construir coisas incríveis e integrar soluções!
-
-- **Email:** [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
-- **LinkedIn:** [josias-batista](https://www.linkedin.com/in/josias-batista)
-- **GitHub:** [@josiasdev](https://github.com/josiasdev)
-
-<br/>
-
-<div align="center">
-  <small>Made with ♥ in Quixadá - Ceará, Brasil</small>
-</div>
+- **Portfolio**: [josias-batista-portfolio.vercel.app](https://josias-batista-portfolio.vercel.app)
+- **LinkedIn**: [linkedin.com/in/josias-batista](https://www.linkedin.com/in/josias-batista)
+- **GitHub**: [github.com/josiasdev](https://github.com/josiasdev)
+- **Email**: [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
+- **Localização**: Quixadá, Ceará, Brasil
