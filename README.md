@@ -6,7 +6,7 @@ Este repositório contém o código-fonte do portfólio profissional de Francisc
 
 A aplicação apresenta trajetórias profissionais, projetos em destaque na Web3 e backend tradicional, conquistas em hackathons globais, certificações técnicas verificáveis, formação acadêmica, idiomas e formulário transacional de contato.
 
-O projeto adota a arquitetura visual **Senior Minimalist** (inspirada em *brittanychiang.com*, *leerob.io* e *markodenic.com*): layout split-screen no desktop com barra lateral fixa e indicador dinâmico de seção ativa, paleta enxuta em Slate escuro (`#0f172a`) com acento em Teal/Emerald (`#14b8a6`), tipografia técnica monoespaçada (*Fira Code*), suporte a Modo Escuro e Claro, e internacionalização completa nos idiomas Português, Inglês e Espanhol.
+O projeto adota a arquitetura visual Senior Minimalist (inspirada em brittanychiang.com, leerob.io e markodenic.com): layout split-screen no desktop com barra lateral fixa e indicador dinâmico de seção ativa (seções 01 a 09), paleta enxuta em Slate escuro (`#0f172a`) com acento em Teal/Emerald (`#14b8a6`), tipografia técnica monoespaçada (Fira Code), suporte a Modo Escuro e Claro via ThemeContext, e internacionalização completa nos idiomas Português, Inglês e Espanhol com download dinâmico do currículo correspondente em PDF.
 
 ---
 
@@ -14,7 +14,7 @@ O projeto adota a arquitetura visual **Senior Minimalist** (inspirada em *britta
 
 O site é organizado nas seguintes seções editoriais navegáveis:
 
-1. **Hero & Painel Lateral Fixo (Desktop)**: Foto de perfil ampliada, nome, cargo, resumo de atuação (Web 3.0 Resident Developer @ iRede), badges de status, botões de ação com alto contraste no hover (Ver Projetos, Entre em Contato e Download do Currículo em PDF), links sociais e navegadores de idioma/tema.
+1. **Hero & Painel Lateral Fixo (Desktop)**: Seletores superiores de idioma e tema (`LanguageToggle` e `ThemeToggle`), foto de perfil ampliada, nome, cargo, resumo de atuação (Web 3.0 Resident Developer @ iRede), badges de status, botões de ação de alto contraste (Ver Projetos, Entre em Contato e Download do Currículo em PDF adaptado por idioma), links sociais e menu de navegação lateral com as 9 seções.
 2. **01. Sobre Mim**: Narrativa dividida em três parágrafos cobrindo o ensino técnico com média 9,67/10,0 em Aracoiaba, o bacharelado em Engenharia de Software na UFC Quixadá e a atuação atual com microsserviços Java e Smart Contracts em Solidity (EVM) e Soroban (Stellar).
 3. **02. Habilidades**: Grade com 6 categorias técnicas organizadas (Web3 & Blockchain, Back-End, Front-End, Bancos de Dados, DevOps & Cloud, Habilidades Adicionais) com badges monoespaçados.
 4. **03. Experiência**: Timeline em formato grid com períodos monoespaçados à esquerda, cargo e empresa destacados, descrições objetivas e tags de tecnologias aplicadas.
@@ -30,9 +30,9 @@ O site é organizado nas seguintes seções editoriais navegáveis:
 ## Tecnologias e Arquitetura
 
 - **Core**: React 18, Vite 5, TypeScript 5 (strict mode).
-- **Estilização & Design System**: Tailwind CSS com tokens de design customizados, variáveis HSL semânticas e tipografia com `Inter` (sans-serif) e `Fira Code` (monospaced).
+- **Estilização & Design System**: Tailwind CSS com tokens de design customizados, variáveis HSL semânticas e tipografia com Inter (sans-serif) e Fira Code (monospaced).
 - **UI & Componentes**: Componentes base shadcn/ui, Radix UI Primitives, Lucide React Icons.
-- **Gerenciamento de Estado & I18n**: Context API para alternância dinâmica de idiomas (PT, EN, ES) e tema (Dark/Light/System).
+- **Gerenciamento de Estado & I18n**: Context API com `LanguageContext` para alternância de idiomas (PT, EN, ES) com download de PDF correspondente (`Curriculo_Josias_Batista.pdf`, `Resume_Josias_Batista.pdf`, `Currículum_Josias_Batista.pdf`), e `ThemeContext` para sincronização global de tema (Dark/Light/System).
 - **Formulário & Serverless**: React Hook Form, Zod e Vercel Serverless Functions (`/api/send-email`) integradas ao Resend.
 - **Roteamento & Qualidade**: React Router v6, TanStack Query v5, Helmet Async e ESLint.
 

@@ -4,15 +4,15 @@ Estratégias e padrões utilizados para garantir a melhor experiência mobile (r
 
 ## Navegação Mobile: Top Bar & Bottom Navigation Bar
 
-No mobile (`<lg`), a navegação é dividida em duas áreas funcionais para máxima ergonomia:
+No mobile (<lg), a navegação é dividida em duas áreas funcionais para máxima ergonomia:
 
-1. **Top Header Bar Fixa (`lg:hidden sticky top-0`)**:
+1. Top Header Bar Fixa (`lg:hidden sticky top-0`):
    - Título do desenvolvedor com scroll suave até o topo.
-   - **`LanguageToggle` com `direction="down"`**: O menu dropdown abre para baixo (`top-full mt-2`), garantindo que não saia da tela ou seja cortado pela viewport superior.
-   - **`ThemeToggle`**: Alternância imediata entre Dark, Light e System.
+   - `LanguageToggle` com `direction="down" align="right"`: O menu dropdown abre para baixo (`top-full mt-2`), alinhado à direita com fundo 100% opaco (`bg-card opacity-100 shadow-2xl z-[100]`), garantindo que não vaze ou sobreponha textos.
+   - `ThemeToggle`: Alternância imediata entre Dark, Light e System, sincronizado via `ThemeContext`.
 
-2. **Bottom Navigation Bar Fixa (`lg:hidden fixed bottom-0`)**:
-   - 5 ícones fundamentais de acesso rápido: **Sobre**, **Experiência**, **Projetos**, **Hackathons** e **Contato**.
+2. Bottom Navigation Bar Fixa (`lg:hidden fixed bottom-0`):
+   - 5 ícones fundamentais de acesso rápido: Sobre, Experiência, Projetos, Hackathons e Contato.
    - Ícones Lucide React (`User`, `GraduationCap`, `Code`, `Trophy`, `Mail`).
    - Estado ativo destacado em `text-primary` com ícone em traço mais espesso (`strokeWidth={2.5}`).
    - Suporte a `pb-[env(safe-area-inset-bottom)]` para evitar colisão com a barra do Face ID / Home Indicator nos iPhones.
@@ -24,18 +24,19 @@ Todos os elementos interativos no mobile possuem dimensões adequadas (mínimo d
 - Botões "Entre em Contato" e "Baixar Currículo" no Hero (h-10 com padding generoso)
 - Links diretos no formulário de contato e redes sociais
 
-## LanguageToggle Mobile
+## LanguageToggle & ThemeToggle Mobile
 
-- O botão acionador mostra a bandeira emoji e a sigla em texto monoespaçado (`🇧🇷 PT`, `🇺🇸 EN`, `🇪🇸 ES`).
-- O menu dropdown recebe `direction="down"` quando acionado na barra superior mobile (`Header.tsx`) e `direction="up"` quando acionado na barra lateral desktop (`Index.tsx`).
-- Fechamento automático ao clicar fora (`mousedown`) ou pressionar `Escape`.
+- O botão acionador do idioma mostra a bandeira e a sigla em texto monoespaçado (PT, EN, ES).
+- O menu dropdown do idioma possui opacidade total (100% sólida em `bg-card`), evitando transparências ou colisão visual com textos ao fundo.
+- O alternador de tema é gerenciado centralmente por `ThemeContext`, mantendo mobile e desktop 100% sincronizados.
+- Fechamento automático do menu de idioma ao clicar fora (`mousedown`) ou pressionar `Escape`.
 
 ## Performance Mobile & Viewport
 
-- **Dynamic Viewports (`dvh`):** Uso de `min-h-screen` com containers flexíveis para evitar que barras nativas de navegadores (Safari, Chrome iOS/Android) ocultem conteúdos inferiores.
-- **Lazy Loading:** Seções do conteúdo principal importadas via `React.lazy` + `<Suspense>` com indicador sutil.
-- **Imagem de Perfil Ampliada:** `fetchPriority="high"`, `decoding="async"` e dimensões `w-32 h-32 sm:w-36 sm:h-36` garantindo nitidez sem re-layouts.
-- **Scroll NATIVO Suave:** Scroll nativo otimizado do navegador (`scroll-behavior: smooth` em CSS), eliminando bibliotecas pesadas de loop JS no thread principal mobile.
+- Dynamic Viewports (`dvh`): Uso de `min-h-screen` com containers flexíveis para evitar que barras nativas de navegadores (Safari, Chrome iOS/Android) ocultem conteúdos inferiores.
+- Lazy Loading: Seções do conteúdo principal importadas via `React.lazy` + `<Suspense>` com indicador sutil.
+- Imagem de Perfil Ampliada: `fetchPriority="high"`, `decoding="async"` e dimensões responsivas garantindo nitidez sem re-layouts.
+- Scroll NATIVO Suave: Scroll nativo otimizado do navegador (`scroll-behavior: smooth` em CSS), eliminando bibliotecas pesadas de loop JS no thread principal mobile.
 
 ## Padding de Compensação no Footer Mobile
 
