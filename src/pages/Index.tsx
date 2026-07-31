@@ -36,7 +36,9 @@ const Index = () => {
     { id: "projects", label: t("nav.projects"), num: "04" },
     { id: "hackathons", label: t("nav.hackathons"), num: "05" },
     { id: "education", label: t("nav.education"), num: "06" },
-    { id: "contact", label: t("nav.contact"), num: "07" },
+    { id: "certifications", label: t("nav.certifications"), num: "07" },
+    { id: "languages", label: t("nav.languages"), num: "08" },
+    { id: "contact", label: t("nav.contact"), num: "09" },
   ];
 
   const scrollToSection = (id: string) => {
