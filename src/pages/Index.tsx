@@ -92,11 +92,11 @@ const Index = () => {
         <div className="lg:flex lg:justify-between lg:gap-12">
           
           {/* Left Column: Sticky Profile & Side Navigation (Desktop lg+) */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-16">
+          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-24">
             <div className="space-y-6">
               {/* Desktop Top Actions: Language & Theme Toggles */}
-              <div className="hidden lg:flex items-center gap-3 pb-3 border-b border-border/40 text-xs font-mono text-muted-foreground">
-                <LanguageToggle direction="down" align="left" />
+              <div className="hidden lg:flex items-center justify-end gap-2.5">
+                <LanguageToggle direction="down" align="right" />
                 <ThemeToggle />
               </div>
 

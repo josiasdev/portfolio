@@ -1,5 +1,4 @@
-import { Moon, Sun, Monitor } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Moon, Sun, Monitor, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -7,61 +6,57 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-type Theme = "dark" | "light" | "system";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<Theme>("system");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove("light", "dark");
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    root.classList.add(theme);
-  }, [theme]);
-
-  const handleThemeChange = (newTheme: Theme) => {
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
+  const { theme, setTheme } = useTheme();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="rounded-full relative">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-9 w-9 rounded-lg border border-border/60 hover:border-primary/40 hover:bg-secondary/60 transition-all relative"
+        >
+          <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-foreground" />
+          <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-foreground" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-card dark:bg-card opacity-100 border border-border/80 shadow-2xl z-[100]">
-        <DropdownMenuItem onClick={() => handleThemeChange("light")}>
-          <Sun className="mr-2 h-4 w-4" />
-          Light
+      <DropdownMenuContent
+        align="end"
+        className="w-36 bg-card dark:bg-card opacity-100 border border-border/80 shadow-2xl z-[100]"
+      >
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className={`flex items-center justify-between cursor-pointer ${theme === "light" ? "text-primary font-semibold" : ""}`}
+        >
+          <div className="flex items-center">
+            <Sun className="mr-2 h-4 w-4" />
+            <span>Light</span>
+          </div>
+          {theme === "light" && <Check className="h-3.5 w-3.5 text-primary" />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleThemeChange("dark")}>
-          <Moon className="mr-2 h-4 w-4" />
-          Dark
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className={`flex items-center justify-between cursor-pointer ${theme === "dark" ? "text-primary font-semibold" : ""}`}
+        >
+          <div className="flex items-center">
+            <Moon className="mr-2 h-4 w-4" />
+            <span>Dark</span>
+          </div>
+          {theme === "dark" && <Check className="h-3.5 w-3.5 text-primary" />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleThemeChange("system")}>
-          <Monitor className="mr-2 h-4 w-4" />
-          System
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className={`flex items-center justify-between cursor-pointer ${theme === "system" ? "text-primary font-semibold" : ""}`}
+        >
+          <div className="flex items-center">
+            <Monitor className="mr-2 h-4 w-4" />
+            <span>System</span>
+          </div>
+          {theme === "system" && <Check className="h-3.5 w-3.5 text-primary" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
