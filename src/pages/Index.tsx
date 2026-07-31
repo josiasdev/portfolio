@@ -92,8 +92,14 @@ const Index = () => {
         <div className="lg:flex lg:justify-between lg:gap-12">
           
           {/* Left Column: Sticky Profile & Side Navigation (Desktop lg+) */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-24">
-            <div className="space-y-8">
+          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-16">
+            <div className="space-y-6">
+              {/* Desktop Top Actions: Language & Theme Toggles */}
+              <div className="hidden lg:flex items-center gap-3 pb-3 border-b border-border/40 text-xs font-mono text-muted-foreground">
+                <LanguageToggle direction="down" align="left" />
+                <ThemeToggle />
+              </div>
+
               <Hero />
 
               {/* Side Navigation with Active Line Indicator (Brittany Chiang style) */}
@@ -130,12 +136,6 @@ const Index = () => {
                   })}
                 </ul>
               </nav>
-            </div>
-
-            {/* Sticky Bottom Actions: Language & Theme Toggles */}
-            <div className="hidden lg:flex items-center gap-3 pt-8 border-t border-border/40 text-xs font-mono text-muted-foreground">
-              <LanguageToggle direction="up" />
-              <ThemeToggle />
             </div>
           </header>
 

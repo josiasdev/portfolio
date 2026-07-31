@@ -61,7 +61,7 @@ const Header = () => {
           Josias Batista
         </button>
         <div className="flex items-center gap-2">
-          <LanguageToggle direction="down" />
+          <LanguageToggle direction="down" align="right" />
           <ThemeToggle />
         </div>
       </header>

@@ -17,9 +17,10 @@ const languages: LangOption[] = [
 
 interface LanguageToggleProps {
   direction?: "up" | "down";
+  align?: "left" | "right";
 }
 
-const LanguageToggle = ({ direction = "up" }: LanguageToggleProps) => {
+const LanguageToggle = ({ direction = "up", align = "right" }: LanguageToggleProps) => {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -74,11 +75,11 @@ const LanguageToggle = ({ direction = "up" }: LanguageToggleProps) => {
         <div
           role="listbox"
           className={`
-            absolute right-0 w-44 z-[100]
-            rounded-xl border border-border/60 dark:border-border/40
-            bg-card/98 dark:bg-card/98 backdrop-blur-lg
-            shadow-lg overflow-hidden animate-fade-in
-            ${direction === "up" ? "bottom-full mb-2 origin-bottom-right" : "top-full mt-2 origin-top-right"}
+            absolute w-48 z-[100]
+            rounded-xl border border-border/80 dark:border-border/60
+            bg-card dark:bg-card opacity-100 shadow-2xl overflow-hidden animate-fade-in
+            ${align === "left" ? "left-0 origin-top-left" : "right-0 origin-top-right"}
+            ${direction === "up" ? "bottom-full mb-2" : "top-full mt-2"}
           `}
         >
           {/* Header */}
