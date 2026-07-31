@@ -92,10 +92,10 @@ const Index = () => {
         <div className="lg:flex lg:justify-between lg:gap-12">
           
           {/* Left Column: Sticky Profile & Side Navigation (Desktop lg+) */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-24">
-            <div className="space-y-6">
+          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-10 lg:overflow-y-auto">
+            <div className="space-y-4">
               {/* Desktop Top Actions: Language & Theme Toggles */}
-              <div className="hidden lg:flex items-center justify-end gap-2.5">
+              <div className="hidden lg:flex items-center justify-end gap-2.5 pb-1">
                 <LanguageToggle direction="down" align="right" />
                 <ThemeToggle />
               </div>
@@ -104,24 +104,24 @@ const Index = () => {
 
               {/* Side Navigation with Active Line Indicator (Brittany Chiang style) */}
               <nav className="nav hidden lg:block" aria-label="In-page section jump links">
-                <ul className="space-y-3 w-max">
+                <ul className="space-y-0.5 w-max">
                   {navItems.map((item) => {
                     const isActive = activeSection === item.id;
                     return (
                       <li key={item.id}>
                         <button
                           onClick={() => scrollToSection(item.id)}
-                          className="group flex items-center py-1.5 transition-all text-left"
+                          className="group flex items-center py-1 transition-all text-left"
                         >
                           <span
                             className={`mr-4 h-px transition-all duration-300 ${
                               isActive
-                                ? "w-16 bg-primary"
-                                : "w-8 bg-border group-hover:w-16 group-hover:bg-foreground"
+                                ? "w-14 bg-primary"
+                                : "w-7 bg-border group-hover:w-14 group-hover:bg-foreground"
                             }`}
                           />
                           <span
-                            className={`text-xs font-mono font-semibold tracking-widest uppercase transition-colors ${
+                            className={`text-[11px] font-mono font-semibold tracking-widest uppercase transition-colors ${
                               isActive
                                 ? "text-primary"
                                 : "text-muted-foreground group-hover:text-foreground"

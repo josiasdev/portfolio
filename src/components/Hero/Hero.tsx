@@ -28,10 +28,10 @@ const Hero = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-3">
       {/* Profile & Name Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-primary/40 flex-shrink-0 bg-card shadow-sm">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-primary/40 flex-shrink-0 bg-card shadow-sm">
           <img
             src={profileImage}
             alt="Francisco Josias da Silva Batista"
@@ -40,41 +40,41 @@ const Hero = () => {
             className="w-full h-full object-cover object-top"
           />
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-medium text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded">
             <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block animate-pulse" />
             <span>{t('hero.roleBadge')}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-sans">
+          <h1 className="text-3xl sm:text-4xl lg:text-2xl font-bold tracking-tight text-foreground font-sans">
             Josias Batista
           </h1>
-          <p className="text-sm sm:text-base font-mono text-muted-foreground">
+          <p className="text-sm sm:text-base lg:text-xs font-mono text-muted-foreground">
             {t('hero.title')}
           </p>
         </div>
       </div>
 
-      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl">
+      <p className="text-sm sm:text-base lg:text-xs text-muted-foreground leading-relaxed max-w-xl lg:max-w-none">
         {t('hero.subtitle')}
       </p>
 
       {/* Meta & Location */}
-      <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground flex-wrap">
+      <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground flex-wrap">
         <div className="flex items-center gap-1.5">
-          <MapPin className="h-3.5 w-3.5 text-primary" />
+          <MapPin className="h-3 w-3 text-primary" />
           <span>{t('hero.location')}</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <Phone className="h-3.5 w-3.5 text-primary" />
+          <Phone className="h-3 w-3 text-primary" />
           <span>+55 (85) 98231-7976</span>
         </div>
       </div>
 
       {/* Action Buttons */}
-      <div className="flex items-center gap-3 flex-wrap pt-2">
+      <div className="flex items-center gap-2 flex-wrap">
         <Button
           size="sm"
-          className="h-10 px-5 text-xs font-mono font-semibold bg-primary text-primary-foreground hover:bg-primary/85 transition-colors rounded"
+          className="h-8 px-4 text-xs font-mono font-semibold bg-primary text-primary-foreground hover:bg-primary/85 transition-colors rounded"
           onClick={() => scrollToSection('projects')}
         >
           {t('hero.cta')}
@@ -83,7 +83,7 @@ const Hero = () => {
         <Button
           size="sm"
           variant="outline"
-          className="h-10 px-5 text-xs font-mono font-semibold border-primary/60 text-primary bg-primary/5 hover:bg-primary hover:text-primary-foreground transition-all rounded"
+          className="h-8 px-4 text-xs font-mono font-semibold border-primary/60 text-primary bg-primary/5 hover:bg-primary hover:text-primary-foreground transition-all rounded"
           onClick={() => scrollToSection('contact')}
         >
           {t('hero.contact')}
@@ -93,17 +93,17 @@ const Hero = () => {
           size="sm"
           variant="ghost"
           asChild
-          className="h-10 px-4 text-xs font-mono font-semibold text-foreground border border-border/80 hover:bg-card hover:border-primary/50 hover:text-primary transition-all rounded"
+          className="h-8 px-3 text-xs font-mono font-semibold text-foreground border border-border/80 hover:bg-card hover:border-primary/50 hover:text-primary transition-all rounded"
         >
           <a href={`/${encodeURI(currentCvFile)}`} download={currentCvFile}>
-            <FileText className="mr-1.5 h-3.5 w-3.5 text-primary" />
+            <FileText className="mr-1.5 h-3 w-3 text-primary" />
             {t('hero.downloadCV')}
           </a>
         </Button>
       </div>
 
       {/* Social Badges */}
-      <div className="flex items-center gap-2 pt-2 border-t border-border/40 flex-wrap">
+      <div className="flex items-center gap-1.5 pt-1 border-t border-border/40 flex-wrap">
         <a
           href="https://github.com/josiasdev"
           target="_blank"
@@ -113,7 +113,7 @@ const Hero = () => {
           <img
             src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
             alt="GitHub"
-            className="h-7 rounded"
+            className="h-6 rounded"
           />
         </a>
         <a
@@ -125,7 +125,7 @@ const Hero = () => {
           <img
             src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
             alt="LinkedIn"
-            className="h-7 rounded"
+            className="h-6 rounded"
           />
         </a>
         <a
@@ -135,7 +135,7 @@ const Hero = () => {
           <img
             src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
             alt="Gmail"
-            className="h-7 rounded"
+            className="h-6 rounded"
           />
         </a>
       </div>
