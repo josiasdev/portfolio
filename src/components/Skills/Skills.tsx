@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Code2, Database, Cloud, Blocks, Palette, Wrench } from "lucide-react";
+import { Code2, Database, Cloud, Blocks, Wrench } from "lucide-react";
 
 type SkillCategory = {
   title: string;
@@ -14,32 +14,27 @@ const Skills = () => {
     {
       title: t('skills.web3'),
       icon: Blocks,
-      skills: ['Solidity', 'Foundry', 'Hardhat', 'Ethereum (EVM)', 'Smart Contracts', 'DeFi Primitives', 'Rust', 'Move', 'Sui', 'Stellar (Soroban)'],
+      skills: ['Solidity', 'Rust', 'Smart Contracts', 'Stellar (Soroban)', 'Ethereum (EVM)'],
     },
     {
       title: t('skills.backend'),
       icon: Code2,
-      skills: ['Java 17', 'Spring Boot', 'Node.js', 'NestJS', 'Express.js'],
-    },
-    {
-      title: t('skills.frontend'),
-      icon: Palette,
-      skills: ['TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Vite', 'HTML5', 'CSS3'],
+      skills: ['Node.js', 'NestJS', 'TypeScript', 'Express.js'],
     },
     {
       title: t('skills.databases'),
       icon: Database,
-      skills: ['PostgreSQL', 'Prisma ORM', 'MySQL', 'MongoDB', 'SQL Server'],
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB'],
     },
     {
       title: t('skills.devops'),
       icon: Cloud,
-      skills: ['Docker', 'Kubernetes', 'AWS', 'Linux (LPI)', 'Git', 'CI/CD Pipelines'],
+      skills: ['Docker', 'AWS', 'Git', 'GitHub'],
     },
     {
       title: t('skills.additional'),
       icon: Wrench,
-      skills: ['Clean Architecture', 'SOLID', 'Protocol Design', 'RESTful APIs', 'Oracles', 'Scrum', 'RAG LLMs'],
+      skills: ['Clean Architecture', 'SOLID', 'RESTful APIs', 'Metodologias Ágeis (Scrum, Kanban)'],
     },
   ];
 

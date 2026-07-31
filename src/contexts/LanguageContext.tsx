@@ -127,6 +127,8 @@ const translations = {
     'projects.title': 'Featured Projects',
     'projects.viewCode': 'View Code',
     'projects.viewDemo': 'Live Demo',
+    'projects.showAll': 'View All Projects ({count})',
+    'projects.showLess': 'Show Featured Projects',
 
     'projects.filters.all': 'All',
     'projects.filters.fullstack': 'Full Stack',
@@ -152,8 +154,6 @@ const translations = {
     'projects.chainmed.title': 'ChainMed',
     'projects.chainmed.desc': 'ChainMed revolutionizes the way doctors prescribe and patients manage their medications, all with the security and immutability of blockchain technology.',
 
-    'projects.monemiitec.title': 'Monemii Tec',
-    'projects.monemiitec.desc': 'A digital platform for the Agrotech sector, offering agrocomputing solutions for the public sector and connecting cutting-edge technology to the field.',
 
     'projects.convit3-digital.title': 'Convit3-digital',
     'projects.convit3-digital.desc': 'An intuitive platform for creating and managing digital events. Track attendee RSVPs, see who confirmed or declined invitations, and organize all event details in one place.',
@@ -413,6 +413,8 @@ const translations = {
     'projects.title': 'Projetos em Destaque',
     'projects.viewCode': 'Ver Código',
     'projects.viewDemo': 'Demo ao Vivo',
+    'projects.showAll': 'Ver Todos os Projetos ({count})',
+    'projects.showLess': 'Mostrar Apenas Destaques',
 
     'projects.filters.all': 'Todos',
     'projects.filters.fullstack': 'Full Stack',
@@ -438,8 +440,6 @@ const translations = {
     'projects.chainmed.title': 'ChainMed',
     'projects.chainmed.desc': 'O ChainMed revoluciona a forma como médicos prescrevem e pacientes gerenciam seus medicamentos, tudo com a segurança e imutabilidade da tecnologia blockchain.',
 
-    'projects.monemiitec.title': 'Monemii Tec',
-    'projects.monemiitec.desc': 'Uma plataforma digital para o setor Agrotech, que apresenta soluções de agrocomputação para o setor público e conecta tecnologia de ponta ao campo.',
 
     'projects.convit3-digital.title': 'Convit3-digital',
     'projects.convit3-digital.desc': 'Uma plataforma intuitiva para criar e gerenciar eventos digitais. Com ela, você pode acompanhar as confirmações de presença dos participantes, ver quem confirmou ou recusou convites e organizar todos os detalhes do evento em um só lugar.',
@@ -697,6 +697,8 @@ const translations = {
     'projects.title': 'Proyectos Destacados',
     'projects.viewCode': 'Ver Código',
     'projects.viewDemo': 'Demo en Vivo',
+    'projects.showAll': 'Ver Todos los Proyectos ({count})',
+    'projects.showLess': 'Mostrar Solo Destacados',
 
     'projects.filters.all': 'Todos',
     'projects.filters.fullstack': 'Full Stack',
@@ -722,8 +724,6 @@ const translations = {
     'projects.chainmed.title': 'ChainMed',
     'projects.chainmed.desc': 'ChainMed revoluciona la forma en que los médicos prescriben y los pacientes gestionan sus medicamentos, con la seguridad e inmutabilidad de la tecnología blockchain.',
 
-    'projects.monemiitec.title': 'Monemii Tec',
-    'projects.monemiitec.desc': 'Una plataforma digital para el sector Agrotech, que ofrece soluciones de agrocomputación para el sector público y conecta tecnología de punta con el campo.',
 
     'projects.convit3-digital.title': 'Convit3-digital',
     'projects.convit3-digital.desc': 'Una plataforma intuitiva para crear y gestionar eventos digitales. Con ella, puedes rastrear confirmaciones de asistencia, ver quién confirmó o rechazó invitaciones y organizar todos los detalles del evento en un solo lugar.',

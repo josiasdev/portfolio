@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { ExternalLink, Github, Star, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Project = {
   title: string;
@@ -94,6 +95,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 const Projects = () => {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
   const projects: Project[] = [
     {
@@ -101,7 +103,7 @@ const Projects = () => {
       description: t('projects.coinconut.desc'),
       github: "https://github.com/josiasdev/coinconut",
       demo: "https://coinconut-b6qp.vercel.app",
-      tags: ['Web3', 'Rust', 'Soroban', 'Stellar', 'Noir (ZK)', 'React', 'TypeScript']
+      tags: ['Web3', 'Rust', 'Soroban', 'Stellar', 'Noir (ZK)', 'TypeScript']
     },
     {
       title: t('projects.elociv.title'),
@@ -109,6 +111,20 @@ const Projects = () => {
       github: "https://github.com/josiasdev/EloCiv",
       demo: "https://github.com/josiasdev/EloCiv",
       tags: ['Web3', 'Rust', 'Soroban', 'Stellar', 'Fastify', 'Docker']
+    },
+    {
+      title: t('projects.chainmed.title'),
+      description: t('projects.chainmed.desc'),
+      github: "https://github.com/josiasdev/ChainMed",
+      demo: "https://chain-med.vercel.app",
+      tags: ['Web3', 'Solidity', 'EVM', 'Smart Contracts', 'React.js', 'TypeScript']
+    },
+    {
+      title: t('projects.sylopay.title'),
+      description: t('projects.sylopay.desc'),
+      github: 'https://github.com/Sylopay/sylopay',
+      demo: null,
+      tags: ['Web3', 'Rust', 'Soroban', 'Stellar', 'NestJS', 'Docker']
     },
     {
       title: t('projects.tutorcrypto.title'),
@@ -123,34 +139,6 @@ const Projects = () => {
       github: "https://github.com/josiasdev/RelatorioAniversariantes",
       demo: null,
       tags: ['Backend', 'Java 17', 'Spring Boot', 'Selenium', 'Docker', 'OpenPDF']
-    },
-    {
-      title: t('projects.chainmed.title'),
-      description: t('projects.chainmed.desc'),
-      github: "https://github.com/josiasdev/ChainMed",
-      demo: "https://chain-med.vercel.app",
-      tags: ['Full Stack', 'React.js', 'Vite', 'TypeScript', 'Tailwind CSS']
-    },
-    {
-      title: t('projects.monemiitec.title'),
-      description: t('projects.monemiitec.desc'),
-      github: null,
-      demo: 'https://www.monemiitec.com.br',
-      tags: ['Full Stack', 'React.js', 'JavaScript']
-    },
-    {
-      title: t('projects.convit3-digital.title'),
-      description: t('projects.convit3-digital.desc'),
-      github: 'https://github.com/josiasdev/convit3-digital',
-      demo: null,
-      tags: ['Full Stack', 'Next.js', 'TypeScript']
-    },
-    {
-      title: t('projects.sylopay.title'),
-      description: t('projects.sylopay.desc'),
-      github: 'https://github.com/Sylopay/sylopay',
-      demo: null,
-      tags: ['Web3', 'NestJS', 'Stellar', 'PostgreSQL', 'Docker']
     },
     {
       title: t('projects.kyra.title'),
@@ -235,6 +223,14 @@ const Projects = () => {
       github: 'https://github.com/josiasdev/ponte-pecem-ia-ret',
       demo: null,
       tags: ['Backend', 'Python', 'N8n', 'Operations Research']
+    },
+
+    {
+      title: t('projects.convit3-digital.title'),
+      description: t('projects.convit3-digital.desc'),
+      github: 'https://github.com/josiasdev/convit3-digital',
+      demo: null,
+      tags: ['Full Stack', 'Next.js', 'TypeScript']
     }
   ];
 
@@ -251,6 +247,10 @@ const Projects = () => {
   const filteredProjects = selectedCategory === 'All'
     ? projects
     : projects.filter(project => project.tags.some(t => t.toLowerCase().includes(selectedCategory.toLowerCase())));
+
+  const displayedProjects = (!showAll && selectedCategory === 'All')
+    ? filteredProjects.slice(0, 4)
+    : filteredProjects;
 
   return (
     <section id="projects" className="scroll-mt-16 space-y-6">
@@ -279,10 +279,28 @@ const Projects = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {filteredProjects.map((project) => (
+        {displayedProjects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
+
+      {selectedCategory === 'All' && (
+        <div className="flex justify-center pt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowAll(!showAll)}
+            className="font-mono text-xs border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all rounded gap-2"
+          >
+            <span>
+              {showAll
+                ? t('projects.showLess')
+                : t('projects.showAll', { count: projects.length })}
+            </span>
+            <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${showAll ? "rotate-180" : ""}`} />
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
