@@ -47,7 +47,7 @@ const Hackathons = () => {
       name: "Hack Meridian 2025",
       projectName: "SyloPay",
       description: t('hackathons.meridian.desc'),
-      award: "Prize Pool: US$50k",
+      award: t('hackathons.meridian.award'),
       date: "2025",
       location: "Rio de Janeiro, BR",
       github: "https://github.com/Sylopay/sylopay",

@@ -21,16 +21,9 @@ const translations = {
     'nav.languages': 'Languages',
     'nav.contact': 'Contact',
     
-    // Web3
-    'web3.connect': 'Connect Wallet',
-    'web3.disconnect': 'Disconnect',
-    'web3.secret.title': 'Access Granted',
-    'web3.secret.desc': 'Welcome to the decentralized sector. Your identity is verified on the blockchain.',
-    'web3.secret.install': 'Please install MetaMask to connect.',
-    
     // SEO
-    'seo.title': 'Josias Batista | Full Stack & Web3 Developer',
-    'seo.description': 'Portfolio of Josias Batista, Full Stack Developer specializing in Web3, Blockchain, and modern web applications with React and Node.js.',
+    'seo.title': 'Josias Batista | Blockchain Developer & Protocol Engineer',
+    'seo.description': 'Portfolio of Josias Batista — Blockchain Developer & Protocol Engineer specializing in Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript, and DeFi.',
     
     // Hero
     'hero.roleBadge': 'Web 3.0 Resident Developer @ iRede',
@@ -131,7 +124,6 @@ const translations = {
     'projects.showLess': 'Show Featured Projects',
 
     'projects.filters.all': 'All',
-    'projects.filters.fullstack': 'Full Stack',
     'projects.filters.backend': 'Back-End',
     'projects.filters.web3': 'Web3',
     'projects.filters.java': 'Java',
@@ -216,13 +208,16 @@ const translations = {
     'education.title': 'Academic Education',
     'education.subtitle': 'Solid background in Software Engineering at the Federal University of Ceará and technical IT foundation.',
     'education.degree': 'Bachelor\'s Degree in Software Engineering',
+    'education.degree.period': '2022 — 2027',
+    'education.degree.location': 'Quixadá, Ceará, Brazil',
+    'education.degree.shortDesc': 'Bachelor\'s degree focused on requirements engineering, microservices architecture, software quality (QA), testing, and high-performance computing systems development.',
     'education.university': 'Federal University of Ceará - UFC',
     'education.graduation': '2022 - Expected: December 2027',
-    'education.university.desc': 'Bachelor\'s in Software Engineering focusing on the entire lifecycle of complex, reliable, and high-quality computational systems. Preparing professionals for local and global tech markets.\n\nCore Competencies:\n- Engineering & Architecture: Requirements analysis, architecture, detailed design, software construction, and maintenance.\n- Quality & Management: Software testing (QA), configuration management, and project management.\n- Soft Skills: Clear communication, effective teamwork, and proactive problem-solving.\n- Practical Application: Real-world projects and supervised internships, consolidating theory in corporate environments.',
+    'education.university.desc': 'Bachelor\'s in Software Engineering focusing on the entire lifecycle of complex, reliable, and high-quality computational systems. Preparing professionals for local and global tech markets.',
     'education.technical': 'Intermediate Level Technical Course in Computer Science',
-    'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': '2019 - 2021',
-    'education.school.desc': 'Technical Course in Computer Science integrated with High School. Focused on systems development and IT infrastructure, graduating with an average grade of 9.67/10.0 in technical subjects.\n\nKey Knowledge Applied:\n- Web & Software Development: Programming Logic, HTML/CSS, JavaScript, PHP, MySQL, and OOP (Java).\n- Infrastructure: Computer Architecture, Networking, and Operating Systems.\n- Activities: Academic Monitoring, Software Development Projects, Study Groups, Workshops, and Hackathons.',
+    'education.technical.period': '2019 — 2021',
+    'education.technical.location': 'Aracoiaba, Ceará, Brazil',
+    'education.technical.shortDesc': 'Solid technical background in programming logic, web development (HTML/CSS, JS, PHP, Java), databases (MySQL), and computer networking. Technical GPA: 9.67/10.0.',
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Free Course',
     'education.cyfrin.date': 'July 2026 – Present',
@@ -232,6 +227,21 @@ const translations = {
     'education.portuguese': 'Portuguese',
     'education.english': 'English',
     'education.spanish': 'Spanish',
+
+    // Certifications Section
+    'certifications.viewCredential': 'View Credential',
+    'certifications.irede.title': 'Web 3.0 Technology Training',
+    'certifications.agentic.title': 'Founding Partner Certificate — Agentic Space',
+    'certifications.agentic.issuer': 'Raport Tecnologia Inova Simples',
+    'certifications.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
+    'certifications.awsrestart.title': 'AWS re/Start Graduate',
+    'certifications.sui.title': 'Sui Developer Workshop Certificate',
+    'certifications.awsacademy.title': 'AWS Academy Graduate - AWS Academy Cloud Foundations',
+    'certifications.microsoft.title': 'Hack Together: AI Agents Hackathon',
+    'certifications.web3edu.title': 'Masterclass: Getting Started in Web3',
+    'certifications.web3edu.issuer': 'Web3EduBrasil Institute',
+    'certifications.alura.title': 'Back-End Dev Immersion',
+    'certifications.utah.title': 'STRONGER 8.0 - Linux LPI Battalion - 010-160',
 
     // Languages Section
     'languages.badge': 'Global Communication',
@@ -272,28 +282,8 @@ const translations = {
     'contact.form.error.submit': 'Error sending message. Please try again.',
 
     // Footer
-    'footer.tagline': 'Full Stack Developer & Web3 enthusiast building robust, scalable solutions.',
-    'footer.nav': 'Quick Links',
-    'footer.social': 'Connect',
-    'footer.contact.label': 'Contact',
     'footer.rights': 'All rights reserved.',
-    'footer.open': 'Open to work',
     'footer.backToTop': 'Back to top',
-    'footer.madeWith': 'Made with',
-
-    // Experience (inline labels)
-    'experience.badge.current': 'Present',
-    'experience.tech.label': 'Technologies Used',
-
-    // Hackathons
-    'hackathons.project.label': 'Project',
-
-    // Contact
-    'contact.direct.title': 'Get in touch directly',
-
-    // Projects count
-    'projects.count.one': 'project',
-    'projects.count.many': 'projects',
   },
   pt: {
     // Navigation
@@ -315,8 +305,8 @@ const translations = {
     'web3.secret.install': 'Por favor, instale a MetaMask para conectar.',
     
     // SEO
-    'seo.title': 'Josias Batista | Desenvolvedor Blockchain & Web3',
-    'seo.description': 'Portfólio de Josias Batista, Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Web3, Smart Contracts e Backend Java.',
+    'seo.title': 'Josias Batista | Desenvolvedor Blockchain & Engenheiro de Protocolos',
+    'seo.description': 'Portfólio de Josias Batista — Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desenvolvedor Residente em Web 3.0 no iRede',
@@ -502,18 +492,36 @@ const translations = {
     'education.title': 'Formação Acadêmica',
     'education.subtitle': 'Formação sólida em Engenharia de Software na Universidade Federal do Ceará e base técnica em TI.',
     'education.degree': 'Bacharelado em Engenharia de Software',
+    'education.degree.period': '2022 — 2027',
+    'education.degree.location': 'Quixadá, Ceará, Brasil',
+    'education.degree.shortDesc': 'Bacharelado focado em engenharia de requisitos, arquitetura de microsserviços, qualidade de software (QA), testes e desenvolvimento de sistemas computacionais de alta performance.',
     'education.university': 'Universidade Federal do Ceará - UFC',
     'education.graduation': 'mar de 2022 - dez de 2027',
-    'education.university.desc': 'Bacharelado em Engenharia de Software pela Universidade Federal do Ceará (UFC) - Campus Quixadá. Formação focada em todo o ciclo de vida do desenvolvimento de sistemas computacionais complexos, confiáveis e de alta qualidade, preparando o profissional para atuar no mercado de tecnologia local e global.\n\nPrincipais competências:\n- Engenharia e Arquitetura: Levantamento e análise de requisitos, arquitetura, projeto detalhado, construção e manutenção de software.\n- Qualidade e Gestão: Testes de software (QA), gerência de configuração e gerenciamento de projetos.\n- Soft Skills: Comunicação clara, trabalho em equipe eficaz e postura proativa na resolução de problemas.\n- Prática: Aplicação em projetos reais e estágio supervisionado, consolidando a teoria no ambiente corporativo.',
+    'education.university.desc': 'Bacharelado em Engenharia de Software pela Universidade Federal do Ceará (UFC) - Campus Quixadá. Formação focada em todo o ciclo de vida do desenvolvimento de sistemas computacionais complexos, confiáveis e de alta qualidade.',
     'education.technical': 'Curso Técnico em Informática',
-    'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': 'jan de 2019 - dez de 2021',
-    'education.school.desc': 'Curso Técnico em Informática integrado ao Ensino Médio. Formação voltada para o desenvolvimento de sistemas e infraestrutura de TI, com nota média de 9,67/10,0 nas disciplinas técnicas.\n\nPrincipais conhecimentos adquiridos e aplicados na prática:\n- Desenvolvimento Web e Software: Lógica de Programação, HTML/CSS, JavaScript, PHP, MySQL e Programação Orientada a Objetos (Java).\n- Infraestrutura: Arquitetura e Manutenção de Computadores, Redes de Computadores e Sistemas Operacionais.\n- Atividades: Monitoria Acadêmica, Projetos de Desenvolvimento de Software, Grupos de Estudo, Workshops e Hackathons.',
+    'education.technical.period': '2019 — 2021',
+    'education.technical.location': 'Aracoiaba, Ceará, Brasil',
+    'education.technical.shortDesc': 'Formação técnica sólida em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, Java), banco de dados (MySQL) e redes de computadores. Média técnica: 9.67/10.0.',
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Curso Livre',
     'education.cyfrin.date': 'Julho de 2026 – o momento',
     'education.cyfrin.desc': 'Formação completa na plataforma de educação Web3 da Cyfrin Updraft, com foco em desenvolvimento de Blockchain e Smart Contracts.',
     'education.certifications.title': 'Certificações & Licenças',
+
+    // Certifications Section
+    'certifications.viewCredential': 'Ver Credencial',
+    'certifications.irede.title': 'Capacitação Tecnológica em Web 3.0',
+    'certifications.agentic.title': 'Certificado de Sócio Fundador — Agentic Space',
+    'certifications.agentic.issuer': 'Raport Tecnologia Inova Simples',
+    'certifications.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
+    'certifications.awsrestart.title': 'AWS re/Start Graduate',
+    'certifications.sui.title': 'Workshop Certificate como Sui Developer',
+    'certifications.awsacademy.title': 'AWS Academy Graduate - AWS Academy Cloud Foundations',
+    'certifications.microsoft.title': 'Hack Together: AI Agents Hackathon',
+    'certifications.web3edu.title': 'Aulão: Comece na Web3',
+    'certifications.web3edu.issuer': 'Instituto Web3EduBrasil',
+    'certifications.alura.title': 'Imersão Dev Back-End',
+    'certifications.utah.title': 'STRONGER 8.0 - Batalhão Linux LPI - 010-160',
     'education.languages': 'Idiomas',
     'education.portuguese': 'Português',
     'education.english': 'Inglês',
@@ -558,28 +566,8 @@ const translations = {
     'contact.form.error.submit': 'Erro ao enviar a mensagem. Tente novamente.',
 
     // Footer
-    'footer.tagline': 'Desenvolvedor Full Stack & entusiasta Web3 construindo soluções robustas e escaláveis.',
-    'footer.nav': 'Links Rápidos',
-    'footer.social': 'Redes',
-    'footer.contact.label': 'Contato',
     'footer.rights': 'Todos os direitos reservados.',
-    'footer.open': 'Disponível para trabalho',
     'footer.backToTop': 'Voltar ao topo',
-    'footer.madeWith': 'Feito com',
-
-    // Experience (inline labels)
-    'experience.badge.current': 'Atual',
-    'experience.tech.label': 'Tecnologias Utilizadas',
-
-    // Hackathons
-    'hackathons.project.label': 'Projeto',
-
-    // Contact
-    'contact.direct.title': 'Entre em contato direto',
-
-    // Projects count
-    'projects.count.one': 'projeto',
-    'projects.count.many': 'projetos',
   },
   es: {
     // Navigation
@@ -600,8 +588,8 @@ const translations = {
     'web3.secret.install': 'Por favor, instale MetaMask para conectarse.',
 
     // SEO
-    'seo.title': 'Josias Batista | Desarrollador Blockchain & Web3',
-    'seo.description': 'Portafolio de Josias Batista, Desarrollador Blockchain & Ingeniero de Protocolos especializado en Web3, Smart Contracts y Backend Java.',
+    'seo.title': 'Josias Batista | Desarrollador Blockchain & Ingeniero de Protocolos',
+    'seo.description': 'Portafolio de Josias Batista — Desarrollador Blockchain & Ingeniero de Protocolos especializado en Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript y DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desarrollador Residente Web 3.0 en iRede',
@@ -786,18 +774,36 @@ const translations = {
     'education.title': 'Formación Académica',
     'education.subtitle': 'Formación sólida en Ingeniería de Software en la Universidad Federal de Ceará y base técnica en TI.',
     'education.degree': 'Licenciatura en Ingeniería de Software',
+    'education.degree.period': '2022 — 2027',
+    'education.degree.location': 'Quixadá, Ceará, Brasil',
+    'education.degree.shortDesc': 'Licenciatura enfocada en ingeniería de requisitos, arquitectura de microservicios, calidad de software (QA), pruebas y desarrollo de sistemas computacionales de alto rendimiento.',
     'education.university': 'Universidad Federal de Ceará - UFC',
     'education.graduation': '2022 - Previsto: Diciembre 2027',
-    'education.university.desc': 'Licenciatura en Ingeniería de Software enfocada en todo el ciclo de vida del desarrollo de sistemas computacionales complejos, confiables y de alta calidad. Preparando profesionales para actuar en el mercado tecnológico local y global.\n\nPrincipales competencias:\n- Ingeniería y Arquitectura: Análisis de requisitos, arquitectura, diseño detallado, construcción y mantenimiento de software.\n- Calidad y Gestión: Pruebas de software (QA), gestión de configuración y gestión de proyectos.\n- Soft Skills: Comunicación clara, trabajo en equipo eficaz y resolución proactiva de problemas.\n- Práctica: Aplicación en proyectos reales y pasantías supervisadas, consolidando la teoría en entornos corporativos.',
+    'education.university.desc': 'Licenciatura en Ingeniería de Software enfocada en todo el ciclo de vida del desarrollo de sistemas computacionales complejos, confiables y de alta calidad.',
     'education.technical': 'Curso Técnico en Informática',
-    'education.school': 'EEEP Dr. Salomão Alves de Moura',
-    'education.completed': '2019 - 2021',
-    'education.school.desc': 'Curso Técnico en Informática integrado a la Educación Secundaria. Formación orientada al desarrollo de sistemas e infraestructura de TI, con una calificación promedio de 9.67/10.0 en materias técnicas.\n\nPrincipales conocimientos aplicados:\n- Desarrollo Web y Software: Lógica de Programación, HTML/CSS, JavaScript, PHP, MySQL y POO (Java).\n- Infraestructura: Arquitectura y Mantenimiento de Computadoras, Redes y Sistemas Operativos.\n- Actividades: Monitoría Académica, Proyectos de Desarrollo, Grupos de Estudio, Talleres y Hackatones.',
+    'education.technical.period': '2019 — 2021',
+    'education.technical.location': 'Aracoiaba, Ceará, Brasil',
+    'education.technical.shortDesc': 'Formación técnica sólida en lógica de programación, desarrollo web (HTML/CSS, JS, PHP, Java), bases de datos (MySQL) y redes de computadoras. Promedio técnico: 9.67/10.0.',
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Curso Libre',
     'education.cyfrin.date': 'Julio 2026 – Presente',
     'education.cyfrin.desc': 'Formación completa en la plataforma de educación Web3 de Cyfrin Updraft, enfocada en el desarrollo de Blockchain y Smart Contracts.',
     'education.certifications.title': 'Certificaciones y Licencias',
+
+    // Certifications Section
+    'certifications.viewCredential': 'Ver Credencial',
+    'certifications.irede.title': 'Capacitación Tecnológica en Web 3.0',
+    'certifications.agentic.title': 'Certificado de Socio Fundador — Agentic Space',
+    'certifications.agentic.issuer': 'Raport Tecnologia Inova Simples',
+    'certifications.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
+    'certifications.awsrestart.title': 'AWS re/Start Graduate',
+    'certifications.sui.title': 'Certificado de Taller como Sui Developer',
+    'certifications.awsacademy.title': 'AWS Academy Graduate - AWS Academy Cloud Foundations',
+    'certifications.microsoft.title': 'Hack Together: AI Agents Hackathon',
+    'certifications.web3edu.title': 'Clase Maestra: Comienza en Web3',
+    'certifications.web3edu.issuer': 'Instituto Web3EduBrasil',
+    'certifications.alura.title': 'Inmersión Dev Back-End',
+    'certifications.utah.title': 'STRONGER 8.0 - Batallón Linux LPI - 010-160',
     'education.languages': 'Idiomas',
     'education.portuguese': 'Portugués',
     'education.english': 'Inglés',
@@ -842,28 +848,8 @@ const translations = {
     'contact.form.error.submit': 'Error al enviar el mensaje. Inténtalo de nuevo.',
 
     // Footer
-    'footer.tagline': 'Desarrollador Full Stack & entusiasta Web3 construyendo soluciones robustas y escalables.',
-    'footer.nav': 'Accesos Rápidos',
-    'footer.social': 'Conectar',
-    'footer.contact.label': 'Contacto',
     'footer.rights': 'Todos los derechos reservados.',
-    'footer.open': 'Disponible para trabajar',
     'footer.backToTop': 'Volver arriba',
-    'footer.madeWith': 'Hecho con',
-
-    // Experience (inline labels)
-    'experience.badge.current': 'Actual',
-    'experience.tech.label': 'Tecnologías Utilizadas',
-
-    // Hackathons
-    'hackathons.project.label': 'Proyecto',
-
-    // Contact
-    'contact.direct.title': 'Contáctame directamente',
-
-    // Projects count
-    'projects.count.one': 'proyecto',
-    'projects.count.many': 'proyectos',
   },
 };
 

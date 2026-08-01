@@ -15,64 +15,64 @@ const Certifications = () => {
 
   const certifications: Certification[] = [
     {
-      title: "Capacitação Tecnológica em Web 3.0",
+      title: t('certifications.irede.title'),
       issuer: "iRede",
       date: "2026",
       url: "https://drive.google.com/file/d/1WB9yWFHvYsdtNoV0LXNRpZQPIryYZgav/view",
       badge: "Web3 & Blockchain"
     },
     {
-      title: "Certificado de Sócio Fundador — Agentic Space",
-      issuer: "Raport Tecnologia Inova Simples",
+      title: t('certifications.agentic.title'),
+      issuer: t('certifications.agentic.issuer'),
       date: "2026",
       credentialId: "AS-137-4",
       url: "https://www.linkedin.com/in/josias-batista/overlay/Certifications/209062227/treasury/?profileId=ACoAADnqZncBUzTfdZK0BqbCV8dFSKcjpH31FHw",
       badge: "Founder & AI"
     },
     {
-      title: "Cyfrin Updraft - Smart Contract Development",
+      title: t('certifications.cyfrin.title'),
       issuer: "Cyfrin",
       date: "2026",
       url: "https://updraft.cyfrin.io/courses",
       badge: "Smart Contracts"
     },
     {
-      title: "AWS re/Start Graduate",
+      title: t('certifications.awsrestart.title'),
       issuer: "Amazon Web Services (AWS)",
       date: "2025",
       url: "https://www.credly.com/badges/0e0ae80e-3407-4b8c-bd9e-88879ca24b07/public_url",
       badge: "Cloud AWS"
     },
     {
-      title: "Workshop Certificate como Sui Developer",
+      title: t('certifications.sui.title'),
       issuer: "WayLearn",
       date: "2025",
       url: "https://drive.google.com/file/d/1yggIj01RTYXEKQ5U78RSWkg9sHkwGOzb/view",
       badge: "Sui Blockchain"
     },
     {
-      title: "AWS Academy Graduate - AWS Academy Cloud Foundations",
+      title: t('certifications.awsacademy.title'),
       issuer: "Amazon Web Services (AWS)",
       date: "2025",
       url: "https://www.credly.com/badges/ce7c99f6-6627-44d3-a8ed-6e30373ab8ae/public_url",
       badge: "Cloud Foundations"
     },
     {
-      title: "Hack Together: AI Agents Hackathon",
+      title: t('certifications.microsoft.title'),
       issuer: "Microsoft",
       date: "2025",
       url: "https://www.credly.com/badges/524e19d6-a3fe-4e14-99ee-08559c963abd/linked_in_profile",
       badge: "AI Agents"
     },
     {
-      title: "Aulão: comece na Web3",
-      issuer: "Instituto Web3EduBrasil",
+      title: t('certifications.web3edu.title'),
+      issuer: t('certifications.web3edu.issuer'),
       date: "2025",
       url: "https://drive.google.com/file/d/1OuJVnirj92zNrAt_867EnQ0n2DRio908/view",
       badge: "Web3 Fundamentals"
     },
     {
-      title: "Imersão Dev Back-End",
+      title: t('certifications.alura.title'),
       issuer: "Alura",
       date: "2024",
       credentialId: "6f6262bf-8132-418d-99b4-d2f4e9622f13",
@@ -80,7 +80,7 @@ const Certifications = () => {
       badge: "Backend Node/Java"
     },
     {
-      title: "STRONGER 8.0 - Batalhão Linux LPI - 010-160",
+      title: t('certifications.utah.title'),
       issuer: "Grupo Utah",
       date: "2024",
       url: "https://drive.google.com/file/d/18UBRbvopqsELNkSebPf2N0lpuI-DGWja/view",
@@ -131,7 +131,7 @@ const Certifications = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs font-mono text-primary hover:underline"
               >
-                <span>Ver credencial</span>
+                <span>{t('certifications.viewCredential')}</span>
                 <ExternalLink className="h-3 w-3" />
               </a>
             </div>

@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { GraduationCap, Calendar, MapPin, Building2 } from "lucide-react";
+import { Calendar, MapPin, Building2 } from "lucide-react";
 
 const Education = () => {
   const { t } = useLanguage();
@@ -30,17 +30,17 @@ const Education = () => {
             <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground flex-shrink-0">
               <div className="flex items-center gap-1">
                 <Calendar className="h-3.5 w-3.5 text-primary" />
-                <span>2022 — 2027</span>
+                <span>{t('education.degree.period')}</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="h-3.5 w-3.5 text-primary" />
-                <span>Quixadá, Ceará, Brasil</span>
+                <span>{t('education.degree.location')}</span>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Bacharelado focado em engenharia de requisitos, arquitetura de microsserviços, qualidade de software (QA), testes e desenvolvimento de sistemas computacionais de alta performance.
+            {t('education.degree.shortDesc')}
           </p>
         </div>
 
@@ -60,17 +60,17 @@ const Education = () => {
             <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground flex-shrink-0">
               <div className="flex items-center gap-1">
                 <Calendar className="h-3.5 w-3.5 text-primary" />
-                <span>2019 — 2021</span>
+                <span>{t('education.technical.period')}</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="h-3.5 w-3.5 text-primary" />
-                <span>Aracoiaba, Ceará, Brasil</span>
+                <span>{t('education.technical.location')}</span>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Formação técnica sólida em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, Java), banco de dados (MySQL) e redes de computadores. Média técnica: 9.67/10.0.
+            {t('education.technical.shortDesc')}
           </p>
         </div>
       </div>

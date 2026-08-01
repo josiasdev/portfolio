@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle/LanguageToggle";
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 
 const About = lazy(() => import("@/components/About/About"));
 const Skills = lazy(() => import("@/components/Skills/Skills"));
@@ -27,7 +26,6 @@ const SectionLoader = () => (
 const Index = () => {
   const { t, language } = useLanguage();
   const [activeSection, setActiveSection] = useState<string>("about");
-  const observerRef = useRef<IntersectionObserver | null>(null);
 
   const navItems = [
     { id: "about", label: t("nav.about"), num: "01" },
