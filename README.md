@@ -14,11 +14,11 @@ O projeto adota a arquitetura visual Senior Minimalist (inspirada em brittanychi
 
 O site é organizado nas seguintes seções editoriais navegáveis:
 
-1. **Hero & Painel Lateral Fixo (Desktop)**: Seletores superiores de idioma e tema (`LanguageToggle` e `ThemeToggle`), foto de perfil ampliada, nome, cargo, resumo de atuação (Web 3.0 Resident Developer @ iRede), badges de status, botões de ação de alto contraste (Ver Projetos, Entre em Contato e Download do Currículo em PDF adaptado por idioma), links sociais e menu de navegação lateral com as 9 seções.
+1. **Hero & Painel Lateral Fixo (Desktop)**: Seletores superiores de idioma e tema (`LanguageToggle` e `ThemeToggle`), foto de perfil ampliada, nome, cargo (Desenvolvedor Blockchain & Engenheiro de Protocolos), resumo de atuação (Web 3.0 Resident Developer @ iRede), badges de status, botões de ação de alto contraste (Ver Projetos, Entre em Contato e Download do Currículo em PDF adaptado por idioma), links sociais e menu de navegação lateral com as 9 seções.
 2. **01. Sobre Mim**: Narrativa dividida em três parágrafos cobrindo o ensino técnico com média 9,67/10,0 em Aracoiaba, o bacharelado em Engenharia de Software na UFC Quixadá e a atuação atual com microsserviços Java e Smart Contracts em Solidity (EVM) e Soroban (Stellar).
-3. **02. Habilidades**: Grade com 6 categorias técnicas organizadas (Web3 & Blockchain, Back-End, Front-End, Bancos de Dados, DevOps & Cloud, Habilidades Adicionais) com badges monoespaçados.
+3. **02. Habilidades**: Grade com 6 categorias técnicas organizadas (Web3 & Blockchain, Back-End Java/TypeScript, Bancos de Dados, DevOps & Ferramentas, Metodologias Ágeis, Habilidades Adicionais) com badges monoespaçados.
 4. **03. Experiência**: Timeline em formato grid com períodos monoespaçados à esquerda, cargo e empresa destacados, descrições objetivas e tags de tecnologias aplicadas.
-5. **04. Projetos**: Cards minimalistas com bordas finas de 1px, filtros de categoria (Web3, Backend, Java, Python, Rust, .NET), contagem ao vivo de stars da API do GitHub, tags em `font-mono` e links diretos para código e demonstrações.
+5. **04. Projetos**: 4 projetos Web3/Solidity/Rust em destaque por padrão (COINCONUT, EloCiv, ChainMed, SyloPay), filtros por categoria (Web3, Backend, Java, Python, Rust, .NET), contagem ao vivo de stars da API do GitHub, tags em `font-mono`, links diretos para código/demonstrações e botão expansível "Ver Todos os Projetos".
 6. **05. Hackathons**: Registro de participações e premiações em maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge Blockchain 2026, Hack Meridian, SUI Hackathon, HackaLedger XRPL).
 7. **06. Formação Acadêmica**: Detalhes do Bacharelado em Engenharia de Software (Universidade Federal do Ceará - UFC Campus Quixadá, 2022–2027) e do Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura em Aracoiaba - Ceará, 2019–2021).
 8. **07. Certificações & Licenças**: Grade com credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, Utah Linux LPI).
@@ -31,7 +31,7 @@ O site é organizado nas seguintes seções editoriais navegáveis:
 
 - **Core**: React 18, Vite 5, TypeScript 5 (strict mode).
 - **Estilização & Design System**: Tailwind CSS com tokens de design customizados, variáveis HSL semânticas e tipografia com Inter (sans-serif) e Fira Code (monospaced).
-- **UI & Componentes**: Componentes base shadcn/ui, Radix UI Primitives, Lucide React Icons.
+- **UI & Componentes**: Componentes essenciais shadcn/ui (button, dropdown-menu, form, input, label, select, textarea, sonner, tooltip), Radix UI Primitives, Lucide React Icons.
 - **Gerenciamento de Estado & I18n**: Context API com `LanguageContext` para alternância de idiomas (PT, EN, ES) com download de PDF correspondente (`Curriculo_Josias_Batista.pdf`, `Resume_Josias_Batista.pdf`, `Currículum_Josias_Batista.pdf`), e `ThemeContext` para sincronização global de tema (Dark/Light/System).
 - **Formulário & Serverless**: React Hook Form, Zod e Vercel Serverless Functions (`/api/send-email`) integradas ao Resend.
 - **Roteamento & Qualidade**: React Router v6, TanStack Query v5, Helmet Async e ESLint.
