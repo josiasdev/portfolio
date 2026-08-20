@@ -20,8 +20,10 @@ const translations = {
     'nav.certifications': 'Certifications',
     'nav.languages': 'Languages',
     'nav.contact': 'Contact',
-    
-    
+    // SEO
+    'seo.title': 'Josias Batista | Blockchain Developer & Protocol Engineer',
+    'seo.description': 'Portfolio of Josias Batista — Blockchain Developer & Protocol Engineer specializing in Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript, and DeFi.',
+
     // Hero
     'hero.roleBadge': 'Web 3.0 Resident Developer @ iRede',
     'hero.title': 'Blockchain Developer',
@@ -293,7 +295,9 @@ const translations = {
     'nav.certifications': 'Certificações',
     'nav.languages': 'Idiomas',
     'nav.contact': 'Contato',
-    
+    // SEO
+    'seo.title': 'Josias Batista | Desenvolvedor Blockchain & Engenheiro de Protocolos',
+    'seo.description': 'Portfólio de Josias Batista — Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desenvolvedor Residente em Web 3.0 no iRede',
@@ -566,8 +570,9 @@ const translations = {
     'nav.education': 'Formación',
     'nav.certifications': 'Certificaciones',
     'nav.languages': 'Idiomas',
-    'nav.contact': 'Contacto',
-
+    // SEO
+    'seo.title': 'Josias Batista | Desarrollador Blockchain & Ingeniero de Protocolos',
+    'seo.description': 'Portafolio de Josias Batista — Desarrollador Blockchain & Ingeniero de Protocolos especializado en Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript y DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desarrollador Residente Web 3.0 en iRede',
@@ -579,6 +584,7 @@ const translations = {
     'hero.downloadCV': 'Descargar CV',
 
     // About
+    'about.title': 'Sobre mí',
     'about.summary': 'Mi trayectoria técnica comenzó entre 2019 y 2021 con el Curso Técnico en Informática en EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brasil), obteniendo un promedio de 9.67/10.0 en materias técnicas. Construí bases sólidas en lógica de programación, desarrollo web (HTML/CSS, JS, PHP, MySQL), POO en Java, infraestructura de redes y robótica.\n\nEn 2022, ingresé a la Licenciatura en Ingeniería de Software en la Universidad Federal de Ceará (UFC - Campus Quixadá). Mi formación abarca todo el ciclo de vida de sistemas computacionales complejos, con foco en arquitectura de requisitos, pruebas de software (QA), gestión de proyectos y tutoría académica.\n\nActualmente, combino la solidez de microservicios (Java/Spring Boot) con el desarrollo de Smart Contracts deterministas en EVM (Solidity/Foundry) y Stellar (Soroban/Rust). Me desempeño como Desarrollador Residente en Web 3.0 en iRede y estoy abierto a oportunidades en backend y protocolos blockchain.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquitecturas escalables con Java, Spring Boot, Node.js y NestJS.',

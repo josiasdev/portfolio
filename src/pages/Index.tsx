@@ -79,15 +79,23 @@ const Index = () => {
     };
   }, [language]);
 
+  const seoTitle = t("seo.title") && t("seo.title") !== "seo.title"
+    ? t("seo.title")
+    : "Josias Batista | Desenvolvedor Blockchain & Engenheiro de Protocolos";
+
+  const seoDescription = t("seo.description") && t("seo.description") !== "seo.description"
+    ? t("seo.description")
+    : "Portfólio de Josias Batista — Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.";
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
       <Helmet htmlAttributes={{ lang: language }}>
-        <title>{t("seo.title")}</title>
-        <meta name="description" content={t("seo.description")} />
-        <meta property="og:title" content={t("seo.title")} />
-        <meta property="og:description" content={t("seo.description")} />
-        <meta name="twitter:title" content={t("seo.title")} />
-        <meta name="twitter:description" content={t("seo.description")} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
       </Helmet>
 
       {/* Mobile Top & Bottom Navigation */}
