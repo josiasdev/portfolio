@@ -81,11 +81,11 @@ const Index = () => {
 
   const seoTitle = t("seo.title") && t("seo.title") !== "seo.title"
     ? t("seo.title")
-    : "Josias Batista | Desenvolvedor Blockchain & Engenheiro de Protocolos";
+    : "Josias Batista | Desenvolvedor Blockchain & Contratos Inteligentes";
 
   const seoDescription = t("seo.description") && t("seo.description") !== "seo.description"
     ? t("seo.description")
-    : "Portfólio de Josias Batista — Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.";
+    : "Portfólio de Josias Batista — Desenvolvedor Blockchain & Contratos Inteligentes especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.";
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">

@@ -21,13 +21,13 @@ const translations = {
     'nav.languages': 'Languages',
     'nav.contact': 'Contact',
     // SEO
-    'seo.title': 'Josias Batista | Blockchain Developer & Protocol Engineer',
-    'seo.description': 'Portfolio of Josias Batista — Blockchain Developer & Protocol Engineer specializing in Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript, and DeFi.',
+    'seo.title': 'Josias Batista | Blockchain & Smart Contract Developer',
+    'seo.description': 'Portfolio of Josias Batista — Blockchain & Smart Contract Developer specializing in Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript, and DeFi.',
 
     // Hero
     'hero.roleBadge': 'Web 3.0 Resident Developer @ iRede',
-    'hero.title': 'Blockchain Developer',
-    'hero.subtitle': 'Blockchain Developer | Solidity | Rust | Smart Contracts | Stellar | Ethereum | EVM | Foundry | TypeScript',
+    'hero.title': 'Blockchain & Smart Contract Developer',
+    'hero.subtitle': 'Blockchain Developer | Smart Contract Developer | Solidity | Rust | Stellar | Ethereum | TypeScript',
     'hero.location': 'Quixadá - Ceará, Brazil',
     'hero.cta': 'View Projects',
     'hero.contact': 'Contact Me',
@@ -296,13 +296,13 @@ const translations = {
     'nav.languages': 'Idiomas',
     'nav.contact': 'Contato',
     // SEO
-    'seo.title': 'Josias Batista | Desenvolvedor Blockchain & Engenheiro de Protocolos',
-    'seo.description': 'Portfólio de Josias Batista — Desenvolvedor Blockchain & Engenheiro de Protocolos especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.',
+    'seo.title': 'Josias Batista | Desenvolvedor Blockchain & Contratos Inteligentes',
+    'seo.description': 'Portfólio de Josias Batista — Desenvolvedor Blockchain & Contratos Inteligentes especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desenvolvedor Residente em Web 3.0 no iRede',
-    'hero.title': 'Desenvolvedor Blockchain',
-    'hero.subtitle': 'Desenvolvedor Blockchain | Solidity | Rust | Smart Contracts | Stellar | Ethereum | EVM | Foundry | TypeScript',
+    'hero.title': 'Desenvolvedor Blockchain & Contratos Inteligentes',
+    'hero.subtitle': 'Desenvolvedor Blockchain | Desenvolvedor Contratos Inteligentes | Solidity | Rust | Stellar | Ethereum | TypeScript',
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Projetos',
     'hero.contact': 'Entre em Contato',
@@ -571,13 +571,13 @@ const translations = {
     'nav.certifications': 'Certificaciones',
     'nav.languages': 'Idiomas',
     // SEO
-    'seo.title': 'Josias Batista | Desarrollador Blockchain & Ingeniero de Protocolos',
-    'seo.description': 'Portafolio de Josias Batista — Desarrollador Blockchain & Ingeniero de Protocolos especializado en Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript y DeFi.',
+    'seo.title': 'Josias Batista | Desarrollador Blockchain y Contratos Inteligentes',
+    'seo.description': 'Portafolio de Josias Batista — Desarrollador Blockchain y Contratos Inteligentes especializado en Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript y DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desarrollador Residente Web 3.0 en iRede',
-    'hero.title': 'Desarrollador Blockchain',
-    'hero.subtitle': 'Desarrollador Blockchain | Solidity | Rust | Smart Contracts | Stellar | Ethereum | EVM | Foundry | TypeScript',
+    'hero.title': 'Desarrollador Blockchain y Contratos Inteligentes',
+    'hero.subtitle': 'Desarrollador Blockchain | Desarrollador Contratos Inteligentes | Solidity | Rust | Stellar | Ethereum | TypeScript',
     'hero.location': 'Quixadá - Ceará, Brasil',
     'hero.cta': 'Ver Proyectos',
     'hero.contact': 'Contáctame',
