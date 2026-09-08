@@ -11,8 +11,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    return savedTheme || "system";
+    try {
+      const savedTheme = localStorage.getItem("theme") as Theme | null;
+      return savedTheme || "system";
+    } catch {
+      return "system";
+    }
   });
 
   useEffect(() => {
@@ -28,7 +32,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       root.classList.add(theme);
     }
 
-    localStorage.setItem("theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {
+      // localStorage unavailable (private browsing, quota exceeded, etc.)
+    }
   }, [theme]);
 
   // Listen for system theme changes if theme is "system"
