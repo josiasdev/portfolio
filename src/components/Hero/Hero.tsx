@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, Phone, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, FileText, Briefcase, Trophy } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import profileImage from "@/assets/profile.webp";
 
@@ -60,6 +60,14 @@ const Hero = () => {
 
       {/* Meta & Location */}
       <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground flex-wrap">
+        <div className="flex items-center gap-1.5">
+          <Briefcase className="h-3.5 w-3.5 text-primary" />
+          <span>{t('hero.experience')}</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Trophy className="h-3.5 w-3.5 text-primary" />
+          <span>{t('hero.hackathons')}</span>
+        </div>
         <div className="flex items-center gap-1.5">
           <MapPin className="h-3.5 w-3.5 text-primary" />
           <span>{t('hero.location')}</span>

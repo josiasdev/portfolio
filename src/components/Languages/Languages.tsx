@@ -3,7 +3,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 type LanguageItem = {
   nameKey: string;
   levelKey: string;
-  flag: string;
   descKey: string;
 };
 
@@ -14,19 +13,16 @@ const LanguagesSection = () => {
     {
       nameKey: 'education.portuguese',
       levelKey: 'languages.pt.level',
-      flag: '🇧🇷',
       descKey: 'languages.pt.desc'
     },
     {
       nameKey: 'education.english',
       levelKey: 'languages.en.level',
-      flag: '🇺🇸',
       descKey: 'languages.en.desc'
     },
     {
       nameKey: 'education.spanish',
       levelKey: 'languages.es.level',
-      flag: '🇪🇸',
       descKey: 'languages.es.desc'
     }
   ];
@@ -46,8 +42,7 @@ const LanguagesSection = () => {
             key={index}
             className="p-4 rounded border border-border/60 bg-card/30 hover:border-primary/50 transition-colors space-y-2"
           >
-            <div className="flex items-center justify-between">
-              <span className="text-xl">{item.flag}</span>
+            <div className="flex items-center justify-end">
               <span className="font-mono text-[10px] text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded">
                 {t(item.levelKey)}
               </span>

@@ -6,13 +6,12 @@ type LangOption = {
   code: 'pt' | 'en' | 'es';
   label: string;
   nativeLabel: string;
-  flag: string;
 };
 
 const languages: LangOption[] = [
-  { code: 'pt', label: 'Português', nativeLabel: 'PT', flag: '🇧🇷' },
-  { code: 'en', label: 'English',   nativeLabel: 'EN', flag: '🇺🇸' },
-  { code: 'es', label: 'Español',   nativeLabel: 'ES', flag: '🇪🇸' },
+  { code: 'pt', label: 'Português', nativeLabel: 'PT' },
+  { code: 'en', label: 'English',   nativeLabel: 'EN' },
+  { code: 'es', label: 'Español',   nativeLabel: 'ES' },
 ];
 
 interface LanguageToggleProps {
@@ -63,7 +62,6 @@ const LanguageToggle = ({ direction = "up", align = "right" }: LanguageTogglePro
           }
         `}
       >
-        <span className="text-base leading-none">{current.flag}</span>
         <span className="text-xs font-semibold">{current.nativeLabel}</span>
         <ChevronDown
           className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
@@ -111,7 +109,6 @@ const LanguageToggle = ({ direction = "up", align = "right" }: LanguageTogglePro
                       }
                     `}
                   >
-                    <span className="text-xl leading-none w-7 text-center">{lang.flag}</span>
                     <span className="flex-1 text-left font-medium">{lang.label}</span>
                     {isActive && (
                       <Check className="h-3.5 w-3.5 text-primary flex-shrink-0" />
