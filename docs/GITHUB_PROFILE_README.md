@@ -1,12 +1,12 @@
-# GitHub Profile README — Francisco Josias Batista
+# GitHub Profile README - Francisco Josias Batista
 
-*Language / Idioma:* [English](#-english) | [Português (Brasil)](#-português-do-brasil)
+*Language / Idioma:* [English](#english) | [Português (Brasil)](#português-do-brasil)
 
 ---
 
-## 🇺🇸 English
+## English
 
-### Hi there, I'm Francisco Josias Batista 👋
+### Hi there, I'm Francisco Josias Batista
 
 **Blockchain Developer & Protocol Engineer | Java & Spring Boot Backend Specialist**
 
@@ -16,18 +16,18 @@ My primary technical focus centers on **Solidity (EVM)**, **Rust & Soroban (Stel
 
 ---
 
-### 🌐 Quick Overview & Links
+### Quick Overview & Links
 
-- 🌐 **Portfolio Site:** [josias-batista-portfolio.vercel.app](https://josias-batista-portfolio.vercel.app/)
-- 💼 **LinkedIn:** [linkedin.com/in/josias-batista](https://www.linkedin.com/in/josias-batista/)
-- 📁 **GitHub Repositories:** [github.com/josiasdev](https://github.com/josiasdev)
-- ✉️ **Email:** [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
-- 📱 **Phone:** +55 (85) 98231-7976
-- 📍 **Location:** Quixadá, Ceará, Brazil
+- **Portfolio Site:** [josias-batista-portfolio.vercel.app](https://josias-batista-portfolio.vercel.app/)
+- **LinkedIn:** [linkedin.com/in/josias-batista](https://www.linkedin.com/in/josias-batista/)
+- **GitHub Repositories:** [github.com/josiasdev](https://github.com/josiasdev)
+- **Email:** [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
+- **Phone:** +55 (85) 98231-7976
+- **Location:** Quixadá, Ceará, Brazil
 
 ---
 
-### 🛠️ Tech Stack & Ecosystem
+### Tech Stack & Ecosystem
 
 - **Web3 & Blockchain:** Solidity (EVM), Rust, Soroban (Stellar), Noir (ZK Proofs), Foundry, Hardhat, W3C Verifiable Credentials, DeFi Primitives.
 - **Backend & Engineering:** Java 17/21, Spring Boot, Spring Security, Microservices, Node.js, NestJS, TypeScript, Python (RAG / AI Agents), RabbitMQ, REST APIs.
@@ -36,16 +36,16 @@ My primary technical focus centers on **Solidity (EVM)**, **Rust & Soroban (Stel
 
 ---
 
-### 🏆 Global Hackathons & Awards
+### Global Hackathons & Awards
 
-- 🥇 **PULSO Hackathon (Stellar Network 2026):** Project **COINCONUT** — Impact ledger for reverse logistics of coconut waste built on Stellar Soroban with ZK Proofs (Noir) & ESG Soulbound NFTs.
-- 🥈 **UNICEF Youth Challenge Blockchain 2026 (UNICEF Brasil & Blockchain.RIO):** Project **EloCiv** — Decentralized W3C Verifiable Credentials platform on Stellar Soroban for youth civic history.
-- 🏅 **Hack Meridian 2025 (Stellar Network):** Project **SyloPay** — Decentralized BNPL (Buy Now, Pay Later) protocol on Stellar blockchain.
-- 🥉 **HackaLedger XRPL 2024:** 3rd Place Web 3 Track with AI tutor integration on XRP Ledger.
+- **PULSO Hackathon (Stellar Network 2026):** Project **COINCONUT** - Impact ledger for reverse logistics of coconut waste built on Stellar Soroban with ZK Proofs (Noir) & ESG Soulbound NFTs.
+- **UNICEF Youth Challenge Blockchain 2026 (UNICEF Brasil & Blockchain.RIO):** Project **EloCiv** - Decentralized W3C Verifiable Credentials platform on Stellar Soroban for youth civic history.
+- **Hack Meridian 2025 (Stellar Network):** Project **SyloPay** - Decentralized BNPL (Buy Now, Pay Later) protocol on Stellar blockchain.
+- **HackaLedger XRPL 2024:** 3rd Place Web 3 Track with AI tutor integration on XRP Ledger.
 
 ---
 
-### 🚀 Featured Projects
+### Featured Projects
 
 | Project | Description | Tech Stack |
 | :--- | :--- | :--- |
@@ -59,9 +59,9 @@ My primary technical focus centers on **Solidity (EVM)**, **Rust & Soroban (Stel
 
 ---
 
-## 🇧🇷 Português do Brasil
+## Português do Brasil
 
-### Olá! Eu sou o Francisco Josias Batista 👋
+### Olá! Eu sou o Francisco Josias Batista
 
 **Desenvolvedor Blockchain & Engenheiro de Protocolos | Especialista em Backend Java & Spring Boot**
 
@@ -71,18 +71,18 @@ Minha especialização técnica inclui **Solidity (EVM)**, **Rust & Soroban (Red
 
 ---
 
-### 🌐 Informações e Links Úteis
+### Informações e Links Úteis
 
-- 🌐 **Portfólio Web:** [josias-batista-portfolio.vercel.app](https://josias-batista-portfolio.vercel.app/)
-- 💼 **LinkedIn:** [linkedin.com/in/josias-batista](https://www.linkedin.com/in/josias-batista/)
-- 📁 **Repositórios no GitHub:** [github.com/josiasdev](https://github.com/josiasdev)
-- ✉️ **E-mail:** [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
-- 📱 **Telefone:** +55 (85) 98231-7976
-- 📍 **Localização:** Quixadá, Ceará, Brasil
+- **Portfólio Web:** [josias-batista-portfolio.vercel.app](https://josias-batista-portfolio.vercel.app/)
+- **LinkedIn:** [linkedin.com/in/josias-batista](https://www.linkedin.com/in/josias-batista/)
+- **Repositórios no GitHub:** [github.com/josiasdev](https://github.com/josiasdev)
+- **E-mail:** [josiasmartins098@gmail.com](mailto:josiasmartins098@gmail.com)
+- **Telefone:** +55 (85) 98231-7976
+- **Localização:** Quixadá, Ceará, Brasil
 
 ---
 
-### 🛠️ Tecnologias & Ecossistema
+### Tecnologias & Ecossistema
 
 - **Web3 & Blockchain:** Solidity (EVM), Rust, Soroban (Stellar), Noir (Provas ZK), Foundry, Hardhat, Credenciais Verificáveis W3C, Primitivas DeFi.
 - **Backend & Engenharia:** Java 17/21, Spring Boot, Spring Security, Microsserviços, Node.js, NestJS, TypeScript, Python (RAG / Agentes de IA), RabbitMQ, APIs REST.
@@ -91,16 +91,16 @@ Minha especialização técnica inclui **Solidity (EVM)**, **Rust & Soroban (Red
 
 ---
 
-### 🏆 Hackathons Globais & Conquistas
+### Hackathons Globais & Conquistas
 
-- 🥇 **PULSO Hackathon (Stellar Network 2026):** Projeto **COINCONUT** — Ledger de impacto descentralizado para logística reversa da fibra de coco com Provas ZK (Noir) e NFTs ESG Soulbound na Stellar Soroban.
-- 🥈 **UNICEF Youth Challenge Blockchain 2026 (UNICEF Brasil & Blockchain.RIO):** Projeto **EloCiv** — Plataforma descentralizada de Credenciais Verificáveis W3C na Stellar Soroban para histórico cívico jovem.
-- 🏅 **Hack Meridian 2025 (Stellar Network):** Projeto **SyloPay** — Protocolo descentralizado de BNPL (Buy Now, Pay Later) na blockchain Stellar.
-- 🥉 **HackaLedger XRPL 2024:** 3º Lugar na Trilha Web 3 com chatbot e tutor digital integrado no ecossistema XRP Ledger.
+- **PULSO Hackathon (Stellar Network 2026):** Projeto **COINCONUT** - Ledger de impacto descentralizado para logística reversa da fibra de coco com Provas ZK (Noir) e NFTs ESG Soulbound na Stellar Soroban.
+- **UNICEF Youth Challenge Blockchain 2026 (UNICEF Brasil & Blockchain.RIO):** Projeto **EloCiv** - Plataforma descentralizada de Credenciais Verificáveis W3C na Stellar Soroban para histórico cívico jovem.
+- **Hack Meridian 2025 (Stellar Network):** Projeto **SyloPay** - Protocolo descentralizado de BNPL (Buy Now, Pay Later) na blockchain Stellar.
+- **HackaLedger XRPL 2024:** 3º Lugar na Trilha Web 3 com chatbot e tutor digital integrado no ecossistema XRP Ledger.
 
 ---
 
-### 🚀 Projetos em Destaque
+### Projetos em Destaque
 
 | Projeto | Descrição | Stack Principal |
 | :--- | :--- | :--- |

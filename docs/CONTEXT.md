@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Portfólio profissional de Francisco Josias da Silva Batista — Desenvolvedor Blockchain, Engenheiro de Protocolos e Especialista em Backend Java/Spring Boot. O site apresenta trajetória profissional, projetos Web3 e backend, conquistas em hackathons globais, certificações verificáveis, formação acadêmica, idiomas e canais de contato.
+Portfólio profissional de Francisco Josias da Silva Batista - Desenvolvedor Blockchain, Engenheiro de Protocolos e Especialista em Backend Java/Spring Boot. O site apresenta trajetória profissional, projetos Web3 e backend, conquistas em hackathons globais, certificações verificáveis, formação acadêmica, idiomas e canais de contato.
 
 ---
 
@@ -49,16 +49,16 @@ Todas as cores são configuradas como variáveis HSL em `src/index.css` e consum
 
 ## Seções do Portfólio (ordem de renderização)
 
-1. Hero & Painel Lateral — Seletores superiores de idioma/tema, foto ampliada, nome, badge de status traduzido, título profissional, botões CTA (Ver Projetos, Entre em Contato, Download CV dinâmico por idioma) e redes sociais.
-2. 01. Sobre Mim (`#about`) — Narrativa editorial estruturada abrangendo formação técnica em Aracoiaba (média 9,67/10,0), Engenharia de Software na UFC Quixadá e atuação atual em backend Java e Web3 no iRede.
-3. 02. Habilidades (`#skills`) — 6 categorias organizadas com badges monospaced (Web3 & Blockchain, Back-End Java/TypeScript, Bancos de Dados, DevOps & Ferramentas, Metodologias Ágeis, Habilidades Adicionais).
-4. 03. Experiência (`#experience`) — Timeline em formato grid com anos monoespaçados à esquerda, cargo/empresa à direita e tags de tecnologias aplicadas.
-5. 04. Projetos (`#projects`) — 4 projetos Web3/Solidity/Rust em destaque por padrão (COINCONUT, EloCiv, ChainMed, SyloPay), filtros por categoria, estatísticas em tempo real do GitHub via API, links para repositórios/demos e botão expansível "Ver Todos os Projetos".
-6. 05. Hackathons (`#hackathons`) — Cards com maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge 2026, Hack Meridian, SUI, XRPL).
-7. 06. Formação Acadêmica (`#education`) — Bacharelado em Engenharia de Software (UFC Campus Quixadá, 2022–2027) + Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura em Aracoiaba - Ceará, 2019–2021).
-8. 07. Certificações & Licenças (`#certifications`) — Grid de credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, Utah Linux LPI).
-9. 08. Idiomas & Proficiência (`#languages`) — Português (Nativo), Inglês (Intermediário B1) e Espanhol (Intermediário B1).
-10. 09. Contato & Rodapé (`#contact`) — Formulário transacional, links diretos de comunicação, copyright e botão de retorno ao topo.
+1. Hero & Painel Lateral - Seletores superiores de idioma/tema, foto ampliada, nome, badge de status traduzido, título profissional, botões CTA (Ver Projetos, Entre em Contato, Download CV dinâmico por idioma) e redes sociais.
+2. 01. Sobre Mim (`#about`) - Narrativa editorial estruturada abrangendo formação técnica em Aracoiaba (média 9,67/10,0), Engenharia de Software na UFC Quixadá e atuação atual em backend Java e Web3 no iRede.
+3. 02. Habilidades (`#skills`) - 6 categorias organizadas com badges monospaced (Web3 & Blockchain, Back-End Java/TypeScript, Bancos de Dados, DevOps & Ferramentas, Metodologias Ágeis, Habilidades Adicionais).
+4. 03. Experiência (`#experience`) - Timeline em formato grid com anos monoespaçados à esquerda, cargo/empresa à direita e tags de tecnologias aplicadas.
+5. 04. Projetos (`#projects`) - 4 projetos Web3/Solidity/Rust em destaque por padrão (COINCONUT, EloCiv, ChainMed, SyloPay), filtros por categoria, estatísticas em tempo real do GitHub via API, links para repositórios/demos e botão expansível "Ver Todos os Projetos".
+6. 05. Hackathons (`#hackathons`) - Cards com maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge 2026, Hack Meridian, SUI, XRPL).
+7. 06. Formação Acadêmica (`#education`) - Bacharelado em Engenharia de Software (UFC Campus Quixadá, 2022-2027) + Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura em Aracoiaba - Ceará, 2019-2021).
+8. 07. Certificações & Licenças (`#certifications`) - Grid de credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, Utah Linux LPI).
+9. 08. Idiomas & Proficiência (`#languages`) - Português (Nativo), Inglês (Intermediário B1) e Espanhol (Intermediário B1).
+10. 09. Contato & Rodapé (`#contact`) - Formulário transacional, links diretos de comunicação, copyright e botão de retorno ao topo.
 
 ---
 

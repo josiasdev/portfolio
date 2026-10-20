@@ -1,4 +1,4 @@
-# Francisco Josias da Silva Batista — Portfólio Pessoal
+# Francisco Josias da Silva Batista - Portfólio Pessoal
 
 ## Visão Geral
 
@@ -20,7 +20,7 @@ O site é organizado nas seguintes seções editoriais navegáveis:
 4. **03. Experiência**: Timeline em formato grid com períodos monoespaçados à esquerda, cargo e empresa destacados, descrições objetivas e tags de tecnologias aplicadas.
 5. **04. Projetos**: 4 projetos Web3/Solidity/Rust em destaque por padrão (COINCONUT, EloCiv, ChainMed, SyloPay), filtros por categoria (Web3, Backend, Java, Python, Rust, .NET), contagem ao vivo de stars da API do GitHub, tags em `font-mono`, links diretos para código/demonstrações e botão expansível "Ver Todos os Projetos".
 6. **05. Hackathons**: Registro de participações e premiações em maratonas globais (PULSO Hackathon Stellar, UNICEF Youth Challenge Blockchain 2026, Hack Meridian, SUI Hackathon, HackaLedger XRPL).
-7. **06. Formação Acadêmica**: Detalhes do Bacharelado em Engenharia de Software (Universidade Federal do Ceará - UFC Campus Quixadá, 2022–2027) e do Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura em Aracoiaba - Ceará, 2019–2021).
+7. **06. Formação Acadêmica**: Detalhes do Bacharelado em Engenharia de Software (Universidade Federal do Ceará - UFC Campus Quixadá, 2022-2027) e do Curso Técnico em Informática (EEEP Dr. Salomão Alves de Moura em Aracoiaba - Ceará, 2019-2021).
 8. **07. Certificações & Licenças**: Grade com credenciais verificáveis (iRede Web 3.0, Agentic Space Founder, Cyfrin Updraft, AWS re/Start, AWS Academy Cloud Foundations, Microsoft AI Agents, Sui Developer, Alura, Utah Linux LPI).
 9. **08. Idiomas & Proficiência**: Níveis de proficiência em Português (Nativo), Inglês (Intermediário B1) e Espanhol (Intermediário B1).
 10. **09. Contato & Rodapé**: Formulário transacional de mensagem, links de acesso direto (Email, LinkedIn, Telefone), copyright e atalho de retorno ao topo.

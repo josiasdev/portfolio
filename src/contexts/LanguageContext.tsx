@@ -22,7 +22,7 @@ const translations = {
     'nav.contact': 'Contact',
     // SEO
     'seo.title': 'Josias Batista | Blockchain & Smart Contract Developer',
-    'seo.description': 'Portfolio of Josias Batista — Blockchain & Smart Contract Developer specializing in Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript, and DeFi.',
+    'seo.description': 'Portfolio of Josias Batista - Blockchain & Smart Contract Developer specializing in Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript, and DeFi.',
 
     // Hero
     'hero.roleBadge': 'Web 3.0 Resident Developer @ iRede',
@@ -37,7 +37,7 @@ const translations = {
     
     // About
     'about.title': 'About Me',
-    'about.summary': 'My technical journey began between 2019 and 2021 with the IT Technical Course at EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brazil), graduating with a 9.67/10.0 GPA in technical subjects, where I built strong foundations in programming logic, web development (HTML/CSS, JS, PHP, MySQL), OOP with Java, and computer networking.\n\nIn 2021 I started my professional career as an IT Intern at Lucrei Cashback, working on rigorous manual testing in production with structured documentation of non-conformities — my first contact with QA processes — and technical mentoring of students. In 2022 I decided to focus entirely on the Software Engineering Bachelor\'s program at the Federal University of Ceará (UFC Quixadá Campus) to consolidate my fundamentals, covering the complete software development lifecycle, requirements engineering, system architecture, software testing (QA), academic tutoring, and active participation in hackathons.\n\nI returned to the market in 2025 and have been working intensively on backend and Web3 engineering ever since, now with more than 2 years of professional experience: I combine event-driven microservices (Java/Spring Boot) with deterministic EVM smart contracts (Solidity/Foundry) and Stellar (Soroban/Rust). I serve as a Web 3.0 Resident Developer at iRede, remain an active hackathon competitor, and am open to high-performance backend and blockchain protocol engineering roles.',
+    'about.summary': 'My technical journey began between 2019 and 2021 with the IT Technical Course at EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brazil), graduating with a 9.67/10.0 GPA in technical subjects, where I built strong foundations in programming logic, web development (HTML/CSS, JS, PHP, MySQL), OOP with Java, and computer networking.\n\nIn 2021 I started my professional career as an IT Intern at Lucrei Cashback, working on rigorous manual testing in production with structured documentation of non-conformities - my first contact with QA processes - and technical mentoring of students. In 2022 I decided to focus entirely on the Software Engineering Bachelor\'s program at the Federal University of Ceará (UFC Quixadá Campus) to consolidate my fundamentals, covering the complete software development lifecycle, requirements engineering, system architecture, software testing (QA), academic tutoring, and active participation in hackathons.\n\nI returned to the market in 2025 and have been working intensively on backend and Web3 engineering ever since, now with more than 2 years of professional experience: I combine event-driven microservices (Java/Spring Boot) with deterministic EVM smart contracts (Solidity/Foundry) and Stellar (Soroban/Rust). I serve as a Web 3.0 Resident Developer at iRede, remain an active hackathon competitor, and am open to high-performance backend and blockchain protocol engineering roles.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Scalable architectures with Java, Spring Boot, Node.js, and NestJS.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -50,7 +50,7 @@ const translations = {
     // GitHub Stats
     'github.title': 'GitHub Activity',
     'github.subtitle': 'Real-time data from the GitHub API.',
-    'github.fallback': 'Estimated data — live data loading...',
+    'github.fallback': 'Estimated data - live data loading...',
     'github.repos': 'Public Repos',
     'github.stars': 'Total Stars',
     'github.followers': 'Followers',
@@ -91,14 +91,14 @@ const translations = {
     'experience.monitor.company': 'Federal University of Ceará (UFC)',
     'experience.monitor.period': 'March 2026 - July 2026',
     'experience.monitor.desc1': 'Technical support for undergraduate students in Full Stack and Mobile application development, including software architecture best practices, SOLID principles, and code organization.',
-    'experience.monitor.desc2': 'Conducted Code Reviews and debugging support, reinforcing code quality and maintainability—competencies applicable to any stack, including Java backend and smart contract development (where rigorous code review is critical).',
+    'experience.monitor.desc2': 'Conducted Code Reviews and debugging support, reinforcing code quality and maintainability: competencies applicable to any stack, including Java backend and smart contract development (where rigorous code review is critical).',
     'experience.monitor.desc3': 'Disseminated version control best practices with Git/GitHub and collaborative workflows, as well as developing educational materials and technical workshops.',
     'experience.monitor.tech': 'Java, SOLID, Code Review, Debugging, Git/GitHub, React, Node.js, Mobile',
 
     'experience.brazil.role': 'Junior Front-End Developer',
     'experience.brazil.company': 'Brasil Cursinhos',
     'experience.brazil.period': 'February 2025 - February 2026',
-    'experience.brazil.desc1': 'Implemented reusable components with React and TypeScript, with structured consumption of RESTful APIs—direct practice with API contracts, error handling, and client-server integration.',
+    'experience.brazil.desc1': 'Implemented reusable components with React and TypeScript, with structured consumption of RESTful APIs, direct practice with API contracts, error handling, and client-server integration.',
     'experience.brazil.desc2': 'Developed interfaces focused on UX and loading performance.',
     'experience.brazil.desc3': 'Collaborated in defining technical solutions for platform scalability, including discussions on data structures and endpoint organization.',
     'experience.brazil.tech': 'React, TypeScript, REST APIs, HTML, CSS, Next.js, UX',
@@ -113,7 +113,7 @@ const translations = {
     'experience.lucrei.role': 'IT Intern',
     'experience.lucrei.company': 'Lucrei',
     'experience.lucrei.period': 'September 2021 - December 2021',
-    'experience.lucrei.desc1': 'Execution of rigorous manual testing in a production environment with structured documentation of non-conformities—initial QA baseline and detail orientation for technical rigor.',
+    'experience.lucrei.desc1': 'Execution of rigorous manual testing in a production environment with structured documentation of non-conformities, initial QA baseline and detail orientation for technical rigor.',
     'experience.lucrei.desc2': 'Technical mentoring of students in programming logic and web tools.',
     'experience.lucrei.tech': 'QA, Manual Testing, Web Tools, Technical Mentoring',
     
@@ -132,10 +132,10 @@ const translations = {
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
 
-    'projects.coinconut.title': 'COINCONUT — ImpactLedger on Stellar',
+    'projects.coinconut.title': 'COINCONUT - ImpactLedger on Stellar',
     'projects.coinconut.desc': 'Decentralized impact ledger on Stellar (Soroban smart contracts in Rust) certifying coconut husk reverse logistics into ESG Soulbound NFTs, Zero-Knowledge Privacy proofs (Noir), and automated PIX off-ramp via Stellar Anchors.',
 
-    'projects.elociv.title': 'EloCiv — Youth Civic Engagement',
+    'projects.elociv.title': 'EloCiv - Youth Civic Engagement',
     'projects.elociv.desc': 'Decentralized Web3 platform for UNICEF Youth Challenge 2026 anchoring W3C Verifiable Credentials for youth civic engagement onto Stellar Soroban smart contracts (elociv-registry), featuring a portable civic wallet and geolocalized SDG mapping.',
 
     'projects.tutorcrypto.title': 'Crypto & Web3 AI Tutor Agent',
@@ -182,7 +182,7 @@ const translations = {
     'projects.kyra.desc': 'An AI agent that analyzes DeFi strategies and recommends optimal combinations within the SUI ecosystem. Designed and implemented the Back-End logic for data analysis and on-chain integrations.',
     
     'projects.heather.title': 'Heather AI Finance',
-    'projects.heather.desc': 'An AI-powered educational assistant for the XRP Ledger, guiding non-technical users through XRPL tools. Designed the database schema and data model for AI–user interactions.',
+    'projects.heather.desc': 'An AI-powered educational assistant for the XRP Ledger, guiding non-technical users through XRPL tools. Designed the database schema and data model for AI-user interactions.',
     
     'projects.btg.title': 'BTG Pactual Challenge',
     'projects.btg.desc': 'Development of a microservice with Java and Spring Boot for asynchronous order processing via RabbitMQ. RESTful API implementation for querying reports and persisting data in MongoDB.',
@@ -209,20 +209,20 @@ const translations = {
     'education.title': 'Academic Education',
     'education.subtitle': 'Solid background in Software Engineering at the Federal University of Ceará and technical IT foundation.',
     'education.degree': 'Bachelor\'s Degree in Software Engineering',
-    'education.degree.period': '2022 — 2027',
+    'education.degree.period': '2022 - 2027',
     'education.degree.location': 'Quixadá, Ceará, Brazil',
     'education.degree.shortDesc': 'Bachelor\'s degree focused on requirements engineering, microservices architecture, software quality (QA), testing, and high-performance computing systems development.',
     'education.university': 'Federal University of Ceará - UFC',
     'education.graduation': '2022 - Expected: December 2027',
     'education.university.desc': 'Bachelor\'s in Software Engineering focusing on the entire lifecycle of complex, reliable, and high-quality computational systems. Preparing professionals for local and global tech markets.',
     'education.technical': 'Intermediate Level Technical Course in Computer Science',
-    'education.technical.period': '2019 — 2021',
+    'education.technical.period': '2019 - 2021',
     'education.technical.location': 'Aracoiaba, Ceará, Brazil',
     'education.technical.shortDesc': 'Solid technical background in programming logic, web development (HTML/CSS, JS, PHP, Java), databases (MySQL), and computer networking. Technical GPA: 9.67/10.0.',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Free Course',
-    'education.cyfrin.date': 'July 2026 – Present',
+    'education.cyfrin.date': 'July 2026 - Present',
     'education.cyfrin.desc': 'Complete training on the Cyfrin Updraft Web3 education platform, focused on Blockchain and Smart Contract development.',
     'education.certifications.title': 'Certifications & Credentials',
     'education.languages': 'Languages',
@@ -233,7 +233,7 @@ const translations = {
     // Certifications Section
     'certifications.viewCredential': 'View Credential',
     'certifications.irede.title': 'Web 3.0 Technology Training',
-    'certifications.agentic.title': 'Founding Partner Certificate — Agentic Space',
+    'certifications.agentic.title': 'Founding Partner Certificate - Agentic Space',
     'certifications.agentic.issuer': 'Raport Tecnologia Inova Simples',
     'certifications.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'certifications.awsrestart.title': 'AWS re/Start Graduate',
@@ -300,7 +300,7 @@ const translations = {
     'nav.contact': 'Contato',
     // SEO
     'seo.title': 'Josias Batista | Desenvolvedor Blockchain & Contratos Inteligentes',
-    'seo.description': 'Portfólio de Josias Batista — Desenvolvedor Blockchain & Contratos Inteligentes especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.',
+    'seo.description': 'Portfólio de Josias Batista - Desenvolvedor Blockchain & Contratos Inteligentes especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desenvolvedor Residente em Web 3.0 no iRede',
@@ -315,7 +315,7 @@ const translations = {
     
     // About
     'about.title': 'Sobre Mim',
-    'about.summary': 'Minha jornada técnica começou entre 2019 e 2021 no Curso Técnico em Informática integrado ao Ensino Médio da EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará), onde conquistei média de 9,67/10,0 nas disciplinas técnicas, desenvolvendo bases sólidas em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, MySQL), POO em Java e redes de computadores.\n\nEm 2021, iniciei minha trajetória profissional como Estagiário de TI na Lucrei Cashback, atuando em testes manuais rigorosos em ambiente de produção com documentação estruturada de inconformidades — meu primeiro contato com processos de QA — e mentoria técnica de alunos. Em 2022, decidi me dedicar integralmente ao Bacharelado em Engenharia de Software da Universidade Federal do Ceará (UFC - Campus Quixadá) para consolidar meus fundamentos, abrangendo todo o ciclo de vida do desenvolvimento, engenharia e arquitetura de requisitos, testes de software (QA), atuação como Monitor Acadêmico e participação ativa em hackathons.\n\nRetornei ao mercado em 2025 e, desde então, venho atuando intensamente em engenharia backend e Web3, somando hoje mais de 2 anos de experiência profissional: uno a robustez de microsserviços e sistemas orientados a eventos (Java/Spring Boot) à criação de Smart Contracts determinísticos na EVM (Solidity/Foundry) e Stellar (Soroban/Rust). Atuo como Desenvolvedor Residente em Web 3.0 no Instituto iRede, mantenho participação ativa em hackathons e estou aberto a oportunidades em backend de alta performance e engenharia de protocolos blockchain.',
+    'about.summary': 'Minha jornada técnica começou entre 2019 e 2021 no Curso Técnico em Informática integrado ao Ensino Médio da EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará), onde conquistei média de 9,67/10,0 nas disciplinas técnicas, desenvolvendo bases sólidas em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, MySQL), POO em Java e redes de computadores.\n\nEm 2021, iniciei minha trajetória profissional como Estagiário de TI na Lucrei Cashback, atuando em testes manuais rigorosos em ambiente de produção com documentação estruturada de inconformidades - meu primeiro contato com processos de QA - e mentoria técnica de alunos. Em 2022, decidi me dedicar integralmente ao Bacharelado em Engenharia de Software da Universidade Federal do Ceará (UFC - Campus Quixadá) para consolidar meus fundamentos, abrangendo todo o ciclo de vida do desenvolvimento, engenharia e arquitetura de requisitos, testes de software (QA), atuação como Monitor Acadêmico e participação ativa em hackathons.\n\nRetornei ao mercado em 2025 e, desde então, venho atuando intensamente em engenharia backend e Web3, somando hoje mais de 2 anos de experiência profissional: uno a robustez de microsserviços e sistemas orientados a eventos (Java/Spring Boot) à criação de Smart Contracts determinísticos na EVM (Solidity/Foundry) e Stellar (Soroban/Rust). Atuo como Desenvolvedor Residente em Web 3.0 no Instituto iRede, mantenho participação ativa em hackathons e estou aberto a oportunidades em backend de alta performance e engenharia de protocolos blockchain.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquiteturas escaláveis com Java, Spring Boot, Node.js e NestJS.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -328,7 +328,7 @@ const translations = {
     // GitHub Stats
     'github.title': 'Atividade no GitHub',
     'github.subtitle': 'Dados em tempo real via API do GitHub.',
-    'github.fallback': 'Dados estimados — carregando dados ao vivo...',
+    'github.fallback': 'Dados estimados - carregando dados ao vivo...',
     'github.repos': 'Repositórios',
     'github.stars': 'Total de Stars',
     'github.followers': 'Seguidores',
@@ -411,10 +411,10 @@ const translations = {
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
 
-    'projects.coinconut.title': 'COINCONUT — ImpactLedger na Stellar',
+    'projects.coinconut.title': 'COINCONUT - ImpactLedger na Stellar',
     'projects.coinconut.desc': 'Plataforma de ledger de impacto descentralizada na Stellar (Smart Contracts Soroban em Rust) certificando a logística reversa e reciclagem de cascas de coco em NFTs ESG Soulbound, provas ZK (Noir) e liquidação PIX via Stellar Anchors.',
 
-    'projects.elociv.title': 'EloCiv — O Elo da Cidadania Jovem',
+    'projects.elociv.title': 'EloCiv - O Elo da Cidadania Jovem',
     'projects.elociv.desc': 'Solução descentralizada Web3 criada para o UNICEF Youth Challenge 2026 para ancoragem de Credenciais Verificáveis W3C do engajamento cívico jovem em Smart Contracts Soroban (Stellar), carteira cívica portátil e mapeamento de ODS.',
 
     'projects.tutorcrypto.title': 'Agente de IA: Tutor Web3 & Blockchain',
@@ -488,27 +488,27 @@ const translations = {
     'education.title': 'Formação Acadêmica',
     'education.subtitle': 'Formação sólida em Engenharia de Software na Universidade Federal do Ceará e base técnica em TI.',
     'education.degree': 'Bacharelado em Engenharia de Software',
-    'education.degree.period': '2022 — 2027',
+    'education.degree.period': '2022 - 2027',
     'education.degree.location': 'Quixadá, Ceará, Brasil',
     'education.degree.shortDesc': 'Bacharelado focado em engenharia de requisitos, arquitetura de microsserviços, qualidade de software (QA), testes e desenvolvimento de sistemas computacionais de alta performance.',
     'education.university': 'Universidade Federal do Ceará - UFC',
     'education.graduation': 'mar de 2022 - dez de 2027',
     'education.university.desc': 'Bacharelado em Engenharia de Software pela Universidade Federal do Ceará (UFC) - Campus Quixadá. Formação focada em todo o ciclo de vida do desenvolvimento de sistemas computacionais complexos, confiáveis e de alta qualidade.',
     'education.technical': 'Curso Técnico em Informática',
-    'education.technical.period': '2019 — 2021',
+    'education.technical.period': '2019 - 2021',
     'education.technical.location': 'Aracoiaba, Ceará, Brasil',
     'education.technical.shortDesc': 'Formação técnica sólida em lógica de programação, desenvolvimento web (HTML/CSS, JS, PHP, Java), banco de dados (MySQL) e redes de computadores. Média técnica: 9.67/10.0.',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Curso Livre',
-    'education.cyfrin.date': 'Julho de 2026 – o momento',
+    'education.cyfrin.date': 'Julho de 2026 - o momento',
     'education.cyfrin.desc': 'Formação completa na plataforma de educação Web3 da Cyfrin Updraft, com foco em desenvolvimento de Blockchain e Smart Contracts.',
     'education.certifications.title': 'Certificações & Licenças',
 
     // Certifications Section
     'certifications.viewCredential': 'Ver Credencial',
     'certifications.irede.title': 'Capacitação Tecnológica em Web 3.0',
-    'certifications.agentic.title': 'Certificado de Sócio Fundador — Agentic Space',
+    'certifications.agentic.title': 'Certificado de Sócio Fundador - Agentic Space',
     'certifications.agentic.issuer': 'Raport Tecnologia Inova Simples',
     'certifications.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'certifications.awsrestart.title': 'AWS re/Start Graduate',
@@ -578,7 +578,7 @@ const translations = {
     'nav.languages': 'Idiomas',
     // SEO
     'seo.title': 'Josias Batista | Desarrollador Blockchain y Contratos Inteligentes',
-    'seo.description': 'Portafolio de Josias Batista — Desarrollador Blockchain y Contratos Inteligentes especializado en Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript y DeFi.',
+    'seo.description': 'Portafolio de Josias Batista - Desarrollador Blockchain y Contratos Inteligentes especializado en Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript y DeFi.',
 
     // Hero
     'hero.roleBadge': 'Desarrollador Residente Web 3.0 en iRede',
@@ -593,7 +593,7 @@ const translations = {
 
     // About
     'about.title': 'Sobre mí',
-    'about.summary': 'Mi trayectoria técnica comenzó entre 2019 y 2021 con el Curso Técnico en Informática en EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brasil), obteniendo un promedio de 9.67/10.0 en materias técnicas y construyendo bases sólidas en lógica de programación, desarrollo web (HTML/CSS, JS, PHP, MySQL), POO en Java y redes de computadoras.\n\nEn 2021 inicié mi trayectoria profesional como Pasante de TI en Lucrei Cashback, realizando pruebas manuales rigurosas en ambiente de producción con documentación estructurada de no conformidades — mi primer contacto con procesos de QA — y mentoría técnica a estudiantes. En 2022 decidí dedicarme por completo a la Licenciatura en Ingeniería de Software en la Universidad Federal de Ceará (UFC - Campus Quixadá) para consolidar mis fundamentos, abarcando todo el ciclo de vida del desarrollo, ingeniería y arquitectura de requisitos, pruebas de software (QA) y participación activa en hackatones.\n\nRegresé al mercado en 2025 y desde entonces he estado trabajando intensamente en ingeniería backend y Web3, sumando hoy más de 2 años de experiencia profesional: combino la solidez de microservicios (Java/Spring Boot) con el desarrollo de Smart Contracts deterministas en EVM (Solidity/Foundry) y Stellar (Soroban/Rust). Me desempeño como Desarrollador Residente en Web 3.0 en iRede, mantengo participación activa en hackatones y estoy abierto a oportunidades en backend de alto rendimiento e ingeniería de protocolos blockchain.',
+    'about.summary': 'Mi trayectoria técnica comenzó entre 2019 y 2021 con el Curso Técnico en Informática en EEEP Dr. Salomão Alves de Moura (Aracoiaba - Ceará, Brasil), obteniendo un promedio de 9.67/10.0 en materias técnicas y construyendo bases sólidas en lógica de programación, desarrollo web (HTML/CSS, JS, PHP, MySQL), POO en Java y redes de computadoras.\n\nEn 2021 inicié mi trayectoria profesional como Pasante de TI en Lucrei Cashback, realizando pruebas manuales rigurosas en ambiente de producción con documentación estructurada de no conformidades - mi primer contacto con procesos de QA - y mentoría técnica a estudiantes. En 2022 decidí dedicarme por completo a la Licenciatura en Ingeniería de Software en la Universidad Federal de Ceará (UFC - Campus Quixadá) para consolidar mis fundamentos, abarcando todo el ciclo de vida del desarrollo, ingeniería y arquitectura de requisitos, pruebas de software (QA) y participación activa en hackatones.\n\nRegresé al mercado en 2025 y desde entonces he estado trabajando intensamente en ingeniería backend y Web3, sumando hoy más de 2 años de experiencia profesional: combino la solidez de microservicios (Java/Spring Boot) con el desarrollo de Smart Contracts deterministas en EVM (Solidity/Foundry) y Stellar (Soroban/Rust). Me desempeño como Desarrollador Residente en Web 3.0 en iRede, mantengo participación activa en hackatones y estoy abierto a oportunidades en backend de alto rendimiento e ingeniería de protocolos blockchain.',
     'about.bento.backend': 'Backend & APIs',
     'about.bento.backend_desc': 'Arquitecturas escalables con Java, Spring Boot, Node.js y NestJS.',
     'about.bento.web3': 'Web3 & Blockchain',
@@ -606,7 +606,7 @@ const translations = {
     // GitHub Stats
     'github.title': 'Actividad en GitHub',
     'github.subtitle': 'Datos en tiempo real desde la API de GitHub.',
-    'github.fallback': 'Datos estimados — cargando datos en vivo...',
+    'github.fallback': 'Datos estimados - cargando datos en vivo...',
     'github.repos': 'Repositorios',
     'github.stars': 'Total de Stars',
     'github.followers': 'Seguidores',
@@ -689,10 +689,10 @@ const translations = {
     'projects.filters.rust': 'Rust',
     'projects.filters.dotnet': '.NET',
 
-    'projects.coinconut.title': 'COINCONUT — ImpactLedger en Stellar',
+    'projects.coinconut.title': 'COINCONUT - ImpactLedger en Stellar',
     'projects.coinconut.desc': 'Plataforma de libro de impacto descentralizado en Stellar (Smart Contracts Soroban en Rust) que certifica la logística inversa de cáscaras de coco en NFTs ESG Soulbound y pruebas ZK (Noir).',
 
-    'projects.elociv.title': 'EloCiv — Ciudadanía Juvenil Web3',
+    'projects.elociv.title': 'EloCiv - Ciudadanía Juvenil Web3',
     'projects.elociv.desc': 'Plataforma Web3 para el UNICEF Youth Challenge 2026 que ancla Credenciales Verificables W3C del compromiso cívico juvenil en contratos inteligentes Soroban (Stellar).',
 
     'projects.tutorcrypto.title': 'Agente de IA: Tutor Web3 & Blockchain',
@@ -766,27 +766,27 @@ const translations = {
     'education.title': 'Formación Académica',
     'education.subtitle': 'Formación sólida en Ingeniería de Software en la Universidad Federal de Ceará y base técnica en TI.',
     'education.degree': 'Licenciatura en Ingeniería de Software',
-    'education.degree.period': '2022 — 2027',
+    'education.degree.period': '2022 - 2027',
     'education.degree.location': 'Quixadá, Ceará, Brasil',
     'education.degree.shortDesc': 'Licenciatura enfocada en ingeniería de requisitos, arquitectura de microservicios, calidad de software (QA), pruebas y desarrollo de sistemas computacionales de alto rendimiento.',
     'education.university': 'Universidad Federal de Ceará - UFC',
     'education.graduation': '2022 - Previsto: Diciembre 2027',
     'education.university.desc': 'Licenciatura en Ingeniería de Software enfocada en todo el ciclo de vida del desarrollo de sistemas computacionales complejos, confiables y de alta calidad.',
     'education.technical': 'Curso Técnico en Informática',
-    'education.technical.period': '2019 — 2021',
+    'education.technical.period': '2019 - 2021',
     'education.technical.location': 'Aracoiaba, Ceará, Brasil',
     'education.technical.shortDesc': 'Formación técnica sólida en lógica de programación, desarrollo web (HTML/CSS, JS, PHP, Java), bases de datos (MySQL) y redes de computadoras. Promedio técnico: 9.67/10.0.',
     'education.school': 'EEEP Dr. Salomão Alves de Moura',
     'education.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'education.cyfrin.type': 'Curso Libre',
-    'education.cyfrin.date': 'Julio 2026 – Presente',
+    'education.cyfrin.date': 'Julio 2026 - Presente',
     'education.cyfrin.desc': 'Formación completa en la plataforma de educación Web3 de Cyfrin Updraft, enfocada en el desarrollo de Blockchain y Smart Contracts.',
     'education.certifications.title': 'Certificaciones y Licencias',
 
     // Certifications Section
     'certifications.viewCredential': 'Ver Credencial',
     'certifications.irede.title': 'Capacitación Tecnológica en Web 3.0',
-    'certifications.agentic.title': 'Certificado de Socio Fundador — Agentic Space',
+    'certifications.agentic.title': 'Certificado de Socio Fundador - Agentic Space',
     'certifications.agentic.issuer': 'Raport Tecnologia Inova Simples',
     'certifications.cyfrin.title': 'Cyfrin Updraft - Smart Contract Development',
     'certifications.awsrestart.title': 'AWS re/Start Graduate',

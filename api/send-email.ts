@@ -21,7 +21,7 @@ const translations: Record<string, {
   subjects: Record<string, string>;
 }> = {
   pt: {
-    portfolioTitle: 'Josias Batista — Portfólio',
+    portfolioTitle: 'Josias Batista - Portfólio',
     subTitle: 'Nova mensagem de contato recebida',
     nameLabel: 'Nome:',
     emailLabel: 'Email:',
@@ -36,7 +36,7 @@ const translations: Record<string, {
     },
   },
   en: {
-    portfolioTitle: 'Josias Batista — Portfolio',
+    portfolioTitle: 'Josias Batista - Portfolio',
     subTitle: 'New contact message received',
     nameLabel: 'Name:',
     emailLabel: 'Email:',
@@ -51,7 +51,7 @@ const translations: Record<string, {
     },
   },
   es: {
-    portfolioTitle: 'Josias Batista — Portafolio',
+    portfolioTitle: 'Josias Batista - Portafolio',
     subTitle: 'Nuevo mensaje de contacto recibido',
     nameLabel: 'Nombre:',
     emailLabel: 'Email:',
@@ -100,7 +100,7 @@ export default async function handler(
     const dict = translations[langKey];
 
     const formattedSubject = dict.subjects[subject] || subject;
-    const emailSubject = `[${dict.portfolioTitle.split(' — ')[1]}] ${formattedSubject} — ${name}`;
+    const emailSubject = `[${dict.portfolioTitle.split(' - ')[1]}] ${formattedSubject} - ${name}`;
 
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',

@@ -85,7 +85,7 @@ const Index = () => {
 
   const seoDescription = t("seo.description") && t("seo.description") !== "seo.description"
     ? t("seo.description")
-    : "Portfólio de Josias Batista — Desenvolvedor Blockchain & Contratos Inteligentes especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.";
+    : "Portfólio de Josias Batista - Desenvolvedor Blockchain & Contratos Inteligentes especializado em Solidity, Rust, Smart Contracts, Stellar (Soroban), Ethereum (EVM), Foundry, TypeScript e DeFi.";
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">

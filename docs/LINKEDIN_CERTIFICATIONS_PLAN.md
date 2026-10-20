@@ -5,24 +5,24 @@
 
 ---
 
-## ⚠️ Contexto Crítico: O que a API gratuita do LinkedIn realmente oferece
+## Contexto Crítico: O que a API gratuita do LinkedIn realmente oferece
 
 Antes de qualquer coisa, é importante ser direto sobre as limitações reais da API oficial do LinkedIn em 2026:
 
 | Recurso | Tier Gratuito (self-service) | Partner/Aprovado |
 |---|---|---|
-| Login com LinkedIn (nome, foto, headline) | ✅ Disponível | ✅ |
-| Email do membro autenticado | ✅ Disponível | ✅ |
-| Postar no feed | ✅ Disponível | ✅ |
-| **Certificações / Licenças** | ❌ Bloqueado | ✅ Somente parceiros aprovados |
-| Experiência profissional | ❌ Bloqueado | ✅ Somente parceiros aprovados |
-| Educação | ❌ Bloqueado | ✅ Somente parceiros aprovados |
+| Login com LinkedIn (nome, foto, headline) | Disponível | Disponível |
+| Email do membro autenticado | Disponível | Disponível |
+| Postar no feed | Disponível | Disponível |
+| **Certificações / Licenças** | Bloqueado | Somente parceiros aprovados |
+| Experiência profissional | Bloqueado | Somente parceiros aprovados |
+| Educação | Bloqueado | Somente parceiros aprovados |
 
 **Conclusão:** O endpoint de certificações (`GET /v2/people/id={id}/certifications`) existe na documentação, mas seu uso é **restrito a desenvolvedores aprovados pelo LinkedIn**, não disponível no tier gratuito self-service. Isso foi confirmado em issues públicas do Stack Overflow e na própria documentação da Microsoft/LinkedIn.
 
 Fontes:
-- [Getting Access to LinkedIn APIs](https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access) — lista oficial de permissões abertas e fechadas
-- [Profile Edit API - Certifications](https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/certifications) — documenta o endpoint, mas com nota "restricted to approved developers"
+- [Getting Access to LinkedIn APIs](https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access) - lista oficial de permissões abertas e fechadas
+- [Profile Edit API - Certifications](https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/certifications) - documenta o endpoint, mas com nota "restricted to approved developers"
 - [Stack Overflow: Not enough permissions to access certifications](https://stackoverflow.com/questions/76519331/linkedin-api-not-enough-permissions-to-access-post-people-id-id-certificat)
 - [LinkedIn API Pricing Guide 2026 - Blotato](https://www.blotato.com/blog/linkedin-api-pricing)
 
@@ -30,7 +30,7 @@ Fontes:
 
 ## Abordagens Viáveis (da mais recomendada para a menos)
 
-### ✅ Abordagem 1 — Exportação de Dados do LinkedIn + Parsing automático (RECOMENDADA)
+### Abordagem 1 - Exportação de Dados do LinkedIn + Parsing automático (RECOMENDADA)
 
 Esta é a abordagem mais limpa, sem depender de aprovação externa, sem custo, e 100% dentro dos Termos de Uso do LinkedIn.
 
@@ -48,23 +48,23 @@ Name, Url, Authority, Started On, Finished On, License Number, Associated With
 ```
 
 **Fontes:**
-- [LinkedIn: Download your account data](https://www.linkedin.com/help/linkedin/answer/50191) — inclui nota: "if you don't have certifications listed, you won't receive a Certifications file"
+- [LinkedIn: Download your account data](https://www.linkedin.com/help/linkedin/answer/50191) - inclui nota: "if you don't have certifications listed, you won't receive a Certifications file"
 - [LinkedIn: Export larger data archive](https://www.linkedin.com/help/linkedin/answer/a570340)
 
 ---
 
 #### Implementação da Abordagem 1
 
-**Passo 1 — Exportar os dados do LinkedIn**
+**Passo 1 - Exportar os dados do LinkedIn**
 
 ```
 Settings & Privacy → Data Privacy → Get a copy of your data
 → Selecionar "Certifications" (ou full archive)
-→ Aguardar email (pode levar até 24–72h)
+→ Aguardar email (pode levar até 24-72h)
 → Baixar o ZIP e extrair Certifications.csv
 ```
 
-**Passo 2 — Script de conversão (Node.js / Bun)**
+**Passo 2 - Script de conversão (Node.js / Bun)**
 
 Criar `scripts/parse-linkedin-certifications.ts`:
 
@@ -106,10 +106,10 @@ writeFileSync(
   "utf-8"
 );
 
-console.log(`✅ ${certifications.length} certificações exportadas.`);
+console.log(`${certifications.length} certificações exportadas.`);
 ```
 
-**Passo 3 — Consumir o JSON no componente Certifications.tsx**
+**Passo 3 - Consumir o JSON no componente Certifications.tsx**
 
 ```typescript
 import certifications from "@/data/certifications.json";
@@ -117,7 +117,7 @@ import certifications from "@/data/certifications.json";
 // certifications é um array tipado, basta mapear
 ```
 
-**Passo 4 (opcional) — GitHub Actions para lembrar de atualizar**
+**Passo 4 (opcional) - GitHub Actions para lembrar de atualizar**
 
 Criar `.github/workflows/certifications-reminder.yml`:
 
@@ -139,7 +139,7 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: "🔔 Lembrete: atualizar certificações do LinkedIn",
+              title: " Lembrete: atualizar certificações do LinkedIn",
               body: "Verifique se há novas certificações no LinkedIn e re-exporte o Certifications.csv.",
               labels: ["maintenance"]
             })
@@ -147,7 +147,7 @@ jobs:
 
 ---
 
-### ✅ Abordagem 2 — Ferramenta "LinkedIn to JSON Resume" (browser bookmarklet)
+### Abordagem 2 - Ferramenta "LinkedIn to JSON Resume" (browser bookmarklet)
 
 Uma extensão/bookmarklet open source que lê sua página de perfil do LinkedIn e extrai todos os dados (incluindo certificações) para o formato [JSON Resume](https://jsonresume.org/).
 
@@ -177,7 +177,7 @@ O JSON Resume inclui a seção `certificates`:
 
 ---
 
-### ⚠️ Abordagem 3 — API OAuth + Login com LinkedIn (parcialmente viável)
+### Abordagem 3 - API OAuth + Login com LinkedIn (parcialmente viável)
 
 Usando o **"Sign in with LinkedIn using OpenID Connect"** (única permissão gratuita), dá para obter nome, foto e headline do usuário autenticado. **Não retorna certificações**, mas pode ser útil para sincronizar outros dados básicos do perfil automaticamente.
 
@@ -212,7 +212,7 @@ Certificações **não estão incluídas** nesse payload.
 
 ---
 
-### ❌ Abordagem 4 — Scraping / APIs de terceiros (NÃO RECOMENDADA)
+### Abordagem 4 - Scraping / APIs de terceiros (NÃO RECOMENDADA)
 
 Existem APIs de terceiros (Apify, ScrapIn, Bright Data, etc.) que extraem dados do LinkedIn via scraping. **Não recomendado** pelos seguintes motivos:
 
@@ -266,10 +266,10 @@ portfolio/
 
 | Abordagem | Gratuito | Automatizável | Risco | Complexidade |
 |---|---|---|---|---|
-| 1. Export CSV + Script | ✅ | Semi (manual export + script) | Nenhum | Baixa |
-| 2. Bookmarklet JSON Resume | ✅ | Manual | Nenhum | Baixa |
-| 3. OAuth API (sem certificações) | ✅ | Sim | Nenhum | Média |
-| 4. Scraping / APIs terceiros | 💰 Pago | Sim | Alto | Alta |
+| 1. Export CSV + Script | Sim | Semi (manual export + script) | Nenhum | Baixa |
+| 2. Bookmarklet JSON Resume | Sim | Manual | Nenhum | Baixa |
+| 3. OAuth API (sem certificações) | Sim | Sim | Nenhum | Média |
+| 4. Scraping / APIs terceiros | Pago | Sim | Alto | Alta |
 
 **A Abordagem 1 é a melhor opção**: gratuita, dentro dos termos do LinkedIn, e a única que entrega as certificações de forma confiável sem aprovação de parceiro.
 
